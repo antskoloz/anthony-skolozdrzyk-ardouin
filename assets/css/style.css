@@ -199,18 +199,19 @@ p {
 .nav-desktop {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 22px;
 }
 
 .nav-links {
   display: flex;
-  gap: 28px;
+  gap: 20px;
 }
 
 .nav-links a {
   font-size: 0.92rem;
   font-weight: 600;
   color: var(--text-muted);
+  white-space: nowrap;
   transition: color 0.15s ease;
 }
 
@@ -221,20 +222,21 @@ p {
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 12px;
 }
 
 .lang-switch {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 3px;
   font-size: 0.85rem;
   font-weight: 700;
   color: var(--text-faint);
+  white-space: nowrap;
 }
 
 .lang-switch a {
-  padding: 4px 6px;
+  padding: 4px 4px;
   border-radius: 6px;
 }
 
