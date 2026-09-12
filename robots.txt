@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://skoloz.github.io/anthony-skolozdrzyk-ardouin/sitemap.xml
+Sitemap: https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/sitemap.xml

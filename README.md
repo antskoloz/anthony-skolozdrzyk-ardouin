@@ -2,7 +2,7 @@
 
 Static, trilingual (EN/FR/DE) personal brand site. Plain HTML/CSS/JS, no build step, built for GitHub Pages.
 
-Live at: https://skoloz.github.io/anthony-skolozdrzyk-ardouin/
+Live at: https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/
 
 ## Structure
 
