@@ -721,6 +721,10 @@ p {
   gap: 40px;
 }
 
+.project-card + .project-card {
+  margin-top: 24px;
+}
+
 .project-info .eyebrow {
   margin-bottom: 10px;
 }
