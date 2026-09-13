@@ -1,0 +1,36 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SearchBox from "../components/SearchBox.astro";
+import CategoryGrid from "../components/CategoryGrid.astro";
+
+const codes = await getCollection("codes", ({ data }) => !data.draft);
+
+const counts: Record<string, number> = {};
+for (const { data } of codes) {
+  counts[data.category] = (counts[data.category] ?? 0) + 1;
+}
+---
+
+<BaseLayout
+  title="Decline Code Lookup — What Every Card Decline Means"
+  description="Look up any Visa, Mastercard, or Amex decline code and learn exactly why a payment was declined and what to do about it."
+  path="/"
+>
+  <section class="hero">
+    <div class="wrap">
+      <h1>What does that decline code actually mean?</h1>
+      <p class="hero__subtitle">
+        Search any Visa, Mastercard, or Amex decline code or message to get a plain-English
+        explanation, the likely cause, and exactly what to do next.
+      </p>
+      <SearchBox />
+    </div>
+  </section>
+
+  <section class="wrap">
+    <h2>Browse by category</h2>
+    <p>Not sure which code you're looking for? Browse decline reasons grouped by cause.</p>
+    <CategoryGrid counts={counts} />
+  </section>
+</BaseLayout>

@@ -1,0 +1,23 @@
+---
+interface Props {
+  linkedinUrl?: string;
+  githubUrl?: string;
+}
+
+const {
+  // TODO: replace with the real LinkedIn profile URL before launch.
+  linkedinUrl = "https://www.linkedin.com/in/TODO-REPLACE-ME",
+  githubUrl = "https://github.com/antskoloz",
+} = Astro.props;
+---
+
+<aside class="cta" aria-label="About the author">
+  <p>
+    Written and maintained by a payments professional. Have a question about
+    decline rates or need help diagnosing yours?
+  </p>
+  <p class="cta__links">
+    <a href={linkedinUrl} rel="noopener noreferrer" target="_blank">Connect on LinkedIn</a>
+    <a href={githubUrl} rel="noopener noreferrer" target="_blank">See my GitHub</a>
+  </p>
+</aside>

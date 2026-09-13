@@ -1,0 +1,27 @@
+---
+import CodeCard from "./CodeCard.astro";
+
+interface RelatedEntry {
+  slug: string;
+  title: string;
+  summary: string;
+  category: string;
+}
+
+interface Props {
+  entries: RelatedEntry[];
+}
+
+const { entries } = Astro.props;
+---
+
+{entries.length > 0 && (
+  <section class="related-codes" aria-labelledby="related-heading">
+    <h2 id="related-heading">Related decline codes</h2>
+    <div class="related-codes__grid">
+      {entries.map((entry) => (
+        <CodeCard slug={entry.slug} title={entry.title} summary={entry.summary} category={entry.category} />
+      ))}
+    </div>
+  </section>
+)}

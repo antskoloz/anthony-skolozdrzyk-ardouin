@@ -1,0 +1,20 @@
+---
+import { withBase } from "../utils/seo";
+import { categories } from "../data/categories";
+
+interface Props {
+  counts: Record<string, number>;
+}
+
+const { counts } = Astro.props;
+---
+
+<div class="category-grid">
+  {categories.map((category) => (
+    <a class="category-card" href={withBase(`/category/${category.id}/`)} style={`--badge-color:${category.color}`}>
+      <h3>{category.label}</h3>
+      <p>{category.description}</p>
+      <span class="category-card__count">{counts[category.id] ?? 0} decline codes</span>
+    </a>
+  ))}
+</div>

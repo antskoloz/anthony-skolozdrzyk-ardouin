@@ -1,0 +1,35 @@
+---
+interface Props {
+  faq: { question: string; answer: string }[];
+}
+
+const { faq } = Astro.props;
+
+const jsonLd = faq.length
+  ? {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faq.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.answer,
+        },
+      })),
+    }
+  : null;
+---
+
+{faq.length > 0 && (
+  <section class="faq" aria-labelledby="faq-heading">
+    <h2 id="faq-heading">Frequently asked questions</h2>
+    {faq.map((item) => (
+      <div class="faq__item">
+        <h3>{item.question}</h3>
+        <p>{item.answer}</p>
+      </div>
+    ))}
+  </section>
+)}
+{jsonLd && <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />}

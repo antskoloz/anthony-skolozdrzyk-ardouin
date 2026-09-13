@@ -1,0 +1,61 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import CodeCard from "../../components/CodeCard.astro";
+import { categories, getCategory } from "../../data/categories";
+
+export async function getStaticPaths() {
+  return categories.map((category) => ({
+    params: { category: category.id },
+  }));
+}
+
+const { category } = Astro.params;
+const categoryMeta = getCategory(category as string);
+
+const allCodes = await getCollection("codes", ({ data }) => !data.draft);
+const codesInCategory = allCodes
+  .filter((entry) => entry.data.category === categoryMeta.id)
+  .sort((a, b) => a.data.title.localeCompare(b.data.title));
+
+const otherCategories = categories.filter((c) => c.id !== categoryMeta.id);
+---
+
+<BaseLayout
+  title={`${categoryMeta.label} Decline Codes`}
+  description={categoryMeta.description}
+  path={`/category/${categoryMeta.id}/`}
+>
+  <div class="wrap">
+    <Breadcrumbs
+      crumbs={[
+        { label: "Home", path: "/" },
+        { label: categoryMeta.label, path: `/category/${categoryMeta.id}/` },
+      ]}
+    />
+
+    <h1>{categoryMeta.label}</h1>
+    <p class="category-hub__description">{categoryMeta.description}</p>
+
+    <div class="related-codes__grid">
+      {codesInCategory.map((entry) => (
+        <CodeCard
+          slug={entry.data.slug}
+          title={entry.data.title}
+          summary={entry.data.summary}
+          category={entry.data.category}
+        />
+      ))}
+    </div>
+
+    <section aria-labelledby="other-categories-heading">
+      <h2 id="other-categories-heading">Other categories</h2>
+      <ul>
+        {otherCategories.map((c) => (
+          <li><a href={`${import.meta.env.BASE_URL}category/${c.id}/`}>{c.label}</a></li>
+        ))}
+      </ul>
+    </section>
+  </div>
+</BaseLayout>

@@ -1,0 +1,15 @@
+---
+import { withBase } from "../utils/seo";
+---
+
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="site-header__brand" href={withBase("/")}>Decline Code Lookup</a>
+    <nav aria-label="Primary">
+      <ul class="site-header__nav">
+        <li><a href={withBase("/glossary/")}>Glossary</a></li>
+        <li><a href={withBase("/about/")}>About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

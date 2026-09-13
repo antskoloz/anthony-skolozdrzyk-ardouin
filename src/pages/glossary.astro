@@ -1,0 +1,49 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import { withBase, buildCanonicalUrl } from "../utils/seo";
+
+const codes = (await getCollection("codes", ({ data }) => !data.draft)).sort((a, b) =>
+  a.data.title.localeCompare(b.data.title),
+);
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "DefinedTermSet",
+  name: "Card Payment Decline Codes Glossary",
+  description: "A glossary of card payment decline reasons across Visa, Mastercard, and American Express.",
+  hasDefinedTerm: codes.map((entry) => ({
+    "@type": "DefinedTerm",
+    name: entry.data.title,
+    description: entry.data.summary,
+    url: buildCanonicalUrl(Astro, `/codes/${entry.data.slug}/`),
+  })),
+};
+---
+
+<BaseLayout
+  title="Full Glossary of Decline Codes"
+  description="A complete A-Z glossary of every card payment decline reason covered by this site, across Visa, Mastercard, and American Express."
+  path="/glossary/"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+  </Fragment>
+
+  <div class="wrap">
+    <Breadcrumbs crumbs={[{ label: "Home", path: "/" }, { label: "Glossary", path: "/glossary/" }]} />
+
+    <h1>Glossary of decline codes</h1>
+    <p>Every decline reason covered on this site, A-Z.</p>
+
+    <ul class="glossary-list">
+      {codes.map((entry) => (
+        <li>
+          <a href={withBase(`/codes/${entry.data.slug}/`)}>{entry.data.title}</a>
+          <span class="glossary-list__summary">{entry.data.summary}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</BaseLayout>

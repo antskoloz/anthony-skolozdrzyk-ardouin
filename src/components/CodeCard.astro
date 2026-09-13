@@ -1,0 +1,22 @@
+---
+import { withBase } from "../utils/seo";
+import { getCategory } from "../data/categories";
+
+interface Props {
+  slug: string;
+  title: string;
+  summary: string;
+  category: string;
+}
+
+const { slug, title, summary, category } = Astro.props;
+const categoryMeta = getCategory(category);
+---
+
+<a class="code-card" href={withBase(`/codes/${slug}/`)}>
+  <span class="code-card__badge" style={`--badge-color:${categoryMeta.color}`}>
+    {categoryMeta.label}
+  </span>
+  <h3 class="code-card__title">{title}</h3>
+  <p class="code-card__summary">{summary}</p>
+</a>

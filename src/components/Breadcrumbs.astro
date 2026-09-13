@@ -1,0 +1,40 @@
+---
+import { withBase, buildCanonicalUrl } from "../utils/seo";
+
+interface Crumb {
+  label: string;
+  path: string;
+}
+
+interface Props {
+  crumbs: Crumb[];
+}
+
+const { crumbs } = Astro.props;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: crumbs.map((crumb, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: crumb.label,
+    item: buildCanonicalUrl(Astro, crumb.path),
+  })),
+};
+---
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <ol>
+    {crumbs.map((crumb, index) => (
+      <li>
+        {index === crumbs.length - 1 ? (
+          <span aria-current="page">{crumb.label}</span>
+        ) : (
+          <a href={withBase(crumb.path)}>{crumb.label}</a>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>
+<script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />

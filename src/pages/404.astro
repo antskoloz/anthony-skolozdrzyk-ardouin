@@ -1,0 +1,18 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SearchBox from "../components/SearchBox.astro";
+import { withBase } from "../utils/seo";
+---
+
+<BaseLayout
+  title="Page Not Found"
+  description="This page doesn't exist. Search for a decline code or browse the glossary instead."
+  path="/404/"
+>
+  <div class="wrap">
+    <h1>Page not found</h1>
+    <p>That page doesn't exist, but you can search for a decline code below.</p>
+    <SearchBox />
+    <p><a href={withBase("/glossary/")}>Browse the full glossary of decline codes</a></p>
+  </div>
+</BaseLayout>

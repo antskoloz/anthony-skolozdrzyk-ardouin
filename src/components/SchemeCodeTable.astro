@@ -1,0 +1,41 @@
+---
+interface SchemeCode {
+  scheme: "visa" | "mastercard" | "amex" | "discover" | "jcb";
+  code: string;
+  label?: string;
+}
+
+interface Props {
+  schemeCodes: SchemeCode[];
+}
+
+const { schemeCodes } = Astro.props;
+
+const schemeNames: Record<SchemeCode["scheme"], string> = {
+  visa: "Visa",
+  mastercard: "Mastercard",
+  amex: "American Express",
+  discover: "Discover",
+  jcb: "JCB",
+};
+---
+
+<table class="scheme-table">
+  <caption class="sr-only">Decline code by card network</caption>
+  <thead>
+    <tr>
+      <th scope="col">Card network</th>
+      <th scope="col">Code</th>
+      <th scope="col">Network's wording</th>
+    </tr>
+  </thead>
+  <tbody>
+    {schemeCodes.map((entry) => (
+      <tr>
+        <th scope="row">{schemeNames[entry.scheme]}</th>
+        <td>{entry.code}</td>
+        <td>{entry.label ?? "—"}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>

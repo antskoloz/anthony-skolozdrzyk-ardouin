@@ -1,0 +1,97 @@
+---
+import { getCollection, getEntry, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import SchemeCodeTable from "../../components/SchemeCodeTable.astro";
+import FaqBlock from "../../components/FaqBlock.astro";
+import RelatedCodes from "../../components/RelatedCodes.astro";
+import CTA from "../../components/CTA.astro";
+import { getCategory } from "../../data/categories";
+import { buildCanonicalUrl } from "../../utils/seo";
+
+export async function getStaticPaths() {
+  const codes = await getCollection("codes", ({ data }) => !data.draft);
+  return codes.map((entry) => ({
+    params: { slug: entry.data.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { data } = entry;
+const { Content } = await render(entry);
+
+const categoryMeta = getCategory(data.category);
+
+const relatedEntries = (
+  await Promise.all(data.relatedSlugs.map((slug) => getEntry("codes", slug)))
+)
+  .filter((e): e is NonNullable<typeof e> => Boolean(e) && !e!.data.draft)
+  .map((e) => ({
+    slug: e.data.slug,
+    title: e.data.title,
+    summary: e.data.summary,
+    category: e.data.category,
+  }));
+
+const definedTermJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  name: data.title,
+  description: data.summary,
+  inDefinedTermSet: buildCanonicalUrl(Astro, "/glossary/"),
+  url: buildCanonicalUrl(Astro, `/codes/${data.slug}/`),
+};
+---
+
+<BaseLayout
+  title={data.seoTitle ?? `${data.title} Decline Code — Meaning & Fix`}
+  description={data.metaDescription ?? data.summary}
+  path={`/codes/${data.slug}/`}
+  ogType="article"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(definedTermJsonLd)} />
+  </Fragment>
+
+  <article class="wrap code-page">
+    <Breadcrumbs
+      crumbs={[
+        { label: "Home", path: "/" },
+        { label: categoryMeta.label, path: `/category/${categoryMeta.id}/` },
+        { label: data.title, path: `/codes/${data.slug}/` },
+      ]}
+    />
+
+    <h1>{data.title}</h1>
+    <p class="code-page__answer">{data.summary}</p>
+
+    <h2>Decline code by card network</h2>
+    <SchemeCodeTable schemeCodes={data.schemeCodes} />
+
+    <h2>Common causes</h2>
+    <ul>
+      {data.commonCauses.map((cause) => <li>{cause}</li>)}
+    </ul>
+
+    <h2>What merchants should do</h2>
+    <ul>
+      {data.merchantActions.map((action) => <li>{action}</li>)}
+    </ul>
+
+    <h2>How to prevent this</h2>
+    <ul>
+      {data.preventionTips.map((tip) => <li>{tip}</li>)}
+    </ul>
+
+    <div class="code-page__body">
+      <Content />
+    </div>
+
+    <FaqBlock faq={data.faq} />
+
+    <RelatedCodes entries={relatedEntries} />
+
+    <CTA />
+  </article>
+</BaseLayout>
