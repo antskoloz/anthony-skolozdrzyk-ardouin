@@ -13,8 +13,8 @@
 - [x] GitHub Actions build+deploy workflow
 - [x] Deploy Cloudflare Worker OAuth proxy + create GitHub OAuth App (see [decisions.md](decisions.md) ADR-002)
 - [x] Fill in the real `base_url` in `public/admin/config.yml`
-- [ ] Flip repo Pages source to "GitHub Actions" in GitHub Settings → Pages
-- [ ] Push and confirm the Actions workflow deploys successfully
+- [x] Flip repo Pages source to "GitHub Actions" in GitHub Settings → Pages
+- [x] Push and confirm the Actions workflow deploys successfully — live at https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/
 - [ ] Log into `/admin`, publish a first real post
 
 ## Phase 3 — Follow-ups (not started)
