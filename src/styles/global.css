@@ -113,7 +113,7 @@ h3 {
   color: var(--color-muted);
 }
 
-.site-header__nav ul {
+.site-header__nav {
   list-style: none;
   display: flex;
   align-items: center;
@@ -221,7 +221,7 @@ h3 {
     display: block;
   }
 
-  .site-header__nav ul {
+  .site-header__nav {
     flex-direction: column;
     align-items: stretch;
     gap: 0;
@@ -259,7 +259,7 @@ h3 {
   padding-block: var(--space-4);
 }
 
-.site-footer__nav ul {
+.site-footer__nav {
   list-style: none;
   display: flex;
   gap: var(--space-3);
