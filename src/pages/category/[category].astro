@@ -4,6 +4,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import CodeCard from "../../components/CodeCard.astro";
 import { categories, getCategory } from "../../data/categories";
+import { withBase } from "../../utils/seo";
 
 export async function getStaticPaths() {
   return categories.map((category) => ({
@@ -53,7 +54,7 @@ const otherCategories = categories.filter((c) => c.id !== categoryMeta.id);
       <h2 id="other-categories-heading">Other categories</h2>
       <ul>
         {otherCategories.map((c) => (
-          <li><a href={`${import.meta.env.BASE_URL}category/${c.id}/`}>{c.label}</a></li>
+          <li><a href={withBase(`/category/${c.id}/`)}>{c.label}</a></li>
         ))}
       </ul>
     </section>

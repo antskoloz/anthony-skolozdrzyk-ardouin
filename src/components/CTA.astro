@@ -1,12 +1,12 @@
 ---
 interface Props {
   linkedinUrl?: string;
-  githubUrl?: string;
+  portfolioUrl?: string;
 }
 
 const {
   linkedinUrl = "https://www.linkedin.com/in/anthony-skolozdrzyk-ardouin-data-analytics-expert/",
-  githubUrl = "https://github.com/antskoloz",
+  portfolioUrl = "https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/",
 } = Astro.props;
 ---
 
@@ -17,6 +17,6 @@ const {
   </p>
   <p class="cta__links">
     <a href={linkedinUrl} rel="noopener noreferrer" target="_blank">Connect on LinkedIn</a>
-    <a href={githubUrl} rel="noopener noreferrer" target="_blank">See my GitHub</a>
+    <a href={portfolioUrl} rel="noopener noreferrer" target="_blank">Visit my portfolio</a>
   </p>
 </aside>

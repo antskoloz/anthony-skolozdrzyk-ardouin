@@ -34,7 +34,8 @@
   const input = document.getElementById("decline-search") as HTMLInputElement;
   const resultsEl = document.getElementById("decline-search-results") as HTMLUListElement;
   const statusEl = document.getElementById("decline-search-status") as HTMLDivElement;
-  const base = import.meta.env.BASE_URL;
+  const rawBase = import.meta.env.BASE_URL;
+  const base = rawBase.endsWith("/") ? rawBase : `${rawBase}/`;
 
   let fuse: Fuse<SearchEntry> | null = null;
   let entries: SearchEntry[] = [];

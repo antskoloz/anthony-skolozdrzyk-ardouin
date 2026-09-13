@@ -6,6 +6,7 @@
   --color-accent: #1a5fb4;
   --color-accent-contrast: #ffffff;
   --color-surface: #f7f7f8;
+  --color-navy: #0a1f44;
 
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -75,6 +76,12 @@ h3 {
 /* Header */
 
 .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -84,22 +91,69 @@ h3 {
   justify-content: space-between;
   padding-block: var(--space-3);
   flex-wrap: wrap;
-  gap: var(--space-2);
+  gap: var(--space-3);
 }
 
 .site-header__brand {
-  font-weight: 700;
-  font-size: 1.125rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
   text-decoration: none;
-  color: var(--color-text);
+  color: var(--color-navy);
+  line-height: 1.2;
+}
+
+.site-header__byline {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--color-muted);
 }
 
 .site-header__nav ul {
   list-style: none;
   display: flex;
+  align-items: center;
   gap: var(--space-4);
   margin: 0;
   padding: 0;
+}
+
+.site-header__nav a {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--color-text);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.site-header__nav a:hover,
+.site-header__nav a:focus-visible {
+  color: var(--color-navy);
+  border-bottom-color: var(--color-accent);
+}
+
+.site-header__divider {
+  width: 1px;
+  height: 18px;
+  background: var(--color-border);
+}
+
+.site-header__linkedin {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-muted);
+}
+
+.site-header__linkedin:hover,
+.site-header__linkedin:focus-visible {
+  color: var(--color-navy);
 }
 
 /* Footer */

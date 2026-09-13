@@ -1,14 +1,39 @@
 ---
 import { withBase } from "../utils/seo";
+
+interface Props {
+  linkedinUrl?: string;
+  portfolioUrl?: string;
+}
+
+const {
+  linkedinUrl = "https://www.linkedin.com/in/anthony-skolozdrzyk-ardouin-data-analytics-expert/",
+  portfolioUrl = "https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/",
+} = Astro.props;
 ---
 
 <header class="site-header">
   <div class="wrap site-header__inner">
-    <a class="site-header__brand" href={withBase("/")}>Decline Code Lookup</a>
+    <a class="site-header__brand" href={withBase("/")}>
+      Decline Code Lookup
+      <span class="site-header__byline">by Anthony Skolozdrzyk-Ardouin</span>
+    </a>
     <nav aria-label="Primary">
       <ul class="site-header__nav">
         <li><a href={withBase("/glossary/")}>Glossary</a></li>
         <li><a href={withBase("/about/")}>About</a></li>
+        <li class="site-header__divider" aria-hidden="true"></li>
+        <li>
+          <a href={portfolioUrl} rel="noopener noreferrer" target="_blank">Portfolio</a>
+        </li>
+        <li>
+          <a class="site-header__linkedin" href={linkedinUrl} rel="noopener noreferrer" target="_blank" aria-label="Anthony Skolozdrzyk-Ardouin on LinkedIn">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.476-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.114 20.452H3.558V9h3.556v11.452z"></path>
+            </svg>
+            LinkedIn
+          </a>
+        </li>
       </ul>
     </nav>
   </div>
