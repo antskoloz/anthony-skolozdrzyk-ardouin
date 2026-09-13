@@ -76,6 +76,11 @@ const {
       link.addEventListener("click", closeMenu);
     });
 
+    document.addEventListener("click", (event) => {
+      const target = event.target as Node;
+      if (!navWrap.contains(target) && !toggle.contains(target)) closeMenu();
+    });
+
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape") closeMenu();
     });
