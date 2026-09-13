@@ -1,35 +1,51 @@
 # Anthony Skolozdrzyk-Ardouin — Personal Site
 
-Static, trilingual (EN/FR/DE) personal brand site. Plain HTML/CSS/JS, no build step, built for GitHub Pages.
+Trilingual (EN/FR/DE) personal brand homepage, plus an English-only blog with a Decap CMS admin UI. No database — the blog is Markdown files committed to this repo, built by Astro, served as static files on GitHub Pages.
 
 Live at: https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/
+
+See [architecture.md](architecture.md), [plan.md](plan.md), [specs/blog.md](specs/blog.md) and [decisions.md](decisions.md) for the full design and rationale.
 
 ## Structure
 
 ```
-index.html             English homepage (default)
-fr/index.html          French homepage
-de/index.html           German homepage
-assets/css/style.css    Styles
-assets/js/main.js       Nav toggle, email obfuscation
-assets/img/             Images (headshot, full, favicon)
-sitemap.xml
-robots.txt
+public/                 Legacy homepage — plain HTML/CSS/JS, copied as-is into the build
+  index.html              English homepage (default)
+  fr/index.html            French homepage
+  de/index.html            German homepage
+  assets/                  Styles, scripts, images (shared with the blog)
+  admin/                   Decap CMS (index.html + config.yml)
+  robots.txt, sitemap.xml  Hand-maintained, homepage URLs only
+
+src/                    Astro-rendered blog
+  content.config.ts        `blog` collection schema
+  content/blog/*.md        Posts — this is what Decap CMS commits to
+  layouts/, pages/blog/    Blog templates and routes
+  pages/rss.xml.js         RSS feed
 ```
 
-## Deploying changes
+## Local development
 
 ```bash
-git add -A
-git commit -m "Describe the change"
-git push
+npm install
+npm run dev       # http://localhost:4321/anthony-skolozdrzyk-ardouin/
+npm run build     # outputs to dist/
+npm run preview   # serve the production build locally
 ```
 
-GitHub Pages redeploys automatically from `main` within a minute or two.
+Editing the homepage (`public/index.html`, `public/fr/`, `public/de/`) needs no build step — those files are copied verbatim. Editing the blog (`src/`) needs `npm run build` to regenerate `dist/`.
+
+## Deploying
+
+Push to `main` — a GitHub Actions workflow (`.github/workflows/deploy.yml`) builds the site and deploys `dist/` to GitHub Pages automatically.
+
+## Publishing a blog post
+
+- **Via the CMS:** go to `/admin`, log in with GitHub, write the post through the form. It commits a Markdown file to `src/content/blog/` on `main`, which triggers the deploy workflow above.
+- **By hand:** add a `.md` file to `src/content/blog/` with the required frontmatter (see [specs/blog.md](specs/blog.md)), then `git push`.
 
 ## After it's live (SEO/GEO follow-ups)
 
-- Submit the site (and `sitemap.xml`) to Google Search Console and Bing Webmaster Tools — this is the single biggest lever for showing up in search and AI-assistant answers.
-- Once you have a custom domain, add a `CNAME` file at the repo root with the domain name, update DNS, and update every absolute URL in the HTML/sitemap/robots files to match.
-- If you want more content over time (repurposed LinkedIn posts, case studies), it's easiest to add an `/insights/` folder with one static HTML page per post, linked from the nav — good for both SEO (more indexed pages) and GEO (more citable text for AI answers).
-- Optional: a dedicated 1200×630 OG share image (currently `og:image`/`twitter:image` reuse the headshot) gives cleaner link previews on LinkedIn/Slack.
+- Submit the site and both sitemaps (`sitemap.xml`, `sitemap-index.xml`) to Google Search Console and Bing Webmaster Tools.
+- Once there's a custom domain, add a `CNAME` file at the repo root and update every absolute URL across the homepage HTML, `astro.config.mjs`, `src/consts.ts`, `sitemap.xml` and `robots.txt` to match.
+- Optional: a dedicated 1200×630 OG share image (currently `og:image`/`twitter:image` reuse the headshot).

@@ -1,0 +1,45 @@
+---
+import { getCollection } from 'astro:content';
+import BlogLayout from '../../layouts/BlogLayout.astro';
+import { SITE_DESCRIPTION } from '../../consts';
+
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const posts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const dateFormat: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+---
+
+<BlogLayout title="Blog" description={SITE_DESCRIPTION} canonicalPath="/blog/">
+  <section class="blog-hero">
+    <div class="container">
+      <p class="eyebrow">Notes &amp; writing</p>
+      <h1>Blog</h1>
+      <p>Revenue Operations, payments and data analytics — practical notes from running RevOps and analytics at scale.</p>
+    </div>
+  </section>
+
+  <section class="container">
+    {posts.length === 0 ? (
+      <p class="blog-empty">No posts yet — check back soon.</p>
+    ) : (
+      <div class="blog-grid">
+        {posts.map((post) => (
+          <article class="blog-card">
+            <div class="blog-meta">
+              <time datetime={post.data.pubDate.toISOString()}>
+                {post.data.pubDate.toLocaleDateString('en-US', dateFormat)}
+              </time>
+            </div>
+            <h2><a href={`${post.id}/`}>{post.data.title}</a></h2>
+            <p>{post.data.description}</p>
+            {post.data.tags.length > 0 && (
+              <div class="tag-list" style="margin-top:16px;">
+                {post.data.tags.map((tag) => <span class="tag">{tag}</span>)}
+              </div>
+            )}
+          </article>
+        ))}
+      </div>
+    )}
+  </section>
+</BlogLayout>

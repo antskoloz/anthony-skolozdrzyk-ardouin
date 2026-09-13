@@ -1,0 +1,37 @@
+backend:
+  name: github
+  repo: antskoloz/anthony-skolozdrzyk-ardouin
+  branch: main
+  # TODO: replace with the deployed Cloudflare Worker URL once the OAuth
+  # proxy is live (see architecture.md / decisions.md for setup steps).
+  base_url: https://REPLACE-WITH-YOUR-WORKER.workers.dev
+  auth_endpoint: auth
+
+site_url: https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/
+display_url: https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/
+logo_url: https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/assets/img/favicon.svg
+
+media_folder: "public/blog/uploads"
+public_folder: "/blog/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    label_singular: "Post"
+    folder: "src/content/blog"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    format: "frontmatter"
+    extension: "md"
+    summary: "{{title}} — {{pubDate}}"
+    sortable_fields: ["pubDate", "title"]
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text", hint: "Used for the meta description, OG tags and blog card excerpt." }
+      - { label: "Publish Date", name: "pubDate", widget: "datetime" }
+      - { label: "Updated Date", name: "updatedDate", widget: "datetime", required: false }
+      - { label: "Hero Image", name: "heroImage", widget: "image", required: false, media_library: { config: { multiple: false } } }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Draft", name: "draft", widget: "boolean", default: true, hint: "Draft posts are not built into the live site." }
+      - { label: "Body", name: "body", widget: "markdown" }

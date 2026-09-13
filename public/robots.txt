@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
 
 Sitemap: https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/sitemap.xml
+Sitemap: https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/sitemap-index.xml

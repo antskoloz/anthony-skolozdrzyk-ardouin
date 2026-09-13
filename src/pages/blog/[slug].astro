@@ -1,0 +1,57 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import BlogLayout from '../../layouts/BlogLayout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const dateFormat: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+---
+
+<BlogLayout
+  title={post.data.title}
+  description={post.data.description}
+  canonicalPath={`/blog/${post.id}/`}
+  ogImage={post.data.heroImage}
+  article={{ pubDate: post.data.pubDate, updatedDate: post.data.updatedDate, tags: post.data.tags }}
+>
+  <div class="container">
+    <a href="../" class="back-link">&larr; Back to blog</a>
+
+    <header class="post-header">
+      <div class="blog-meta">
+        <time datetime={post.data.pubDate.toISOString()}>
+          {post.data.pubDate.toLocaleDateString('en-US', dateFormat)}
+        </time>
+      </div>
+      <h1>{post.data.title}</h1>
+      {post.data.tags.length > 0 && (
+        <div class="tag-list">
+          {post.data.tags.map((tag) => <span class="tag">{tag}</span>)}
+        </div>
+      )}
+    </header>
+
+    {post.data.heroImage && (
+      <div class="post-hero-image" style="max-width:720px;margin-inline:auto;">
+        <img src={post.data.heroImage} alt={post.data.title} loading="eager">
+      </div>
+    )}
+
+    <div class="prose">
+      <Content />
+    </div>
+  </div>
+</BlogLayout>
