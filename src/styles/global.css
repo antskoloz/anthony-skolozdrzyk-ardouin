@@ -86,11 +86,11 @@ h3 {
 }
 
 .site-header__inner {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-block: var(--space-3);
-  flex-wrap: wrap;
   gap: var(--space-3);
 }
 
@@ -154,6 +154,93 @@ h3 {
 .site-header__linkedin:hover,
 .site-header__linkedin:focus-visible {
   color: var(--color-navy);
+}
+
+.site-header__toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  border-radius: 0.375rem;
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.site-header__toggle:hover {
+  background: var(--color-surface);
+}
+
+.site-header__toggle-bar {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--color-navy);
+  border-radius: 1px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.site-header__toggle.is-active .site-header__toggle-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.site-header__toggle.is-active .site-header__toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.site-header__toggle.is-active .site-header__toggle-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 780px) {
+  .site-header__byline {
+    display: none;
+  }
+
+  .site-header__toggle {
+    display: flex;
+  }
+
+  .site-header__nav-wrap {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: 0 12px 20px rgba(10, 31, 68, 0.08);
+  }
+
+  .site-header__nav-wrap.is-open {
+    display: block;
+  }
+
+  .site-header__nav ul {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: var(--space-2) 0;
+  }
+
+  .site-header__nav a {
+    display: block;
+    padding: var(--space-3);
+    border-bottom: none;
+  }
+
+  .site-header__linkedin {
+    gap: 8px;
+  }
+
+  .site-header__divider {
+    display: none;
+  }
 }
 
 /* Footer */
