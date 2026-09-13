@@ -2,9 +2,7 @@ backend:
   name: github
   repo: antskoloz/anthony-skolozdrzyk-ardouin
   branch: main
-  # TODO: replace with the deployed Cloudflare Worker URL once the OAuth
-  # proxy is live (see architecture.md / decisions.md for setup steps).
-  base_url: https://REPLACE-WITH-YOUR-WORKER.workers.dev
+  base_url: https://anthony-site-cms-auth.anthony-skolozdrzyk.workers.dev
   auth_endpoint: auth
 
 site_url: https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/

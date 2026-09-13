@@ -49,4 +49,4 @@ See [specs/blog.md](specs/blog.md) for the `blog` collection schema and the Deca
 
 ## Admin auth (Decap CMS)
 
-Decap's `github` backend needs an OAuth handshake that a static site can't complete on its own. A small OAuth proxy (the open-source `decap-cms-oauth-provider`) runs as a Cloudflare Worker and is referenced from `public/admin/config.yml`'s `backend.base_url`. See [decisions.md](decisions.md) ADR-002 and [specs/blog.md](specs/blog.md) for the exact setup steps.
+Decap's `github` backend needs an OAuth handshake that a static site can't complete on its own. `oauth-worker/` (a separate deployable, not part of the Astro build) vendors the open-source [sveltia-cms-auth](https://github.com/sveltia/sveltia-cms-auth) script and runs as a Cloudflare Worker at `https://anthony-site-cms-auth.anthony-skolozdrzyk.workers.dev`, referenced from `public/admin/config.yml`'s `backend.base_url`. See `oauth-worker/README.md` for redeploy steps and [decisions.md](decisions.md) ADR-002 for the setup rationale.

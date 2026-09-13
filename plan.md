@@ -11,8 +11,8 @@
 - [x] `blog` content collection, listing + post pages, RSS feed, blog-only sitemap
 - [x] Decap CMS admin at `/admin` (GitHub backend, English-only `blog` collection)
 - [x] GitHub Actions build+deploy workflow
-- [ ] Deploy Cloudflare Worker OAuth proxy + create GitHub OAuth App (manual — see [decisions.md](decisions.md) ADR-002)
-- [ ] Fill in the real `base_url` in `public/admin/config.yml` once the Worker is live
+- [x] Deploy Cloudflare Worker OAuth proxy + create GitHub OAuth App (see [decisions.md](decisions.md) ADR-002)
+- [x] Fill in the real `base_url` in `public/admin/config.yml`
 - [ ] Flip repo Pages source to "GitHub Actions" in GitHub Settings → Pages
 - [ ] Push and confirm the Actions workflow deploys successfully
 - [ ] Log into `/admin`, publish a first real post

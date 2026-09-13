@@ -34,7 +34,7 @@ Every blog page (via `BlogLayout.astro`) gets: canonical URL, OG + Twitter tags,
 ## Decap CMS configuration
 
 `public/admin/config.yml`:
-- **Backend:** `github`, repo `antskoloz/anthony-skolozdrzyk-ardouin`, branch `main`, `base_url` pointing at the Cloudflare Worker OAuth proxy (see [decisions.md](../decisions.md) ADR-002 — placeholder URL until the Worker is deployed).
+- **Backend:** `github`, repo `antskoloz/anthony-skolozdrzyk-ardouin`, branch `main`, `base_url` pointing at the Cloudflare Worker OAuth proxy (`https://anthony-site-cms-auth.anthony-skolozdrzyk.workers.dev` — see [decisions.md](../decisions.md) ADR-002).
 - **Media:** `media_folder: "public/blog/uploads"`, `public_folder: "/blog/uploads"` — Decap uploads land directly in `public/`, matching the `heroImage` field's plain-string schema.
 - **Collection:** single `blog` collection mapped to `src/content/blog/*.md`, fields matching the schema table above (`title` string, `description` text, `pubDate`/`updatedDate` datetime, `heroImage` image, `tags` list, `draft` boolean default `true`, `body` markdown).
 - `public/admin/index.html` loads Decap CMS from the `unpkg` CDN — no npm dependency, no bundling.

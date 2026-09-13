@@ -1,0 +1,12 @@
+name = "anthony-site-cms-auth"
+main = "src/index.js"
+compatibility_date = "2024-01-01"
+
+[vars]
+# Restricts the OAuth handshake to Decap CMS instances running on this exact
+# site — Decap sends its own hostname as `site_id`, so this stops someone
+# else's CMS install from using this worker's GitHub OAuth App.
+ALLOWED_DOMAINS = "antskoloz.github.io"
+
+# GITHUB_CLIENT_ID and GITHUB_CLIENT_SECRET are set as secrets, not vars —
+# see README.md in this folder. Never commit them here.
