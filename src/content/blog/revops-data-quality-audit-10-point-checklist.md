@@ -1,8 +1,15 @@
 ---
 title: "The RevOps Data Quality Audit: A 10-Point Checklist"
-description: "Bad CRM data quietly breaks forecasts and reports. Use this 10-point revenue data audit with ready-to-run SQL checks to find and fix the biggest gaps."
-pubDate: 2026-10-24
-tags: ["revops", "data quality", "crm", "sql", "revenue operations"]
+description: Bad CRM data quietly breaks forecasts and reports. Use this
+  10-point revenue data audit with ready-to-run SQL checks to find and fix the
+  biggest gaps.
+pubDate: 2026-09-19T10:56:00.000+02:00
+tags:
+  - revops
+  - data quality
+  - crm
+  - sql
+  - revenue operations
 draft: true
 ---
 
