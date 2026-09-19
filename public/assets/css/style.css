@@ -1014,6 +1014,13 @@ p {
   margin-top: 24px;
 }
 
+.footer-disclaimer {
+  font-size: 0.78rem;
+  color: var(--text-faint);
+  width: 100%;
+  margin-top: 6px;
+}
+
 /* ---------- Skip link ---------- */
 
 .skip-link {
