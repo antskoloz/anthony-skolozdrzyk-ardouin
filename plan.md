@@ -25,7 +25,7 @@ Behavior in [specs/free-tools.md](specs/free-tools.md), decision in [decisions.m
 
 - [x] A/B Test Sample Size & Confidence Calculator — `projects/ab-test-calculator/`
 - [x] Chi-Square Test Calculator — `projects/chi-square-calculator/`
-- [ ] Marketing ROI Calculator (ROAS · CAC · LTV) — `projects/marketing-roi-calculator/`
+- [x] Marketing ROI Calculator (ROAS · CAC · LTV) — `projects/marketing-roi-calculator/`
 - [ ] UTM Link Builder — `projects/utm-builder/`
 - [ ] Anthony reviews the disclaimer wording (default text is not legal advice)
 

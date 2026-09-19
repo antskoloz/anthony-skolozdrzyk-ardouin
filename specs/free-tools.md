@@ -6,7 +6,7 @@ A family of free, no-sign-up calculators for marketers, each published as its ow
 
 ## Shared contract (every tool)
 
-- **Static vanilla HTML/CSS/JS**, no `package.json`, no build step. Published by copying the folder to `dist/projects/<tool>/`. Files: `index.html`, `tool.css`, `tool.js`, optional `stats.js` (pure functions, no DOM) and `stats.test.mjs`, `README.md`.
+- **Static vanilla HTML/CSS/JS**, no `package.json`, no build step. Published by copying the folder to `dist/projects/<tool>/`. Files: `index.html`, `tool.css`, `tool.js`, optional pure-function module with its test (`stats.js` + `stats.test.mjs` for the statistical tools, `calc.js` + `calc.test.mjs` for the others; no DOM), `favicon.svg`, `README.md`.
 - **No code shared between tools** (see projects.md rules): each folder carries its own copy of `tool.css` and of any `stats.js` it needs.
 - **English-only UI.** The homepage card for each tool is translated in EN/FR/DE.
 - **Computation runs in the browser.** No inputs are sent to or stored on a server. No `localStorage` of user data.

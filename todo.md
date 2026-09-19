@@ -8,7 +8,7 @@ Spec: [specs/free-tools.md](specs/free-tools.md). One commit per tool, including
 - [x] Tool 2: `projects/chi-square-calculator/` + card (EN/FR/DE)
 
 ## Sunday
-- [ ] Tool 3: `projects/marketing-roi-calculator/` + card (EN/FR/DE)
+- [x] Tool 3: `projects/marketing-roi-calculator/` + card (EN/FR/DE)
 - [ ] Tool 4: `projects/utm-builder/` + card (EN/FR/DE)
 - [ ] Full check: `npm run build:all`, browser pass on each tool and all 3 homepages
 - [ ] Push (only when Anthony says so) and confirm the Actions deploy is green
