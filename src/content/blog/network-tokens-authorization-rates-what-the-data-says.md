@@ -1,9 +1,14 @@
 ---
 title: "Network Tokens and Authorization Rates: What the Data Says"
-description: "Do network tokens raise card approval rates? Compare Visa's 4.8% and Mastercard-cited 10.3-point figures, and learn why the numbers differ."
-pubDate: 2026-10-10
-tags: ["payments", "network tokens", "authorization rate", "tokenization"]
-draft: true
+description: Do network tokens raise card approval rates? Compare Visa's 4.8%
+  and Mastercard-cited 10.3-point figures, and learn why the numbers differ.
+pubDate: 2026-09-19T10:07:00.000+02:00
+tags:
+  - payments
+  - network tokens
+  - authorization rate
+  - tokenization
+draft: false
 ---
 
 > **Short answer:** Yes, network tokens are associated with higher approval rates, but the size of the lift depends on who measured it. Visa reports a 4.8% increase in authorization rates for tokenized transactions (2025). Mastercard cites a 10.3 percentage-point increase from Checkout.com merchants. The two figures use different populations and different units, so they should not be averaged or compared directly.
