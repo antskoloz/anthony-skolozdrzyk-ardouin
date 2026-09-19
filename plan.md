@@ -26,7 +26,7 @@ Behavior in [specs/free-tools.md](specs/free-tools.md), decision in [decisions.m
 - [x] A/B Test Sample Size & Confidence Calculator — `projects/ab-test-calculator/`
 - [x] Chi-Square Test Calculator — `projects/chi-square-calculator/`
 - [x] Marketing ROI Calculator (ROAS · CAC · LTV) — `projects/marketing-roi-calculator/`
-- [ ] UTM Link Builder — `projects/utm-builder/`
+- [x] UTM Link Builder — `projects/utm-builder/`
 - [ ] Anthony reviews the disclaimer wording (default text is not legal advice)
 
 Cut order if the weekend slips: UTM bulk mode, then Tool 4, then Tool 3's benchmark traffic-lights. Tools 1–2 are not cut.

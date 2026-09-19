@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free UTM Link Builder: Campaign URL Builder for Marketers | Anthony Skolozdrzyk-Ardouin</title>
+<meta name="description" content="Free UTM link builder for marketers: create clean, consistent campaign URLs with utm_source, utm_medium and utm_campaign, keep existing parameters, tag many links at once and avoid the naming mistakes that split your analytics. No sign-up.">
+<meta name="author" content="Anthony Skolozdrzyk-Ardouin">
+<meta name="robots" content="index, follow">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QXP44186J4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QXP44186J4');
+</script>
+<link rel="canonical" href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/utm-builder/">
+<meta property="og:site_name" content="Anthony Skolozdrzyk-Ardouin">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free UTM Link Builder: Campaign URL Builder for Marketers">
+<meta property="og:description" content="Build clean, consistent UTM campaign links in seconds, one at a time or in bulk. Free for everyone, no sign-up.">
+<meta property="og:url" content="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/utm-builder/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Free UTM Link Builder: Campaign URL Builder for Marketers">
+<meta name="twitter:description" content="Build clean, consistent UTM campaign links in seconds, one at a time or in bulk. Free for everyone, no sign-up.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tool.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "UTM Link Builder",
+  "url": "https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/utm-builder/",
+  "description": "Free campaign URL builder that adds utm_source, utm_medium, utm_campaign, utm_term and utm_content to your links, one at a time or in bulk.",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any (web browser)",
+  "isAccessibleForFree": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+  "author": { "@type": "Person", "name": "Anthony Skolozdrzyk-Ardouin", "url": "https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What are UTM parameters?", "acceptedAnswer": { "@type": "Answer", "text": "UTM parameters are tags added to the end of a URL, such as utm_source, utm_medium and utm_campaign. Analytics tools read them to tell you which source, channel and campaign each visit came from." } },
+    { "@type": "Question", "name": "Which UTM parameters are required?", "acceptedAnswer": { "@type": "Answer", "text": "In practice utm_source, utm_medium and utm_campaign should always be set. utm_term (paid keywords) and utm_content (to tell apart ads or links pointing to the same page) are optional." } },
+    { "@type": "Question", "name": "Are UTM parameters case-sensitive?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. In Google Analytics, Email and email are reported as two different values. Choose one convention, usually all lowercase with underscores or hyphens, and use it everywhere." } },
+    { "@type": "Question", "name": "Should I use UTM parameters on links inside my own website?", "acceptedAnswer": { "@type": "Answer", "text": "No. UTM tags on internal links can start a new session and overwrite the original source of the visit. Use them only on links that bring people to your site from outside." } },
+    { "@type": "Question", "name": "Do UTM parameters hurt SEO?", "acceptedAnswer": { "@type": "Answer", "text": "They do not change your content, and search engines are generally good at treating tagged URLs as the same page, especially when the page sets a canonical URL. Avoid tagging links that you expect search engines to crawl." } }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="logo" href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/">
+      <span class="logo-mark">AS</span>
+      <span>Anthony Skolozdrzyk-Ardouin</span>
+    </a>
+    <nav class="nav-desktop" aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#about">About</a></li>
+        <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#experience">Experience</a></li>
+        <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#skills">Skills</a></li>
+        <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#work" aria-current="true">Work</a></li>
+        <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/">Blog</a></li>
+        <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#faq">FAQ</a></li>
+        <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#contact">Contact</a></li>
+      </ul>
+      <a class="btn btn-primary btn-sm" href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#contact">Let's chat</a>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-mobile" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile">
+    <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#about">About</a>
+    <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#experience">Experience</a>
+    <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#skills">Skills</a>
+    <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#work">Work</a>
+    <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/">Blog</a>
+    <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#faq">FAQ</a>
+    <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="tool-bar">
+  <div class="tool-bar__inner">
+    <a class="tool-bar__title" href="./">UTM Builder</a>
+    <nav aria-label="UTM Builder">
+      <ul class="tool-bar__nav">
+        <li><a href="#calculator">Calculator</a></li>
+        <li><a href="#methodology">Methodology</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<main id="main-content">
+  <section class="hero">
+    <div class="wrap">
+      <span class="badge-free">Free tool</span>
+      <h1>UTM Link Builder: clean, consistent campaign links</h1>
+      <p class="hero__lead">Tag your links so your analytics tells you which channel, campaign and ad really brought each visitor. Build one link, or tag a whole list at once, without the typos and inconsistent naming that split your reports.</p>
+      <p class="hero__free">Free for everyone to use, no sign-up. Nothing you type leaves your browser.</p>
+    </div>
+  </section>
+
+  <section id="calculator" class="wrap" aria-label="UTM link builder">
+    <div class="panel">
+      <div class="tabs" role="tablist" aria-label="Mode">
+        <button class="tab" role="tab" id="tab-single" aria-selected="true" aria-controls="panel-single" type="button">Single link</button>
+        <button class="tab" role="tab" id="tab-bulk" aria-selected="false" aria-controls="panel-bulk" type="button">Bulk (many links)</button>
+      </div>
+
+      <form id="utm-form" class="form-grid" novalidate>
+        <div class="field full" id="panel-single" role="tabpanel" aria-labelledby="tab-single">
+          <label for="utm-url">Page URL</label>
+          <input id="utm-url" type="text" inputmode="url" value="https://example.com/landing-page" autocomplete="off" spellcheck="false">
+          <p class="hint">The full address you are linking to, starting with https://. Existing parameters and #anchors are kept.</p>
+          <p class="error" id="utm-url-error"></p>
+        </div>
+        <div class="field full" id="panel-bulk" role="tabpanel" aria-labelledby="tab-bulk" hidden>
+          <label for="utm-urls">Page URLs (one per line)</label>
+          <textarea id="utm-urls" rows="5" spellcheck="false" autocomplete="off" style="width:100%;padding:11px 12px;border:1px solid #cfd7e4;border-radius:8px;font:inherit;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:0.9rem;">https://example.com/landing-page
+https://example.com/pricing?plan=pro#compare</textarea>
+          <p class="hint">Every line gets the same source, medium and campaign below.</p>
+          <p class="error" id="utm-urls-error"></p>
+        </div>
+
+        <div class="field">
+          <label for="utm-source">Campaign source <span class="hint">(required)</span></label>
+          <input id="utm-source" type="text" list="sources" value="newsletter" autocomplete="off" spellcheck="false">
+          <p class="hint">Where the traffic comes from: google, linkedin, newsletter…</p>
+          <p class="error" id="utm-source-error"></p>
+        </div>
+        <div class="field">
+          <label for="utm-medium">Campaign medium <span class="hint">(required)</span></label>
+          <input id="utm-medium" type="text" list="mediums" value="email" autocomplete="off" spellcheck="false">
+          <p class="hint">The channel type: cpc, email, social, paid_social…</p>
+          <p class="error" id="utm-medium-error"></p>
+        </div>
+        <div class="field">
+          <label for="utm-campaign">Campaign name <span class="hint">(required)</span></label>
+          <input id="utm-campaign" type="text" value="spring_sale_2026" autocomplete="off" spellcheck="false">
+          <p class="hint">The promotion or initiative, e.g. spring_sale_2026.</p>
+          <p class="error" id="utm-campaign-error"></p>
+        </div>
+        <div class="field">
+          <label for="utm-term">Campaign term <span class="hint">(optional)</span></label>
+          <input id="utm-term" type="text" value="" autocomplete="off" spellcheck="false">
+          <p class="hint">Paid search keyword.</p>
+          <p class="error" id="utm-term-error"></p>
+        </div>
+        <div class="field">
+          <label for="utm-content">Campaign content <span class="hint">(optional)</span></label>
+          <input id="utm-content" type="text" value="" autocomplete="off" spellcheck="false">
+          <p class="hint">Tells apart ads or links that point to the same page, e.g. header_button.</p>
+          <p class="error" id="utm-content-error"></p>
+        </div>
+        <div class="field">
+          <label for="normalize" style="display:flex;gap:10px;align-items:flex-start;">
+            <input id="normalize" type="checkbox" checked style="width:auto;margin-top:5px;">
+            <span>Lowercase and replace spaces with underscores<span class="hint" style="display:block;margin-top:2px;">Recommended: analytics treats Email and email as different values.</span></span>
+          </label>
+        </div>
+        <datalist id="sources"><option value="google"><option value="bing"><option value="facebook"><option value="instagram"><option value="linkedin"><option value="x"><option value="youtube"><option value="newsletter"><option value="partner_site"></datalist>
+        <datalist id="mediums"><option value="cpc"><option value="email"><option value="social"><option value="paid_social"><option value="display"><option value="affiliate"><option value="referral"><option value="qr"></datalist>
+      </form>
+
+      <div id="results" class="results" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section id="how-to-read" class="section wrap narrow">
+    <h2>How to name your parameters</h2>
+    <p><strong>Source</strong> is who sends the traffic (<code>google</code>, <code>linkedin</code>, <code>newsletter</code>), <strong>medium</strong> is the type of channel (<code>cpc</code>, <code>email</code>, <code>social</code>) and <strong>campaign</strong> is the initiative (<code>spring_sale_2026</code>). Optional <strong>term</strong> carries a paid keyword and <strong>content</strong> distinguishes ads or links that point to the same page.</p>
+    <p>Consistency matters more than any particular scheme: pick a convention (lowercase, underscores or hyphens, no spaces), write it down, and use it for every link. Otherwise <code>Email</code>, <code>email</code> and <code>e-mail</code> show up as three different channels in your reports.</p>
+    <p class="muted">Use UTM tags only on links that bring people to your site from outside. On internal links they can overwrite the original source of a visit.</p>
+  </section>
+
+  <section id="methodology" class="section wrap narrow">
+    <h2>How the link is built</h2>
+    <div class="formula">destination URL  +  ?utm_source=…&amp;utm_medium=…&amp;utm_campaign=…[&amp;utm_term=…][&amp;utm_content=…]</div>
+    <p>Your existing query parameters and #anchor are kept as written. If the URL already contains one of the utm parameters you fill in, it is replaced, and you are told. Values are trimmed, and with the recommended option turned on they are lowercased and spaces become underscores. Values are then percent-encoded, so characters such as &amp;, = and accented letters cannot break the link. The domain is lowercased by the URL standard; the path keeps its case.</p>
+    <p><strong>Limits:</strong> this tool builds links; it does not check that a page exists, shorten links, or store your naming history. Test one tagged link and confirm it appears correctly in your analytics before you send it to thousands of people.</p>
+  </section>
+
+  <section id="faq" class="section wrap narrow faq">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>What are UTM parameters?</summary>
+      <p>UTM parameters are tags added to the end of a URL, such as utm_source, utm_medium and utm_campaign. Analytics tools read them to tell you which source, channel and campaign each visit came from.</p>
+    </details>
+    <details>
+      <summary>Which UTM parameters are required?</summary>
+      <p>In practice utm_source, utm_medium and utm_campaign should always be set. utm_term (paid keywords) and utm_content (to tell apart ads or links pointing to the same page) are optional.</p>
+    </details>
+    <details>
+      <summary>Are UTM parameters case-sensitive?</summary>
+      <p>Yes. In Google Analytics, Email and email are reported as two different values. Choose one convention, usually all lowercase with underscores or hyphens, and use it everywhere.</p>
+    </details>
+    <details>
+      <summary>Should I use UTM parameters on links inside my own website?</summary>
+      <p>No. UTM tags on internal links can start a new session and overwrite the original source of the visit. Use them only on links that bring people to your site from outside.</p>
+    </details>
+    <details>
+      <summary>Do UTM parameters hurt SEO?</summary>
+      <p>They do not change your content, and search engines are generally good at treating tagged URLs as the same page, especially when the page sets a canonical URL. Avoid tagging links that you expect search engines to crawl.</p>
+    </details>
+  </section>
+
+  <section class="wrap narrow">
+    <h2 class="sr-only">Related tools</h2>
+    <ul class="related">
+      <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/marketing-roi-calculator/">Marketing ROI Calculator: ROAS, CAC &amp; LTV</a></li>
+      <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/ab-test-calculator/">A/B Test Calculator</a></li>
+      <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/chi-square-calculator/">Chi-Square Test Calculator</a></li>
+    </ul>
+    <aside class="disclaimer" aria-labelledby="disclaimer-title">
+      <h2 id="disclaimer-title">Free tool &amp; disclaimer</h2>
+      <p>This tool is provided free of charge for general informational and educational purposes only. It is offered "as is", without warranty of any kind, and does not constitute professional, statistical, financial, legal or marketing advice. Results depend on the accuracy of your inputs and on the statistical assumptions stated on this page; you are solely responsible for decisions taken on the basis of the results. To the fullest extent permitted by law, the author accepts no liability for any loss or damage arising from use of this tool. This is an independent personal initiative by Anthony Skolozdrzyk-Ardouin; it is not affiliated with, endorsed by, or representative of any current or former employer. Calculations run entirely in your browser: the data you enter is not sent to or stored on any server. Anonymous usage analytics (Google Analytics) are collected on this site.</p>
+    </aside>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <p>&copy; <span id="year">2026</span> Anthony Skolozdrzyk-Ardouin. Free tool for free use.</p>
+    <p><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/">Home</a> &middot; <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#work">More free tools</a> &middot; <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/">Blog</a></p>
+  </div>
+</footer>
+
+<script type="module" src="tool.js"></script>
+</body>
+</html>
