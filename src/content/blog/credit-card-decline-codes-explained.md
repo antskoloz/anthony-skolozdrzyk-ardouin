@@ -9,7 +9,7 @@ tags:
   - decline codes
   - authorization
   - e-commerce
-draft: true
+draft: false
 ---
 > **Short answer:** A decline code is a short message from the card issuer or network explaining why a payment was refused. The same number can mean different things on different networks, and many declines arrive as a vague "do not honor." Group codes by the action they call for: retry, fix the data, authenticate, or use another payment method.
 
