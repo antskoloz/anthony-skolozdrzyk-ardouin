@@ -3,7 +3,7 @@ title: "SQL window functions: 10 patterns for real analysis"
 description: "Window functions keep your rows while you calculate across them.
   Learn ten patterns: ranking, deduplication, running totals, LAG, cohorts and
   streaks."
-pubDate: 2026-09-19
+pubDate: 2026-09-19T12:06:00.000+02:00
 tags:
   - sql
   - window functions
