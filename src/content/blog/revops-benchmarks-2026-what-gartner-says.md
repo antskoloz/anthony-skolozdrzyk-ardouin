@@ -3,7 +3,7 @@ title: "RevOps Benchmarks 2026: What Gartner Says, What to Trust"
 description: RevOps benchmark reports are everywhere, but few show their
   sources. See what Gartner reports, how to vet a benchmark, and which metrics
   to track yourself.
-pubDate: 2026-10-04
+pubDate: 2026-09-19T11:32:00.000+02:00
 tags:
   - revops
   - revenue operations
