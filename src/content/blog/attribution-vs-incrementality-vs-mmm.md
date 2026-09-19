@@ -3,7 +3,7 @@ title: "Attribution vs. Incrementality vs. MMM: Which to Use When"
 description: Attribution, incrementality tests and marketing mix modeling answer
   different questions. Learn when to use each, with evidence from field
   experiments.
-pubDate: 2026-10-03
+pubDate: 2026-09-19T10:01:00.000+02:00
 tags:
   - marketing analytics
   - attribution
