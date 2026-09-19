@@ -1,22 +1,27 @@
 ---
 title: "Attribution vs. Incrementality vs. MMM: Which to Use When"
-description: "Attribution, incrementality tests and marketing mix modeling answer different questions. Learn when to use each, with evidence from field experiments."
+description: Attribution, incrementality tests and marketing mix modeling answer
+  different questions. Learn when to use each, with evidence from field
+  experiments.
 pubDate: 2026-10-03
-tags: ["marketing analytics", "attribution", "incrementality", "marketing mix modeling"]
+tags:
+  - marketing analytics
+  - attribution
+  - incrementality
+  - marketing mix modeling
 draft: true
 ---
-
 > **Short answer:** Use attribution to see which touchpoints customers interacted with, incrementality tests to learn what a channel truly caused, and marketing mix modeling (MMM) to plan budgets across all channels over time. They are not rivals. Each answers a different question, and the strongest measurement setups use experiments to check the other two.
 
 If you have ever seen a dashboard where every channel claims credit for the same sale, you have met the limits of attribution. This guide explains the three main methods, what each is good for, and how to combine them without a large team.
 
 ## What questions do these methods answer?
 
-| Method | Question it answers | Data it needs | Main limit |
-| --- | --- | --- | --- |
-| **Attribution** | Which touchpoints did converting customers interact with? | User-level tracking data | Shows association, not cause |
-| **Incrementality testing** | What extra sales did this activity cause? | A test group and a control group | Tests take time and planning; one test covers one question |
-| **Marketing mix modeling (MMM)** | How do all channels, promotions and outside factors move sales over time? | Aggregated weekly data across channels | Needs enough history and variation |
+| Method                           | Question it answers                                                       | Data it needs                          | Main limit                                                 |
+| -------------------------------- | ------------------------------------------------------------------------- | -------------------------------------- | ---------------------------------------------------------- |
+| **Attribution**                  | Which touchpoints did converting customers interact with?                 | User-level tracking data               | Shows association, not cause                               |
+| **Incrementality testing**       | What extra sales did this activity cause?                                 | A test group and a control group       | Tests take time and planning; one test covers one question |
+| **Marketing mix modeling (MMM)** | How do all channels, promotions and outside factors move sales over time? | Aggregated weekly data across channels | Needs enough history and variation                         |
 
 ## What is attribution, and where does it fall short?
 
@@ -25,19 +30,6 @@ Attribution assigns credit for a conversion to the marketing touchpoints a custo
 Its weakness is that being present is not the same as causing. A customer who was already about to buy may still click a retargeting ad, and the ad takes credit. Measurement consultancy Deducive also lists practical data problems: consent banners removing tracking signals, users switching devices, and cross-domain checkouts breaking cookies. It adds that ad platforms use generous attribution windows, which can double-count conversions.
 
 *Source: [Deducive: Our Guide to Marketing Attribution, Incrementality and MMM for 2026](https://www.deducive.com/blog/2025/12/12/our-guide-to-marketing-attribution-incrementality-and-mmm-for-2026).*
-
-## How wrong can observational methods be?
-
-A large academic study gives a useful answer. Researchers Brett Gordon, Florian Zettelmeyer, Neha Bhargava and Dan Chapsky compared randomized experiments with common non-experimental methods using 15 large advertising campaigns at Facebook in 2015. Across the campaigns, the study covered about 500 million user-experiment observations and 1.6 billion ad impressions.
-
-Their findings:
-
-- They found "a significant difference in the ad effectiveness obtained from RCTs and from observational approaches." Randomized controlled trials (RCTs) are the experiments; observational approaches are methods that analyze data without a randomized control group.
-- In half of the studies, the estimated percentage increase in purchases was "off by a factor of three across all methods."
-- Observational methods frequently overestimated the effect, although some significantly underestimated it.
-- The authors concluded that commonly used observational approaches, based on the data usually available in the industry, often fail to accurately measure the true effect of advertising.
-
-*Source: Gordon, Zettelmeyer, Bhargava and Chapsky, "A Comparison of Approaches to Advertising Measurement: Evidence from Big Field Experiments at Facebook," Marketing Science, 2019 ([paper](https://www.kellogg.northwestern.edu/faculty/gordon_b/files/fb_comparison.pdf)). The study covers one platform in 2015, so treat it as strong evidence about method risk, not a forecast for your account.*
 
 ## What is incrementality testing?
 
@@ -57,8 +49,8 @@ Meta's Robyn documentation describes MMM as "a privacy-friendly, highly resilien
 
 Two ideas sit at the core of most MMMs, according to the same guide:
 
-- **Adstock**, which reflects how the effect of advertising persists over time.
-- **Saturation**, the principle that each additional unit of exposure increases the response at a declining rate.
+* **Adstock**, which reflects how the effect of advertising persists over time.
+* **Saturation**, the principle that each additional unit of exposure increases the response at a declining rate.
 
 Google's open-source MMM, Meridian, uses Bayesian causal inference to estimate the incremental outcome of each marketing input. Its documentation says it helps answer three questions: historical ROI by channel, response curves that show how impact varies with spend, and optimal future budget allocation.
 
@@ -72,17 +64,17 @@ The connection is calibration. Robyn's guide "strongly" recommends using experim
 
 A workable pattern, and it is my suggestion rather than a published standard:
 
-| Step | Method | Purpose |
-| --- | --- | --- |
-| 1 | Attribution | Daily and campaign-level optimization, treated as directional |
-| 2 | Incrementality tests | Check your biggest or least certain channels |
-| 3 | MMM | Plan budgets across channels, calibrated with test results |
+| Step | Method               | Purpose                                                       |
+| ---- | -------------------- | ------------------------------------------------------------- |
+| 1    | Attribution          | Daily and campaign-level optimization, treated as directional |
+| 2    | Incrementality tests | Check your biggest or least certain channels                  |
+| 3    | MMM                  | Plan budgets across channels, calibrated with test results    |
 
 ## Which should I start with?
 
-- **Small team, limited history:** Start with clean attribution plus one incrementality test on your largest paid channel.
-- **Two or more years of weekly data and several channels:** Add an MMM, and calibrate it with your test results.
-- **Heavy retargeting or brand search spend:** Test these first. They are the channels where attribution tends to claim the most credit.
+* **Small team, limited history:** Start with clean attribution plus one incrementality test on your largest paid channel.
+* **Two or more years of weekly data and several channels:** Add an MMM, and calibrate it with your test results.
+* **Heavy retargeting or brand search spend:** Test these first. They are the channels where attribution tends to claim the most credit.
 
 ## Frequently asked questions
 
@@ -100,10 +92,10 @@ A lift test typically compares randomized groups of people. A geo test compares 
 
 ## Sources
 
-- [Gordon et al., "A Comparison of Approaches to Advertising Measurement" (Marketing Science, 2019)](https://www.kellogg.northwestern.edu/faculty/gordon_b/files/fb_comparison.pdf)
-- [Deducive: Marketing Attribution, Incrementality and MMM for 2026](https://www.deducive.com/blog/2025/12/12/our-guide-to-marketing-attribution-incrementality-and-mmm-for-2026)
-- [Robyn: An Analyst's Guide to MMM](https://facebookexperimental.github.io/Robyn/docs/analysts-guide-to-MMM/)
-- [Google Meridian: Introduction](https://developers.google.com/meridian/docs/basics/meridian-introduction)
-- [GeoLift: Methodology](https://facebookincubator.github.io//GeoLift/docs/Methodology/)
+* [Gordon et al., "A Comparison of Approaches to Advertising Measurement" (Marketing Science, 2019)](https://www.kellogg.northwestern.edu/faculty/gordon_b/files/fb_comparison.pdf)
+* [Deducive: Marketing Attribution, Incrementality and MMM for 2026](https://www.deducive.com/blog/2025/12/12/our-guide-to-marketing-attribution-incrementality-and-mmm-for-2026)
+* [Robyn: An Analyst's Guide to MMM](https://facebookexperimental.github.io/Robyn/docs/analysts-guide-to-MMM/)
+* [Google Meridian: Introduction](https://developers.google.com/meridian/docs/basics/meridian-introduction)
+* [GeoLift: Methodology](https://facebookincubator.github.io//GeoLift/docs/Methodology/)
 
 *Last reviewed: 19 September 2026.*
