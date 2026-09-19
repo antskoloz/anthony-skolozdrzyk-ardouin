@@ -1,0 +1,22 @@
+---
+interface Props {
+  linkedinUrl?: string;
+  portfolioUrl?: string;
+}
+
+const {
+  linkedinUrl = "https://www.linkedin.com/in/anthony-skolozdrzyk-ardouin-data-analytics-expert/",
+  portfolioUrl = "https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/",
+} = Astro.props;
+---
+
+<aside class="cta" aria-label="About the author">
+  <p>
+    Written and maintained by a payments professional. Have a question about
+    decline rates or need help diagnosing yours?
+  </p>
+  <p class="cta__links">
+    <a href={linkedinUrl} rel="noopener noreferrer" target="_blank">Connect on LinkedIn</a>
+    <a href={portfolioUrl} rel="noopener noreferrer" target="_blank">Visit my portfolio</a>
+  </p>
+</aside>

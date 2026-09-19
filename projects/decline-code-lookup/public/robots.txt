@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://antskoloz.github.io/decline-code-lookup/sitemap-index.xml

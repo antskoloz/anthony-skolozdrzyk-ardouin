@@ -1,0 +1,118 @@
+---
+---
+
+<div class="search-box">
+  <label for="decline-search" class="search-box__label">
+    Search by decline code, message, or keyword
+  </label>
+  <input
+    id="decline-search"
+    type="search"
+    class="search-box__input"
+    placeholder="e.g. 51, &quot;Do Not Honor&quot;, insufficient funds..."
+    role="combobox"
+    aria-expanded="false"
+    aria-controls="decline-search-results"
+    aria-autocomplete="list"
+    autocomplete="off"
+  />
+  <div id="decline-search-status" class="sr-only" aria-live="polite"></div>
+  <ul id="decline-search-results" class="search-box__results" hidden></ul>
+</div>
+
+<script>
+  import Fuse from "fuse.js";
+
+  interface SearchEntry {
+    slug: string;
+    title: string;
+    category: string;
+    summary: string;
+    schemeCodes: string[];
+  }
+
+  const input = document.getElementById("decline-search") as HTMLInputElement;
+  const resultsEl = document.getElementById("decline-search-results") as HTMLUListElement;
+  const statusEl = document.getElementById("decline-search-status") as HTMLDivElement;
+  const rawBase = import.meta.env.BASE_URL;
+  const base = rawBase.endsWith("/") ? rawBase : `${rawBase}/`;
+
+  let fuse: Fuse<SearchEntry> | null = null;
+  let entries: SearchEntry[] = [];
+
+  async function loadIndex() {
+    const res = await fetch(`${base}search-index.json`);
+    entries = await res.json();
+    fuse = new Fuse(entries, {
+      keys: ["title", "summary", "schemeCodes"],
+      threshold: 0.3,
+    });
+  }
+
+  function renderResults(matches: SearchEntry[], query: string) {
+    resultsEl.innerHTML = "";
+
+    if (query.trim() === "") {
+      resultsEl.hidden = true;
+      input.setAttribute("aria-expanded", "false");
+      statusEl.textContent = "";
+      return;
+    }
+
+    if (matches.length === 0) {
+      resultsEl.hidden = true;
+      input.setAttribute("aria-expanded", "false");
+      statusEl.textContent = "No matching decline codes found.";
+      return;
+    }
+
+    for (const entry of matches) {
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.href = `${base}codes/${entry.slug}/`;
+      a.innerHTML = `<span class="search-box__result-title">${entry.title}</span><span class="search-box__result-summary">${entry.summary}</span>`;
+      li.appendChild(a);
+      resultsEl.appendChild(li);
+    }
+
+    resultsEl.hidden = false;
+    input.setAttribute("aria-expanded", "true");
+    statusEl.textContent = `${matches.length} result${matches.length === 1 ? "" : "s"} found.`;
+  }
+
+  function search(query: string) {
+    if (!fuse) return;
+
+    const trimmed = query.trim();
+    if (trimmed === "") {
+      renderResults([], trimmed);
+      return;
+    }
+
+    // Exact/prefix code match takes priority (e.g. typing "51" should surface Visa/Mastercard 51 first).
+    const exactCodeMatches = entries.filter((entry) =>
+      entry.schemeCodes.some((code) => code.toLowerCase() === trimmed.toLowerCase()),
+    );
+    const fuzzyMatches = fuse.search(trimmed).map((result) => result.item);
+
+    const seen = new Set<string>();
+    const combined: SearchEntry[] = [];
+    for (const entry of [...exactCodeMatches, ...fuzzyMatches]) {
+      if (!seen.has(entry.slug)) {
+        seen.add(entry.slug);
+        combined.push(entry);
+      }
+    }
+
+    renderResults(combined.slice(0, 8), trimmed);
+  }
+
+  let debounceTimer: ReturnType<typeof setTimeout>;
+  input.addEventListener("input", () => {
+    clearTimeout(debounceTimer);
+    const value = input.value;
+    debounceTimer = setTimeout(() => search(value), 100);
+  });
+
+  loadIndex();
+</script>

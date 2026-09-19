@@ -1,0 +1,17 @@
+---
+import { withBase } from "../utils/seo";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <p>&copy; {year} Decline Code Lookup. Educational resource for merchants — not legal or compliance advice.</p>
+    <nav aria-label="Footer">
+      <ul class="site-footer__nav">
+        <li><a href={withBase("/glossary/")}>All decline codes</a></li>
+        <li><a href={withBase("/about/")}>About</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
