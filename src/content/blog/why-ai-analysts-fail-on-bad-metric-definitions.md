@@ -3,7 +3,7 @@ title: Why AI analysts fail on bad metric definitions
 description: AI can write valid SQL in seconds, but it can't know which
   definition of revenue your CFO approved. Why a governed metrics layer matters,
   with benchmark data.
-pubDate: 2026-09-19
+pubDate: 2026-09-19T20:11:00.000+02:00
 tags:
   - text-to-sql
   - ai analytics
