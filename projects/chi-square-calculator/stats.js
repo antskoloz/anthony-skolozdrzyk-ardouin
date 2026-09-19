@@ -89,8 +89,11 @@ export function chiSquareTest(table, { yates = false } = {}) {
   const k = Math.min(r - 1, c - 1);
   const cramersV = Math.sqrt(chi2 / (n * k));
   const flat = expected.flat();
+  // Adjusted (standardised) residuals: how many standard deviations each cell is from what luck predicts.
+  const adjResiduals = table.map((row, i) =>
+    row.map((v, j) => (v - expected[i][j]) / Math.sqrt(expected[i][j] * (1 - rowTotals[i] / n) * (1 - colTotals[j] / n))));
   return {
-    chi2, df, pValue: chi2Sf(chi2, df), n, rowTotals, colTotals, expected,
+    chi2, df, pValue: chi2Sf(chi2, df), n, rowTotals, colTotals, expected, adjResiduals,
     cramersV, effectLabel: effectSize(cramersV, k),
     minExpected: Math.min(...flat),
     cellsBelow5: flat.filter((e) => e < 5).length,

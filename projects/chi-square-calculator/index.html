@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Free Chi-Square Test Calculator for A/B Tests & Marketing Data | Anthony Skolozdrzyk-Ardouin</title>
-<meta name="description" content="Free chi-square test calculator for marketers: check whether control and variant (or several groups) really differ, with p-value, 90/95/99% significance, Cramér's V effect size, expected counts and a plain-English interpretation. No sign-up.">
+<title>Free Chi-Square Calculator: Do Your Groups Really Behave Differently? | Anthony Skolozdrzyk-Ardouin</title>
+<meta name="description" content="Free chi-square calculator in plain English: compare conversion rates across channels, ad variants, countries or customer segments and find out whether the differences are real or just luck, and which groups stand out. No sign-up.">
 <meta name="author" content="Anthony Skolozdrzyk-Ardouin">
 <meta name="robots" content="index, follow">
 <!-- Google tag (gtag.js) -->
@@ -18,12 +18,12 @@
 <link rel="canonical" href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/chi-square-calculator/">
 <meta property="og:site_name" content="Anthony Skolozdrzyk-Ardouin">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Free Chi-Square Test Calculator for A/B Tests & Marketing Data">
-<meta property="og:description" content="Is the difference between control and variant real, or just noise? Chi-square test with p-value, effect size and a plain-English reading. Free for everyone, no sign-up.">
+<meta property="og:title" content="Free Chi-Square Calculator: Do Your Groups Really Behave Differently?">
+<meta property="og:description" content="Compare channels, ad variants or customer segments and find out in plain English whether the differences are real or just luck. Free for everyone, no sign-up.">
 <meta property="og:url" content="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/chi-square-calculator/">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Free Chi-Square Test Calculator for A/B Tests & Marketing Data">
-<meta name="twitter:description" content="Is the difference between control and variant real, or just noise? Chi-square test with p-value, effect size and a plain-English reading. Free for everyone, no sign-up.">
+<meta name="twitter:title" content="Free Chi-Square Calculator: Do Your Groups Really Behave Differently?">
+<meta name="twitter:description" content="Compare channels, ad variants or customer segments and find out in plain English whether the differences are real or just luck. Free for everyone, no sign-up.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,9 +33,9 @@
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Chi-Square Test Calculator",
+  "name": "Chi-Square Calculator",
   "url": "https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/chi-square-calculator/",
-  "description": "Free chi-square test of independence for marketers: compare control and variant, or several groups, with p-value, effect size and a plain-English interpretation.",
+  "description": "Free chi-square calculator that tells marketers whether the conversion rates of several groups really differ or only differ by luck, and which groups stand out.",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Any (web browser)",
   "isAccessibleForFree": true,
@@ -48,12 +48,12 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "What is a chi-square test used for in marketing?", "acceptedAnswer": { "@type": "Answer", "text": "It tests whether two categorical variables are related, for example whether conversion (yes or no) depends on which variant a visitor saw, or whether conversion differs across channels. It compares the counts you observed with the counts you would expect if there were no relationship." } },
-    { "@type": "Question", "name": "Chi-square test or z-test for an A/B test?", "acceptedAnswer": { "@type": "Answer", "text": "For a simple control-versus-variant comparison of conversion rates they give the same p-value: the uncorrected 2x2 chi-square statistic equals the square of the two-proportion z statistic. Chi-square is more general because it also handles three or more groups or outcomes." } },
-    { "@type": "Question", "name": "What does the p-value mean here?", "acceptedAnswer": { "@type": "Answer", "text": "It is the probability of seeing differences at least as large as yours if the groups were truly the same. If it is below your threshold (10%, 5% or 1% for 90, 95 or 99% confidence) the result is called statistically significant." } },
-    { "@type": "Question", "name": "What if some expected counts are below 5?", "acceptedAnswer": { "@type": "Answer", "text": "The chi-square approximation becomes unreliable when expected counts are small. Collect more data, merge sparse categories, or use Fisher's exact test for a 2x2 table." } },
-    { "@type": "Question", "name": "What is Cramér's V?", "acceptedAnswer": { "@type": "Answer", "text": "Cramér's V is an effect-size measure from 0 (no association) to 1 (perfect association). It tells you how strong a relationship is, which matters because a very large sample can make a tiny difference statistically significant." } },
-    { "@type": "Question", "name": "If the test is significant, which group is different?", "acceptedAnswer": { "@type": "Answer", "text": "A significant chi-square test on a table with more than two groups only says that at least one group differs. Compare the row percentages, or run pairwise comparisons with an adjustment for multiple tests, to find where the difference is." } }
+    { "@type": "Question", "name": "What is a chi-square test, in plain English?", "acceptedAnswer": { "@type": "Answer", "text": "It checks whether the differences between your groups are bigger than luck alone would produce. It compares what really happened with what you would expect to see if every group behaved in exactly the same way." } },
+    { "@type": "Question", "name": "When should I use this instead of the A/B test calculator?", "acceptedAnswer": { "@type": "Answer", "text": "Use the chi-square calculator to compare two or more groups such as channels, countries or customer segments and see whether they differ at all. Use the A/B test calculator when you want to plan a two-version test or measure how big the improvement is." } },
+    { "@type": "Question", "name": "The result says the groups differ. Which one is best?", "acceptedAnswer": { "@type": "Answer", "text": "The verdict only says that not all groups behave the same. Check the groups that stand out and the conversion rate chart to see where the difference comes from." } },
+    { "@type": "Question", "name": "Does a real difference mean a big difference?", "acceptedAnswer": { "@type": "Answer", "text": "No. With a lot of traffic even a tiny gap can be real. Look at the size of the gap, for example how many times more often the best group converts than the weakest, to judge whether it matters in practice." } },
+    { "@type": "Question", "name": "Can I enter percentages instead of counts?", "acceptedAnswer": { "@type": "Answer", "text": "No, enter the number of people and the number who converted. The test needs real counts because the size of each group tells it how much to trust each percentage." } },
+    { "@type": "Question", "name": "Does this prove that one channel causes better results?", "acceptedAnswer": { "@type": "Answer", "text": "No. It shows that groups differ, not why. Different channels attract different audiences, so a higher conversion rate does not automatically mean the channel itself is better." } }
   ]
 }
 </script>
@@ -111,76 +111,69 @@
   <section class="hero">
     <div class="wrap">
       <span class="badge-free">Free tool</span>
-      <h1>Chi-Square Test Calculator: is the difference real, or noise?</h1>
-      <p class="hero__lead">Compare control and variant, or several groups at once. Get the p-value, the significance at 90, 95 or 99% confidence, an effect size and a plain-English reading of what it means.</p>
+      <h1>Chi-Square Calculator: do your groups really behave differently?</h1>
+      <p class="hero__lead">Compare conversion rates across channels, ad variants, countries or customer segments, and find out whether the differences are real or just luck, and which groups stand out. Plain English, no statistics needed.</p>
       <p class="hero__free">Free for everyone to use, no sign-up. Nothing you type leaves your browser.</p>
     </div>
   </section>
 
+  <section class="wrap" aria-label="How it works">
+    <ol class="steps">
+      <li><strong>Pick your groups</strong>For example your four acquisition channels, or three ad variants.</li>
+      <li><strong>Enter the numbers</strong>For each group: how many people, and how many converted.</li>
+      <li><strong>Read the verdict</strong>Real difference or luck? And which groups stand out?</li>
+    </ol>
+  </section>
+
   <section id="calculator" class="wrap" aria-label="Calculator">
     <div class="panel">
-      <div class="form-grid" style="margin-bottom:20px;">
+      <div class="tabs" role="tablist" aria-label="Type of comparison">
+        <button class="tab" role="tab" id="tab-groups" aria-selected="true" aria-controls="panel-groups" type="button">Compare groups (yes / no result)</button>
+        <button class="tab" role="tab" id="tab-adv" aria-selected="false" aria-controls="panel-adv" type="button">Advanced: several outcomes</button>
+      </div>
+
+      <div class="form-grid" style="margin-bottom:8px;">
         <div class="field">
-          <label for="confidence">Confidence level</label>
+          <label for="confidence">How sure do you want to be?</label>
           <select id="confidence">
-            <option value="0.9">90%</option>
-            <option value="0.95" selected>95%</option>
-            <option value="0.99">99%</option>
+            <option value="0.95" selected>Standard, 95% (recommended)</option>
+            <option value="0.99">Extra careful, 99%</option>
+            <option value="0.9">Quicker, 90%</option>
           </select>
-          <p class="hint">95% is the usual standard.</p>
+          <p class="help">"Sure" here means: if all groups really behaved the same, you would wrongly see a difference in only 5 tests out of 100 (with 95%). Not sure? Keep the standard.</p>
         </div>
-        <div class="field">
-          <label for="yates" style="display:flex;gap:10px;align-items:flex-start;">
-            <input id="yates" type="checkbox" style="width:auto;margin-top:5px;">
-            <span>Apply Yates continuity correction<span class="hint" style="display:block;margin-top:2px;">Only for 2×2 tables. More conservative; mainly useful with small counts.</span></span>
-          </label>
-        </div>
+        <details class="advanced">
+          <summary>Advanced settings (most people can skip this)</summary>
+          <div class="inner" style="padding:14px;">
+            <label for="yates" style="display:flex;gap:10px;align-items:flex-start;font-weight:600;font-size:0.9rem;">
+              <input id="yates" type="checkbox" style="width:auto;margin-top:5px;">
+              <span>Use the "continuity correction" (Yates)<span class="hint" style="display:block;margin-top:2px;font-weight:400;">Only applies when you compare exactly two groups. It makes the test a bit more cautious with small numbers. Leave it off unless your analyst asks for it.</span></span>
+            </label>
+          </div>
+        </details>
       </div>
 
-      <div class="tabs" role="tablist" aria-label="Mode">
-        <button class="tab" role="tab" id="tab-simple" aria-selected="true" aria-controls="panel-simple" type="button">Control vs variant (2×2)</button>
-        <button class="tab" role="tab" id="tab-adv" aria-selected="false" aria-controls="panel-adv" type="button">Advanced table (up to 5×5)</button>
-      </div>
-
-      <div id="panel-simple" role="tabpanel" aria-labelledby="tab-simple">
-        <form id="simple-form" class="form-grid" novalidate>
-          <p class="group-title">Control (A)</p>
-          <div class="field">
-            <label for="s-n1">Visitors</label>
-            <input id="s-n1" type="text" inputmode="numeric" value="10000" autocomplete="off">
-            <p class="error" id="s-n1-error"></p>
-          </div>
-          <div class="field">
-            <label for="s-x1">Conversions</label>
-            <input id="s-x1" type="text" inputmode="numeric" value="500" autocomplete="off">
-            <p class="error" id="s-x1-error"></p>
-          </div>
-          <p class="group-title">Variant (B)</p>
-          <div class="field">
-            <label for="s-n2">Visitors</label>
-            <input id="s-n2" type="text" inputmode="numeric" value="10000" autocomplete="off">
-            <p class="error" id="s-n2-error"></p>
-          </div>
-          <div class="field">
-            <label for="s-x2">Conversions</label>
-            <input id="s-x2" type="text" inputmode="numeric" value="560" autocomplete="off">
-            <p class="error" id="s-x2-error"></p>
-          </div>
-        </form>
-        <div id="simple-results" class="results" aria-live="polite"></div>
+      <div id="panel-groups" role="tabpanel" aria-labelledby="tab-groups">
+        <div class="callout"><p><strong>Use this to compare groups.</strong> Enter one row per group (a channel, an ad, a country, a customer segment). Comparing just two? Delete rows until two remain. For planning an A/B test or measuring the size of an improvement, use the <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/ab-test-calculator/">A/B Test Calculator</a>.</p></div>
+        <div class="grid-wrap">
+          <div id="groups-grid" class="groups"></div>
+        </div>
+        <p><button class="btn btn-sm add-btn" id="add-group" type="button">+ Add a group</button> <span class="hint">Up to 8 groups.</span></p>
+        <p class="error" id="groups-error"></p>
+        <div id="groups-results" class="results" aria-live="polite"></div>
       </div>
 
       <div id="panel-adv" role="tabpanel" aria-labelledby="tab-adv" hidden>
+        <div class="callout"><p><strong>Use this when the result has more than two possible answers.</strong> For example survey answers (satisfied / neutral / unhappy) for each customer segment. Enter <em>counts</em> (numbers of people), not percentages.</p></div>
         <div class="form-grid">
           <div class="field">
-            <label for="adv-rows">Groups (rows)</label>
+            <label for="adv-rows">Number of groups (rows)</label>
             <select id="adv-rows"><option>2</option><option selected>3</option><option>4</option><option>5</option></select>
           </div>
           <div class="field">
-            <label for="adv-cols">Outcomes (columns)</label>
-            <select id="adv-cols"><option selected>2</option><option>3</option><option>4</option><option>5</option></select>
+            <label for="adv-cols">Number of possible outcomes (columns)</label>
+            <select id="adv-cols"><option>2</option><option selected>3</option><option>4</option><option>5</option></select>
           </div>
-          <p class="hint full" style="margin:0;">Enter <strong>counts</strong> (not percentages) and rename the groups and outcomes if you like. Example: three ad variants (rows) by converted / did not convert (columns).</p>
         </div>
         <div class="grid-wrap"><div id="adv-grid"></div></div>
         <p class="error" id="adv-error"></p>
@@ -189,57 +182,91 @@
     </div>
   </section>
 
-  <section id="how-to-read" class="section wrap narrow">
-    <h2>How to read your results</h2>
-    <p>A chi-square test compares the counts you <em>observed</em> with the counts you would <em>expect</em> if group and outcome were unrelated. The bigger the gap, the bigger χ², and the smaller the <strong>p-value</strong>: the probability of seeing differences this large if the groups were truly the same. Below your threshold (10%, 5% or 1% for 90, 95 or 99% confidence), the result is statistically significant.</p>
-    <p><strong>Cramér's V</strong> tells you how strong the relationship is, from 0 to 1. With a lot of traffic even a trivial difference is "significant", so always read the effect size next to the p-value.</p>
-    <p>Want the size of the lift with a confidence interval, or how many visitors a test needs? Use the <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/ab-test-calculator/">free A/B Test Calculator</a>.</p>
+  <section id="how-to-use" class="section wrap narrow">
+    <h2>A worked example</h2>
+    <div class="example">
+      <p><strong>Marta runs marketing for an online course.</strong> Last month she got 10,000 visitors from each of four channels and wants to know whether the channels really convert differently, or whether the gaps are just noise.</p>
+      <p><strong>The numbers (already filled in above):</strong> Email 420 sign-ups (4.2%), Paid search 510 (5.1%), Social 300 (3.0%), Organic 480 (4.8%).</p>
+      <p><strong>The verdict:</strong> the groups really do behave differently: a gap this big would happen by luck far fewer than 1 time in 1,000. Paid search and Organic convert more than average, Social converts less, and Email is in line with the average. The gap is big in practice: Paid search converts 1.7 times as often as Social. Marta shifts some budget from Social to Paid search and Organic, and keeps testing.</p>
+    </div>
+
+    <h2 style="margin-top:36px;">Good habits</h2>
+    <ol class="checklist">
+      <li><strong>Use counts, not percentages.</strong> "5%" alone hides whether it is 5 of 100 or 5,000 of 100,000, and that is exactly what the test needs to know.</li>
+      <li><strong>Compare like with like.</strong> Same period, same definition of "converted" in every group.</li>
+      <li><strong>Count each person once.</strong> The same customer should not appear in two groups or twice in one.</li>
+      <li><strong>Do not go fishing.</strong> The more groups you compare, the more likely one stands out by luck alone. Decide what to compare before you look.</li>
+    </ol>
+  </section>
+
+  <section id="concepts" class="section wrap narrow">
+    <h2>Key ideas explained</h2>
+    <dl class="glossary">
+      <dt>The chi-square test</dt>
+      <dd>A test that asks one question: <em>are the differences between my groups bigger than luck alone would produce?</em> "Chi-square" (χ²) is just the statistician's name for the number it calculates.</dd>
+      <dt>What happened vs what luck predicts</dt>
+      <dd>The test first works out what you would see if every group behaved exactly like the average of all groups. Then it measures how far the real numbers are from that. The further away, the harder it is to blame luck.
+        <span class="analogy">Roll a die 60 times: you expect about 10 sixes, but 8 or 12 is normal. 25 sixes would make you suspect the die.</span></dd>
+      <dt>"Just luck" and a real difference</dt>
+      <dd>Even identical groups will show slightly different rates because people are different. A difference is called <em>statistically significant</em> when it would be very unlikely to appear by luck alone. This calculator says it as "by luck about N times in 100".</dd>
+      <dt>How sure you want to be</dt>
+      <dd>Your risk appetite. At 95%, you accept being fooled by luck in about 5 tests out of 100. At 99%, only 1 in 100, but small differences become harder to prove.</dd>
+      <dt>Size of the difference</dt>
+      <dd>A real difference is not necessarily a big one. With a huge audience even a tiny gap is "real". So the calculator also tells you how big the gap is: how many times more often the best group converts than the weakest, and by how many percentage points. (For tables with several outcomes it uses a statistician's measure called Cramér's V, translated into very small / small / moderate / strong.)</dd>
+      <dt>Groups that stand out</dt>
+      <dd>When the groups differ, this shows which ones are further from the average than luck would explain, and in which direction. It is a guide, not proof: the more groups you compare, the more likely one stands out by chance.</dd>
+      <dt>Too few people</dt>
+      <dd>Small groups make the maths unreliable. When a group is too small, the calculator warns you to gather more data or merge small groups.</dd>
+      <dt>Real difference does not mean cause</dt>
+      <dd>Different channels attract different people. A channel with a higher rate is not automatically a better channel.</dd>
+    </dl>
   </section>
 
   <section id="methodology" class="section wrap narrow">
-    <h2>Methodology</h2>
+    <h2>Methodology (for analysts)</h2>
     <p>Chi-square test of independence on an r × c table of counts:</p>
     <div class="formula">E(i,j) = (row total i × column total j) / grand total
 χ² = Σ (O − E)² / E        degrees of freedom = (r − 1)(c − 1)
 p-value = P(χ²(df) &gt; observed χ²)
-Cramér's V = √( χ² / (N · min(r − 1, c − 1)) )</div>
-    <p>With the Yates correction (2×2 only), each |O − E| is reduced by 0.5 before squaring. Effect-size labels use Cohen's benchmarks scaled by the table size (for a 2×2 table: below 0.1 negligible, 0.1 small, 0.3 medium, 0.5 large).</p>
-    <p>For a 2×2 table without correction, χ² equals the square of the pooled two-proportion z statistic, so both tests give the same p-value.</p>
-    <p><strong>Assumptions:</strong> each observation is counted once and belongs to exactly one cell, observations are independent (the same visitor should not appear twice), and expected counts are large enough: the usual rule is at least 5 in every cell. The calculator warns you when this is not the case. It does not correct for multiple comparisons or repeated looks at the data.</p>
+Cramér's V = √( χ² / (N · min(r − 1, c − 1)) )
+adjusted residual = (O − E) / √( E · (1 − row total/N) · (1 − column total/N) )</div>
+    <p>"Groups that stand out" flags cells whose adjusted residual exceeds ±1.96 (about 95% two-sided), without correction for multiple comparisons. With the Yates correction (2×2 only), each |O − E| is reduced by 0.5 before squaring. In the groups tab the size of the difference is the ratio and the gap between the best and weakest conversion rates (Cramér's V is shown in the technical details, but it is always small when most people do not convert). In the advanced tab, Cramér's V is translated with Cohen's benchmarks scaled by the table size (for a 2×2 table: below 0.1 very small, 0.1 small, 0.3 moderate, 0.5 strong).</p>
+    <p>For a 2×2 table without correction, χ² equals the square of the pooled two-proportion z statistic, so it agrees with the A/B Test Calculator.</p>
+    <p><strong>Assumptions:</strong> each observation is counted once and belongs to exactly one cell, observations are independent, and expected counts are large enough (the usual rule is at least 5 in every cell). The calculator warns when this fails. It does not correct for multiple comparisons or repeated looks at the data.</p>
   </section>
 
   <section id="faq" class="section wrap narrow faq">
     <h2>Frequently asked questions</h2>
     <details>
-      <summary>What is a chi-square test used for in marketing?</summary>
-      <p>It tests whether two categorical variables are related, for example whether conversion (yes or no) depends on which variant a visitor saw, or whether conversion differs across channels. It compares the counts you observed with the counts you would expect if there were no relationship.</p>
+      <summary>What is a chi-square test, in plain English?</summary>
+      <p>It checks whether the differences between your groups are bigger than luck alone would produce. It compares what really happened with what you would expect to see if every group behaved in exactly the same way.</p>
     </details>
     <details>
-      <summary>Chi-square test or z-test for an A/B test?</summary>
-      <p>For a simple control-versus-variant comparison of conversion rates they give the same p-value: the uncorrected 2×2 chi-square statistic equals the square of the two-proportion z statistic. Chi-square is more general because it also handles three or more groups or outcomes.</p>
+      <summary>When should I use this instead of the A/B test calculator?</summary>
+      <p>Use this one to compare two or more groups such as channels, countries or customer segments and see whether they differ at all. Use the A/B Test Calculator when you want to plan a two-version test or measure how big the improvement is.</p>
     </details>
     <details>
-      <summary>What does the p-value mean here?</summary>
-      <p>It is the probability of seeing differences at least as large as yours if the groups were truly the same. If it is below your threshold (10%, 5% or 1% for 90, 95 or 99% confidence) the result is called statistically significant.</p>
+      <summary>The result says the groups differ. Which one is best?</summary>
+      <p>The verdict only says that not all groups behave the same. Check "Groups that stand out" and the conversion rate chart to see where the difference comes from.</p>
     </details>
     <details>
-      <summary>What if some expected counts are below 5?</summary>
-      <p>The chi-square approximation becomes unreliable when expected counts are small. Collect more data, merge sparse categories, or use Fisher's exact test for a 2×2 table.</p>
+      <summary>Does a real difference mean a big difference?</summary>
+      <p>No. With a lot of traffic even a tiny gap can be real. Look at the size of the gap, for example how many times more often the best group converts than the weakest, to judge whether it matters in practice.</p>
     </details>
     <details>
-      <summary>What is Cramér's V?</summary>
-      <p>Cramér's V is an effect-size measure from 0 (no association) to 1 (perfect association). It tells you how strong a relationship is, which matters because a very large sample can make a tiny difference statistically significant.</p>
+      <summary>Can I enter percentages instead of counts?</summary>
+      <p>No, enter the number of people and the number who converted. The test needs real counts because the size of each group tells it how much to trust each percentage.</p>
     </details>
     <details>
-      <summary>If the test is significant, which group is different?</summary>
-      <p>A significant chi-square test on a table with more than two groups only says that at least one group differs. Compare the row percentages, or run pairwise comparisons with an adjustment for multiple tests, to find where the difference is.</p>
+      <summary>Does this prove that one channel causes better results?</summary>
+      <p>No. It shows that groups differ, not why. Different channels attract different audiences, so a higher conversion rate does not automatically mean the channel itself is better.</p>
     </details>
   </section>
 
   <section class="wrap narrow">
     <h2 class="sr-only">Related tools</h2>
     <ul class="related">
-      <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/ab-test-calculator/">A/B Test Calculator: sample size &amp; confidence intervals</a></li>
+      <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/ab-test-calculator/">A/B Test Calculator: how many visitors, and did B win?</a></li>
       <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/marketing-roi-calculator/">Marketing ROI Calculator: ROAS, CAC &amp; LTV</a></li>
       <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/utm-builder/">UTM Link Builder</a></li>
     </ul>

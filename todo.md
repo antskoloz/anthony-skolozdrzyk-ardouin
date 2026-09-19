@@ -14,9 +14,9 @@ Spec: [specs/free-tools.md](specs/free-tools.md). One commit per tool, including
 - [ ] Push (only when Anthony says so) and confirm the Actions deploy is green
 
 ## Rework (requested after review)
-- [ ] Tool 1 (`ab-test-calculator`) business-friendly rework: simplified inputs, headline verdicts, range bar, glossary
-- [ ] Tool 2 (`chi-square-calculator`) business-friendly rework: group rows, bars, "who stands out", glossary
-- [ ] Update homepage cards (EN/FR/DE) to the new plain wording
+- [x] Tool 1 (`ab-test-calculator`) business-friendly rework: simplified inputs, headline verdicts, range bar, glossary
+- [x] Tool 2 (`chi-square-calculator`) business-friendly rework: group rows, bars, "who stands out", glossary
+- [x] Update homepage cards (EN/FR/DE) to the new plain wording
 
 ## Carried over
 - [ ] Verify https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/decline-code-lookup/ is live after the deploy

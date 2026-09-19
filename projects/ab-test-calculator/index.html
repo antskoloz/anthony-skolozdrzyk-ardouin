@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Free A/B Test Calculator: Sample Size & Statistical Significance | Anthony Skolozdrzyk-Ardouin</title>
-<meta name="description" content="Free A/B test calculator for marketers: find the sample size you need before a test, then check whether your results are statistically significant, with 90/95/99% confidence intervals and a plain-English interpretation. No sign-up.">
+<title>Free A/B Test Calculator: How Many Visitors Do You Need, and Did B Win? | Anthony Skolozdrzyk-Ardouin</title>
+<meta name="description" content="Free A/B test calculator in plain English: find out how many visitors your test needs, then check whether version B really beat version A or it was just luck. No statistics degree, no sign-up.">
 <meta name="author" content="Anthony Skolozdrzyk-Ardouin">
 <meta name="robots" content="index, follow">
 <!-- Google tag (gtag.js) -->
@@ -18,12 +18,12 @@
 <link rel="canonical" href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/ab-test-calculator/">
 <meta property="og:site_name" content="Anthony Skolozdrzyk-Ardouin">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Free A/B Test Calculator: Sample Size & Statistical Significance">
-<meta property="og:description" content="Plan your sample size and check whether your A/B test result is statistically significant. Free for everyone, no sign-up.">
+<meta property="og:title" content="Free A/B Test Calculator: How Many Visitors Do You Need, and Did B Win?">
+<meta property="og:description" content="Plan your A/B test and find out in plain English whether B really beat A. Free for everyone, no sign-up.">
 <meta property="og:url" content="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/ab-test-calculator/">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Free A/B Test Calculator: Sample Size & Statistical Significance">
-<meta name="twitter:description" content="Plan your sample size and check whether your A/B test result is statistically significant. Free for everyone, no sign-up.">
+<meta name="twitter:title" content="Free A/B Test Calculator: How Many Visitors Do You Need, and Did B Win?">
+<meta name="twitter:description" content="Plan your A/B test and find out in plain English whether B really beat A. Free for everyone, no sign-up.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,9 +33,9 @@
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "A/B Test Calculator: Sample Size & Statistical Significance",
+  "name": "A/B Test Calculator",
   "url": "https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/ab-test-calculator/",
-  "description": "Free calculator that tells marketers how many visitors an A/B test needs and whether the observed result is statistically significant, with confidence intervals.",
+  "description": "Free calculator that tells marketers how many visitors an A/B test needs and whether version B really beat version A, explained in plain English.",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Any (web browser)",
   "isAccessibleForFree": true,
@@ -48,11 +48,12 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "How many visitors do I need for an A/B test?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on your baseline conversion rate, the smallest lift you care about, the confidence level and the statistical power. Lower baselines and smaller lifts need far more visitors. Enter those values in the Plan a test tab to get the required sample size per variant." } },
-    { "@type": "Question", "name": "What does 95% confidence mean in an A/B test?", "acceptedAnswer": { "@type": "Answer", "text": "It means that if there were truly no difference between the variants, you would see a result this extreme less than 5% of the time. It does not mean there is a 95% probability that the variant is better." } },
-    { "@type": "Question", "name": "What is statistical power?", "acceptedAnswer": { "@type": "Answer", "text": "Power is the probability that your test detects a real lift of at least the size you planned for. 80% is the common default: if the lift is real, you would detect it 8 times out of 10." } },
-    { "@type": "Question", "name": "Can I stop my A/B test as soon as it reaches significance?", "acceptedAnswer": { "@type": "Answer", "text": "Not safely. Checking repeatedly and stopping at the first significant result inflates the false-positive rate well above your chosen level. Decide the sample size in advance and read the result once it is reached." } },
-    { "@type": "Question", "name": "My result is not significant. Does that mean there is no difference?", "acceptedAnswer": { "@type": "Answer", "text": "No. It means the data do not provide enough evidence to tell the variants apart. Look at the confidence interval: a wide interval that includes zero usually means the test was too small, not that the variants are equal." } }
+    { "@type": "Question", "name": "How many visitors do I need for an A/B test?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on your current conversion rate and on the smallest improvement you care about. A low conversion rate or a small improvement means many more visitors. Enter both in the calculator to get the number of visitors needed per version." } },
+    { "@type": "Question", "name": "What does 95% sure mean in an A/B test?", "acceptedAnswer": { "@type": "Answer", "text": "It means that if A and B were really identical, you would wrongly pick a winner only about 5 times in 100 tests. It does not mean there is a 95% chance that B is better." } },
+    { "@type": "Question", "name": "Can I stop my A/B test as soon as B looks like it is winning?", "acceptedAnswer": { "@type": "Answer", "text": "Not safely. Numbers swing a lot in the first days, and stopping the moment they look good makes false winners much more likely. Decide the number of visitors in advance and check the result once you reach it." } },
+    { "@type": "Question", "name": "My result says no clear winner. Does that mean A and B are the same?", "acceptedAnswer": { "@type": "Answer", "text": "No. It means the test did not collect enough evidence to tell them apart. Any real difference is probably small, or you need more visitors. The likely range shown by the calculator tells you how big the difference could still be." } },
+    { "@type": "Question", "name": "How long should I run an A/B test?", "acceptedAnswer": { "@type": "Answer", "text": "Until each version has reached the number of visitors the calculator gave you, and for at least one or two full weeks so that every day of the week is represented." } },
+    { "@type": "Question", "name": "Can I test more than two versions?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, but every extra version needs its own set of visitors and increases the chance that luck produces a false winner. Keep it to a few versions and be more sceptical of a lone winner." } }
   ]
 }
 </script>
@@ -110,103 +111,127 @@
   <section class="hero">
     <div class="wrap">
       <span class="badge-free">Free tool</span>
-      <h1>A/B Test Calculator: sample size &amp; statistical significance</h1>
-      <p class="hero__lead">Was your test big enough, and how sure can you be of the result? Plan the sample size before you launch, then check your results with confidence intervals and a plain-English reading.</p>
+      <h1>A/B Test Calculator: how many visitors do you need, and did B really win?</h1>
+      <p class="hero__lead">No statistics degree required. Tell us how many people saw each version and how many converted, and get a clear answer in plain English: a winner, a loser, or "not enough data yet".</p>
       <p class="hero__free">Free for everyone to use, no sign-up. Nothing you type leaves your browser.</p>
     </div>
   </section>
 
+  <section class="wrap" aria-label="How it works">
+    <ol class="steps">
+      <li><strong>Plan</strong>Find out how many visitors your test needs before you launch it.</li>
+      <li><strong>Run</strong>Show version A and version B to visitors at random until you reach that number.</li>
+      <li><strong>Check</strong>Enter the results to see whether B really won, or whether it is just luck.</li>
+    </ol>
+  </section>
+
   <section id="calculator" class="wrap" aria-label="Calculator">
     <div class="panel">
-      <div class="form-grid" style="margin-bottom:20px;">
+      <div class="tabs" role="tablist" aria-label="What do you want to do?">
+        <button class="tab" role="tab" id="tab-plan" aria-selected="true" aria-controls="panel-plan" type="button">1 · Before: how many visitors do I need?</button>
+        <button class="tab" role="tab" id="tab-check" aria-selected="false" aria-controls="panel-check" type="button">2 · After: did B really win?</button>
+      </div>
+
+      <div class="form-grid" style="margin-bottom:8px;">
         <div class="field">
-          <label for="confidence">Confidence level</label>
+          <label for="confidence">How sure do you want to be?</label>
           <select id="confidence">
-            <option value="0.9">90%</option>
-            <option value="0.95" selected>95%</option>
-            <option value="0.99">99%</option>
+            <option value="0.95" selected>Standard, 95% (recommended)</option>
+            <option value="0.99">Extra careful, 99%</option>
+            <option value="0.9">Quicker, 90%</option>
           </select>
-          <p class="hint">95% is the usual standard. Higher confidence needs more visitors.</p>
+          <p class="help">"Sure" here means: if A and B were really identical, you would wrongly pick a winner in only 5 tests out of 100 (with 95%). Not sure? Keep the standard.</p>
         </div>
       </div>
 
-      <div class="tabs" role="tablist" aria-label="Mode">
-        <button class="tab" role="tab" id="tab-plan" aria-selected="true" aria-controls="panel-plan" type="button">Plan a test (sample size)</button>
-        <button class="tab" role="tab" id="tab-check" aria-selected="false" aria-controls="panel-check" type="button">Check my results</button>
-      </div>
-
       <div id="panel-plan" role="tabpanel" aria-labelledby="tab-plan">
+        <div class="callout"><p><strong>Use this before you launch.</strong> It tells you how many visitors each version needs. Too few visitors and you cannot trust the result, whatever it says.</p></div>
         <form id="plan-form" class="form-grid" novalidate>
           <div class="field">
-            <label for="plan-baseline">Baseline conversion rate (%)</label>
-            <input id="plan-baseline" name="baseline" type="text" inputmode="decimal" value="5" autocomplete="off">
-            <p class="hint">Your current conversion rate, e.g. 5 for 5%.</p>
+            <label for="plan-baseline">Your current conversion rate (%)</label>
+            <input id="plan-baseline" type="text" inputmode="decimal" value="5" autocomplete="off">
+            <p class="hint">Out of every 100 visitors, how many buy, sign up or click? "5" means 5 in 100. Not sure? Divide last month's conversions by last month's visitors and multiply by 100.</p>
             <p class="error" id="plan-baseline-error"></p>
           </div>
           <div class="field">
-            <label for="plan-mde">Minimum lift worth detecting</label>
-            <input id="plan-mde" name="mde" type="text" inputmode="decimal" value="10" autocomplete="off">
-            <p class="hint">The smallest improvement that would matter to your business.</p>
-            <p class="error" id="plan-mde-error"></p>
-          </div>
-          <div class="field">
-            <label for="plan-mde-type">Lift is expressed as</label>
-            <select id="plan-mde-type">
-              <option value="relative" selected>Relative % (5% → 5.5% is +10%)</option>
-              <option value="absolute">Absolute points (5% → 5.5% is +0.5 pp)</option>
+            <label for="plan-mde-preset">Smallest improvement worth detecting</label>
+            <select id="plan-mde-preset">
+              <option value="5">Small: +5% better than today</option>
+              <option value="10" selected>Medium: +10% better than today</option>
+              <option value="20">Large: +20% better than today</option>
+              <option value="30">Very large: +30% better than today</option>
+              <option value="custom">Other…</option>
             </select>
+            <p class="hint">How much better must B be for you to care? Small improvements need many more visitors to spot, so don't ask for more precision than your business needs.</p>
+            <p class="preview" id="plan-mde-preview"></p>
+          </div>
+          <div class="field" id="plan-mde-custom-wrap" hidden>
+            <label for="plan-mde-custom">Your own improvement (%)</label>
+            <input id="plan-mde-custom" type="text" inputmode="decimal" value="15" autocomplete="off">
+            <p class="hint">Relative to today: 10 means 10% better, so 5% becomes 5.5%.</p>
+            <p class="error" id="plan-mde-custom-error"></p>
           </div>
           <div class="field">
-            <label for="plan-power">Statistical power</label>
-            <select id="plan-power">
-              <option value="0.8" selected>80% (standard)</option>
-              <option value="0.9">90% (more cautious)</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="plan-sides">Test type</label>
-            <select id="plan-sides">
-              <option value="2" selected>Two-sided (detects better or worse)</option>
-              <option value="1">One-sided (only detects an improvement)</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="plan-variants">Number of variants (including control)</label>
-            <input id="plan-variants" name="variants" type="text" inputmode="numeric" value="2" autocomplete="off">
-            <p class="error" id="plan-variants-error"></p>
-          </div>
-          <div class="field">
-            <label for="plan-traffic">Daily visitors to the test (optional)</label>
-            <input id="plan-traffic" name="traffic" type="text" inputmode="numeric" value="" placeholder="e.g. 1500" autocomplete="off">
-            <p class="hint">Adds an estimated duration.</p>
+            <label for="plan-traffic">Visitors per day on this page <span class="hint">(optional)</span></label>
+            <input id="plan-traffic" type="text" inputmode="numeric" value="3000" autocomplete="off">
+            <p class="hint">Gives you an estimated duration. Take last month's visitors and divide by 30.</p>
             <p class="error" id="plan-traffic-error"></p>
           </div>
+          <details class="advanced full">
+            <summary>Advanced settings (most people can skip this)</summary>
+            <div class="form-grid">
+              <div class="field">
+                <label for="plan-power">Chance of spotting a real win</label>
+                <select id="plan-power">
+                  <option value="0.8" selected>80% (standard)</option>
+                  <option value="0.9">90% (more cautious)</option>
+                </select>
+                <p class="hint">If B really is better by the amount above, this is the chance the test notices it. Statisticians call it "power".</p>
+              </div>
+              <div class="field">
+                <label for="plan-sides">Do you want to detect</label>
+                <select id="plan-sides">
+                  <option value="2" selected>Both better and worse (recommended)</option>
+                  <option value="1">Only an improvement</option>
+                </select>
+                <p class="hint">"Only an improvement" needs fewer visitors but cannot tell you that B is worse.</p>
+              </div>
+              <div class="field">
+                <label for="plan-variants">Number of versions, including your current one</label>
+                <input id="plan-variants" type="text" inputmode="numeric" value="2" autocomplete="off">
+                <p class="hint">2 means A versus B. More versions need more visitors in total.</p>
+                <p class="error" id="plan-variants-error"></p>
+              </div>
+            </div>
+          </details>
         </form>
         <div id="plan-results" class="results" aria-live="polite"></div>
       </div>
 
       <div id="panel-check" role="tabpanel" aria-labelledby="tab-check" hidden>
+        <div class="callout"><p><strong>Use this after your test.</strong> Enter what happened for each version and get a plain-English verdict. Let the test run to the visitor number from step 1 before you look.</p></div>
         <form id="check-form" class="form-grid" novalidate>
-          <p class="group-title">Control (A)</p>
+          <p class="group-title">Version A (your current page)</p>
           <div class="field">
-            <label for="check-n1">Visitors</label>
-            <input id="check-n1" type="text" inputmode="numeric" value="10000" autocomplete="off">
+            <label for="check-n1">People who saw A</label>
+            <input id="check-n1" type="text" inputmode="numeric" value="31400" autocomplete="off">
             <p class="error" id="check-n1-error"></p>
           </div>
           <div class="field">
-            <label for="check-x1">Conversions</label>
-            <input id="check-x1" type="text" inputmode="numeric" value="500" autocomplete="off">
+            <label for="check-x1">People who converted on A</label>
+            <input id="check-x1" type="text" inputmode="numeric" value="1570" autocomplete="off">
+            <p class="hint">Bought, signed up, clicked: whatever you are measuring.</p>
             <p class="error" id="check-x1-error"></p>
           </div>
-          <p class="group-title">Variant (B)</p>
+          <p class="group-title">Version B (the new page)</p>
           <div class="field">
-            <label for="check-n2">Visitors</label>
-            <input id="check-n2" type="text" inputmode="numeric" value="10000" autocomplete="off">
+            <label for="check-n2">People who saw B</label>
+            <input id="check-n2" type="text" inputmode="numeric" value="31300" autocomplete="off">
             <p class="error" id="check-n2-error"></p>
           </div>
           <div class="field">
-            <label for="check-x2">Conversions</label>
-            <input id="check-x2" type="text" inputmode="numeric" value="560" autocomplete="off">
+            <label for="check-x2">People who converted on B</label>
+            <input id="check-x2" type="text" inputmode="numeric" value="1720" autocomplete="off">
             <p class="error" id="check-x2-error"></p>
           </div>
         </form>
@@ -215,51 +240,91 @@
     </div>
   </section>
 
-  <section id="how-to-read" class="section wrap narrow">
-    <h2>How to read your results</h2>
-    <p><strong>Plan a test</strong> tells you how many visitors each variant needs so that, if the lift you care about is real, you will detect it with the power you chose. Decide this number <em>before</em> you launch and stick to it.</p>
-    <p><strong>Check my results</strong> compares two variants you already ran. The <em>p-value</em> is the chance of seeing a difference this large if the variants were truly identical; below your threshold (10%, 5% or 1% for 90, 95 or 99% confidence) the result is called statistically significant. The <em>confidence interval</em> is the range of lifts that are consistent with your data: it is often more useful than the p-value because it shows how big, or how small, the real effect could be.</p>
-    <p class="muted">Statistical significance is not the same as business significance: a tiny lift can be significant with enough traffic, and a large lift can be inconclusive with too little.</p>
+  <section id="how-to-use" class="section wrap narrow">
+    <h2>How to run a good A/B test in 5 steps</h2>
+    <ol class="checklist">
+      <li><strong>Change one thing.</strong> A new headline, a different button, a shorter form. If you change five things at once you will never know which one worked.</li>
+      <li><strong>Work out the visitors you need first</strong> with the "Before" tab, and write the number down.</li>
+      <li><strong>Split traffic at random</strong> and at the same time: half see A, half see B. Do not compare this month with last month.</li>
+      <li><strong>Wait.</strong> Run the test for at least one or two full weeks and until you reach your number. Resist the urge to peek and stop early.</li>
+      <li><strong>Check once</strong> with the "After" tab, then act on the verdict.</li>
+    </ol>
+
+    <h2 style="margin-top:36px;">A worked example</h2>
+    <div class="example">
+      <p><strong>Sophie runs an online running-shoe shop.</strong> About 5 visitors in 100 buy, and she wants to test a new product page. She would only care about an improvement of about +10% (5% becoming 5.5%).</p>
+      <p><strong>Step 1.</strong> The "Before" tab says she needs about 31,234 visitors per version. With 3,000 visitors a day, that is around 21 days, so she plans three weeks.</p>
+      <p><strong>Step 2.</strong> After three weeks, A had 31,400 visitors and 1,570 buyers (5.0%). B had 31,300 visitors and 1,720 buyers (5.5%).</p>
+      <p><strong>Step 3.</strong> The "After" tab (already filled in with these numbers) says B wins: about 10% better. A gap this big would happen by pure luck only about 5 times in 1,000, and the real improvement is most likely between about +3% and +17%. Sophie rolls out B and keeps watching her sales.</p>
+    </div>
+  </section>
+
+  <section id="concepts" class="section wrap narrow">
+    <h2>Key ideas explained</h2>
+    <dl class="glossary">
+      <dt>Conversion rate</dt>
+      <dd>The share of visitors who do what you want (buy, sign up, click). 5 buyers out of 100 visitors is a 5% conversion rate.</dd>
+      <dt>A/B test</dt>
+      <dd>You show two versions of something (A is usually your current one) to different visitors at the same time, then compare how many convert on each.</dd>
+      <dt>Sample size (number of visitors)</dt>
+      <dd>How many people must see each version before the comparison means anything. Small groups are noisy; big groups are steady.
+        <span class="analogy">Flip a coin 10 times and get 7 heads: nothing suspicious. Get 700 heads in 1,000 flips: the coin is clearly not fair.</span></dd>
+      <dt>Improvement (lift)</dt>
+      <dd>How much better B is than A. A "+10% improvement" on a 5% conversion rate means 5.5%, not 15%. Points and percentages are different: going from 5% to 5.5% is +0.5 percentage points, or +10%.</dd>
+      <dt>"Just luck" and statistical significance</dt>
+      <dd>Even two identical pages will show slightly different results, because visitors are different people. A result is called <em>statistically significant</em> when a gap this big would be very unlikely to appear by luck alone. This calculator says it as "a gap this big would happen by luck about N times in 100".</dd>
+      <dt>How sure you want to be (confidence level)</dt>
+      <dd>Your risk appetite. At 95%, you accept being fooled by luck in about 5 tests out of 100. At 99%, only 1 in 100, but you need more visitors.</dd>
+      <dt>Likely range of the real improvement (confidence interval)</dt>
+      <dd>What you measured is a best guess. The range shows how far the real improvement could reasonably be from it. If the range includes zero, B could be no better than A, or even worse.</dd>
+      <dt>Spotting a real win (power)</dt>
+      <dd>If B really is better, this is the chance your test notices it. At 80%, a real win is caught 8 times out of 10.</dd>
+      <dt>False winner</dt>
+      <dd>Declaring B the winner when it is not actually better. Peeking every day and stopping when B looks good is the most common way to create one.</dd>
+    </dl>
   </section>
 
   <section id="methodology" class="section wrap narrow">
-    <h2>Methodology</h2>
-    <p>Sample size per variant for a two-proportion test, where p₁ is the baseline rate, p₂ = p₁ plus the lift, and p̄ = (p₁ + p₂) / 2:</p>
+    <h2>Methodology (for analysts)</h2>
+    <p>Visitors needed per version for a two-proportion test, where p₁ is the current rate, p₂ = p₁ × (1 + improvement), and p̄ = (p₁ + p₂) / 2:</p>
     <div class="formula">n = ( z(α)·√(2·p̄·(1−p̄)) + z(β)·√(p₁(1−p₁) + p₂(1−p₂)) )² / (p₂ − p₁)²</div>
-    <p>z(α) is the critical value for your confidence level (1.645 / 1.960 / 2.576 for 90 / 95 / 99% two-sided) and z(β) is the value for your power (0.842 for 80%). The result is rounded up.</p>
-    <p>Results check: the p-value comes from a two-sided two-proportion z-test using the pooled rate. The confidence interval is on the absolute difference p₂ − p₁ (Wald interval with the unpooled standard error); the relative interval divides its bounds by the control rate, which is an approximation. The "smallest detectable lift" is the lift your sample could detect at 80% power. Observed power is deliberately not reported: it is just another way of restating the p-value and is misleading.</p>
-    <p><strong>Assumptions:</strong> each visitor is counted once, visitors are randomly assigned, the groups are independent, and the sample is large enough for the normal approximation (roughly 10 or more conversions and non-conversions in each group). This calculator does not correct for multiple variants, repeated looks at the data or sequential testing.</p>
-    <p><strong>Good practice:</strong> fix your sample size in advance, do not stop at the first significant reading, run for at least one full business cycle (a week or more), and treat testing many variants or many metrics at once with extra caution.</p>
+    <p>z(α) is the critical value for the confidence level (1.645 / 1.960 / 2.576 for 90 / 95 / 99% two-sided) and z(β) the value for the power (0.842 for 80%). The result is rounded up.</p>
+    <p>Results check: the "luck" figure is the two-sided p-value of a pooled two-proportion z-test. The likely range is a Wald confidence interval on the absolute difference p₂ − p₁ with the unpooled standard error; the relative range divides its bounds by the control rate, which is an approximation. The smallest detectable improvement is the lift the sample could detect at 80% power. Observed power is deliberately not reported: it only restates the p-value.</p>
+    <p><strong>Assumptions:</strong> each visitor is counted once, visitors are randomly assigned, groups are independent, and there are enough conversions and non-conversions (roughly 10 or more) in each group for the normal approximation. The calculator does not correct for several versions, repeated looks at the data or sequential testing.</p>
   </section>
 
   <section id="faq" class="section wrap narrow faq">
     <h2>Frequently asked questions</h2>
     <details>
       <summary>How many visitors do I need for an A/B test?</summary>
-      <p>It depends on your baseline conversion rate, the smallest lift you care about, the confidence level and the statistical power. Lower baselines and smaller lifts need far more visitors. Enter those values in the Plan a test tab to get the required sample size per variant.</p>
+      <p>It depends on your current conversion rate and on the smallest improvement you care about. A low conversion rate or a small improvement means many more visitors. Enter both in the "Before" tab to get the number needed per version.</p>
     </details>
     <details>
-      <summary>What does 95% confidence mean in an A/B test?</summary>
-      <p>It means that if there were truly no difference between the variants, you would see a result this extreme less than 5% of the time. It does not mean there is a 95% probability that the variant is better.</p>
+      <summary>What does "95% sure" mean?</summary>
+      <p>It means that if A and B were really identical, you would wrongly pick a winner only about 5 times in 100 tests. It does not mean there is a 95% chance that B is better.</p>
     </details>
     <details>
-      <summary>What is statistical power?</summary>
-      <p>Power is the probability that your test detects a real lift of at least the size you planned for. 80% is the common default: if the lift is real, you would detect it 8 times out of 10.</p>
+      <summary>Can I stop my test as soon as B looks like it's winning?</summary>
+      <p>Not safely. Numbers swing a lot in the first days, and stopping the moment they look good makes false winners much more likely. Decide the number of visitors in advance and check the result once you reach it.</p>
     </details>
     <details>
-      <summary>Can I stop my A/B test as soon as it reaches significance?</summary>
-      <p>Not safely. Checking repeatedly and stopping at the first significant result inflates the false-positive rate well above your chosen level. Decide the sample size in advance and read the result once it is reached.</p>
+      <summary>My result says "no clear winner". Does that mean A and B are the same?</summary>
+      <p>No. It means the test did not collect enough evidence to tell them apart. Any real difference is probably small, or you need more visitors. The likely range in the results shows how big the difference could still be.</p>
     </details>
     <details>
-      <summary>My result is not significant. Does that mean there is no difference?</summary>
-      <p>No. It means the data do not provide enough evidence to tell the variants apart. Look at the confidence interval: a wide interval that includes zero usually means the test was too small, not that the variants are equal.</p>
+      <summary>How long should I run an A/B test?</summary>
+      <p>Until each version has reached the number of visitors the calculator gave you, and for at least one or two full weeks so that every day of the week is represented.</p>
+    </details>
+    <details>
+      <summary>Can I test more than two versions?</summary>
+      <p>Yes, but every extra version needs its own set of visitors and increases the chance that luck produces a false winner. Keep it to a few versions and be more sceptical of a lone winner.</p>
     </details>
   </section>
 
   <section class="wrap narrow">
     <h2 class="sr-only">Related tools</h2>
     <ul class="related">
-      <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/chi-square-calculator/">Chi-Square Test Calculator: is the difference real?</a></li>
+      <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/chi-square-calculator/">Chi-Square Calculator: compare several groups</a></li>
       <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/marketing-roi-calculator/">Marketing ROI Calculator: ROAS, CAC &amp; LTV</a></li>
       <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/utm-builder/">UTM Link Builder</a></li>
     </ul>

@@ -75,6 +75,20 @@ assert.throws(() => chiSquareTest([[0, 0], [3, 4]]), RangeError); // empty row
 assert.throws(() => chiSquareTest([[0, 5], [0, 4]]), RangeError); // empty column
 assert.throws(() => chiSquareTest([[NaN, 1], [1, 1]]), RangeError);
 
+// Adjusted residuals: independent values (Python) for a 4-channel table; 2×2 residuals equal ±√χ²
+t = chiSquareTest([[420, 9580], [510, 9490], [300, 9700], [480, 9520]]);
+close(t.adjResiduals[0][0], -0.428105, 1e-5, 'adj residual email');
+close(t.adjResiduals[1][0], 4.70915, 1e-5, 'adj residual paid search');
+close(t.adjResiduals[2][0], -7.277778, 1e-6, 'adj residual social');
+close(t.adjResiduals[3][0], 2.996732, 1e-6, 'adj residual organic');
+close(t.adjResiduals[1][1], -t.adjResiduals[1][0], 1e-12, 'yes/no residuals mirror each other');
+close(t.chi2, 63.22937141757502, 1e-9, '4×2 chi2');
+close(t.cramersV, 0.03975844923333122, 1e-9, '4×2 V');
+t = chiSquareTest([[20, 30], [30, 20]]);
+close(Math.abs(t.adjResiduals[0][0]), 2, 1e-12, '2×2 adj residual = √χ²');
+t = chiSquareTest([[500, 9500], [560, 9440]]);
+close(Math.abs(t.adjResiduals[1][0]), 1.8937529756356755, 1e-9, '2×2 adj residual = |z|');
+
 // Effect-size labels scale with min(r−1, c−1)
 assert.equal(effectSize(0.05, 1), 'negligible');
 assert.equal(effectSize(0.2, 1), 'small');
