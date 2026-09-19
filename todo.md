@@ -3,8 +3,8 @@
 Spec: [specs/free-tools.md](specs/free-tools.md). One commit per tool, including its homepage cards (EN/FR/DE) and sitemap entry.
 
 ## Saturday
-- [ ] Tool 1: `projects/ab-test-calculator/` — stats.js + tests, UI, disclaimer/badge, GA4
-- [ ] Homepage: "Free tools" sub-block + card styles + Tool 1 card (EN/FR/DE)
+- [x] Tool 1: `projects/ab-test-calculator/` — stats.js + tests, UI, disclaimer/badge, GA4
+- [x] Homepage: "Free tools" sub-block + card styles + Tool 1 card (EN/FR/DE)
 - [ ] Tool 2: `projects/chi-square-calculator/` + card (EN/FR/DE)
 
 ## Sunday

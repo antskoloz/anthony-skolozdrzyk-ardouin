@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free A/B Test Calculator: Sample Size & Statistical Significance | Anthony Skolozdrzyk-Ardouin</title>
+<meta name="description" content="Free A/B test calculator for marketers: find the sample size you need before a test, then check whether your results are statistically significant, with 90/95/99% confidence intervals and a plain-English interpretation. No sign-up.">
+<meta name="author" content="Anthony Skolozdrzyk-Ardouin">
+<meta name="robots" content="index, follow">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QXP44186J4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QXP44186J4');
+</script>
+<link rel="canonical" href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/ab-test-calculator/">
+<meta property="og:site_name" content="Anthony Skolozdrzyk-Ardouin">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free A/B Test Calculator: Sample Size & Statistical Significance">
+<meta property="og:description" content="Plan your sample size and check whether your A/B test result is statistically significant. Free for everyone, no sign-up.">
+<meta property="og:url" content="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/ab-test-calculator/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Free A/B Test Calculator: Sample Size & Statistical Significance">
+<meta name="twitter:description" content="Plan your sample size and check whether your A/B test result is statistically significant. Free for everyone, no sign-up.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tool.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "A/B Test Calculator: Sample Size & Statistical Significance",
+  "url": "https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/ab-test-calculator/",
+  "description": "Free calculator that tells marketers how many visitors an A/B test needs and whether the observed result is statistically significant, with confidence intervals.",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any (web browser)",
+  "isAccessibleForFree": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+  "author": { "@type": "Person", "name": "Anthony Skolozdrzyk-Ardouin", "url": "https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How many visitors do I need for an A/B test?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on your baseline conversion rate, the smallest lift you care about, the confidence level and the statistical power. Lower baselines and smaller lifts need far more visitors. Enter those values in the Plan a test tab to get the required sample size per variant." } },
+    { "@type": "Question", "name": "What does 95% confidence mean in an A/B test?", "acceptedAnswer": { "@type": "Answer", "text": "It means that if there were truly no difference between the variants, you would see a result this extreme less than 5% of the time. It does not mean there is a 95% probability that the variant is better." } },
+    { "@type": "Question", "name": "What is statistical power?", "acceptedAnswer": { "@type": "Answer", "text": "Power is the probability that your test detects a real lift of at least the size you planned for. 80% is the common default: if the lift is real, you would detect it 8 times out of 10." } },
+    { "@type": "Question", "name": "Can I stop my A/B test as soon as it reaches significance?", "acceptedAnswer": { "@type": "Answer", "text": "Not safely. Checking repeatedly and stopping at the first significant result inflates the false-positive rate well above your chosen level. Decide the sample size in advance and read the result once it is reached." } },
+    { "@type": "Question", "name": "My result is not significant. Does that mean there is no difference?", "acceptedAnswer": { "@type": "Answer", "text": "No. It means the data do not provide enough evidence to tell the variants apart. Look at the confidence interval: a wide interval that includes zero usually means the test was too small, not that the variants are equal." } }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="logo" href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/">
+      <span class="logo-mark">AS</span>
+      <span>Anthony Skolozdrzyk-Ardouin</span>
+    </a>
+    <nav class="nav-desktop" aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#about">About</a></li>
+        <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#experience">Experience</a></li>
+        <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#skills">Skills</a></li>
+        <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#work" aria-current="true">Work</a></li>
+        <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/">Blog</a></li>
+        <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#faq">FAQ</a></li>
+        <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#contact">Contact</a></li>
+      </ul>
+      <a class="btn btn-primary btn-sm" href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#contact">Let's chat</a>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-mobile" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile">
+    <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#about">About</a>
+    <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#experience">Experience</a>
+    <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#skills">Skills</a>
+    <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#work">Work</a>
+    <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/">Blog</a>
+    <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#faq">FAQ</a>
+    <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="tool-bar">
+  <div class="tool-bar__inner">
+    <a class="tool-bar__title" href="./">A/B Test Calculator</a>
+    <nav aria-label="A/B Test Calculator">
+      <ul class="tool-bar__nav">
+        <li><a href="#calculator">Calculator</a></li>
+        <li><a href="#methodology">Methodology</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<main id="main-content">
+  <section class="hero">
+    <div class="wrap">
+      <span class="badge-free">Free tool</span>
+      <h1>A/B Test Calculator: sample size &amp; statistical significance</h1>
+      <p class="hero__lead">Was your test big enough, and how sure can you be of the result? Plan the sample size before you launch, then check your results with confidence intervals and a plain-English reading.</p>
+      <p class="hero__free">Free for everyone to use, no sign-up. Nothing you type leaves your browser.</p>
+    </div>
+  </section>
+
+  <section id="calculator" class="wrap" aria-label="Calculator">
+    <div class="panel">
+      <div class="form-grid" style="margin-bottom:20px;">
+        <div class="field">
+          <label for="confidence">Confidence level</label>
+          <select id="confidence">
+            <option value="0.9">90%</option>
+            <option value="0.95" selected>95%</option>
+            <option value="0.99">99%</option>
+          </select>
+          <p class="hint">95% is the usual standard. Higher confidence needs more visitors.</p>
+        </div>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="Mode">
+        <button class="tab" role="tab" id="tab-plan" aria-selected="true" aria-controls="panel-plan" type="button">Plan a test (sample size)</button>
+        <button class="tab" role="tab" id="tab-check" aria-selected="false" aria-controls="panel-check" type="button">Check my results</button>
+      </div>
+
+      <div id="panel-plan" role="tabpanel" aria-labelledby="tab-plan">
+        <form id="plan-form" class="form-grid" novalidate>
+          <div class="field">
+            <label for="plan-baseline">Baseline conversion rate (%)</label>
+            <input id="plan-baseline" name="baseline" type="text" inputmode="decimal" value="5" autocomplete="off">
+            <p class="hint">Your current conversion rate, e.g. 5 for 5%.</p>
+            <p class="error" id="plan-baseline-error"></p>
+          </div>
+          <div class="field">
+            <label for="plan-mde">Minimum lift worth detecting</label>
+            <input id="plan-mde" name="mde" type="text" inputmode="decimal" value="10" autocomplete="off">
+            <p class="hint">The smallest improvement that would matter to your business.</p>
+            <p class="error" id="plan-mde-error"></p>
+          </div>
+          <div class="field">
+            <label for="plan-mde-type">Lift is expressed as</label>
+            <select id="plan-mde-type">
+              <option value="relative" selected>Relative % (5% → 5.5% is +10%)</option>
+              <option value="absolute">Absolute points (5% → 5.5% is +0.5 pp)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="plan-power">Statistical power</label>
+            <select id="plan-power">
+              <option value="0.8" selected>80% (standard)</option>
+              <option value="0.9">90% (more cautious)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="plan-sides">Test type</label>
+            <select id="plan-sides">
+              <option value="2" selected>Two-sided (detects better or worse)</option>
+              <option value="1">One-sided (only detects an improvement)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="plan-variants">Number of variants (including control)</label>
+            <input id="plan-variants" name="variants" type="text" inputmode="numeric" value="2" autocomplete="off">
+            <p class="error" id="plan-variants-error"></p>
+          </div>
+          <div class="field">
+            <label for="plan-traffic">Daily visitors to the test (optional)</label>
+            <input id="plan-traffic" name="traffic" type="text" inputmode="numeric" value="" placeholder="e.g. 1500" autocomplete="off">
+            <p class="hint">Adds an estimated duration.</p>
+            <p class="error" id="plan-traffic-error"></p>
+          </div>
+        </form>
+        <div id="plan-results" class="results" aria-live="polite"></div>
+      </div>
+
+      <div id="panel-check" role="tabpanel" aria-labelledby="tab-check" hidden>
+        <form id="check-form" class="form-grid" novalidate>
+          <p class="group-title">Control (A)</p>
+          <div class="field">
+            <label for="check-n1">Visitors</label>
+            <input id="check-n1" type="text" inputmode="numeric" value="10000" autocomplete="off">
+            <p class="error" id="check-n1-error"></p>
+          </div>
+          <div class="field">
+            <label for="check-x1">Conversions</label>
+            <input id="check-x1" type="text" inputmode="numeric" value="500" autocomplete="off">
+            <p class="error" id="check-x1-error"></p>
+          </div>
+          <p class="group-title">Variant (B)</p>
+          <div class="field">
+            <label for="check-n2">Visitors</label>
+            <input id="check-n2" type="text" inputmode="numeric" value="10000" autocomplete="off">
+            <p class="error" id="check-n2-error"></p>
+          </div>
+          <div class="field">
+            <label for="check-x2">Conversions</label>
+            <input id="check-x2" type="text" inputmode="numeric" value="560" autocomplete="off">
+            <p class="error" id="check-x2-error"></p>
+          </div>
+        </form>
+        <div id="check-results" class="results" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how-to-read" class="section wrap narrow">
+    <h2>How to read your results</h2>
+    <p><strong>Plan a test</strong> tells you how many visitors each variant needs so that, if the lift you care about is real, you will detect it with the power you chose. Decide this number <em>before</em> you launch and stick to it.</p>
+    <p><strong>Check my results</strong> compares two variants you already ran. The <em>p-value</em> is the chance of seeing a difference this large if the variants were truly identical; below your threshold (10%, 5% or 1% for 90, 95 or 99% confidence) the result is called statistically significant. The <em>confidence interval</em> is the range of lifts that are consistent with your data: it is often more useful than the p-value because it shows how big, or how small, the real effect could be.</p>
+    <p class="muted">Statistical significance is not the same as business significance: a tiny lift can be significant with enough traffic, and a large lift can be inconclusive with too little.</p>
+  </section>
+
+  <section id="methodology" class="section wrap narrow">
+    <h2>Methodology</h2>
+    <p>Sample size per variant for a two-proportion test, where p₁ is the baseline rate, p₂ = p₁ plus the lift, and p̄ = (p₁ + p₂) / 2:</p>
+    <div class="formula">n = ( z(α)·√(2·p̄·(1−p̄)) + z(β)·√(p₁(1−p₁) + p₂(1−p₂)) )² / (p₂ − p₁)²</div>
+    <p>z(α) is the critical value for your confidence level (1.645 / 1.960 / 2.576 for 90 / 95 / 99% two-sided) and z(β) is the value for your power (0.842 for 80%). The result is rounded up.</p>
+    <p>Results check: the p-value comes from a two-sided two-proportion z-test using the pooled rate. The confidence interval is on the absolute difference p₂ − p₁ (Wald interval with the unpooled standard error); the relative interval divides its bounds by the control rate, which is an approximation. The "smallest detectable lift" is the lift your sample could detect at 80% power. Observed power is deliberately not reported: it is just another way of restating the p-value and is misleading.</p>
+    <p><strong>Assumptions:</strong> each visitor is counted once, visitors are randomly assigned, the groups are independent, and the sample is large enough for the normal approximation (roughly 10 or more conversions and non-conversions in each group). This calculator does not correct for multiple variants, repeated looks at the data or sequential testing.</p>
+    <p><strong>Good practice:</strong> fix your sample size in advance, do not stop at the first significant reading, run for at least one full business cycle (a week or more), and treat testing many variants or many metrics at once with extra caution.</p>
+  </section>
+
+  <section id="faq" class="section wrap narrow faq">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>How many visitors do I need for an A/B test?</summary>
+      <p>It depends on your baseline conversion rate, the smallest lift you care about, the confidence level and the statistical power. Lower baselines and smaller lifts need far more visitors. Enter those values in the Plan a test tab to get the required sample size per variant.</p>
+    </details>
+    <details>
+      <summary>What does 95% confidence mean in an A/B test?</summary>
+      <p>It means that if there were truly no difference between the variants, you would see a result this extreme less than 5% of the time. It does not mean there is a 95% probability that the variant is better.</p>
+    </details>
+    <details>
+      <summary>What is statistical power?</summary>
+      <p>Power is the probability that your test detects a real lift of at least the size you planned for. 80% is the common default: if the lift is real, you would detect it 8 times out of 10.</p>
+    </details>
+    <details>
+      <summary>Can I stop my A/B test as soon as it reaches significance?</summary>
+      <p>Not safely. Checking repeatedly and stopping at the first significant result inflates the false-positive rate well above your chosen level. Decide the sample size in advance and read the result once it is reached.</p>
+    </details>
+    <details>
+      <summary>My result is not significant. Does that mean there is no difference?</summary>
+      <p>No. It means the data do not provide enough evidence to tell the variants apart. Look at the confidence interval: a wide interval that includes zero usually means the test was too small, not that the variants are equal.</p>
+    </details>
+  </section>
+
+  <section class="wrap narrow">
+    <aside class="disclaimer" aria-labelledby="disclaimer-title">
+      <h2 id="disclaimer-title">Free tool &amp; disclaimer</h2>
+      <p>This tool is provided free of charge for general informational and educational purposes only. It is offered "as is", without warranty of any kind, and does not constitute professional, statistical, financial, legal or marketing advice. Results depend on the accuracy of your inputs and on the statistical assumptions stated on this page; you are solely responsible for decisions taken on the basis of the results. To the fullest extent permitted by law, the author accepts no liability for any loss or damage arising from use of this tool. This is an independent personal initiative by Anthony Skolozdrzyk-Ardouin; it is not affiliated with, endorsed by, or representative of any current or former employer. Calculations run entirely in your browser: the data you enter is not sent to or stored on any server. Anonymous usage analytics (Google Analytics) are collected on this site.</p>
+    </aside>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <p>&copy; <span id="year">2026</span> Anthony Skolozdrzyk-Ardouin. Free tool for free use.</p>
+    <p><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/">Home</a> &middot; <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#work">More free tools</a> &middot; <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/">Blog</a></p>
+  </div>
+</footer>
+
+<script type="module" src="tool.js"></script>
+</body>
+</html>
