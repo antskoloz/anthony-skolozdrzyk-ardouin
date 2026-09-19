@@ -9,7 +9,7 @@ tags:
   - attribution
   - incrementality
   - marketing mix modeling
-draft: true
+draft: false
 ---
 > **Short answer:** Use attribution to see which touchpoints customers interacted with, incrementality tests to learn what a channel truly caused, and marketing mix modeling (MMM) to plan budgets across all channels over time. They are not rivals. Each answers a different question, and the strongest measurement setups use experiments to check the other two.
 
