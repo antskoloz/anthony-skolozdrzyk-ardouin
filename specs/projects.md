@@ -29,4 +29,4 @@ Each project keeps its own sitemap, `robots.txt` and canonical URLs, all generat
 
 ## Current projects
 
-- `decline-code-lookup` — Astro glossary of card decline codes (40 codes, ~50 pages, JSON-LD, `llms.txt`). Imported from the former standalone repo `antskoloz/decline-code-lookup` with its git history; previously served at `antskoloz.github.io/decline-code-lookup/`.
+- `decline-code-lookup` — Astro glossary of card decline codes (40 codes, ~50 pages, JSON-LD, `llms.txt`). Imported from the former standalone repo `antskoloz/decline-code-lookup` with its git history; previously served at `antskoloz.github.io/decline-code-lookup/`. Its header reuses the brand site's logo and navigation (linking back to the homepage sections, with "Work" highlighted) above a slim bar with the tool's own Glossary/About links; see `src/components/Header.astro`.

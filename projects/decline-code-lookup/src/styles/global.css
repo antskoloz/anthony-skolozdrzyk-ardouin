@@ -73,173 +73,207 @@ h3 {
   line-height: 1.25;
 }
 
-/* Header */
+/* Header — matches the personal brand site's header (see the root site's style.css) */
+
+.site-header,
+.tool-bar {
+  --b-navy: #0a1f44;
+  --b-blue: #2f6fed;
+  --b-blue-dark: #2557c7;
+  --b-text: #16213a;
+  --b-muted: #57647a;
+  --b-border: #e4e9f1;
+  --b-bg-alt: #f6f8fb;
+  font-family: "Inter", var(--font-sans);
+}
 
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 50;
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--color-border);
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: saturate(180%) blur(10px);
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+  border-bottom: 1px solid var(--b-border);
 }
 
-.site-header__inner {
-  position: relative;
+.site-header__inner,
+.tool-bar__inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding-inline: 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-block: var(--space-3);
-  gap: var(--space-3);
 }
 
-.site-header__brand {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  font-weight: 800;
-  font-size: 1.15rem;
-  letter-spacing: -0.01em;
-  text-decoration: none;
-  color: var(--color-navy);
-  line-height: 1.2;
+.site-header__inner {
+  height: 72px;
 }
 
-.site-header__byline {
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  color: var(--color-muted);
-}
-
-.site-header__nav {
-  list-style: none;
+.logo {
   display: flex;
   align-items: center;
-  gap: var(--space-4);
+  gap: 10px;
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+  color: var(--b-navy);
+  text-decoration: none;
+}
+
+.logo-mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  background: linear-gradient(135deg, var(--b-navy), var(--b-blue));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.nav-desktop {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.site-header__nav a {
+.nav-links a {
   font-size: 0.92rem;
   font-weight: 600;
-  color: var(--color-text);
+  color: var(--b-muted);
+  white-space: nowrap;
   text-decoration: none;
-  border-bottom: 2px solid transparent;
-  padding-bottom: 2px;
-  transition: color 0.15s ease, border-color 0.15s ease;
+  transition: color 0.15s ease;
 }
 
-.site-header__nav a:hover,
-.site-header__nav a:focus-visible {
-  color: var(--color-navy);
-  border-bottom-color: var(--color-accent);
+.nav-links a:hover,
+.nav-links a[aria-current="true"] {
+  color: var(--b-blue);
 }
 
-.site-header__divider {
-  width: 1px;
-  height: 18px;
-  background: var(--color-border);
-}
-
-.site-header__linkedin {
+.btn {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  color: var(--color-muted);
+  gap: 8px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
 }
 
-.site-header__linkedin:hover,
-.site-header__linkedin:focus-visible {
-  color: var(--color-navy);
+.btn-sm {
+  padding: 9px 16px;
+  font-size: 0.85rem;
 }
 
-.site-header__toggle {
+.btn-primary {
+  background: var(--b-blue);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(47, 111, 237, 0.28);
+}
+
+.btn-primary:hover {
+  background: var(--b-blue-dark);
+  color: #fff;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--b-navy);
+  margin: 5px 0;
+}
+
+.nav-mobile {
   display: none;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  width: 40px;
-  height: 40px;
+  gap: 4px;
+  padding: 12px 24px 20px;
+  border-top: 1px solid var(--b-border);
+  background: #fff;
+}
+
+.nav-mobile.is-open {
+  display: flex;
+}
+
+.nav-mobile a {
+  padding: 12px 0;
+  font-weight: 600;
+  color: var(--b-text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--b-border);
+}
+
+/* Tool sub-bar: the tool's own navigation, under the brand header */
+
+.tool-bar {
+  background: var(--b-bg-alt);
+  border-bottom: 1px solid var(--b-border);
+}
+
+.tool-bar__inner {
+  min-height: 46px;
+  gap: 16px;
+}
+
+.tool-bar__title {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--b-navy);
+  text-decoration: none;
+}
+
+.tool-bar__nav {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
   padding: 0;
-  border: none;
-  border-radius: 0.375rem;
-  background: transparent;
-  cursor: pointer;
-  flex-shrink: 0;
 }
 
-.site-header__toggle:hover {
-  background: var(--color-surface);
+.tool-bar__nav a {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--b-muted);
+  text-decoration: none;
 }
 
-.site-header__toggle-bar {
-  display: block;
-  width: 20px;
-  height: 2px;
-  background: var(--color-navy);
-  border-radius: 1px;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+.tool-bar__nav a:hover,
+.tool-bar__nav a:focus-visible {
+  color: var(--b-blue);
 }
 
-.site-header__toggle.is-active .site-header__toggle-bar:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
-
-.site-header__toggle.is-active .site-header__toggle-bar:nth-child(2) {
-  opacity: 0;
-}
-
-.site-header__toggle.is-active .site-header__toggle-bar:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
-}
-
-@media (max-width: 780px) {
-  .site-header__byline {
+@media (max-width: 760px) {
+  .nav-desktop {
     display: none;
   }
 
-  .site-header__toggle {
-    display: flex;
-  }
-
-  .site-header__nav-wrap {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: var(--color-bg);
-    border-bottom: 1px solid var(--color-border);
-    box-shadow: 0 12px 20px rgba(10, 31, 68, 0.08);
-  }
-
-  .site-header__nav-wrap.is-open {
+  .nav-toggle {
     display: block;
-  }
-
-  .site-header__nav {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-    padding: var(--space-2) 0;
-  }
-
-  .site-header__nav a {
-    display: block;
-    padding: var(--space-3);
-    border-bottom: none;
-  }
-
-  .site-header__linkedin {
-    gap: 8px;
-  }
-
-  .site-header__divider {
-    display: none;
   }
 }
 
