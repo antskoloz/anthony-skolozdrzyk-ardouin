@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Chi-Square Test Calculator for A/B Tests & Marketing Data | Anthony Skolozdrzyk-Ardouin</title>
+<meta name="description" content="Free chi-square test calculator for marketers: check whether control and variant (or several groups) really differ, with p-value, 90/95/99% significance, Cramér's V effect size, expected counts and a plain-English interpretation. No sign-up.">
+<meta name="author" content="Anthony Skolozdrzyk-Ardouin">
+<meta name="robots" content="index, follow">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QXP44186J4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QXP44186J4');
+</script>
+<link rel="canonical" href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/chi-square-calculator/">
+<meta property="og:site_name" content="Anthony Skolozdrzyk-Ardouin">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Chi-Square Test Calculator for A/B Tests & Marketing Data">
+<meta property="og:description" content="Is the difference between control and variant real, or just noise? Chi-square test with p-value, effect size and a plain-English reading. Free for everyone, no sign-up.">
+<meta property="og:url" content="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/chi-square-calculator/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Free Chi-Square Test Calculator for A/B Tests & Marketing Data">
+<meta name="twitter:description" content="Is the difference between control and variant real, or just noise? Chi-square test with p-value, effect size and a plain-English reading. Free for everyone, no sign-up.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tool.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Chi-Square Test Calculator",
+  "url": "https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/chi-square-calculator/",
+  "description": "Free chi-square test of independence for marketers: compare control and variant, or several groups, with p-value, effect size and a plain-English interpretation.",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any (web browser)",
+  "isAccessibleForFree": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+  "author": { "@type": "Person", "name": "Anthony Skolozdrzyk-Ardouin", "url": "https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What is a chi-square test used for in marketing?", "acceptedAnswer": { "@type": "Answer", "text": "It tests whether two categorical variables are related, for example whether conversion (yes or no) depends on which variant a visitor saw, or whether conversion differs across channels. It compares the counts you observed with the counts you would expect if there were no relationship." } },
+    { "@type": "Question", "name": "Chi-square test or z-test for an A/B test?", "acceptedAnswer": { "@type": "Answer", "text": "For a simple control-versus-variant comparison of conversion rates they give the same p-value: the uncorrected 2x2 chi-square statistic equals the square of the two-proportion z statistic. Chi-square is more general because it also handles three or more groups or outcomes." } },
+    { "@type": "Question", "name": "What does the p-value mean here?", "acceptedAnswer": { "@type": "Answer", "text": "It is the probability of seeing differences at least as large as yours if the groups were truly the same. If it is below your threshold (10%, 5% or 1% for 90, 95 or 99% confidence) the result is called statistically significant." } },
+    { "@type": "Question", "name": "What if some expected counts are below 5?", "acceptedAnswer": { "@type": "Answer", "text": "The chi-square approximation becomes unreliable when expected counts are small. Collect more data, merge sparse categories, or use Fisher's exact test for a 2x2 table." } },
+    { "@type": "Question", "name": "What is Cramér's V?", "acceptedAnswer": { "@type": "Answer", "text": "Cramér's V is an effect-size measure from 0 (no association) to 1 (perfect association). It tells you how strong a relationship is, which matters because a very large sample can make a tiny difference statistically significant." } },
+    { "@type": "Question", "name": "If the test is significant, which group is different?", "acceptedAnswer": { "@type": "Answer", "text": "A significant chi-square test on a table with more than two groups only says that at least one group differs. Compare the row percentages, or run pairwise comparisons with an adjustment for multiple tests, to find where the difference is." } }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="logo" href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/">
+      <span class="logo-mark">AS</span>
+      <span>Anthony Skolozdrzyk-Ardouin</span>
+    </a>
+    <nav class="nav-desktop" aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#about">About</a></li>
+        <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#experience">Experience</a></li>
+        <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#skills">Skills</a></li>
+        <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#work" aria-current="true">Work</a></li>
+        <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/">Blog</a></li>
+        <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#faq">FAQ</a></li>
+        <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#contact">Contact</a></li>
+      </ul>
+      <a class="btn btn-primary btn-sm" href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#contact">Let's chat</a>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-mobile" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile">
+    <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#about">About</a>
+    <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#experience">Experience</a>
+    <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#skills">Skills</a>
+    <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#work">Work</a>
+    <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/">Blog</a>
+    <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#faq">FAQ</a>
+    <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="tool-bar">
+  <div class="tool-bar__inner">
+    <a class="tool-bar__title" href="./">Chi-Square Calculator</a>
+    <nav aria-label="Chi-Square Calculator">
+      <ul class="tool-bar__nav">
+        <li><a href="#calculator">Calculator</a></li>
+        <li><a href="#methodology">Methodology</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<main id="main-content">
+  <section class="hero">
+    <div class="wrap">
+      <span class="badge-free">Free tool</span>
+      <h1>Chi-Square Test Calculator: is the difference real, or noise?</h1>
+      <p class="hero__lead">Compare control and variant, or several groups at once. Get the p-value, the significance at 90, 95 or 99% confidence, an effect size and a plain-English reading of what it means.</p>
+      <p class="hero__free">Free for everyone to use, no sign-up. Nothing you type leaves your browser.</p>
+    </div>
+  </section>
+
+  <section id="calculator" class="wrap" aria-label="Calculator">
+    <div class="panel">
+      <div class="form-grid" style="margin-bottom:20px;">
+        <div class="field">
+          <label for="confidence">Confidence level</label>
+          <select id="confidence">
+            <option value="0.9">90%</option>
+            <option value="0.95" selected>95%</option>
+            <option value="0.99">99%</option>
+          </select>
+          <p class="hint">95% is the usual standard.</p>
+        </div>
+        <div class="field">
+          <label for="yates" style="display:flex;gap:10px;align-items:flex-start;">
+            <input id="yates" type="checkbox" style="width:auto;margin-top:5px;">
+            <span>Apply Yates continuity correction<span class="hint" style="display:block;margin-top:2px;">Only for 2×2 tables. More conservative; mainly useful with small counts.</span></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="Mode">
+        <button class="tab" role="tab" id="tab-simple" aria-selected="true" aria-controls="panel-simple" type="button">Control vs variant (2×2)</button>
+        <button class="tab" role="tab" id="tab-adv" aria-selected="false" aria-controls="panel-adv" type="button">Advanced table (up to 5×5)</button>
+      </div>
+
+      <div id="panel-simple" role="tabpanel" aria-labelledby="tab-simple">
+        <form id="simple-form" class="form-grid" novalidate>
+          <p class="group-title">Control (A)</p>
+          <div class="field">
+            <label for="s-n1">Visitors</label>
+            <input id="s-n1" type="text" inputmode="numeric" value="10000" autocomplete="off">
+            <p class="error" id="s-n1-error"></p>
+          </div>
+          <div class="field">
+            <label for="s-x1">Conversions</label>
+            <input id="s-x1" type="text" inputmode="numeric" value="500" autocomplete="off">
+            <p class="error" id="s-x1-error"></p>
+          </div>
+          <p class="group-title">Variant (B)</p>
+          <div class="field">
+            <label for="s-n2">Visitors</label>
+            <input id="s-n2" type="text" inputmode="numeric" value="10000" autocomplete="off">
+            <p class="error" id="s-n2-error"></p>
+          </div>
+          <div class="field">
+            <label for="s-x2">Conversions</label>
+            <input id="s-x2" type="text" inputmode="numeric" value="560" autocomplete="off">
+            <p class="error" id="s-x2-error"></p>
+          </div>
+        </form>
+        <div id="simple-results" class="results" aria-live="polite"></div>
+      </div>
+
+      <div id="panel-adv" role="tabpanel" aria-labelledby="tab-adv" hidden>
+        <div class="form-grid">
+          <div class="field">
+            <label for="adv-rows">Groups (rows)</label>
+            <select id="adv-rows"><option>2</option><option selected>3</option><option>4</option><option>5</option></select>
+          </div>
+          <div class="field">
+            <label for="adv-cols">Outcomes (columns)</label>
+            <select id="adv-cols"><option selected>2</option><option>3</option><option>4</option><option>5</option></select>
+          </div>
+          <p class="hint full" style="margin:0;">Enter <strong>counts</strong> (not percentages) and rename the groups and outcomes if you like. Example: three ad variants (rows) by converted / did not convert (columns).</p>
+        </div>
+        <div class="grid-wrap"><div id="adv-grid"></div></div>
+        <p class="error" id="adv-error"></p>
+        <div id="adv-results" class="results" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how-to-read" class="section wrap narrow">
+    <h2>How to read your results</h2>
+    <p>A chi-square test compares the counts you <em>observed</em> with the counts you would <em>expect</em> if group and outcome were unrelated. The bigger the gap, the bigger χ², and the smaller the <strong>p-value</strong>: the probability of seeing differences this large if the groups were truly the same. Below your threshold (10%, 5% or 1% for 90, 95 or 99% confidence), the result is statistically significant.</p>
+    <p><strong>Cramér's V</strong> tells you how strong the relationship is, from 0 to 1. With a lot of traffic even a trivial difference is "significant", so always read the effect size next to the p-value.</p>
+    <p>Want the size of the lift with a confidence interval, or how many visitors a test needs? Use the <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/ab-test-calculator/">free A/B Test Calculator</a>.</p>
+  </section>
+
+  <section id="methodology" class="section wrap narrow">
+    <h2>Methodology</h2>
+    <p>Chi-square test of independence on an r × c table of counts:</p>
+    <div class="formula">E(i,j) = (row total i × column total j) / grand total
+χ² = Σ (O − E)² / E        degrees of freedom = (r − 1)(c − 1)
+p-value = P(χ²(df) &gt; observed χ²)
+Cramér's V = √( χ² / (N · min(r − 1, c − 1)) )</div>
+    <p>With the Yates correction (2×2 only), each |O − E| is reduced by 0.5 before squaring. Effect-size labels use Cohen's benchmarks scaled by the table size (for a 2×2 table: below 0.1 negligible, 0.1 small, 0.3 medium, 0.5 large).</p>
+    <p>For a 2×2 table without correction, χ² equals the square of the pooled two-proportion z statistic, so both tests give the same p-value.</p>
+    <p><strong>Assumptions:</strong> each observation is counted once and belongs to exactly one cell, observations are independent (the same visitor should not appear twice), and expected counts are large enough: the usual rule is at least 5 in every cell. The calculator warns you when this is not the case. It does not correct for multiple comparisons or repeated looks at the data.</p>
+  </section>
+
+  <section id="faq" class="section wrap narrow faq">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>What is a chi-square test used for in marketing?</summary>
+      <p>It tests whether two categorical variables are related, for example whether conversion (yes or no) depends on which variant a visitor saw, or whether conversion differs across channels. It compares the counts you observed with the counts you would expect if there were no relationship.</p>
+    </details>
+    <details>
+      <summary>Chi-square test or z-test for an A/B test?</summary>
+      <p>For a simple control-versus-variant comparison of conversion rates they give the same p-value: the uncorrected 2×2 chi-square statistic equals the square of the two-proportion z statistic. Chi-square is more general because it also handles three or more groups or outcomes.</p>
+    </details>
+    <details>
+      <summary>What does the p-value mean here?</summary>
+      <p>It is the probability of seeing differences at least as large as yours if the groups were truly the same. If it is below your threshold (10%, 5% or 1% for 90, 95 or 99% confidence) the result is called statistically significant.</p>
+    </details>
+    <details>
+      <summary>What if some expected counts are below 5?</summary>
+      <p>The chi-square approximation becomes unreliable when expected counts are small. Collect more data, merge sparse categories, or use Fisher's exact test for a 2×2 table.</p>
+    </details>
+    <details>
+      <summary>What is Cramér's V?</summary>
+      <p>Cramér's V is an effect-size measure from 0 (no association) to 1 (perfect association). It tells you how strong a relationship is, which matters because a very large sample can make a tiny difference statistically significant.</p>
+    </details>
+    <details>
+      <summary>If the test is significant, which group is different?</summary>
+      <p>A significant chi-square test on a table with more than two groups only says that at least one group differs. Compare the row percentages, or run pairwise comparisons with an adjustment for multiple tests, to find where the difference is.</p>
+    </details>
+  </section>
+
+  <section class="wrap narrow">
+    <h2 class="sr-only">Related tools</h2>
+    <ul class="related">
+      <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/ab-test-calculator/">A/B Test Calculator: sample size &amp; confidence intervals</a></li>
+    </ul>
+    <aside class="disclaimer" aria-labelledby="disclaimer-title">
+      <h2 id="disclaimer-title">Free tool &amp; disclaimer</h2>
+      <p>This tool is provided free of charge for general informational and educational purposes only. It is offered "as is", without warranty of any kind, and does not constitute professional, statistical, financial, legal or marketing advice. Results depend on the accuracy of your inputs and on the statistical assumptions stated on this page; you are solely responsible for decisions taken on the basis of the results. To the fullest extent permitted by law, the author accepts no liability for any loss or damage arising from use of this tool. This is an independent personal initiative by Anthony Skolozdrzyk-Ardouin; it is not affiliated with, endorsed by, or representative of any current or former employer. Calculations run entirely in your browser: the data you enter is not sent to or stored on any server. Anonymous usage analytics (Google Analytics) are collected on this site.</p>
+    </aside>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <p>&copy; <span id="year">2026</span> Anthony Skolozdrzyk-Ardouin. Free tool for free use.</p>
+    <p><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/">Home</a> &middot; <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#work">More free tools</a> &middot; <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/">Blog</a></p>
+  </div>
+</footer>
+
+<script type="module" src="tool.js"></script>
+</body>
+</html>
