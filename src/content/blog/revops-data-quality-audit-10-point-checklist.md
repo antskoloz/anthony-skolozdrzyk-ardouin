@@ -10,7 +10,7 @@ tags:
   - crm
   - sql
   - revenue operations
-draft: true
+draft: false
 ---
 
 > **Short answer:** Start with a quick manual test: pull 100 recent records, mark the ones with an obvious error, and count the clean ones. A Harvard Business Review study using this method found that on average 47% of newly created records had at least one critical error. Then work through ten checks, from missing owners to orphaned records, with SQL where it helps.
