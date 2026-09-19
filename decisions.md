@@ -58,6 +58,24 @@ ADR log. Superseded decisions are marked as such, not deleted or edited in place
 
 ---
 
+## ADR-005: Plain language first for the free statistical tools
+
+**Date:** 2026-09-19
+**Status:** Accepted
+
+**Context:** After review, Anthony found the first versions of the A/B Test Calculator and the Chi-Square Calculator too "geeky" for ordinary marketers: statistical vocabulary (confidence level, power, minimum detectable effect, one-sided test, χ², degrees of freedom, expected counts, Cramér's V) was in the main inputs and results.
+
+**Options considered:**
+1. Keep the tools as analyst tools and add glossary text only.
+2. Rework inputs, results and page copy to business language, keep the exact same statistics underneath, and move technical output into collapsed details.
+3. Remove the statistics that are hard to explain.
+
+**Decision:** Option 2. The maths and the tested `stats.js` modules do not change (a small adjusted-residuals function is added for "which group stands out"). What changes is the interface: fewer required inputs with defaults and presets, expert options collapsed, a headline verdict, plain-English explanations with the luck framing rather than "1 − p", a range visual, "what to do next", and a concept glossary on the page. The principles are in [specs/free-tools.md](specs/free-tools.md) and apply to any future statistical tool. The Chi-Square tool keeps its folder and URL (people search for "chi-square calculator") but its headline speaks about groups.
+
+**Consequences:** More page copy to maintain and translate on the homepage cards. Some expert controls are one click further away. Presets (small / medium / large improvement) are a judgement call and are labelled as such. The "stands out" list is descriptive and is not corrected for multiple comparisons; the page says so.
+
+---
+
 ## ADR-002: Cloudflare Worker OAuth proxy + GitHub Actions Pages deploy
 
 **Date:** 2026-09-13

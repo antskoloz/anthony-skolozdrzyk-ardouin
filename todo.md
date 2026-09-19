@@ -13,6 +13,11 @@ Spec: [specs/free-tools.md](specs/free-tools.md). One commit per tool, including
 - [ ] Full check: `npm run build:all`, browser pass on each tool and all 3 homepages
 - [ ] Push (only when Anthony says so) and confirm the Actions deploy is green
 
+## Rework (requested after review)
+- [ ] Tool 1 (`ab-test-calculator`) business-friendly rework: simplified inputs, headline verdicts, range bar, glossary
+- [ ] Tool 2 (`chi-square-calculator`) business-friendly rework: group rows, bars, "who stands out", glossary
+- [ ] Update homepage cards (EN/FR/DE) to the new plain wording
+
 ## Carried over
 - [ ] Verify https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/decline-code-lookup/ is live after the deploy
 - [ ] Delete the standalone `antskoloz/decline-code-lookup` repo (its old URLs will 404 — no redirect is possible from a deleted Pages site)

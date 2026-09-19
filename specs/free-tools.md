@@ -28,31 +28,42 @@ Short form (cards / "Free tools" block): "Free tool for free use. Provided as is
 
 Inside `#work` on `public/index.html`, `public/fr/index.html`, `public/de/index.html`: a "Free tools" sub-block after the Decline Code Lookup card — heading, a one-line "free, no sign-up" note with the short disclaimer, and a grid of compact cards (badge, name, one-line benefit, tags, **Open** → `projects/<tool>/`). Shipping a tool means adding its card to all three homepages and its URL to `public/sitemap.xml`, in the same change. Card styles live in `public/assets/css/style.css`.
 
-## Tool 1 — A/B Test Sample Size & Confidence Calculator
+## Plain-language principles (Tools 1 and 2, and any future statistical tool)
 
-Path `projects/ab-test-calculator/`. Question answered: *was my test big enough, and how sure can I be?*
+Added after review: the first version was too "geeky" for a typical marketer. Decision record: [decisions.md](../decisions.md) ADR-005.
 
-**Plan mode** — inputs: baseline conversion rate p₁ (%), minimum detectable effect (relative % or absolute pp), confidence level (90/95/99 %), power (80/90 %), sides (two-sided default), optional daily visitors and number of variants. Output: required sample size per variant and total, estimated duration in days when traffic is given.
+- **Plain language first.** Inputs and headings use business words (visitors, conversions, "how sure do you want to be"), not statistical ones. Any technical term that must appear is glossed in the same sentence.
+- **Few inputs, sensible defaults.** Only what a marketer knows is asked. Expert options (power, one-/two-sided, number of variants, Yates correction) live in a collapsed "Advanced settings" block.
+- **One clear answer.** Every result opens with a headline verdict in a coloured box, then "what this means" in one or two sentences, then a visual, then "what to do next".
+- **Technical details are collapsed.** p-value, z, χ², degrees of freedom, expected counts, standard errors live in a collapsed "Technical details" block for analysts.
+- **Guidance on the page.** Each tool page has a "how to use it" strip, a worked example, a plain-English glossary ("Key ideas explained") with everyday analogies, a "before you trust the result" checklist, and FAQs written for business readers. The statistical method and assumptions stay in the Methodology section.
+- **No misleading shortcuts.** The tools never present 1 − p as "the probability the variant is better". The p-value is phrased as "if the versions were really identical, a gap this big would happen by luck about N times in 100".
 
-n per variant = (z_α·√(2·p̄·(1−p̄)) + z_β·√(p₁(1−p₁) + p₂(1−p₂)))² / (p₂ − p₁)², with p₂ = p₁ + effect, p̄ = (p₁+p₂)/2, z_α = z(1−α/2) two-sided or z(1−α) one-sided, z_β = z(power). Rounded up. Duration = ceil(n × variants / daily visitors).
+## Tool 1 — A/B Test Calculator
 
-**Check mode** — inputs: visitors and conversions for control and variant, confidence level (check mode is always two-sided). Outputs: both conversion rates, absolute lift (pp) and relative lift (%), confidence interval on the absolute difference (Wald, unpooled SE) with the relative interval derived by dividing by the control rate, two-proportion z-test p-value (pooled SE), the smallest effect the sample could reliably detect (MDE at 80 % power for the observed sample sizes), and a plain-English verdict. Observed/post-hoc power is deliberately not shown: it is a function of the p-value and misleads.
+Path `projects/ab-test-calculator/`. Question answered: *how many visitors do I need, and did version B really win?* Formulas are unchanged from the first version.
 
-**Verdicts:** significant and interval excludes 0 → "significant at X %"; not significant → "not enough evidence yet" plus how many more visitors the plan-mode formula suggests; significant but interval wide (upper/lower bound ratio > 4 or lower bound < 20 % of the point estimate) → warning that the true lift could be much smaller/larger.
+**Intro strip:** three steps: 1 Plan (how many visitors), 2 Run the test, 3 Check (did B win).
 
-**Warnings:** peeking/stopping early, testing many variants or metrics (multiple comparisons), sample fewer than ~100 conversions per variant, running less than a full business cycle.
+**Tab "Before the test: how many visitors do I need?"** Inputs: current conversion rate (%) with an example and a typical-range hint; **smallest improvement worth detecting** as a relative % with presets (small +5 %, medium +10 %, large +20 %, or custom) and a live translation ("5.0 % → 5.5 %"); **how sure do you want to be** (Standard 95 % default, Extra careful 99 %, Quicker 90 %); optional daily visitors. Advanced settings (collapsed): power 80/90 %, one-/two-sided, number of versions including control (default 2).
+Output: headline (visitors per version and in total), duration when traffic is given, a realism signal (≤ 4 weeks good, ≤ 8 weeks warn, > 8 weeks bad) with what to do if it is too long, a "how the answer changes" table (improvements of +5, +10, +20, +50 % at the same confidence), and a checklist.
+n per variant = (z_α·√(2·p̄·(1−p̄)) + z_β·√(p₁(1−p₁) + p₂(1−p₂)))² / (p₂ − p₁)², p₂ = p₁ × (1 + relative improvement), rounded up; duration = ceil(n × versions / daily visitors).
 
-**Edge cases:** conversions > visitors, negative or non-numeric input, zero visitors, baseline 0 % or 100 % (sample-size undefined → message), effect that pushes p₂ outside 0–100 %, control equals variant (p = 1, lift 0).
+**Tab "After the test: did B really win?"** Inputs: for A (current) and B (new) the number of people who saw it and the number who took the action, plus "how sure do you want to be". Output: headline verdict (B is better / B is worse / no clear winner yet); the luck sentence ("if A and B were really identical, a gap this big would happen by luck about N times in 100"); the **likely real improvement** as a range with a horizontal range bar around zero (Worse ← 0 → Better); "what to do next" per verdict (roll out and keep monitoring / keep A / keep running until about N visitors per version, or decide on other grounds); "before you trust this result" checklist. Collapsed Technical details: conversion rates, absolute lift, p-value (pooled two-proportion z-test, two-sided), z, Wald interval on the absolute difference (relative interval = bounds / control rate), smallest lift the sample could detect at 80 % power. Warnings: fewer than 100 conversions per version, fewer than 10 conversions or non-conversions in a group, zero conversions in both.
 
-## Tool 2 — Chi-Square Test Calculator
+**Edge cases:** conversions > visitors, non-numeric or negative input, baseline 0 % or 100 %, improvement that pushes the rate to 100 % or more, identical versions (p = 1), zero conversions in both versions.
 
-Path `projects/chi-square-calculator/`. Question answered: *is the difference between control and variant real, or noise?*
+## Tool 2 — Chi-Square Calculator
 
-**Simple mode:** 2×2 — control vs variant, converted vs not converted (inputs: visitors and conversions per group; non-converted derived). **Advanced mode:** contingency table up to 5×5 with editable row/column labels (e.g. 3 variants, or channel × converted).
+Path `projects/chi-square-calculator/` (folder and URL kept for search intent). Question answered: *do these groups really behave differently, or is it just luck?* Distinct from Tool 1: Tool 1 plans a test and measures the size of a lift between two versions; Tool 2 compares **two or more groups** at once (channels, segments, ad variants, countries).
 
-**Outputs:** χ² = Σ (O − E)²/E with E = row total × column total / grand total; degrees of freedom (r−1)(c−1); p-value (upper tail of the χ² distribution); result at 90/95/99 % (reject / do not reject independence); expected-counts table; Cramér's V = √(χ² / (N·min(r−1, c−1))) with a small/medium/large label; optional Yates continuity correction (2×2 only, off by default; when on, |O−E| reduced by 0.5); plain-English interpretation. Relative to Tool 1: Tool 1 plans and estimates the lift; Tool 2 tests observed counts and generalises to multiple groups.
+**Tabs:** "2 groups" (people and conversions for each); "Several groups" (2–8 groups, one row per group: name, people, conversions, add/remove rows); "Advanced: several outcomes" (table up to 5×5 of counts with editable labels, e.g. survey answers by segment).
+Common inputs: "how sure do you want to be" (Standard 95 % / Extra careful 99 % / Quicker 90 %). Advanced settings (collapsed): Yates continuity correction (2×2 only, off by default).
 
-**Warnings/edge cases:** any expected count < 5 (χ² approximation unreliable, suggest Fisher's exact test — not implemented); zero row/column total (undefined → message); non-integer or negative counts rejected; only a whole table with at least 2×2 accepted; significant χ² on a multi-group table says *some* group differs, not which one.
+**Output:** headline verdict ("the groups behave differently" / "no clear difference"); the luck sentence; a bar chart of the conversion rate of each group (yes/no tabs); "which groups stand out": groups whose count differs from what luck would predict (|adjusted residual| > 1.96), stated as "converts more/less than expected", with a caveat that this is descriptive and not corrected for multiple looks; "strength of the difference" as a plain label (very small / small / moderate / strong, from Cramér's V scaled by min(r−1, c−1)); "what to do next". Collapsed Technical details: χ², degrees of freedom, p-value, Cramér's V, N, expected-counts table.
+χ² = Σ (O − E)²/E, E = row total × column total / N, df = (r−1)(c−1); adjusted residual = (O − E) / √(E·(1 − row total/N)·(1 − column total/N)); for an uncorrected 2×2 table |adjusted residual| = √χ² = |z| of the pooled two-proportion test.
+
+**Warnings/edge cases:** any expected count < 5 → "some groups have too few people for this test to be reliable" (Fisher's exact test suggested for 2×2, not implemented); a row or column total of zero; non-integer or negative counts; conversions greater than people; a significant result says *some* group differs, and the standouts show where.
 
 ## Tool 3 — Marketing ROI Calculator (ROAS · CAC · LTV)
 
