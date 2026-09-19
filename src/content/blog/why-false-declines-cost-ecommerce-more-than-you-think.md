@@ -3,7 +3,7 @@ title: Why False Declines Cost E-commerce More Than You Think
 description: False declines turn good customers away. See what the data says
   about their cost, why they happen, and how to measure and reduce them in
   e-commerce.
-pubDate: 2026-09-26
+pubDate: 2026-09-19T10:02:00.000+02:00
 tags:
   - payments
   - false declines
