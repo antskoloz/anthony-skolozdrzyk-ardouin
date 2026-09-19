@@ -40,6 +40,24 @@ ADR log. Superseded decisions are marked as such, not deleted or edited in place
 
 ---
 
+## ADR-004: Free marketing tools as static vanilla projects, English-only, homepage cards trilingual
+
+**Date:** 2026-09-19
+**Status:** Accepted
+
+**Context:** Anthony wants to build his personal brand with free calculators for marketing people (A/B test sample size and confidence, chi-square, ROAS/CAC/LTV, UTM builder), each in its own `projects/` subfolder and highlighted on the homepage when it ships, always labelled free and carrying a legal disclaimer.
+
+**Options considered:**
+1. One Astro app per tool (like Decline Code Lookup).
+2. One combined "tools" app with a page per tool.
+3. One static vanilla HTML/CSS/JS folder per tool, no build step.
+
+**Decision:** Option 3. Each tool is independent (as [specs/projects.md](specs/projects.md) requires), a calculator needs no framework, and static folders are copied without `npm ci`/`npm run build`, so CI time does not grow (the consequence flagged in ADR-003). Each tool carries its own copy of the small shared CSS and stats code rather than importing across projects. Further decisions: tool UIs are English-only while homepage cards are translated in EN/FR/DE; tool pages load the existing GA4 gtag (`G-QXP44186J4`) and state in the disclaimer that inputs never leave the browser; the homepage gets a "Free tools" grid inside the Work section; every tool and card carries a "Free tool" badge and the disclaimer. Details in [specs/free-tools.md](specs/free-tools.md).
+
+**Consequences:** Stats code is duplicated across Tools 1 and 2, so a bug fix must be applied to both copies (mitigated by the same reference-value test in each). Tool pages are English while the FR/DE homepages link to them. Analytics on the tools means the disclaimer must keep mentioning it. The legal disclaimer wording is a sensible default, not legal advice, and is for Anthony to confirm.
+
+---
+
 ## ADR-002: Cloudflare Worker OAuth proxy + GitHub Actions Pages deploy
 
 **Date:** 2026-09-13

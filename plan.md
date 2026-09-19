@@ -19,6 +19,18 @@
 - [x] `projects/` folder convention + import Decline Code Lookup (see [decisions.md](decisions.md) ADR-003)
 - [ ] Verify the new Decline Code Lookup URL live, then delete the standalone `decline-code-lookup` repo
 
+## Phase 4 — Free marketing tools (weekend of 2026-09-19/20)
+
+Behavior in [specs/free-tools.md](specs/free-tools.md), decision in [decisions.md](decisions.md) ADR-004. Each tool ships with its homepage card (EN/FR/DE), sitemap entry, "Free tool" badge and disclaimer.
+
+- [ ] A/B Test Sample Size & Confidence Calculator — `projects/ab-test-calculator/`
+- [ ] Chi-Square Test Calculator — `projects/chi-square-calculator/`
+- [ ] Marketing ROI Calculator (ROAS · CAC · LTV) — `projects/marketing-roi-calculator/`
+- [ ] UTM Link Builder — `projects/utm-builder/`
+- [ ] Anthony reviews the disclaimer wording (default text is not legal advice)
+
+Cut order if the weekend slips: UTM bulk mode, then Tool 4, then Tool 3's benchmark traffic-lights. Tools 1–2 are not cut.
+
 ## Phase 3 — Follow-ups (not started)
 
 - [ ] Custom domain + `CNAME` (would require updating all absolute URLs across HTML/sitemap/robots/Astro config)
