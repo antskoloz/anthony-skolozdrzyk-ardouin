@@ -1,9 +1,16 @@
 ---
-title: "Why AI analysts fail on bad metric definitions"
-description: "AI can write valid SQL in seconds, but it can't know which definition of revenue your CFO approved. Why a governed metrics layer matters, with benchmark data."
+title: Why AI analysts fail on bad metric definitions
+description: AI can write valid SQL in seconds, but it can't know which
+  definition of revenue your CFO approved. Why a governed metrics layer matters,
+  with benchmark data.
 pubDate: 2026-09-19
-tags: ["text-to-sql", "ai analytics", "semantic layer", "business intelligence", "data governance"]
-draft: true
+tags:
+  - text-to-sql
+  - ai analytics
+  - semantic layer
+  - business intelligence
+  - data governance
+draft: false
 ---
 
 > **Short answer:** Modern AI can write SQL that runs. It cannot know which definition of "revenue" or "active customer" your business has agreed on. Give it raw tables and it will return fast, confident, inconsistent numbers. Give it a governed metrics layer, with one definition per metric, and accuracy improves sharply. The bottleneck is your definitions, not the model.
