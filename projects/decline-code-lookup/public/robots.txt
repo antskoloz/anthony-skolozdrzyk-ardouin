@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://antskoloz.github.io/decline-code-lookup/sitemap-index.xml
+Sitemap: https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/decline-code-lookup/sitemap-index.xml

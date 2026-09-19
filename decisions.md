@@ -22,6 +22,24 @@ ADR log. Superseded decisions are marked as such, not deleted or edited in place
 
 ---
 
+## ADR-003: `projects/` folder with one self-contained app per subfolder
+
+**Date:** 2026-09-19
+**Status:** Accepted
+
+**Context:** Decline Code Lookup lived in its own repository with its own GitHub Pages site, and Anthony wants future projects to live in this repo instead, one subfolder each, with the standalone repo deleted.
+
+**Options considered:**
+1. Merge project code into the root Astro app (shared `src/`, one build).
+2. npm workspaces with a shared lockfile.
+3. Independent subfolders, each built on its own by a small script, all published under `/projects/<name>/`.
+
+**Decision:** Option 3. Projects keep their own dependencies and tooling (they may not all be Astro), the root site is untouched by them, and one script (`scripts/build-projects.mjs`) plus one workflow step publish them. The project's Astro `base` moves to `/anthony-skolozdrzyk-ardouin/projects/decline-code-lookup`, and it was imported with `git subtree` so its history survives the old repo's deletion. Contract in [specs/projects.md](specs/projects.md).
+
+**Consequences:** Project URLs change, and the old `antskoloz.github.io/decline-code-lookup/` URLs stop working once the standalone repo is deleted (GitHub Pages cannot redirect from a deleted repo), so existing inbound links and search rankings for the old URLs are lost. CI build time grows with each project. Projects share nothing with the root site, so a design or tracking change to the root does not propagate to them.
+
+---
+
 ## ADR-002: Cloudflare Worker OAuth proxy + GitHub Actions Pages deploy
 
 **Date:** 2026-09-13

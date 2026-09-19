@@ -10,4 +10,4 @@ Anthony Skolozdrzyk-Ardouin's personal brand site — trilingual (EN/FR/DE) home
 
 ## Doc set
 
-Following the spec-driven-development methodology: [plan.md](plan.md) (phased roadmap), [architecture.md](architecture.md) (system design), [specs/blog.md](specs/blog.md) (blog behavior spec), [decisions.md](decisions.md) (ADR log), [todo.md](todo.md) (current sprint). Treat these as the source of truth; a conversation is not canonical until something is promoted into one of these files.
+Following the spec-driven-development methodology: [plan.md](plan.md) (phased roadmap), [architecture.md](architecture.md) (system design), [specs/blog.md](specs/blog.md) (blog behavior spec), [specs/projects.md](specs/projects.md) (`projects/` folder contract), [decisions.md](decisions.md) (ADR log), [todo.md](todo.md) (current sprint). Treat these as the source of truth; a conversation is not canonical until something is promoted into one of these files.

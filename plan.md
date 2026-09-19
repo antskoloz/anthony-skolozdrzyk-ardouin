@@ -15,7 +15,9 @@
 - [x] Fill in the real `base_url` in `public/admin/config.yml`
 - [x] Flip repo Pages source to "GitHub Actions" in GitHub Settings → Pages
 - [x] Push and confirm the Actions workflow deploys successfully — live at https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/
-- [ ] Log into `/admin`, publish a first real post
+- [x] Log into `/admin`, publish a first real post
+- [x] `projects/` folder convention + import Decline Code Lookup (see [decisions.md](decisions.md) ADR-003)
+- [ ] Verify the new Decline Code Lookup URL live, then delete the standalone `decline-code-lookup` repo
 
 ## Phase 3 — Follow-ups (not started)
 
