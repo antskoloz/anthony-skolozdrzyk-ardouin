@@ -1,9 +1,15 @@
 ---
 title: "SQL window functions: 10 patterns for real analysis"
-description: "Window functions keep your rows while you calculate across them. Learn ten patterns: ranking, deduplication, running totals, LAG, cohorts and streaks."
+description: "Window functions keep your rows while you calculate across them.
+  Learn ten patterns: ranking, deduplication, running totals, LAG, cohorts and
+  streaks."
 pubDate: 2026-09-19
-tags: ["sql", "window functions", "data analysis", "payments analytics"]
-draft: true
+tags:
+  - sql
+  - window functions
+  - data analysis
+  - payments analytics
+draft: false
 ---
 
 > **Short answer:** Window functions calculate across rows related to the current row *without collapsing them* the way `GROUP BY` does. A handful of patterns (ranking, deduplication, running totals, `LAG`, percent of total, bucketing and gaps-and-islands) cover most everyday analytical work in a single readable query.
