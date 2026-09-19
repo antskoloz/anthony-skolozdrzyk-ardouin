@@ -85,8 +85,6 @@ Start with one question: *of the payments we attempted, how many were declined, 
 - **By issuer or card type.** One issuer with a high decline rate points to a specific fix.
 - **By customer type.** New customers and returning customers behave differently.
 
-If you want to see this kind of breakdown in practice, my demo dashboard [Ledger](https://antskoloz.github.io/optimization-payment/) ranks decline drivers by their estimated revenue impact.
-
 ## Frequently asked questions
 
 **What is the difference between a false decline and a false positive?**

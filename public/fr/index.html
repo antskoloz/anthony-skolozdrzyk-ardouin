@@ -92,14 +92,6 @@
     },
     {
       "@type": "Question",
-      "name": "Quelle est l'expérience d'Anthony sur les taux d'autorisation de paiement ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Il a développé Ledger, une plateforme d'analytics paiement qui aide les marchands à diagnostiquer et récupérer le revenu perdu lié aux transactions refusées, en analysant les taux d'autorisation, les motifs de refus et la performance des banques émettrices."
-      }
-    },
-    {
-      "@type": "Question",
       "name": "Dans quels secteurs et avec quels outils Anthony est-il spécialisé ?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -133,7 +125,7 @@
         <li><a href="#about">À propos</a></li>
         <li><a href="#experience">Expérience</a></li>
         <li><a href="#skills">Compétences</a></li>
-        <li><a href="#projects">Projets</a></li>
+        <li><a href="#work">Travaux</a></li>
         <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/">Blog</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -159,7 +151,7 @@
     <a href="#about">À propos</a>
     <a href="#experience">Expérience</a>
     <a href="#skills">Compétences</a>
-    <a href="#projects">Projets</a>
+    <a href="#work">Travaux</a>
     <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/">Blog</a>
     <a href="#faq">FAQ</a>
     <a href="#contact">Contact</a>
@@ -201,7 +193,7 @@
 
         <div class="hero-ctas">
           <a href="#contact" class="btn btn-primary">Discutons</a>
-          <a href="#projects" class="btn btn-outline">Voir mes projets</a>
+          <a href="#work" class="btn btn-outline">Voir mes travaux</a>
         </div>
       </div>
 
@@ -520,130 +512,16 @@
     </div>
   </section>
 
-  <!-- Projects -->
-  <section id="projects" class="section section--alt">
+  <!-- Work -->
+  <section id="work" class="section section--alt">
     <div class="container">
       <div class="section-head">
-        <p class="eyebrow">Projets</p>
         <h2>Travaux sélectionnés</h2>
-        <p>Des projets personnels où j'applique la même rigueur analytique à mes propres produits.</p>
-      </div>
-
-      <div class="project-card project-card--ledger">
-        <div class="project-info">
-          <p class="eyebrow">Analytics Paiements · Projet personnel</p>
-          <h3>Ledger — Plateforme d'optimisation des paiements</h3>
-          <p>Un tableau de bord d'analytics paiement qui aide les marchands à comprendre et réduire les transactions refusées. Les marchands importent leur historique de paiement (Stripe, Adyen, Checkout.com, ou connexion directe) et obtiennent une répartition des refus par moyen de paiement, banque émettrice et motif d'échec — ainsi qu'un ensemble de recommandations classées, chacune chiffrée par impact financier estimé.</p>
-          <div class="tag-list" style="margin-bottom:24px;">
-            <span class="tag">Analyse du taux d'autorisation</span>
-            <span class="tag">Diagnostic des refus</span>
-            <span class="tag">Détection des faux positifs</span>
-            <span class="tag">Moteur de recommandations</span>
-          </div>
-          <div class="project-links">
-            <a class="btn btn-primary btn-sm" href="https://antskoloz.github.io/optimization-payment/" target="_blank" rel="noopener">Voir la démo en ligne</a>
-          </div>
-
-          <div class="project-reco">
-            <h4>Principales recommandations identifiées (jeu de données exemple)</h4>
-            <ul>
-              <li>Relances automatiques pour fonds insuffisants <strong>+69 000 €/an</strong></li>
-              <li>Ajout de moyens de paiement locaux <strong>+41 700 €/an</strong></li>
-              <li>Simplification des parcours 3DS <strong>+34 300 €/an</strong></li>
-              <li>Revue des règles antifraude <strong>+26 300 €/an</strong></li>
-              <li>Notifications avant expiration de carte <strong>+23 000 €/an</strong></li>
-              <li>Demande d'exemption DSP2 <strong>+7 000 €/an</strong></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="project-metrics">
-          <div class="metric-box">
-            <strong>81,4 %</strong>
-            <span>Taux d'autorisation actuel</span>
-          </div>
-          <div class="metric-box">
-            <strong>+4,6 pts</strong>
-            <span>Amélioration potentielle identifiée</span>
-          </div>
-          <div class="metric-box">
-            <strong>1 842</strong>
-            <span>Transactions refusées analysées par mois</span>
-          </div>
-          <div class="metric-box">
-            <strong>95 784 €</strong>
-            <span>Revenu mensuel à risque lié aux refus</span>
-          </div>
-          <div class="metric-box">
-            <strong>211</strong>
-            <span>Faux positifs détectés</span>
-          </div>
-          <div class="metric-box">
-            <strong>201 300 €/an</strong>
-            <span>Récupération estimée sur les 6 recommandations</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-card project-card--fraud">
-        <div class="project-info">
-          <p class="eyebrow">Fraud Analytics · Projet personnel</p>
-          <h3>Fraud Radar — Dashboard d'analyse de la fraude sur paiements par carte</h3>
-          <p>Un dashboard interactif d'analyse de la fraude couvrant 20 000 transactions par carte, développé de zéro en JavaScript natif avec un cross-filtering complet façon Power BI — cliquez sur un segment de graphique et chaque KPI et graphique se met à jour instantanément. La même analyse et le même reporting pourraient tout aussi bien être livrés dans Power BI ou Qlik ; cette réalisation illustre la même rigueur de dashboarding transposée dans une application JavaScript légère, sans framework.</p>
-          <div class="tag-list" style="margin-bottom:24px;">
-            <span class="tag">Détection de fraude</span>
-            <span class="tag">Cross-Filtering</span>
-            <span class="tag">Power BI · Qlik · JavaScript</span>
-            <span class="tag">Scoring de risque</span>
-          </div>
-          <div class="project-links">
-            <a class="btn btn-primary btn-sm" href="https://antskoloz.github.io/fraud-analytics-dashboard/" target="_blank" rel="noopener">Voir la démo en ligne</a>
-          </div>
-
-          <div class="project-reco">
-            <h4>Principaux signaux de risque identifiés (jeu de données exemple)</h4>
-            <ul>
-              <li>Taux de fraude sans authentification (vs 0,78 % pour la biométrie) <strong>4,44 %</strong></li>
-              <li>Tentatives d'arnaque générées par IA détectées <strong>375</strong></li>
-              <li>Hausse du taux de fraude liée à un signalement d'arnaque IA, le facteur de risque le plus élevé <strong>+7,5 pts</strong></li>
-              <li>Catégorie marchande la plus touchée par la fraude <strong>Électronique</strong></li>
-              <li>Ticket moyen frauduleux vs ticket légitime <strong>1,4x</strong></li>
-              <li>Transactions frauduleuses avec ≥1 signal de risque (vs 22,4 % pour les légitimes) <strong>65,8 %</strong></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="project-metrics">
-          <div class="metric-box">
-            <strong>1,70 %</strong>
-            <span>Taux de fraude sur 20 000 transactions</span>
-          </div>
-          <div class="metric-box">
-            <strong>61 444 $</strong>
-            <span>Montant frauduleux signalé à risque</span>
-          </div>
-          <div class="metric-box">
-            <strong>339</strong>
-            <span>Cas de fraude confirmés analysés</span>
-          </div>
-          <div class="metric-box">
-            <strong>4,44 %</strong>
-            <span>Taux de fraude sans authentification</span>
-          </div>
-          <div class="metric-box">
-            <strong>375</strong>
-            <span>Tentatives d'arnaque générées par IA détectées</span>
-          </div>
-          <div class="metric-box">
-            <strong>65,8 %</strong>
-            <span>Transactions frauduleuses avec ≥1 signal de risque</span>
-          </div>
-        </div>
       </div>
 
       <div class="project-card project-card--decline">
         <div class="project-info">
-          <p class="eyebrow">Éducation marchands · Projet personnel</p>
+          <p class="eyebrow">Éducation marchands</p>
           <h3>Decline Code Lookup — Glossaire des codes de refus de paiement par carte</h3>
           <p>Un glossaire gratuit et indépendant qui traduit en langage clair les codes de refus Visa, Mastercard et American Express à l'intention des marchands — ce que chaque code signifie, pourquoi il survient, et ce qu'il faut faire. Construit comme un site statique Astro avec une page dédiée par motif de refus, des données structurées et un fichier llms.txt, pensé pour être à la fois adapté aux moteurs de recherche et aux moteurs de réponse IA.</p>
           <div class="tag-list" style="margin-bottom:24px;">
@@ -653,7 +531,7 @@
             <span class="tag">Éducation paiements</span>
           </div>
           <div class="project-links">
-            <a class="btn btn-primary btn-sm" href="https://antskoloz.github.io/decline-code-lookup/" target="_blank" rel="noopener">Voir la démo en ligne</a>
+            <a class="btn btn-primary btn-sm" href="https://antskoloz.github.io/decline-code-lookup/" target="_blank" rel="noopener">Ouvrir</a>
           </div>
 
           <div class="project-reco">
@@ -707,10 +585,6 @@
           <p>Il dirige les Revenue Operations, et a précédemment construit la capacité analytique et de modélisation financière pour la division crypto et iGaming de Nexi, en co-pilotant l'unification des capacités analytiques sur la division eCommerce d'environ 1 000 personnes.</p>
         </div>
         <div class="faq-item">
-          <h3>Quelle est l'expérience d'Anthony sur les taux d'autorisation de paiement ?</h3>
-          <p>Il a développé Ledger, une plateforme d'analytics paiement qui aide les marchands à diagnostiquer et récupérer le revenu perdu lié aux transactions refusées, en analysant les taux d'autorisation, les motifs de refus et la performance des banques émettrices — voir la section Projets ci-dessus.</p>
-        </div>
-        <div class="faq-item">
           <h3>Dans quels secteurs et avec quels outils Anthony est-il spécialisé ?</h3>
           <p>Paiements, eCommerce, crypto et iGaming, avec SQL, Python, Power BI, et des plateformes data d'entreprise incluant Hive/Hadoop, Druid, Superset, Oracle SQL et MSSQL.</p>
         </div>
@@ -751,7 +625,7 @@
     <ul class="footer-links">
       <li><a href="#about">À propos</a></li>
       <li><a href="#experience">Expérience</a></li>
-      <li><a href="#projects">Projets</a></li>
+      <li><a href="#work">Travaux</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="footer-social">

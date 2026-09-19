@@ -79,7 +79,7 @@ Run a simple comparison instead of trusting any headline number:
 4. Track fraud rates and chargebacks alongside approvals.
 5. If you can, run a controlled rollout to a random share of traffic. Mixing populations is the most common way to overstate the effect.
 
-To see how decline patterns break down before and after a change like this, try my demo dashboard [Ledger](https://antskoloz.github.io/optimization-payment/). For the wider revenue picture, read [Why False Declines Cost E-commerce More Than You Think](https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/why-false-declines-cost-ecommerce-more-than-you-think/).
+For the wider revenue picture, read [Why False Declines Cost E-commerce More Than You Think](https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/why-false-declines-cost-ecommerce-more-than-you-think/).
 
 ## Frequently asked questions
 

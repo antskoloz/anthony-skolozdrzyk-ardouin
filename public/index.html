@@ -102,14 +102,6 @@
     },
     {
       "@type": "Question",
-      "name": "What is Anthony's experience with payment authorization rates?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Anthony built Ledger, a payment analytics platform that helps merchants diagnose and recover declined-transaction revenue by analyzing authorization rates, decline reasons and issuing-bank performance."
-      }
-    },
-    {
-      "@type": "Question",
       "name": "What industries and tools does Anthony specialize in?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -143,7 +135,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
+        <li><a href="#work">Work</a></li>
         <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/">Blog</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -169,7 +161,7 @@
     <a href="#about">About</a>
     <a href="#experience">Experience</a>
     <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
+    <a href="#work">Work</a>
     <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/">Blog</a>
     <a href="#faq">FAQ</a>
     <a href="#contact">Contact</a>
@@ -211,7 +203,7 @@
 
         <div class="hero-ctas">
           <a href="#contact" class="btn btn-primary">Let's chat</a>
-          <a href="#projects" class="btn btn-outline">See my work</a>
+          <a href="#work" class="btn btn-outline">See my work</a>
         </div>
       </div>
 
@@ -530,130 +522,16 @@
     </div>
   </section>
 
-  <!-- Projects -->
-  <section id="projects" class="section section--alt">
+  <!-- Work -->
+  <section id="work" class="section section--alt">
     <div class="container">
       <div class="section-head">
-        <p class="eyebrow">Projects</p>
         <h2>Selected work</h2>
-        <p>Side projects where I apply the same analytical rigor to my own products.</p>
-      </div>
-
-      <div class="project-card project-card--ledger">
-        <div class="project-info">
-          <p class="eyebrow">Payments Analytics · Side Project</p>
-          <h3>Ledger — Payment Optimization Platform</h3>
-          <p>A payment analytics dashboard that helps merchants understand and reduce transaction declines. Merchants import their payment history (Stripe, Adyen, Checkout.com, or direct connection) and get a breakdown of declines by payment method, issuing bank and failure reason — plus a ranked set of recommendations, each sized by estimated financial impact.</p>
-          <div class="tag-list" style="margin-bottom:24px;">
-            <span class="tag">Authorization Rate Analysis</span>
-            <span class="tag">Decline Diagnostics</span>
-            <span class="tag">False-Positive Detection</span>
-            <span class="tag">Recommendation Engine</span>
-          </div>
-          <div class="project-links">
-            <a class="btn btn-primary btn-sm" href="https://antskoloz.github.io/optimization-payment/" target="_blank" rel="noopener">View live demo</a>
-          </div>
-
-          <div class="project-reco">
-            <h4>Top recommendations surfaced (sample dataset)</h4>
-            <ul>
-              <li>Automatic retries for insufficient funds <strong>+€69,000/yr</strong></li>
-              <li>Local payment method addition <strong>+€41,700/yr</strong></li>
-              <li>Simplified 3DS flows <strong>+€34,300/yr</strong></li>
-              <li>Fraud rule review <strong>+€26,300/yr</strong></li>
-              <li>Pre-expiry card notifications <strong>+€23,000/yr</strong></li>
-              <li>PSD2 exemption application <strong>+€7,000/yr</strong></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="project-metrics">
-          <div class="metric-box">
-            <strong>81.4%</strong>
-            <span>Current authorization rate</span>
-          </div>
-          <div class="metric-box">
-            <strong>+4.6 pts</strong>
-            <span>Potential improvement identified</span>
-          </div>
-          <div class="metric-box">
-            <strong>1,842</strong>
-            <span>Monthly declined transactions analyzed</span>
-          </div>
-          <div class="metric-box">
-            <strong>€95,784</strong>
-            <span>Monthly revenue at risk from declines</span>
-          </div>
-          <div class="metric-box">
-            <strong>211</strong>
-            <span>False positives detected</span>
-          </div>
-          <div class="metric-box">
-            <strong>€201,300/yr</strong>
-            <span>Estimated recovery across 6 recommendations</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-card project-card--fraud">
-        <div class="project-info">
-          <p class="eyebrow">Fraud Analytics · Side Project</p>
-          <h3>Fraud Radar — Card Payment Fraud Analytics Dashboard</h3>
-          <p>An interactive fraud analytics dashboard covering 20,000 card transactions, built from scratch in vanilla JavaScript with full Power BI-style cross-filtering — click any chart segment and every KPI and chart updates instantly. The same analysis and report could equally be delivered in Power BI or Qlik; this build shows the same dashboarding discipline translated into a lightweight, framework-free JavaScript app.</p>
-          <div class="tag-list" style="margin-bottom:24px;">
-            <span class="tag">Fraud Detection</span>
-            <span class="tag">Cross-Filtering</span>
-            <span class="tag">Power BI · Qlik · JavaScript</span>
-            <span class="tag">Risk Scoring</span>
-          </div>
-          <div class="project-links">
-            <a class="btn btn-primary btn-sm" href="https://antskoloz.github.io/fraud-analytics-dashboard/" target="_blank" rel="noopener">View live demo</a>
-          </div>
-
-          <div class="project-reco">
-            <h4>Key risk signals surfaced (sample dataset)</h4>
-            <ul>
-              <li>No-authentication fraud rate (vs. 0.78% for biometric) <strong>4.44%</strong></li>
-              <li>AI-generated scam attempts flagged <strong>375</strong></li>
-              <li>Fraud-rate lift from an AI-scam flag, largest of all risk factors <strong>+7.5 pts</strong></li>
-              <li>Top merchant category for fraud cases <strong>Electronics</strong></li>
-              <li>Avg. fraud ticket vs. legitimate ticket <strong>1.4x</strong></li>
-              <li>Fraud transactions carrying &ge;1 risk flag (vs. 22.4% of legit) <strong>65.8%</strong></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="project-metrics">
-          <div class="metric-box">
-            <strong>1.70%</strong>
-            <span>Fraud rate across 20,000 transactions</span>
-          </div>
-          <div class="metric-box">
-            <strong>$61,444</strong>
-            <span>Fraud amount flagged at risk</span>
-          </div>
-          <div class="metric-box">
-            <strong>339</strong>
-            <span>Confirmed fraud cases analyzed</span>
-          </div>
-          <div class="metric-box">
-            <strong>4.44%</strong>
-            <span>Fraud rate with no authentication</span>
-          </div>
-          <div class="metric-box">
-            <strong>375</strong>
-            <span>AI-generated scam attempts flagged</span>
-          </div>
-          <div class="metric-box">
-            <strong>65.8%</strong>
-            <span>Fraud transactions carrying ≥1 risk flag</span>
-          </div>
-        </div>
       </div>
 
       <div class="project-card project-card--decline">
         <div class="project-info">
-          <p class="eyebrow">Merchant Education · Side Project</p>
+          <p class="eyebrow">Merchant Education</p>
           <h3>Decline Code Lookup — Card Decline Code Glossary</h3>
           <p>A free, independent glossary that translates Visa, Mastercard, and American Express decline codes into plain English for merchants — what each one means, why it happens, and exactly what to do about it. Built as a static Astro site with a dedicated page per decline reason, structured data, and an llms.txt file, aimed at being both search-engine and AI-answer-engine friendly.</p>
           <div class="tag-list" style="margin-bottom:24px;">
@@ -663,7 +541,7 @@
             <span class="tag">Payments Education</span>
           </div>
           <div class="project-links">
-            <a class="btn btn-primary btn-sm" href="https://antskoloz.github.io/decline-code-lookup/" target="_blank" rel="noopener">View live demo</a>
+            <a class="btn btn-primary btn-sm" href="https://antskoloz.github.io/decline-code-lookup/" target="_blank" rel="noopener">Open</a>
           </div>
 
           <div class="project-reco">
@@ -717,10 +595,6 @@
           <p>Leads Revenue Operations, and previously built the analytics and financial modeling capability for Nexi's crypto and iGaming vertical, co-leading the effort to unify analytics across the ~1,000-person eCommerce division.</p>
         </div>
         <div class="faq-item">
-          <h3>What is Anthony's experience with payment authorization rates?</h3>
-          <p>He built Ledger, a payment analytics platform that helps merchants diagnose and recover declined-transaction revenue by analyzing authorization rates, decline reasons and issuing-bank performance — see the Projects section above.</p>
-        </div>
-        <div class="faq-item">
           <h3>What industries and tools does Anthony specialize in?</h3>
           <p>Payments, eCommerce, crypto and iGaming, using SQL, Python, Power BI, and enterprise data platforms including Hive/Hadoop, Druid, Superset, Oracle SQL and MSSQL.</p>
         </div>
@@ -761,7 +635,7 @@
     <ul class="footer-links">
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
+      <li><a href="#work">Work</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="footer-social">
