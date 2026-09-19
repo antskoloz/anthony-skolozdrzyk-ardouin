@@ -3,7 +3,7 @@ title: Credit Card Decline Codes Explained in Plain English
 description: What do Visa, Mastercard and Amex decline codes mean? A
   plain-English guide to the most common codes and what merchants should do
   next.
-pubDate: 2026-09-27
+pubDate: 2026-09-19T10:00:00.000+02:00
 tags:
   - payments
   - decline codes
