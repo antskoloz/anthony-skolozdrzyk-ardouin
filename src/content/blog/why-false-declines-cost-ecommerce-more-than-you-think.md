@@ -1,9 +1,15 @@
 ---
-title: "Why False Declines Cost E-commerce More Than You Think"
-description: "False declines turn good customers away. See what the data says about their cost, why they happen, and how to measure and reduce them in e-commerce."
+title: Why False Declines Cost E-commerce More Than You Think
+description: False declines turn good customers away. See what the data says
+  about their cost, why they happen, and how to measure and reduce them in
+  e-commerce.
 pubDate: 2026-09-26
-tags: ["payments", "false declines", "authorization rate", "e-commerce"]
-draft: true
+tags:
+  - payments
+  - false declines
+  - authorization rate
+  - e-commerce
+draft: false
 ---
 
 > **Short answer:** A false decline is a legitimate purchase that gets refused. PYMNTS reports that 47% of merchants say false declines cost them sales and puts the industry-wide loss at an estimated $50 billion. Because most issuer declines carry a vague code, the fix starts with measuring declines by reason, not just by total.
