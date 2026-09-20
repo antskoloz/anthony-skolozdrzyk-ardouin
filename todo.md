@@ -19,8 +19,9 @@ Spec: [specs/free-tools.md](specs/free-tools.md). One commit per tool, including
 - [x] Update homepage cards (EN/FR/DE) to the new plain wording
 
 ## Next tools (chosen 2026-09-20; one commit each, including cards EN/FR/DE + sitemap)
-- [ ] Tool 5: `projects/saas-metrics-calculator/` — calc.js + tests, UI, disclaimer/badge, GA4, cards, sitemap, projects.md list
-- [ ] Tool 6: `projects/rice-prioritizer/` — same checklist
+- [x] Tool 5: `projects/saas-metrics-calculator/` — calc.js + tests, UI, disclaimer/badge, GA4, cards, sitemap, projects.md list
+- [x] Tool 6: `projects/rice-prioritizer/` — same checklist
+- [ ] Decide whether to retitle the homepage "Free tools for marketers" block now that it also holds finance / PM tools (EN/FR/DE)
 - [ ] Bench for later: Break-even & Pricing, Funnel What-If, Approval-Rate Uplift Value, attribution comparison, VAT (FR/DE)
 
 ## Carried over

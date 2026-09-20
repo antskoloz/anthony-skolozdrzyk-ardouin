@@ -28,8 +28,8 @@ Behavior in [specs/free-tools.md](specs/free-tools.md), decision in [decisions.m
 - [x] Marketing ROI Calculator (ROAS · CAC · LTV) — `projects/marketing-roi-calculator/`
 - [x] UTM Link Builder — `projects/utm-builder/`
 - [x] Rework Tools 1–2 for business readers, see [decisions.md](decisions.md) ADR-005 (plain-language inputs, headline verdicts, glossary)
-- [ ] SaaS Metrics & Runway Calculator — `projects/saas-metrics-calculator/` (Tool 5)
-- [ ] RICE / ICE Prioritizer — `projects/rice-prioritizer/` (Tool 6)
+- [x] SaaS Metrics & Runway Calculator — `projects/saas-metrics-calculator/` (Tool 5)
+- [x] RICE / ICE Prioritizer — `projects/rice-prioritizer/` (Tool 6)
 - [ ] Anthony reviews the disclaimer wording (default text is not legal advice)
 
 Cut order if the weekend slips: UTM bulk mode, then Tool 4, then Tool 3's benchmark traffic-lights. Tools 1–2 are not cut.
