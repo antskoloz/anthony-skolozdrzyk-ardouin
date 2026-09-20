@@ -25,7 +25,7 @@ Spec: [specs/free-tools.md](specs/free-tools.md). One commit per tool, including
 - [x] Share & favorites bar on all 6 tools and every blog post (ADR-006); required for every new tool from now on
 - [x] Tool 7: `projects/break-even-pricing-calculator/` — calc.js + tests, UI incl. share bar, card EN/FR/DE, sitemap, projects.md list
 - [x] Homepage: retitle section to "Free tools" and move Decline Code Lookup to the last card (EN/FR/DE)
-- [ ] Decide whether the "Work" nav label should become "Free tools" now (homepages, tool pages, blog and Decline layouts)
+- [x] Rename the "Work" nav label (and the hero "See my work" button) to "Free tools" everywhere (homepages EN/FR/DE, tool pages, blog and Decline layouts)
 - [ ] Decide whether Decline Code Lookup (Astro app, own layout) should get the share bar too
 - [ ] Bench for later: Break-even & Pricing, Funnel What-If, Approval-Rate Uplift Value, attribution comparison, VAT (FR/DE)
 

@@ -11,13 +11,13 @@ A family of free, no-sign-up calculators for marketers, product managers and fin
 - **English-only UI.** The homepage card for each tool is translated in EN/FR/DE.
 - **Computation runs in the browser.** No inputs are sent to or stored on a server. No `localStorage` of user data.
 - **Analytics:** the existing GA4 gtag `G-QXP44186J4` (same snippet as `public/index.html`). Nothing else is loaded from third parties.
-- **Header:** brand logo + primary nav linking back to the homepage (Work highlighted), then a slim bar with the tool name, same pattern as `projects/decline-code-lookup/src/components/Header.astro`.
+- **Header:** brand logo + primary nav linking back to the homepage (Free tools highlighted), then a slim bar with the tool name, same pattern as `projects/decline-code-lookup/src/components/Header.astro`.
 - **Free-tool label:** every tool page shows a "Free tool" badge and the line "Free for everyone to use, no sign-up." near the top; the homepage card carries the same badge.
 - **Disclaimer:** every tool page ends with the full disclaimer below; homepage cards and the "Free tools" block carry the short form.
 - **SEO:** canonical URL, OG/Twitter tags, JSON-LD `WebApplication` + `FAQPage`, a methodology section with formulas and assumptions, and the tool's URL listed in `public/sitemap.xml`.
 - **Accessibility/UX:** labelled inputs, results in an `aria-live` region, works at mobile width, inputs validated with inline messages (never a silent `NaN`).
 - **Share & favorites bar (mandatory on every tool, ADR-006):** a `share-bar` block near the end of the page, just above the related-tools links and the disclaimer, headed "Found this tool useful? Share it or save it." It holds plain-text links styled as buttons, with the tool's canonical URL and title baked into each `href` so they work without JavaScript: Share on LinkedIn, Share on X, Share on Facebook, Share on WhatsApp, Share by email (`mailto:`). Two buttons are revealed by the tool's own `share.js` (a copy per folder, loaded with `defer`): **Copy link** and **Add to favorites**. Browsers do not allow a page to create a bookmark, so the favorites button shows a platform-specific hint (Ctrl + D, ⌘ + D, or the browser-menu steps on iOS and Android). No third-party script, SDK, icon font or tracking pixel is loaded; the third-party site is only opened when the visitor clicks. Clicks are reported to the existing GA4 tag as a `share` event (`method`, `content_type`, `item_id`). New tools start from a copy of an existing tool's bar; do not ship a tool without it.
-- **Not on cards:** no "View code" button; user-facing copy avoids the word "projects" (use "tools"/"work"). Card button is "Open".
+- **Not on cards:** no "View code" button; user-facing copy avoids the word "projects" (use "tools"). Card button is "Open".
 
 ### Disclaimer (full form, English, on every tool page)
 

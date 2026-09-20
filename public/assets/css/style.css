@@ -1127,7 +1127,8 @@ p {
   }
 }
 
-@media (max-width: 760px) {
+/* The full menu (with the longer FR/DE labels and the language switch) needs about 1040px */
+@media (max-width: 1080px) {
   .nav-desktop {
     display: none;
   }
@@ -1135,7 +1136,9 @@ p {
   .nav-toggle {
     display: block;
   }
+}
 
+@media (max-width: 760px) {
   .section {
     padding-block: 60px;
   }
