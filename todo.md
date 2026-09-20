@@ -27,7 +27,11 @@ Spec: [specs/free-tools.md](specs/free-tools.md). One commit per tool, including
 - [x] Homepage: retitle section to "Free tools" and move Decline Code Lookup to the last card (EN/FR/DE)
 - [x] Rename the "Work" nav label (and the hero "See my work" button) to "Free tools" everywhere (homepages EN/FR/DE, tool pages, blog and Decline layouts)
 - [ ] Decide whether Decline Code Lookup (Astro app, own layout) should get the share bar too
-- [ ] Bench for later: Break-even & Pricing, Funnel What-If, Approval-Rate Uplift Value, attribution comparison, VAT (FR/DE)
+- [ ] Bench for later: Funnel What-If, Approval-Rate Uplift Value, attribution comparison, VAT (FR/DE)
+
+## Tool 8 (chosen 2026-09-20 — finance/educational)
+- [x] Tool 8: `projects/company-valuation-calculator/` — WACC + free cash flow + DCF + EPS combined into one worked-example tool (calc.js + tests, UI incl. share bar, prominent educational/not-investment-advice notice, disclaimer/badge, GA4), cards EN/FR/DE, sitemap, specs/free-tools.md + specs/projects.md updated
+- [ ] Anthony to spot-check the tool in a browser (no headless-browser tool was available to verify visually while building it — logic was verified via calc.test.mjs and a manual pipeline simulation instead)
 
 ## Carried over
 - [ ] Verify https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/decline-code-lookup/ is live after the deploy

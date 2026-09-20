@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Company Valuation Calculator: WACC, Free Cash Flow, DCF &amp; EPS | Anthony Skolozdrzyk-Ardouin</title>
+<meta name="description" content="Free educational calculator that walks through WACC, free cash flow, a discounted cash flow (DCF) valuation and EPS as one worked example, so you can see how these classic corporate-finance formulas fit together. Not investment advice. No sign-up.">
+<meta name="author" content="Anthony Skolozdrzyk-Ardouin">
+<meta name="robots" content="index, follow">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QXP44186J4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QXP44186J4');
+</script>
+<link rel="canonical" href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/company-valuation-calculator/">
+<meta property="og:site_name" content="Anthony Skolozdrzyk-Ardouin">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Company Valuation Calculator: WACC, Free Cash Flow, DCF &amp; EPS">
+<meta property="og:description" content="An educational worked example that chains WACC, free cash flow, a DCF valuation and EPS together. Not investment advice. Free for everyone, no sign-up.">
+<meta property="og:url" content="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/company-valuation-calculator/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Free Company Valuation Calculator: WACC, Free Cash Flow, DCF &amp; EPS">
+<meta name="twitter:description" content="An educational worked example that chains WACC, free cash flow, a DCF valuation and EPS together. Not investment advice. Free for everyone, no sign-up.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tool.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Company Valuation Calculator: WACC, Free Cash Flow, DCF & EPS",
+  "url": "https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/company-valuation-calculator/",
+  "description": "Free educational calculator that chains the weighted average cost of capital (WACC), free cash flow, a discounted cash flow (DCF) valuation and earnings per share (EPS) into one worked example. Not investment advice.",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Any (web browser)",
+  "isAccessibleForFree": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+  "author": { "@type": "Person", "name": "Anthony Skolozdrzyk-Ardouin", "url": "https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What is WACC?", "acceptedAnswer": { "@type": "Answer", "text": "WACC (weighted average cost of capital) is the average return a company needs to earn on its assets to satisfy both its shareholders and its lenders, weighted by how much of the company is funded by equity versus debt. It is the discount rate most commonly used in textbook company valuations." } },
+    { "@type": "Question", "name": "What is free cash flow (FCF)?", "acceptedAnswer": { "@type": "Answer", "text": "Free cash flow is the cash a business generates from its operations after paying for the investment needed to keep running and growing (capital expenditure) and after adjusting for changes in working capital. It is often described as the cash left over that could, in theory, be paid out to everyone who has provided the company with capital." } },
+    { "@type": "Question", "name": "What is a DCF (discounted cash flow) valuation?", "acceptedAnswer": { "@type": "Answer", "text": "A DCF valuation estimates the value of a business today as the sum of its expected future free cash flows, each discounted back to the present using a discount rate (usually the WACC), plus a terminal value for everything beyond the projection period. It is a standard corporate-finance teaching method, built entirely on assumptions the person doing the valuation chooses." } },
+    { "@type": "Question", "name": "What is EPS, and what is the difference between basic and diluted EPS?", "acceptedAnswer": { "@type": "Answer", "text": "Earnings per share (EPS) divides a company's profit (after preferred dividends) by its shares outstanding. Basic EPS uses the actual shares outstanding; diluted EPS also counts the extra shares that could be created if options, warrants or convertible securities were exercised, so it is usually a little lower." } },
+    { "@type": "Question", "name": "Is this tool investment advice?", "acceptedAnswer": { "@type": "Answer", "text": "No. This tool is for learning how WACC, free cash flow, DCF valuation and EPS fit together. It is not a recommendation to buy, hold or sell any security, does not use real market data, and should never be the basis of a real financial decision." } }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="logo" href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/">
+      <span class="logo-mark">AS</span>
+      <span>Anthony Skolozdrzyk-Ardouin</span>
+    </a>
+    <nav class="nav-desktop" aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#about">About</a></li>
+        <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#experience">Experience</a></li>
+        <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#skills">Skills</a></li>
+        <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#work" aria-current="true">Free tools</a></li>
+        <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/">Blog</a></li>
+        <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#faq">FAQ</a></li>
+        <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#contact">Contact</a></li>
+      </ul>
+      <a class="btn btn-primary btn-sm" href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#contact">Let's chat</a>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-mobile" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile">
+    <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#about">About</a>
+    <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#experience">Experience</a>
+    <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#skills">Skills</a>
+    <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#work">Free tools</a>
+    <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/">Blog</a>
+    <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#faq">FAQ</a>
+    <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="tool-bar">
+  <div class="tool-bar__inner">
+    <a class="tool-bar__title" href="./">Company Valuation Calculator</a>
+    <nav aria-label="Company Valuation Calculator">
+      <ul class="tool-bar__nav">
+        <li><a href="#calculator">Calculator</a></li>
+        <li><a href="#how-to-read">How to read it</a></li>
+        <li><a href="#methodology">Methodology</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<main id="main-content">
+  <section class="hero">
+    <div class="wrap">
+      <span class="badge-free">Free tool</span>
+      <span class="badge-edu">Educational, not investment advice</span>
+      <h1>Company Valuation Calculator: WACC, free cash flow, DCF &amp; EPS</h1>
+      <p class="hero__lead">Curious how analysts estimate what a company's shares might be worth? This tool chains four classic corporate-finance building blocks — the cost of capital (WACC), free cash flow, a discounted cash flow (DCF) valuation, and earnings per share (EPS) — into one worked example, so you can see exactly how each number feeds the next.</p>
+      <p class="hero__free">Free for everyone to use, no sign-up. Nothing you type leaves your browser.</p>
+      <div class="edu-notice">
+        <h2>Educational tool — not investment advice</h2>
+        <p>This calculator is built for learning, not for making investment decisions. It runs a simplified, textbook version of a discounted cash flow valuation: it does not represent any real company, does not use live market data, and ignores real-world complexity that a professional valuation would include (multiple valuation methods, qualitative factors, market conditions, risk not captured by a single discount rate, and more). Nothing on this page is a recommendation to buy, hold or sell any security, and it is not financial, investment, legal, accounting or tax advice. Anthony Skolozdrzyk-Ardouin accepts no liability and denies any responsibility for decisions made using this tool or its results. If you are making a real financial decision, consult a qualified professional. Full disclaimer below.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="calculator" class="wrap" aria-label="Calculator">
+    <div class="panel">
+      <form id="valuation-form" class="form-grid" novalidate>
+        <div class="field">
+          <label for="currency">Currency symbol (display only)</label>
+          <select id="currency">
+            <option value="€" selected>€ Euro</option>
+            <option value="$">$ Dollar</option>
+            <option value="£">£ Pound</option>
+            <option value="CHF ">CHF</option>
+            <option value="">None</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="shares">Shares outstanding</label>
+          <input id="shares" type="text" inputmode="decimal" value="100000000" autocomplete="off">
+          <p class="hint">Used below for both the per-share valuation and EPS, so you only enter it once.</p>
+          <p class="error" id="shares-error"></p>
+        </div>
+
+        <p class="group-title">1. Cost of capital (WACC)</p>
+        <p class="group-note">The discount rate: the average return a company must earn to satisfy both shareholders and lenders.</p>
+        <div class="field">
+          <label for="rf">Risk-free rate (%)</label>
+          <input id="rf" type="text" inputmode="decimal" value="4" autocomplete="off">
+          <p class="hint">A proxy for a "safe" long-term government bond yield.</p>
+          <p class="error" id="rf-error"></p>
+        </div>
+        <div class="field">
+          <label for="beta">Beta (share's volatility vs. the market)</label>
+          <input id="beta" type="text" inputmode="decimal" value="1.2" autocomplete="off">
+          <p class="hint">1 moves with the market; above 1 is more volatile, below 1 is less.</p>
+          <p class="error" id="beta-error"></p>
+        </div>
+        <div class="field">
+          <label for="erp">Equity risk premium (%)</label>
+          <input id="erp" type="text" inputmode="decimal" value="5" autocomplete="off">
+          <p class="hint">The extra return investors expect from shares over the risk-free rate.</p>
+          <p class="error" id="erp-error"></p>
+        </div>
+        <div class="field">
+          <label for="cod">Cost of debt, pre-tax (%)</label>
+          <input id="cod" type="text" inputmode="decimal" value="6" autocomplete="off">
+          <p class="error" id="cod-error"></p>
+        </div>
+        <div class="field">
+          <label for="tax">Tax rate (%)</label>
+          <input id="tax" type="text" inputmode="decimal" value="25" autocomplete="off">
+          <p class="hint">Used here for the debt tax shield, and again below for free cash flow.</p>
+          <p class="error" id="tax-error"></p>
+        </div>
+        <div class="field">
+          <label for="mve">Market value of equity</label>
+          <input id="mve" type="text" inputmode="decimal" value="800000000" autocomplete="off">
+          <p class="error" id="mve-error"></p>
+        </div>
+        <div class="field">
+          <label for="mvd">Market value of debt</label>
+          <input id="mvd" type="text" inputmode="decimal" value="200000000" autocomplete="off">
+          <p class="hint">Also used below as total debt when bridging to equity value.</p>
+          <p class="error" id="mvd-error"></p>
+        </div>
+
+        <p class="group-title">2. Free cash flow (base year)</p>
+        <p class="group-note">The cash left after running and reinvesting in the business, before financing decisions.</p>
+        <div class="field">
+          <label for="ebit">Operating profit (EBIT)</label>
+          <input id="ebit" type="text" inputmode="decimal" value="150000000" autocomplete="off">
+          <p class="error" id="ebit-error"></p>
+        </div>
+        <div class="field">
+          <label for="da">Depreciation &amp; amortisation</label>
+          <input id="da" type="text" inputmode="decimal" value="40000000" autocomplete="off">
+          <p class="error" id="da-error"></p>
+        </div>
+        <div class="field">
+          <label for="capex">Capital expenditure (CapEx)</label>
+          <input id="capex" type="text" inputmode="decimal" value="45000000" autocomplete="off">
+          <p class="error" id="capex-error"></p>
+        </div>
+        <div class="field">
+          <label for="nwc">Increase in net working capital</label>
+          <input id="nwc" type="text" inputmode="decimal" value="5000000" autocomplete="off">
+          <p class="hint">Cash tied up in day-to-day operations (stock, receivables, less payables). Use a negative number if it freed up cash instead.</p>
+          <p class="error" id="nwc-error"></p>
+        </div>
+
+        <p class="group-title">3. Growth &amp; DCF valuation</p>
+        <p class="group-note">Projects free cash flow forward, then discounts it back to today's value.</p>
+        <div class="field">
+          <label for="growth">Expected annual FCF growth (%)</label>
+          <input id="growth" type="text" inputmode="decimal" value="6" autocomplete="off">
+          <p class="error" id="growth-error"></p>
+        </div>
+        <div class="field">
+          <label for="years">Projection period</label>
+          <select id="years">
+            <option value="3">3 years</option>
+            <option value="5" selected>5 years</option>
+            <option value="7">7 years</option>
+            <option value="10">10 years</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="terminal">Long-term (terminal) growth (%)</label>
+          <input id="terminal" type="text" inputmode="decimal" value="2.5" autocomplete="off">
+          <p class="hint">The growth rate assumed forever after the projection period. Must be lower than the WACC.</p>
+          <p class="error" id="terminal-error"></p>
+        </div>
+        <div class="field">
+          <label for="cash">Cash &amp; equivalents</label>
+          <input id="cash" type="text" inputmode="decimal" value="50000000" autocomplete="off">
+          <p class="error" id="cash-error"></p>
+        </div>
+
+        <p class="group-title">4. Earnings per share (EPS)</p>
+        <p class="group-note">A separate, well-known profitability measure shown alongside the DCF result for comparison.</p>
+        <div class="field">
+          <label for="netincome">Net income</label>
+          <input id="netincome" type="text" inputmode="decimal" value="90000000" autocomplete="off">
+          <p class="error" id="netincome-error"></p>
+        </div>
+        <div class="field">
+          <label for="prefdiv">Preferred dividends</label>
+          <input id="prefdiv" type="text" inputmode="decimal" value="0" autocomplete="off">
+          <p class="error" id="prefdiv-error"></p>
+        </div>
+        <div class="field">
+          <label for="dilshares">Additional diluted shares</label>
+          <input id="dilshares" type="text" inputmode="decimal" value="10000000" autocomplete="off">
+          <p class="hint">Extra shares from options, warrants or convertibles, for diluted EPS.</p>
+          <p class="error" id="dilshares-error"></p>
+        </div>
+        <div class="field">
+          <label for="price">Share price (optional)</label>
+          <input id="price" type="text" inputmode="decimal" value="15.00" autocomplete="off">
+          <p class="hint">Optional. If entered, shows the P/E ratio and a neutral numeric comparison with the calculated value — not a verdict. Leave blank to skip.</p>
+          <p class="error" id="price-error"></p>
+        </div>
+      </form>
+      <div id="results" class="results" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section id="how-to-read" class="section wrap narrow">
+    <h2>How to read your results</h2>
+    <p><strong>WACC</strong> is the discount rate: roughly, the return a company needs to generate to keep both its shareholders and its lenders satisfied. <strong>Free cash flow (FCF)</strong> is the cash the business actually generates after paying for the investment it needs to keep running and growing.</p>
+    <p>The <strong>DCF valuation</strong> projects free cash flow forward for a few years, adds a "terminal value" for everything after that, and discounts it all back to today using the WACC. The result is a single number: an estimate of what the business (and, per share, its equity) might be worth under the assumptions you entered — nothing more.</p>
+    <p><strong>EPS</strong> is a completely different, simpler measure: profit divided by shares. It is shown alongside the DCF result because it is one of the most common numbers used to describe company earnings, and because the optional P/E ratio and market-price comparison both depend on it.</p>
+    <p class="muted">Change any assumption — the growth rate, the discount rate, the terminal growth rate — and the DCF result moves, often by a lot. That sensitivity is one of the most important things to understand about this kind of valuation: it is a function of its assumptions, not a fact about the business.</p>
+  </section>
+
+  <section id="methodology" class="section wrap narrow">
+    <h2>Methodology</h2>
+    <div class="formula">Cost of equity (CAPM) = risk-free rate + beta x equity risk premium
+WACC       = equity weight x cost of equity + debt weight x cost of debt x (1 - tax rate)
+Free cash flow (FCFF) = EBIT x (1 - tax rate) + D&amp;A - CapEx - increase in net working capital
+Projected FCF, year t = base FCF x (1 + growth rate) ^ t
+Present value, year t = projected FCF, year t / (1 + WACC) ^ t
+Terminal value = final year FCF x (1 + terminal growth) / (WACC - terminal growth)
+Enterprise value = sum of present values + present value of terminal value
+Equity value  = enterprise value - total debt + cash &amp; equivalents
+Value per share = equity value / shares outstanding
+Basic EPS   = (net income - preferred dividends) / shares outstanding
+Diluted EPS = (net income - preferred dividends) / (shares outstanding + additional diluted shares)
+P/E ratio   = share price / EPS</div>
+    <p><strong>Assumptions and limits:</strong> this is a single-stage growth model with one constant growth rate for the whole projection period, which is a simplification real analysts often replace with multiple stages. The terminal value typically makes up most of the total, so it is highly sensitive to the terminal growth rate and the discount rate. Diluted EPS here is simplified (it does not apply the treasury-stock method used in real financial statements). No live market data is used anywhere: every number on this page comes from what you typed in.</p>
+  </section>
+
+  <section id="faq" class="section wrap narrow faq">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>What is WACC?</summary>
+      <p>WACC (weighted average cost of capital) is the average return a company needs to earn on its assets to satisfy both its shareholders and its lenders, weighted by how much of the company is funded by equity versus debt. It is the discount rate most commonly used in textbook company valuations.</p>
+    </details>
+    <details>
+      <summary>What is free cash flow (FCF)?</summary>
+      <p>Free cash flow is the cash a business generates from its operations after paying for the investment needed to keep running and growing (capital expenditure) and after adjusting for changes in working capital. It is often described as the cash left over that could, in theory, be paid out to everyone who has provided the company with capital.</p>
+    </details>
+    <details>
+      <summary>What is a DCF (discounted cash flow) valuation?</summary>
+      <p>A DCF valuation estimates the value of a business today as the sum of its expected future free cash flows, each discounted back to the present using a discount rate (usually the WACC), plus a terminal value for everything beyond the projection period. It is a standard corporate-finance teaching method, built entirely on assumptions the person doing the valuation chooses.</p>
+    </details>
+    <details>
+      <summary>What is EPS, and what is the difference between basic and diluted EPS?</summary>
+      <p>Earnings per share (EPS) divides a company's profit (after preferred dividends) by its shares outstanding. Basic EPS uses the actual shares outstanding; diluted EPS also counts the extra shares that could be created if options, warrants or convertible securities were exercised, so it is usually a little lower.</p>
+    </details>
+    <details>
+      <summary>Is this tool investment advice?</summary>
+      <p>No. This tool is for learning how WACC, free cash flow, DCF valuation and EPS fit together. It is not a recommendation to buy, hold or sell any security, does not use real market data, and should never be the basis of a real financial decision. See the full disclaimer below.</p>
+    </details>
+  </section>
+
+  <section class="wrap narrow">
+    <div class="share-bar" role="group" aria-labelledby="share-title" data-type="tool">
+      <p class="share-title" id="share-title">Found this tool useful? Share it or save it.</p>
+      <div class="share-actions">
+        <a class="share-btn" data-share="linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fantskoloz.github.io%2Fanthony-skolozdrzyk-ardouin%2Fprojects%2Fcompany-valuation-calculator%2F" target="_blank" rel="noopener noreferrer">Share on LinkedIn</a>
+        <a class="share-btn" data-share="x" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fantskoloz.github.io%2Fanthony-skolozdrzyk-ardouin%2Fprojects%2Fcompany-valuation-calculator%2F&amp;text=Free%20Company%20Valuation%20Calculator%3A%20WACC%2C%20Free%20Cash%20Flow%2C%20DCF%20%26%20EPS" target="_blank" rel="noopener noreferrer">Share on X</a>
+        <a class="share-btn" data-share="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fantskoloz.github.io%2Fanthony-skolozdrzyk-ardouin%2Fprojects%2Fcompany-valuation-calculator%2F" target="_blank" rel="noopener noreferrer">Share on Facebook</a>
+        <a class="share-btn" data-share="whatsapp" href="https://wa.me/?text=Free%20Company%20Valuation%20Calculator%3A%20WACC%2C%20Free%20Cash%20Flow%2C%20DCF%20%26%20EPS%20https%3A%2F%2Fantskoloz.github.io%2Fanthony-skolozdrzyk-ardouin%2Fprojects%2Fcompany-valuation-calculator%2F" target="_blank" rel="noopener noreferrer">Share on WhatsApp</a>
+        <a class="share-btn" data-share="email" href="mailto:?subject=Free%20Company%20Valuation%20Calculator%3A%20WACC%2C%20Free%20Cash%20Flow%2C%20DCF%20%26%20EPS&amp;body=Free%20Company%20Valuation%20Calculator%3A%20WACC%2C%20Free%20Cash%20Flow%2C%20DCF%20%26%20EPS%0A%0Ahttps%3A%2F%2Fantskoloz.github.io%2Fanthony-skolozdrzyk-ardouin%2Fprojects%2Fcompany-valuation-calculator%2F">Share by email</a>
+        <button type="button" class="share-btn" data-share="copy" data-share-js hidden>Copy link</button>
+        <button type="button" class="share-btn" data-share="bookmark" data-share-js hidden>&#9734; Add to favorites</button>
+      </div>
+      <p class="share-status" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <section class="wrap narrow">
+    <h2 class="sr-only">Related tools</h2>
+    <ul class="related">
+      <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/saas-metrics-calculator/">SaaS Metrics &amp; Runway Calculator</a></li>
+      <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/break-even-pricing-calculator/">Break-even &amp; Pricing Calculator</a></li>
+      <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/marketing-roi-calculator/">Marketing ROI Calculator</a></li>
+    </ul>
+    <aside class="disclaimer" aria-labelledby="disclaimer-title">
+      <h2 id="disclaimer-title">Free tool &amp; disclaimer</h2>
+      <p>This tool is provided free of charge for general informational and educational purposes only. It is offered "as is", without warranty of any kind, and does not constitute professional, statistical, financial, legal or marketing advice. It is not a recommendation to buy, hold or sell any security, and it does not use real market data. Results depend entirely on the accuracy and reasonableness of your inputs and the assumptions stated on this page; you are solely responsible for decisions taken on the basis of the results. To the fullest extent permitted by law, the author accepts no liability for any loss or damage arising from use of this tool. This is an independent personal initiative by Anthony Skolozdrzyk-Ardouin; it is not affiliated with, endorsed by, or representative of any current or former employer. Calculations run entirely in your browser: the data you enter is not sent to or stored on any server. Anonymous usage analytics (Google Analytics) are collected on this site.</p>
+    </aside>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <p>&copy; <span id="year">2026</span> Anthony Skolozdrzyk-Ardouin. Free tool for free use.</p>
+    <p><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/">Home</a> &middot; <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#work">More free tools</a> &middot; <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/">Blog</a></p>
+  </div>
+</footer>
+
+<script type="module" src="tool.js"></script>
+<script src="share.js" defer></script>
+</body>
+</html>
