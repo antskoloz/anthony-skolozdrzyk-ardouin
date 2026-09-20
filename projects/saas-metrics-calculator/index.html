@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free SaaS Metrics Calculator: MRR, Churn, NRR, Quick Ratio &amp; Runway | Anthony Skolozdrzyk-Ardouin</title>
+<meta name="description" content="Free SaaS metrics calculator: work out ending MRR, ARR, churn, net revenue retention, quick ratio, Rule of 40, burn multiple and cash runway from one month of numbers, with a plain-English reading of each. No sign-up.">
+<meta name="author" content="Anthony Skolozdrzyk-Ardouin">
+<meta name="robots" content="index, follow">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QXP44186J4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QXP44186J4');
+</script>
+<link rel="canonical" href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/saas-metrics-calculator/">
+<meta property="og:site_name" content="Anthony Skolozdrzyk-Ardouin">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free SaaS Metrics Calculator: MRR, Churn, NRR, Quick Ratio &amp; Runway">
+<meta property="og:description" content="How healthy is your recurring revenue, and how long does your cash last? Free for everyone, no sign-up.">
+<meta property="og:url" content="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/saas-metrics-calculator/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Free SaaS Metrics Calculator: MRR, Churn, NRR, Quick Ratio &amp; Runway">
+<meta name="twitter:description" content="How healthy is your recurring revenue, and how long does your cash last? Free for everyone, no sign-up.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tool.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "SaaS Metrics & Runway Calculator: MRR, Churn, NRR, Quick Ratio",
+  "url": "https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/saas-metrics-calculator/",
+  "description": "Free calculator for ending MRR, ARR, MRR churn, net and gross revenue retention, SaaS quick ratio, Rule of 40, burn multiple and cash runway.",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any (web browser)",
+  "isAccessibleForFree": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+  "author": { "@type": "Person", "name": "Anthony Skolozdrzyk-Ardouin", "url": "https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What is net revenue retention (NRR)?", "acceptedAnswer": { "@type": "Answer", "text": "Net revenue retention compares what your existing customers pay now with what they paid at the start of the period, counting upsells, downgrades and cancellations but ignoring new customers. Above 100% means your existing base grows on its own." } },
+    { "@type": "Question", "name": "What is the SaaS quick ratio?", "acceptedAnswer": { "@type": "Answer", "text": "The SaaS quick ratio divides the MRR you gained (new plus expansion) by the MRR you lost (churn plus contraction). A ratio of 4 or more is the usual benchmark for efficient growth; below 1 the business is shrinking." } },
+    { "@type": "Question", "name": "What is the Rule of 40?", "acceptedAnswer": { "@type": "Answer", "text": "The Rule of 40 says a healthy SaaS company's year-over-year revenue growth rate plus its profit margin should be at least 40. It lets fast growth offset thin margins and the other way round." } },
+    { "@type": "Question", "name": "What is a burn multiple?", "acceptedAnswer": { "@type": "Answer", "text": "The burn multiple is the net cash you burn divided by the net new annual recurring revenue you add over the same period. It shows how much cash each euro of new ARR costs. About 1.5 or less is considered efficient; above 3 is a warning sign." } },
+    { "@type": "Question", "name": "How is cash runway calculated?", "acceptedAnswer": { "@type": "Answer", "text": "Runway is the cash you have divided by your net monthly burn, which is cash out minus cash in. It assumes the burn stays constant, so it is an estimate, not a forecast." } }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="logo" href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/">
+      <span class="logo-mark">AS</span>
+      <span>Anthony Skolozdrzyk-Ardouin</span>
+    </a>
+    <nav class="nav-desktop" aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#about">About</a></li>
+        <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#experience">Experience</a></li>
+        <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#skills">Skills</a></li>
+        <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#work" aria-current="true">Work</a></li>
+        <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/">Blog</a></li>
+        <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#faq">FAQ</a></li>
+        <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#contact">Contact</a></li>
+      </ul>
+      <a class="btn btn-primary btn-sm" href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#contact">Let's chat</a>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-mobile" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile">
+    <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#about">About</a>
+    <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#experience">Experience</a>
+    <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#skills">Skills</a>
+    <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#work">Work</a>
+    <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/">Blog</a>
+    <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#faq">FAQ</a>
+    <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="tool-bar">
+  <div class="tool-bar__inner">
+    <a class="tool-bar__title" href="./">SaaS Metrics Calculator</a>
+    <nav aria-label="SaaS Metrics Calculator">
+      <ul class="tool-bar__nav">
+        <li><a href="#calculator">Calculator</a></li>
+        <li><a href="#methodology">Methodology</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<main id="main-content">
+  <section class="hero">
+    <div class="wrap">
+      <span class="badge-free">Free tool</span>
+      <h1>SaaS Metrics &amp; Runway Calculator: MRR, churn, NRR and cash</h1>
+      <p class="hero__lead">How healthy is your recurring revenue, and how long does your cash last? Enter one period of revenue movements to get ending MRR, ARR, retention, the quick ratio and, optionally, the Rule of 40, burn multiple and runway.</p>
+      <p class="hero__free">Free for everyone to use, no sign-up. Nothing you type leaves your browser.</p>
+    </div>
+  </section>
+
+  <section id="calculator" class="wrap" aria-label="Calculator">
+    <div class="panel">
+      <form id="saas-form" class="form-grid" novalidate>
+        <div class="field">
+          <label for="currency">Currency symbol (display only)</label>
+          <select id="currency">
+            <option value="€" selected>€ Euro</option>
+            <option value="$">$ Dollar</option>
+            <option value="£">£ Pound</option>
+            <option value="CHF ">CHF</option>
+            <option value="">None</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="period">The numbers below cover one</label>
+          <select id="period">
+            <option value="1" selected>Month</option>
+            <option value="3">Quarter</option>
+            <option value="12">Year</option>
+          </select>
+        </div>
+
+        <p class="group-title">Monthly recurring revenue (MRR) movements</p>
+        <div class="field">
+          <label for="start">MRR at the start of the period</label>
+          <input id="start" type="text" inputmode="decimal" value="100000" autocomplete="off">
+          <p class="hint">What your customers pay you per month, in total, on day one.</p>
+          <p class="error" id="start-error"></p>
+        </div>
+        <div class="field">
+          <label for="newmrr">New MRR (new customers)</label>
+          <input id="newmrr" type="text" inputmode="decimal" value="8000" autocomplete="off">
+          <p class="error" id="newmrr-error"></p>
+        </div>
+        <div class="field">
+          <label for="expansion">Expansion MRR (upsells and upgrades)</label>
+          <input id="expansion" type="text" inputmode="decimal" value="4000" autocomplete="off">
+          <p class="error" id="expansion-error"></p>
+        </div>
+        <div class="field">
+          <label for="contraction">Contraction MRR (downgrades)</label>
+          <input id="contraction" type="text" inputmode="decimal" value="1000" autocomplete="off">
+          <p class="error" id="contraction-error"></p>
+        </div>
+        <div class="field">
+          <label for="churned">Churned MRR (cancellations)</label>
+          <input id="churned" type="text" inputmode="decimal" value="2000" autocomplete="off">
+          <p class="error" id="churned-error"></p>
+        </div>
+
+        <p class="group-title">Customers (optional, for customer churn)</p>
+        <div class="field">
+          <label for="cust-start">Customers at the start</label>
+          <input id="cust-start" type="text" inputmode="numeric" value="200" autocomplete="off">
+          <p class="error" id="cust-start-error"></p>
+        </div>
+        <div class="field">
+          <label for="cust-lost">Customers lost during the period</label>
+          <input id="cust-lost" type="text" inputmode="numeric" value="5" autocomplete="off">
+          <p class="error" id="cust-lost-error"></p>
+        </div>
+
+        <p class="group-title">Cash (optional, for runway and burn multiple)</p>
+        <div class="field">
+          <label for="cash">Cash in the bank</label>
+          <input id="cash" type="text" inputmode="decimal" value="900000" autocomplete="off">
+          <p class="error" id="cash-error"></p>
+        </div>
+        <div class="field">
+          <label for="burn">Net burn per month</label>
+          <input id="burn" type="text" inputmode="decimal" value="150000" autocomplete="off">
+          <p class="hint">Cash going out minus cash coming in. Enter 0 if you break even or make money.</p>
+          <p class="error" id="burn-error"></p>
+        </div>
+
+        <p class="group-title">Growth and profit (optional, for the Rule of 40)</p>
+        <div class="field">
+          <label for="growth">Year-over-year revenue growth (%)</label>
+          <input id="growth" type="text" inputmode="decimal" value="35" autocomplete="off">
+          <p class="error" id="growth-error"></p>
+        </div>
+        <div class="field">
+          <label for="margin">Profit margin (%)</label>
+          <input id="margin" type="text" inputmode="decimal" value="-5" autocomplete="off">
+          <p class="hint">Use the same margin your investors track (EBITDA or free cash flow). Negative if you lose money.</p>
+          <p class="error" id="margin-error"></p>
+        </div>
+      </form>
+      <div id="results" class="results" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section id="how-to-read" class="section wrap narrow">
+    <h2>How to read your results</h2>
+    <p><strong>NRR (net revenue retention)</strong> asks: if you stopped selling today, would your revenue grow or shrink? Above 100% it grows, thanks to upsells outweighing cancellations and downgrades. <strong>GRR</strong> ignores upsells and shows only what you keep, so it can never exceed 100%.</p>
+    <p>The <strong>quick ratio</strong> compares the MRR you gain with the MRR you lose. The <strong>Rule of 40</strong> adds growth and profit margin, so a fast-growing company can run at a loss and a slow one must be profitable. The <strong>burn multiple</strong> is what each euro of new annual recurring revenue costs you in net cash. <strong>Runway</strong> is how many months your cash lasts at the current burn.</p>
+    <p class="muted">The colour signals (green, amber, red) use widely quoted rules of thumb for SaaS companies: annual NRR of 100% or more, a quick ratio of 4 or more, a Rule of 40 score of 40 or more, a burn multiple of 1.5 or less, and 18 months of runway. They are starting points, not guarantees. Healthy targets depend on your segment, stage and pricing model.</p>
+  </section>
+
+  <section id="methodology" class="section wrap narrow">
+    <h2>Methodology</h2>
+    <div class="formula">Ending MRR   = start + new + expansion − contraction − churned
+ARR          = ending MRR × 12
+Net new MRR  = ending MRR − start
+Growth       = net new MRR / start
+Gross churn  = (churned + contraction) / start
+NRR          = (start + expansion − contraction − churned) / start
+GRR          = (start − contraction − churned) / start
+Annualised   = rate ^ (12 / months in the period)
+Quick ratio  = (new + expansion) / (contraction + churned)
+Logo churn   = customers lost / customers at start
+Rule of 40   = YoY growth % + profit margin %
+Burn multiple = (net monthly burn × months) / (net new MRR × 12)
+Runway       = cash / net monthly burn</div>
+    <p><strong>Assumptions and limits:</strong> all figures are recurring revenue, not cash: invoicing, discounts, one-off fees and taxes are not modelled. Annualising a single month assumes it is typical, which seasonal or fast-changing businesses rarely are. Churned and contracted MRR are assumed to come from customers who were there at the start of the period. Runway assumes the burn stays constant; it ignores new funding, changes in hiring and seasonality. The burn multiple compares burn and net new ARR over the same period and is only defined when both are positive.</p>
+  </section>
+
+  <section id="faq" class="section wrap narrow faq">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>What is net revenue retention (NRR)?</summary>
+      <p>Net revenue retention compares what your existing customers pay now with what they paid at the start of the period, counting upsells, downgrades and cancellations but ignoring new customers. Above 100% means your existing base grows on its own.</p>
+    </details>
+    <details>
+      <summary>What is the SaaS quick ratio?</summary>
+      <p>The SaaS quick ratio divides the MRR you gained (new plus expansion) by the MRR you lost (churn plus contraction). A ratio of 4 or more is the usual benchmark for efficient growth; below 1 the business is shrinking.</p>
+    </details>
+    <details>
+      <summary>What is the Rule of 40?</summary>
+      <p>The Rule of 40 says a healthy SaaS company's year-over-year revenue growth rate plus its profit margin should be at least 40. It lets fast growth offset thin margins and the other way round.</p>
+    </details>
+    <details>
+      <summary>What is a burn multiple?</summary>
+      <p>The burn multiple is the net cash you burn divided by the net new annual recurring revenue you add over the same period. It shows how much cash each euro of new ARR costs. About 1.5 or less is considered efficient; above 3 is a warning sign.</p>
+    </details>
+    <details>
+      <summary>How is cash runway calculated?</summary>
+      <p>Runway is the cash you have divided by your net monthly burn, which is cash out minus cash in. It assumes the burn stays constant, so it is an estimate, not a forecast.</p>
+    </details>
+  </section>
+
+  <section class="wrap narrow">
+    <h2 class="sr-only">Related tools</h2>
+    <ul class="related">
+      <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/marketing-roi-calculator/">Marketing ROI Calculator: ROAS, CAC, LTV</a></li>
+      <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/rice-prioritizer/">RICE / ICE Prioritizer</a></li>
+      <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/ab-test-calculator/">A/B Test Calculator</a></li>
+    </ul>
+    <aside class="disclaimer" aria-labelledby="disclaimer-title">
+      <h2 id="disclaimer-title">Free tool &amp; disclaimer</h2>
+      <p>This tool is provided free of charge for general informational and educational purposes only. It is offered "as is", without warranty of any kind, and does not constitute professional, statistical, financial, legal or marketing advice. Results depend on the accuracy of your inputs and on the statistical assumptions stated on this page; you are solely responsible for decisions taken on the basis of the results. To the fullest extent permitted by law, the author accepts no liability for any loss or damage arising from use of this tool. This is an independent personal initiative by Anthony Skolozdrzyk-Ardouin; it is not affiliated with, endorsed by, or representative of any current or former employer. Calculations run entirely in your browser: the data you enter is not sent to or stored on any server. Anonymous usage analytics (Google Analytics) are collected on this site.</p>
+    </aside>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <p>&copy; <span id="year">2026</span> Anthony Skolozdrzyk-Ardouin. Free tool for free use.</p>
+    <p><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/">Home</a> &middot; <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#work">More free tools</a> &middot; <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/">Blog</a></p>
+  </div>
+</footer>
+
+<script type="module" src="tool.js"></script>
+</body>
+</html>
