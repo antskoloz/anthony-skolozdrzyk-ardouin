@@ -1,9 +1,15 @@
 ---
 title: "DuckDB for analysts: local analytics without a warehouse"
-description: "Query CSV, Parquet and Excel files with plain SQL on your own machine using DuckDB. Practical examples, plus honest limits on concurrency and shared use."
-pubDate: 2026-09-20
-tags: ["duckdb", "sql", "data analytics", "analytics tools"]
-draft: true
+description: Query CSV, Parquet and Excel files with plain SQL on your own
+  machine using DuckDB. Practical examples, plus honest limits on concurrency
+  and shared use.
+pubDate: 2026-09-20T14:17:00.000+02:00
+tags:
+  - duckdb
+  - sql
+  - data analytics
+  - analytics tools
+draft: false
 ---
 
 > **Short answer:** DuckDB lets you run SQL directly on CSV, Parquet and Excel files on your own computer, with no server to set up and no warehouse to wait for. It is excellent for exploration, prototyping and one-off analysis. It is not a replacement for a shared, multi-user warehouse.
