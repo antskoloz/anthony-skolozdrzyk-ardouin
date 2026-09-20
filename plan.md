@@ -30,6 +30,8 @@ Behavior in [specs/free-tools.md](specs/free-tools.md), decision in [decisions.m
 - [x] Rework Tools 1–2 for business readers, see [decisions.md](decisions.md) ADR-005 (plain-language inputs, headline verdicts, glossary)
 - [x] SaaS Metrics & Runway Calculator — `projects/saas-metrics-calculator/` (Tool 5)
 - [x] RICE / ICE Prioritizer — `projects/rice-prioritizer/` (Tool 6)
+- [x] Break-even & Pricing Calculator — `projects/break-even-pricing-calculator/` (Tool 7)
+- [x] Homepage: "Selected work" becomes "Free tools"; Decline Code Lookup demoted to the last card of the grid
 - [ ] Anthony reviews the disclaimer wording (default text is not legal advice)
 
 Cut order if the weekend slips: UTM bulk mode, then Tool 4, then Tool 3's benchmark traffic-lights. Tools 1–2 are not cut.

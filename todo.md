@@ -23,6 +23,9 @@ Spec: [specs/free-tools.md](specs/free-tools.md). One commit per tool, including
 - [x] Tool 6: `projects/rice-prioritizer/` — same checklist
 - [x] Retitle the homepage tools block "Free tools for marketers, product managers and finance teams" and add a bold disclaimer sentence (EN/FR/DE)
 - [x] Share & favorites bar on all 6 tools and every blog post (ADR-006); required for every new tool from now on
+- [x] Tool 7: `projects/break-even-pricing-calculator/` — calc.js + tests, UI incl. share bar, card EN/FR/DE, sitemap, projects.md list
+- [x] Homepage: retitle section to "Free tools" and move Decline Code Lookup to the last card (EN/FR/DE)
+- [ ] Decide whether the "Work" nav label should become "Free tools" now (homepages, tool pages, blog and Decline layouts)
 - [ ] Decide whether Decline Code Lookup (Astro app, own layout) should get the share bar too
 - [ ] Bench for later: Break-even & Pricing, Funnel What-If, Approval-Rate Uplift Value, attribution comparison, VAT (FR/DE)
 
