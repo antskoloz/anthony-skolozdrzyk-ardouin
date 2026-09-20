@@ -5,3 +5,10 @@ node_modules/
 dist/
 .astro/
 .wrangler/
+
+# Spec-driven-methodology docs: local planning/ideation only, not published (ADR-008)
+/plan.md
+/architecture.md
+/todo.md
+/decisions.md
+/specs/
