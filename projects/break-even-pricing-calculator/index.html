@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Break-even &amp; Pricing Calculator: Break-even Point, Margin vs Markup, Discount Impact | Anthony Skolozdrzyk-Ardouin</title>
+<meta name="description" content="Free break-even calculator: how many units you must sell to cover your costs, the difference between margin and markup, and how much extra you must sell to make up for a discount. Plain English, no sign-up.">
+<meta name="author" content="Anthony Skolozdrzyk-Ardouin">
+<meta name="robots" content="index, follow">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QXP44186J4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QXP44186J4');
+</script>
+<link rel="canonical" href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/break-even-pricing-calculator/">
+<meta property="og:site_name" content="Anthony Skolozdrzyk-Ardouin">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Break-even &amp; Pricing Calculator: Break-even, Margin vs Markup, Discounts">
+<meta property="og:description" content="How many units must you sell to cover your costs, and what does a discount really cost you? Free for everyone, no sign-up.">
+<meta property="og:url" content="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/break-even-pricing-calculator/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Free Break-even &amp; Pricing Calculator: Break-even, Margin vs Markup, Discounts">
+<meta name="twitter:description" content="How many units must you sell to cover your costs, and what does a discount really cost you? Free for everyone, no sign-up.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tool.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Break-even & Pricing Calculator",
+  "url": "https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/break-even-pricing-calculator/",
+  "description": "Free calculator for the break-even point, margin and markup conversion, target-profit units, margin of safety and the extra sales needed to make up for a discount.",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any (web browser)",
+  "isAccessibleForFree": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+  "author": { "@type": "Person", "name": "Anthony Skolozdrzyk-Ardouin", "url": "https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How do you calculate the break-even point?", "acceptedAnswer": { "@type": "Answer", "text": "Divide your fixed costs by what each unit contributes: the selling price minus the variable cost per unit. With 10,000 of fixed costs, a price of 50 and a variable cost of 30, each unit leaves 20, so you break even at 500 units." } },
+    { "@type": "Question", "name": "What is the difference between margin and markup?", "acceptedAnswer": { "@type": "Answer", "text": "Margin is profit as a share of the selling price; markup is profit as a share of the cost. Selling something that costs 80 for 100 gives a 20% margin but a 25% markup. A 50% margin needs a 100% markup." } },
+    { "@type": "Question", "name": "What are fixed and variable costs?", "acceptedAnswer": { "@type": "Answer", "text": "Fixed costs do not change with the number of units you sell in the period, such as rent, salaries and software subscriptions. Variable costs grow with every sale, such as materials, delivery, payment fees and sales commission." } },
+    { "@type": "Question", "name": "How much more do I need to sell after giving a discount?", "acceptedAnswer": { "@type": "Answer", "text": "To earn the same total profit you need to sell discount divided by (margin minus discount) more units. At a 40% margin, a 10% discount needs 33% more sales and a 20% discount needs 100% more." } },
+    { "@type": "Question", "name": "What is the margin of safety?", "acceptedAnswer": { "@type": "Answer", "text": "The margin of safety is how far your sales can fall below the current level before you stop making a profit. It equals actual units minus break-even units, divided by actual units." } }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="logo" href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/">
+      <span class="logo-mark">AS</span>
+      <span>Anthony Skolozdrzyk-Ardouin</span>
+    </a>
+    <nav class="nav-desktop" aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#about">About</a></li>
+        <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#experience">Experience</a></li>
+        <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#skills">Skills</a></li>
+        <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#work" aria-current="true">Work</a></li>
+        <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/">Blog</a></li>
+        <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#faq">FAQ</a></li>
+        <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#contact">Contact</a></li>
+      </ul>
+      <a class="btn btn-primary btn-sm" href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#contact">Let's chat</a>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-mobile" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile">
+    <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#about">About</a>
+    <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#experience">Experience</a>
+    <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#skills">Skills</a>
+    <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#work">Work</a>
+    <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/">Blog</a>
+    <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#faq">FAQ</a>
+    <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="tool-bar">
+  <div class="tool-bar__inner">
+    <a class="tool-bar__title" href="./">Break-even &amp; Pricing</a>
+    <nav aria-label="Break-even and Pricing Calculator">
+      <ul class="tool-bar__nav">
+        <li><a href="#calculator">Calculator</a></li>
+        <li><a href="#methodology">Methodology</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<main id="main-content">
+  <section class="hero">
+    <div class="wrap">
+      <span class="badge-free">Free tool</span>
+      <h1>Break-even &amp; Pricing Calculator</h1>
+      <p class="hero__lead">How many units must you sell to cover your costs? What price gives you the margin you want? And how much more must you sell to make up for a discount? Three quick answers, in plain English.</p>
+      <p class="hero__free">Free for everyone to use, no sign-up. Nothing you type leaves your browser.</p>
+    </div>
+  </section>
+
+  <section id="calculator" class="wrap" aria-label="Calculator">
+    <div class="panel">
+      <div class="form-grid">
+        <div class="field">
+          <label for="currency">Currency symbol (display only)</label>
+          <select id="currency">
+            <option value="€" selected>€ Euro</option>
+            <option value="$">$ Dollar</option>
+            <option value="£">£ Pound</option>
+            <option value="CHF ">CHF</option>
+            <option value="">None</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="Question to answer" style="margin-top:20px;">
+        <button type="button" class="tab" role="tab" data-tab="be" aria-selected="true" aria-controls="panel-be">Break-even: how much must I sell?</button>
+        <button type="button" class="tab" role="tab" data-tab="mm" aria-selected="false" aria-controls="panel-mm">Margin &amp; markup: what price?</button>
+        <button type="button" class="tab" role="tab" data-tab="di" aria-selected="false" aria-controls="panel-di">Discount: what does it cost?</button>
+      </div>
+
+      <div class="tab-panel" id="panel-be" role="tabpanel">
+        <form id="be-form" class="form-grid" novalidate>
+          <div class="field">
+            <label for="be-fixed">Fixed costs for the period</label>
+            <input id="be-fixed" type="text" inputmode="decimal" value="10000" autocomplete="off">
+            <p class="hint">Costs that do not change with sales: rent, salaries, software, insurance.</p>
+            <p class="error" id="be-fixed-error"></p>
+          </div>
+          <div class="field">
+            <label for="be-price">Selling price per unit</label>
+            <input id="be-price" type="text" inputmode="decimal" value="50" autocomplete="off">
+            <p class="error" id="be-price-error"></p>
+          </div>
+          <div class="field">
+            <label for="be-var">Variable cost per unit</label>
+            <input id="be-var" type="text" inputmode="decimal" value="30" autocomplete="off">
+            <p class="hint">What each extra sale costs you: materials, delivery, payment fees, commission.</p>
+            <p class="error" id="be-var-error"></p>
+          </div>
+          <div class="field">
+            <label for="be-target">Profit you want to make (optional)</label>
+            <input id="be-target" type="text" inputmode="decimal" value="" placeholder="e.g. 5000" autocomplete="off">
+            <p class="error" id="be-target-error"></p>
+          </div>
+          <div class="field">
+            <label for="be-units">Units you sell or expect to sell (optional)</label>
+            <input id="be-units" type="text" inputmode="decimal" value="800" autocomplete="off">
+            <p class="hint">Adds your profit and your safety cushion.</p>
+            <p class="error" id="be-units-error"></p>
+          </div>
+        </form>
+        <div id="be-results" class="results" aria-live="polite"></div>
+      </div>
+
+      <div class="tab-panel" id="panel-mm" role="tabpanel" hidden>
+        <form id="mm-form" class="form-grid" novalidate>
+          <div class="field">
+            <label for="mm-cost">Your cost per unit</label>
+            <input id="mm-cost" type="text" inputmode="decimal" value="80" autocomplete="off">
+            <p class="error" id="mm-cost-error"></p>
+          </div>
+          <div class="field">
+            <label for="mm-known">What do you already know?</label>
+            <select id="mm-known">
+              <option value="price" selected>The selling price</option>
+              <option value="margin">The margin I want</option>
+              <option value="markup">The markup I want</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="mm-value" id="mm-value-label">Selling price per unit</label>
+            <input id="mm-value" type="text" inputmode="decimal" value="100" autocomplete="off">
+            <p class="error" id="mm-value-error"></p>
+          </div>
+        </form>
+        <div id="mm-results" class="results" aria-live="polite"></div>
+      </div>
+
+      <div class="tab-panel" id="panel-di" role="tabpanel" hidden>
+        <form id="di-form" class="form-grid" novalidate>
+          <div class="field">
+            <label for="di-price">Current selling price</label>
+            <input id="di-price" type="text" inputmode="decimal" value="100" autocomplete="off">
+            <p class="error" id="di-price-error"></p>
+          </div>
+          <div class="field">
+            <label for="di-cost">Your cost per unit</label>
+            <input id="di-cost" type="text" inputmode="decimal" value="60" autocomplete="off">
+            <p class="error" id="di-cost-error"></p>
+          </div>
+          <div class="field">
+            <label for="di-disc">Discount you are considering (%)</label>
+            <input id="di-disc" type="text" inputmode="decimal" value="10" autocomplete="off">
+            <p class="error" id="di-disc-error"></p>
+          </div>
+          <div class="field">
+            <label for="di-units">Units you sell today (optional)</label>
+            <input id="di-units" type="text" inputmode="decimal" value="1000" autocomplete="off">
+            <p class="error" id="di-units-error"></p>
+          </div>
+        </form>
+        <div id="di-results" class="results" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how-to-read" class="section wrap narrow">
+    <h2>Key ideas explained</h2>
+    <p><strong>Fixed costs</strong> are the bills you pay whether you sell one unit or a thousand (rent, salaries, subscriptions). <strong>Variable costs</strong> grow with every sale (materials, delivery, payment fees). What is left of each sale after its variable costs is the <strong>contribution</strong>: it is what pays down the fixed costs, and once they are covered, it is profit.</p>
+    <p><strong>Break-even</strong> is the number of units at which the contributions add up to the fixed costs: no profit, no loss. The <strong>margin of safety</strong> is how far sales can fall below your current level before you reach that point.</p>
+    <p><strong>Margin</strong> is your profit as a share of the <em>selling price</em>; <strong>markup</strong> is your profit as a share of your <em>cost</em>. They are easily confused: adding 20% to your cost gives a 16.7% margin, not 20%. To end up with a 20% margin you need a 25% markup.</p>
+    <h3>Worked example</h3>
+    <p>A shop has 10,000 of fixed costs a month and sells a product for 50 that costs 30 to deliver. Each sale leaves 20, so it breaks even at 10,000 ÷ 20 = <strong>500 units</strong>. Selling 800 units earns 800 × 20 − 10,000 = <strong>6,000</strong>, and sales could fall 37.5% before the shop loses money. Now it considers a 10% discount (price 50 → 45): each sale leaves only 15 instead of 20, so it must sell 33% more (about 1,067 units instead of 800) just to keep the same profit.</p>
+    <p class="muted">Before you trust the result: are all the costs in the right bucket? Do fixed costs, target and units all cover the same period? Is your variable cost really per unit? Do you have a realistic reason to expect the extra sales a discount needs?</p>
+  </section>
+
+  <section id="methodology" class="section wrap narrow">
+    <h2>Methodology</h2>
+    <div class="formula">Contribution per unit = price − variable cost
+Break-even units      = fixed costs / contribution (rounded up)
+Units for a target    = (fixed costs + target profit) / contribution (rounded up)
+Margin of safety      = (units − break-even units) / units
+
+Margin  = (price − cost) / price
+Markup  = (price − cost) / cost
+Price   = cost / (1 − margin) = cost × (1 + markup)
+Markup  = margin / (1 − margin)     Margin = markup / (1 + markup)
+
+Extra sales after a discount d, margin m = (price − cost) / price:
+  extra volume = d / (m − d)   (impossible when d ≥ m)</div>
+    <p><strong>Assumptions and limits:</strong> price and variable cost per unit are constant, everything you produce is sold, and fixed costs stay fixed however many units you sell (in practice they step up as you grow). The discount calculation assumes your cost per unit does not change and that the discount applies to every sale, including customers who would have paid full price. Taxes, financing costs, returns and the time value of money are not modelled. The safety and discount signals (30% and 10% cushion, 50% extra sales) are rules of thumb, not guarantees.</p>
+  </section>
+
+  <section id="faq" class="section wrap narrow faq">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>How do you calculate the break-even point?</summary>
+      <p>Divide your fixed costs by what each unit contributes: the selling price minus the variable cost per unit. With 10,000 of fixed costs, a price of 50 and a variable cost of 30, each unit leaves 20, so you break even at 500 units.</p>
+    </details>
+    <details>
+      <summary>What is the difference between margin and markup?</summary>
+      <p>Margin is profit as a share of the selling price; markup is profit as a share of the cost. Selling something that costs 80 for 100 gives a 20% margin but a 25% markup. A 50% margin needs a 100% markup.</p>
+    </details>
+    <details>
+      <summary>What are fixed and variable costs?</summary>
+      <p>Fixed costs do not change with the number of units you sell in the period, such as rent, salaries and software subscriptions. Variable costs grow with every sale, such as materials, delivery, payment fees and sales commission.</p>
+    </details>
+    <details>
+      <summary>How much more do I need to sell after giving a discount?</summary>
+      <p>To earn the same total profit you need to sell discount divided by (margin minus discount) more units. At a 40% margin, a 10% discount needs 33% more sales and a 20% discount needs 100% more.</p>
+    </details>
+    <details>
+      <summary>What is the margin of safety?</summary>
+      <p>The margin of safety is how far your sales can fall below the current level before you stop making a profit. It equals actual units minus break-even units, divided by actual units.</p>
+    </details>
+  </section>
+
+  <section class="wrap narrow">
+    <div class="share-bar" role="group" aria-labelledby="share-title" data-type="tool">
+      <p class="share-title" id="share-title">Found this tool useful? Share it or save it.</p>
+      <div class="share-actions">
+        <a class="share-btn" data-share="linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fantskoloz.github.io%2Fanthony-skolozdrzyk-ardouin%2Fprojects%2Fbreak-even-pricing-calculator%2F" target="_blank" rel="noopener noreferrer">Share on LinkedIn</a>
+        <a class="share-btn" data-share="x" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fantskoloz.github.io%2Fanthony-skolozdrzyk-ardouin%2Fprojects%2Fbreak-even-pricing-calculator%2F&amp;text=Free%20Break-even%20%26%20Pricing%20Calculator%3A%20Break-even%2C%20Margin%20vs%20Markup%2C%20Discounts" target="_blank" rel="noopener noreferrer">Share on X</a>
+        <a class="share-btn" data-share="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fantskoloz.github.io%2Fanthony-skolozdrzyk-ardouin%2Fprojects%2Fbreak-even-pricing-calculator%2F" target="_blank" rel="noopener noreferrer">Share on Facebook</a>
+        <a class="share-btn" data-share="whatsapp" href="https://wa.me/?text=Free%20Break-even%20%26%20Pricing%20Calculator%3A%20Break-even%2C%20Margin%20vs%20Markup%2C%20Discounts%20https%3A%2F%2Fantskoloz.github.io%2Fanthony-skolozdrzyk-ardouin%2Fprojects%2Fbreak-even-pricing-calculator%2F" target="_blank" rel="noopener noreferrer">Share on WhatsApp</a>
+        <a class="share-btn" data-share="email" href="mailto:?subject=Free%20Break-even%20%26%20Pricing%20Calculator%3A%20Break-even%2C%20Margin%20vs%20Markup%2C%20Discounts&amp;body=Free%20Break-even%20%26%20Pricing%20Calculator%3A%20Break-even%2C%20Margin%20vs%20Markup%2C%20Discounts%0A%0Ahttps%3A%2F%2Fantskoloz.github.io%2Fanthony-skolozdrzyk-ardouin%2Fprojects%2Fbreak-even-pricing-calculator%2F">Share by email</a>
+        <button type="button" class="share-btn" data-share="copy" data-share-js hidden>Copy link</button>
+        <button type="button" class="share-btn" data-share="bookmark" data-share-js hidden>&#9734; Add to favorites</button>
+      </div>
+      <p class="share-status" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <section class="wrap narrow">
+    <h2 class="sr-only">Related tools</h2>
+    <ul class="related">
+      <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/marketing-roi-calculator/">Marketing ROI Calculator: ROAS, CAC, LTV</a></li>
+      <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/saas-metrics-calculator/">SaaS Metrics &amp; Runway Calculator</a></li>
+      <li><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/rice-prioritizer/">RICE / ICE Prioritizer</a></li>
+    </ul>
+    <aside class="disclaimer" aria-labelledby="disclaimer-title">
+      <h2 id="disclaimer-title">Free tool &amp; disclaimer</h2>
+      <p>This tool is provided free of charge for general informational and educational purposes only. It is offered "as is", without warranty of any kind, and does not constitute professional, statistical, financial, legal or marketing advice. Results depend on the accuracy of your inputs and on the statistical assumptions stated on this page; you are solely responsible for decisions taken on the basis of the results. To the fullest extent permitted by law, the author accepts no liability for any loss or damage arising from use of this tool. This is an independent personal initiative by Anthony Skolozdrzyk-Ardouin; it is not affiliated with, endorsed by, or representative of any current or former employer. Calculations run entirely in your browser: the data you enter is not sent to or stored on any server. Anonymous usage analytics (Google Analytics) are collected on this site.</p>
+    </aside>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <p>&copy; <span id="year">2026</span> Anthony Skolozdrzyk-Ardouin. Free tool for free use.</p>
+    <p><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/">Home</a> &middot; <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#work">More free tools</a> &middot; <a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/">Blog</a></p>
+  </div>
+</footer>
+
+<script type="module" src="tool.js"></script>
+<script src="share.js" defer></script>
+</body>
+</html>

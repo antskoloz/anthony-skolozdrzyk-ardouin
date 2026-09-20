@@ -795,6 +795,10 @@ p {
   margin-top: 56px;
 }
 
+.section-head + .free-tools {
+  margin-top: 0;
+}
+
 .free-tools__head h3 {
   font-size: 1.5rem;
   margin-bottom: 8px;
