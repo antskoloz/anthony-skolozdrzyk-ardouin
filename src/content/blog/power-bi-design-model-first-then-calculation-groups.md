@@ -1,9 +1,16 @@
 ---
 title: "Power BI design: model first, then calculation groups"
-description: "A practical guide to Power BI design: star schema, calculation groups, field parameters and dashboard layout habits that keep reports fast and easy to maintain."
-pubDate: 2026-09-20
-tags: ["power bi", "data modeling", "dax", "dashboard design", "business intelligence"]
-draft: true
+description: "A practical guide to Power BI design: star schema, calculation
+  groups, field parameters and dashboard layout habits that keep reports fast
+  and easy to maintain."
+pubDate: 2026-09-20T17:00:00.000+02:00
+tags:
+  - power bi
+  - data modeling
+  - dax
+  - dashboard design
+  - business intelligence
+draft: false
 ---
 
 > **Short answer:** A great Power BI dashboard is mostly decided before you draw a single chart. Get the star schema right, put your logic in a small set of explicit measures, and use calculation groups and field parameters to stop yourself from building the same thing forty times. Then keep the report page simple: the most important number top left, few visuals, consistent colors.
