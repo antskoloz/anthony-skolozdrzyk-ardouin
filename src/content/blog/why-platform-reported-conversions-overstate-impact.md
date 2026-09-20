@@ -1,7 +1,7 @@
 ---
 title: "Why Platform Conversions Overstate Impact (and How to Test)"
 description: "Ad platforms report conversions they may not have caused. Learn how incrementality tests work, with a worked cost example and a step-by-step plan."
-pubDate: 2026-10-17
+pubDate: 2026-10-17T09:00:00.000+02:00
 tags: ["marketing analytics", "incrementality", "geo testing", "advertising measurement"]
 draft: true
 ---

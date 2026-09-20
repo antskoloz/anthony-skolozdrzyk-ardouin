@@ -22,12 +22,15 @@ collections:
     slug: "{{slug}}"
     format: "frontmatter"
     extension: "md"
-    summary: "{{title}} — {{pubDate}}"
+    summary: "{{title}} — {{draft | ternary('📝 Draft','✅ Published')}} — {{pubDate | date('MMM D, YYYY, HH:mm')}}"
     sortable_fields: ["pubDate", "title"]
+    view_filters:
+      - { label: "Drafts", field: "draft", pattern: true }
+      - { label: "Published", field: "draft", pattern: false }
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "text", hint: "Used for the meta description, OG tags and blog card excerpt." }
-      - { label: "Publish Date", name: "pubDate", widget: "datetime" }
+      - { label: "Publish Date", name: "pubDate", widget: "datetime", default: "{{now}}" }
       - { label: "Updated Date", name: "updatedDate", widget: "datetime", required: false }
       - { label: "Hero Image", name: "heroImage", widget: "image", required: false, media_library: { config: { multiple: false } } }
       - { label: "Tags", name: "tags", widget: "list", required: false }
