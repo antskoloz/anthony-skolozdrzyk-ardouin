@@ -76,6 +76,24 @@ ADR log. Superseded decisions are marked as such, not deleted or edited in place
 
 ---
 
+## ADR-006: Share and favorites bar on every free tool and blog post
+
+**Date:** 2026-09-20
+**Status:** Accepted
+
+**Context:** Anthony wants visitors to be able to pass each tool and post on to their network or save it, and wants this on every tool and post by default from now on, without third-party scripts.
+
+**Options considered:**
+1. Third-party share widgets (AddToAny, ShareThis, platform SDKs).
+2. Plain links styled as buttons pointing at each network's public share URL, plus a small first-party script for copy-link and a bookmark hint.
+3. Only the browser's native share sheet (Web Share API).
+
+**Decision:** Option 2. The share links carry the canonical URL and title in their `href`, so they work with JavaScript disabled and add no tracking or page weight. The Web Share API is not used because it is missing on many desktop browsers. A page cannot create a bookmark, so "Add to favorites" shows the right keyboard shortcut or menu steps for the visitor's platform. Share clicks are sent to the existing GA4 tag. The block lives in every free tool's `index.html` with its own `share.js` (tools share no code, ADR-003/004) and in the blog layout as `ShareBar.astro`. Details in [specs/free-tools.md](specs/free-tools.md) and [specs/blog.md](specs/blog.md).
+
+**Consequences:** Each tool carries its own copy of the bar and script, so a change must be applied to every copy (a rollout script or search-and-replace does it). The share URLs of LinkedIn, X, Facebook and WhatsApp can change on their side and are not under our control. Decline Code Lookup, which is an Astro app with its own layout, is not covered yet.
+
+---
+
 ## ADR-002: Cloudflare Worker OAuth proxy + GitHub Actions Pages deploy
 
 **Date:** 2026-09-13

@@ -2,11 +2,11 @@
 
 ## Scope
 
-A family of free, no-sign-up calculators for marketers, each published as its own project under `projects/<tool>/` (folder contract in [projects.md](projects.md)). The purpose is to build Anthony's personal brand: each tool is useful on its own, ranks for its own search intent, and is showcased on the homepage. Decision record: [decisions.md](../decisions.md) ADR-004.
+A family of free, no-sign-up calculators for marketers, product managers and finance teams, each published as its own project under `projects/<tool>/` (folder contract in [projects.md](projects.md)). The purpose is to build Anthony's personal brand: each tool is useful on its own, ranks for its own search intent, and is showcased on the homepage. Decision record: [decisions.md](../decisions.md) ADR-004.
 
 ## Shared contract (every tool)
 
-- **Static vanilla HTML/CSS/JS**, no `package.json`, no build step. Published by copying the folder to `dist/projects/<tool>/`. Files: `index.html`, `tool.css`, `tool.js`, optional pure-function module with its test (`stats.js` + `stats.test.mjs` for the statistical tools, `calc.js` + `calc.test.mjs` for the others; no DOM), `favicon.svg`, `README.md`.
+- **Static vanilla HTML/CSS/JS**, no `package.json`, no build step. Published by copying the folder to `dist/projects/<tool>/`. Files: `index.html`, `tool.css`, `tool.js`, `share.js`, optional pure-function module with its test (`stats.js` + `stats.test.mjs` for the statistical tools, `calc.js` + `calc.test.mjs` for the others; no DOM), `favicon.svg`, `README.md`.
 - **No code shared between tools** (see projects.md rules): each folder carries its own copy of `tool.css` and of any `stats.js` it needs.
 - **English-only UI.** The homepage card for each tool is translated in EN/FR/DE.
 - **Computation runs in the browser.** No inputs are sent to or stored on a server. No `localStorage` of user data.
@@ -16,6 +16,7 @@ A family of free, no-sign-up calculators for marketers, each published as its ow
 - **Disclaimer:** every tool page ends with the full disclaimer below; homepage cards and the "Free tools" block carry the short form.
 - **SEO:** canonical URL, OG/Twitter tags, JSON-LD `WebApplication` + `FAQPage`, a methodology section with formulas and assumptions, and the tool's URL listed in `public/sitemap.xml`.
 - **Accessibility/UX:** labelled inputs, results in an `aria-live` region, works at mobile width, inputs validated with inline messages (never a silent `NaN`).
+- **Share & favorites bar (mandatory on every tool, ADR-006):** a `share-bar` block near the end of the page, just above the related-tools links and the disclaimer, headed "Found this tool useful? Share it or save it." It holds plain-text links styled as buttons, with the tool's canonical URL and title baked into each `href` so they work without JavaScript: Share on LinkedIn, Share on X, Share on Facebook, Share on WhatsApp, Share by email (`mailto:`). Two buttons are revealed by the tool's own `share.js` (a copy per folder, loaded with `defer`): **Copy link** and **Add to favorites**. Browsers do not allow a page to create a bookmark, so the favorites button shows a platform-specific hint (Ctrl + D, ⌘ + D, or the browser-menu steps on iOS and Android). No third-party script, SDK, icon font or tracking pixel is loaded; the third-party site is only opened when the visitor clicks. Clicks are reported to the existing GA4 tag as a `share` event (`method`, `content_type`, `item_id`). New tools start from a copy of an existing tool's bar; do not ship a tool without it.
 - **Not on cards:** no "View code" button; user-facing copy avoids the word "projects" (use "tools"/"work"). Card button is "Open".
 
 ### Disclaimer (full form, English, on every tool page)
@@ -26,7 +27,7 @@ Short form (cards / "Free tools" block): "Free tool for free use. Provided as is
 
 ## Homepage integration
 
-Inside `#work` on `public/index.html`, `public/fr/index.html`, `public/de/index.html`: a "Free tools" sub-block after the Decline Code Lookup card — heading, a one-line "free, no sign-up" note with the short disclaimer, and a grid of compact cards (badge, name, one-line benefit, tags, **Open** → `projects/<tool>/`). Shipping a tool means adding its card to all three homepages and its URL to `public/sitemap.xml`, in the same change. Card styles live in `public/assets/css/style.css`.
+Inside `#work` on `public/index.html`, `public/fr/index.html`, `public/de/index.html`: a "Free tools" sub-block after the Decline Code Lookup card — heading "Free tools for marketers, product managers and finance teams" (translated in FR/DE), a short "free, no sign-up" note that carries a bold **Disclaimer** sentence (as is, information only, not professional, financial, legal or marketing advice, the author accepts no liability, not affiliated with any employer, full disclaimer on each tool), and a grid of compact cards (badge, name, one-line benefit, tags, **Open** → `projects/<tool>/`). Shipping a tool means adding its card to all three homepages and its URL to `public/sitemap.xml`, in the same change. Card styles live in `public/assets/css/style.css`.
 
 ## Plain-language principles (Tools 1 and 2, and any future statistical tool)
 

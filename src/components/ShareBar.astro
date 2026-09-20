@@ -1,0 +1,29 @@
+---
+// Share & favorites bar for blog posts. Plain links (no third-party scripts); the copy and
+// bookmark buttons are enabled by /assets/js/share.js. Spec: specs/blog.md.
+interface Props {
+  url: string;
+  title: string;
+}
+
+const { url, title } = Astro.props;
+const u = encodeURIComponent(url);
+const t = encodeURIComponent(title);
+const links = [
+  { id: 'linkedin', label: 'Share on LinkedIn', href: `https://www.linkedin.com/sharing/share-offsite/?url=${u}` },
+  { id: 'x', label: 'Share on X', href: `https://twitter.com/intent/tweet?url=${u}&text=${t}` },
+  { id: 'facebook', label: 'Share on Facebook', href: `https://www.facebook.com/sharer/sharer.php?u=${u}` },
+  { id: 'whatsapp', label: 'Share on WhatsApp', href: `https://wa.me/?text=${t}%20${u}` },
+];
+---
+
+<div class="share-bar" role="group" aria-labelledby="share-title" data-type="post">
+  <p class="share-title" id="share-title">Found this useful? Share it or save it.</p>
+  <div class="share-actions">
+    {links.map((l) => <a class="share-btn" data-share={l.id} href={l.href} target="_blank" rel="noopener noreferrer">{l.label}</a>)}
+    <a class="share-btn" data-share="email" href={`mailto:?subject=${t}&body=${t}%0A%0A${u}`}>Share by email</a>
+    <button type="button" class="share-btn" data-share="copy" data-share-js hidden>Copy link</button>
+    <button type="button" class="share-btn" data-share="bookmark" data-share-js hidden>&#9734; Add to favorites</button>
+  </div>
+  <p class="share-status" aria-live="polite"></p>
+</div>

@@ -1,6 +1,8 @@
 ---
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import BlogLayout from '../../layouts/BlogLayout.astro';
+import ShareBar from '../../components/ShareBar.astro';
+import { SITE_URL } from '../../consts';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
@@ -52,6 +54,7 @@ const dateFormat: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long',
 
     <div class="prose">
       <Content />
+      <ShareBar url={`${SITE_URL}/blog/${post.id}/`} title={post.data.title} />
     </div>
   </div>
 </BlogLayout>

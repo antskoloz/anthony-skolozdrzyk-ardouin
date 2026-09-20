@@ -31,6 +31,10 @@ Post body is Markdown, rendered via Astro's `render()` into the `.prose` styled 
 
 Every blog page (via `BlogLayout.astro`) gets: canonical URL, OG + Twitter tags, RSS `<link rel="alternate">`, and — for posts specifically — a `BlogPosting` JSON-LD block with `headline`, `datePublished`, `dateModified` (if set), `keywords`, and `author`/`publisher` referencing the existing site-wide `Person` `@id` (`https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#person`) so posts are attributed to the same entity as the homepage's existing `Person` schema.
 
+## Share & favorites bar
+
+Every post ends with a share bar (`src/components/ShareBar.astro`, styles in `public/assets/css/style.css`, behavior in `public/assets/js/share.js`, loaded by `BlogLayout.astro`). It is the same as on the free tools ([free-tools.md](free-tools.md), ADR-006 in [decisions.md](../decisions.md)): plain links styled as buttons for LinkedIn, X, Facebook, WhatsApp and email with the post's canonical URL and title, plus Copy link and Add to favorites (a keyboard-shortcut hint, since browsers cannot bookmark on a page's behalf). No third-party script or widget; clicks are sent to the existing GA4 tag as a `share` event. It is part of the layout, so new posts get it without any editor action.
+
 ## Decap CMS configuration
 
 `public/admin/config.yml`:

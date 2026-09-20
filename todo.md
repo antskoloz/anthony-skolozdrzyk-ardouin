@@ -21,7 +21,9 @@ Spec: [specs/free-tools.md](specs/free-tools.md). One commit per tool, including
 ## Next tools (chosen 2026-09-20; one commit each, including cards EN/FR/DE + sitemap)
 - [x] Tool 5: `projects/saas-metrics-calculator/` — calc.js + tests, UI, disclaimer/badge, GA4, cards, sitemap, projects.md list
 - [x] Tool 6: `projects/rice-prioritizer/` — same checklist
-- [ ] Decide whether to retitle the homepage "Free tools for marketers" block now that it also holds finance / PM tools (EN/FR/DE)
+- [x] Retitle the homepage tools block "Free tools for marketers, product managers and finance teams" and add a bold disclaimer sentence (EN/FR/DE)
+- [x] Share & favorites bar on all 6 tools and every blog post (ADR-006); required for every new tool from now on
+- [ ] Decide whether Decline Code Lookup (Astro app, own layout) should get the share bar too
 - [ ] Bench for later: Break-even & Pricing, Funnel What-If, Approval-Rate Uplift Value, attribution comparison, VAT (FR/DE)
 
 ## Carried over
