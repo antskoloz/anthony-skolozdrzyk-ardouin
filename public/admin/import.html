@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Import a Markdown post — Admin</title>
+<style>
+  :root { --navy: #0a1f44; --blue: #2f6fed; --border: #e4e9f1; --bg-alt: #f6f8fb; --muted: #57647a; --bad: #b3261e; --bad-bg: #fdeceb; --good: #0f7a4d; --good-bg: #e8f6ef; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #16213a; background: #fff; line-height: 1.55; }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 40px 24px 64px; }
+  h1 { font-size: 1.5rem; color: var(--navy); margin: 0 0 8px; }
+  p.lead { color: var(--muted); margin: 0 0 28px; }
+  .panel { border: 1px solid var(--border); border-radius: 12px; padding: 22px; background: var(--bg-alt); }
+  label { display: block; font-weight: 600; font-size: 0.9rem; margin: 16px 0 6px; }
+  label:first-of-type { margin-top: 0; }
+  input[type="file"] { display: block; width: 100%; padding: 10px; border: 1px dashed #cfd7e4; border-radius: 8px; background: #fff; }
+  input[type="text"] { width: 100%; padding: 10px 12px; border: 1px solid #cfd7e4; border-radius: 8px; font: inherit; }
+  .hint { font-size: 0.82rem; color: var(--muted); margin: 6px 0 0; }
+  button { margin-top: 20px; padding: 12px 20px; border: 0; border-radius: 8px; background: var(--blue); color: #fff; font: inherit; font-weight: 700; cursor: pointer; }
+  button:disabled { background: #b9c6e0; cursor: not-allowed; }
+  .status { margin-top: 18px; padding: 14px 16px; border-radius: 8px; font-size: 0.9rem; display: none; }
+  .status.is-visible { display: block; }
+  .status.is-ok { background: var(--good-bg); color: var(--good); }
+  .status.is-warn { background: #fff4dd; color: #9a5b00; }
+  .status.is-error { background: var(--bad-bg); color: var(--bad); }
+  textarea.manual { display: none; width: 100%; height: 160px; margin-top: 12px; font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.8rem; padding: 10px; border: 1px solid var(--border); border-radius: 8px; }
+  .nav { margin-bottom: 24px; font-size: 0.88rem; }
+  .nav a { color: var(--blue); text-decoration: none; margin-right: 16px; }
+  .nav a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="nav"><a href="./">&larr; Back to Content Manager</a><a href="https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/" target="_blank" rel="noopener">View blog</a></div>
+
+  <h1>Import a Markdown post</h1>
+  <p class="lead">Pick a <code>.md</code> file you already wrote (front matter + body, same shape as your other posts) and this opens GitHub's own "create file" screen — filename and content pre-filled where possible — so you commit it straight into <code>src/content/blog/</code> without hunting for the folder yourself.</p>
+
+  <div class="panel">
+    <label for="file">Markdown file</label>
+    <input type="file" id="file" accept=".md,.markdown,.txt">
+    <p class="hint">Read entirely in your browser — nothing is uploaded anywhere until you click "Commit changes" on GitHub's own page.</p>
+
+    <label for="filename">Filename in <code>src/content/blog/</code></label>
+    <input type="text" id="filename" placeholder="my-new-post.md">
+    <p class="hint">This becomes the post's URL. Use lowercase, hyphens, no spaces, and keep the <code>.md</code> ending.</p>
+
+    <button id="go" disabled>Continue on GitHub</button>
+
+    <div class="status" id="status"></div>
+    <textarea class="manual" id="manual" readonly></textarea>
+  </div>
+</div>
+
+<script>
+(function () {
+  var REPO = 'antskoloz/anthony-skolozdrzyk-ardouin';
+  var BRANCH = 'main';
+  var TARGET_FOLDER = 'src/content/blog/';
+  var MAX_URL_CONTENT = 6000; // conservative: keeps the whole GitHub URL comfortably under common browser/proxy limits
+
+  var fileInput = document.getElementById('file');
+  var filenameInput = document.getElementById('filename');
+  var goBtn = document.getElementById('go');
+  var status = document.getElementById('status');
+  var manual = document.getElementById('manual');
+  var content = '';
+
+  function setStatus(kind, html) {
+    status.className = 'status is-visible' + (kind ? ' is-' + kind : '');
+    status.innerHTML = html;
+  }
+
+  function sanitizeFilename(name) {
+    var base = name.replace(/\.(md|markdown|txt)$/i, '').trim();
+    if (!base) base = 'new-post';
+    return base + '.md';
+  }
+
+  fileInput.addEventListener('change', function () {
+    var file = fileInput.files[0];
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function () {
+      content = String(reader.result || '');
+      filenameInput.value = sanitizeFilename(file.name);
+      goBtn.disabled = false;
+      manual.style.display = 'none';
+      setStatus('', '');
+      status.className = 'status';
+    };
+    reader.onerror = function () { setStatus('error', 'Could not read that file. Please try again.'); };
+    reader.readAsText(file);
+  });
+
+  function copyToClipboard(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(text).then(function () { return true; }, function () { return fallbackCopy(text); });
+    }
+    return Promise.resolve(fallbackCopy(text));
+  }
+
+  function fallbackCopy(text) {
+    try {
+      var box = document.createElement('textarea');
+      box.value = text;
+      box.setAttribute('readonly', '');
+      box.style.position = 'fixed';
+      box.style.opacity = '0';
+      document.body.appendChild(box);
+      box.select();
+      var ok = document.execCommand('copy');
+      document.body.removeChild(box);
+      return ok;
+    } catch (e) { return false; }
+  }
+
+  goBtn.addEventListener('click', function () {
+    var filename = (filenameInput.value || '').trim();
+    if (!filename) { setStatus('error', 'Enter a filename first.'); return; }
+    if (!/\.mdx?$/i.test(filename)) { setStatus('error', 'The filename should end in .md.'); return; }
+    if (!content) { setStatus('error', 'Choose a file first.'); return; }
+
+    var path = TARGET_FOLDER + filename;
+    var encoded = encodeURIComponent(content);
+    var fitsInUrl = encoded.length <= MAX_URL_CONTENT;
+    var url = 'https://github.com/' + REPO + '/new/' + BRANCH + '?filename=' + encodeURIComponent(path);
+    if (fitsInUrl) url += '&value=' + encoded;
+
+    copyToClipboard(content).then(function (copied) {
+      window.open(url, '_blank', 'noopener');
+      if (fitsInUrl) {
+        setStatus('ok', 'Opened GitHub’s "Create new file" page in a new tab, with the filename and content already filled in. Check it over there, then click <strong>Commit changes</strong>.' + (copied ? ' (Its content is also on your clipboard, just in case.)' : ''));
+      } else if (copied) {
+        setStatus('warn', 'This post is long, so GitHub’s link can only carry the filename, not the content. It’s been <strong>copied to your clipboard</strong> instead — on the GitHub tab that just opened, click inside the empty editor and press <strong>Ctrl+V</strong> (or <strong>⌘+V</strong> on Mac) to paste it in, then commit.');
+      } else {
+        manual.style.display = 'block';
+        manual.value = content;
+        setStatus('error', 'This post is long, so GitHub’s link can only carry the filename, and copying to your clipboard didn’t work in this browser. Select all the text in the box below, copy it, then paste it into the empty editor on the GitHub tab that just opened.');
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -8,5 +8,15 @@
 </head>
 <body>
   <script src="https://unpkg.com/decap-cms@^3.3.0/dist/decap-cms.js"></script>
+  <script>
+    if (window.CMS && typeof window.CMS.registerAdditionalLink === 'function') {
+      window.CMS.registerAdditionalLink({
+        id: 'import-markdown',
+        title: 'Import a Markdown file',
+        data: './import.html',
+        options: { icon: 'page' },
+      });
+    }
+  </script>
 </body>
 </html>

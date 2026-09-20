@@ -29,6 +29,10 @@ Spec: [specs/free-tools.md](specs/free-tools.md). One commit per tool, including
 - [ ] Decide whether Decline Code Lookup (Astro app, own layout) should get the share bar too
 - [ ] Bench for later: Funnel What-If, Approval-Rate Uplift Value, attribution comparison, VAT (FR/DE)
 
+## Admin: import a pre-written Markdown post (2026-09-20)
+- [x] `public/admin/import.html` — reads a local `.md` file, opens GitHub's own "create file" screen with the `src/content/blog/` path (and, for shorter posts, the body) pre-filled, clipboard-copy fallback for longer posts; linked from inside Decap CMS via `registerAdditionalLink` in `public/admin/index.html`; documented in specs/blog.md
+- [ ] Anthony to test end-to-end (pick a real `.md` file, confirm the GitHub tab opens correctly pre-filled or with content on the clipboard, commit, confirm it shows up in Decap's Blog list and on the live site) — could not be tested live from this session (no browser/GitHub-login access here)
+
 ## Tool 8 (chosen 2026-09-20 — finance/educational)
 - [x] Tool 8: `projects/company-valuation-calculator/` — WACC + free cash flow + DCF + EPS combined into one worked-example tool (calc.js + tests, UI incl. share bar, prominent educational/not-investment-advice notice, disclaimer/badge, GA4), cards EN/FR/DE, sitemap, specs/free-tools.md + specs/projects.md updated
 - [ ] Anthony to spot-check the tool in a browser (no headless-browser tool was available to verify visually while building it — logic was verified via calc.test.mjs and a manual pipeline simulation instead)

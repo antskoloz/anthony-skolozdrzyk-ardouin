@@ -44,6 +44,16 @@ Every post ends with a share bar (`src/components/ShareBar.astro`, styles in `pu
 - `public/admin/index.html` loads Decap CMS from the `unpkg` CDN — no npm dependency, no bundling.
 - `robots.txt` disallows `/admin/` so the editor UI itself doesn't get indexed.
 
+## Import a pre-written Markdown file
+
+`public/admin/import.html`: a standalone admin utility (linked from inside the CMS via `CMS.registerAdditionalLink` in `public/admin/index.html`, and directly reachable at `/admin/import.html`) for publishing a post that was already written elsewhere as a complete `.md` file (front matter + body), instead of retyping it into Decap's form fields or using GitHub's web UI unassisted.
+
+- Reads the chosen file client-side only (`FileReader`); nothing is uploaded until the user commits on GitHub itself.
+- Builds a link to GitHub's own "create file" screen (`https://github.com/antskoloz/anthony-skolozdrzyk-ardouin/new/main?filename=src/content/blog/<name>&value=<content>`) with the target path pre-filled and, for shorter posts, the body pre-filled too.
+- Real posts here typically run 10–13 KB, well past what a URL can safely carry, so content is always also copied to the clipboard as a fallback: past a conservative length (6,000 encoded characters), the tool skips the `value` parameter, opens GitHub with just the filename pre-filled, and tells the user to paste (Ctrl/⌘+V) instead. If clipboard access itself fails, the raw content is shown in an on-page textarea to copy manually.
+- No YAML/front-matter parsing happens in this tool — the file's raw text is handed to GitHub as-is, and Astro's existing content-collection loader parses it exactly as it would any post added by hand.
+- Committing on GitHub still goes through the same `main`-branch history as any other change; the post then appears in Decap CMS's Blog list (and the deploy workflow) like any other file.
+
 ## Known placeholder
 
 `src/content/blog/hello-world.md` ships with `draft: true` — a template example showing field usage, intentionally excluded from the live site, listing, sitemap, and RSS. Safe to edit or delete once real posts exist.
