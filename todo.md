@@ -1,4 +1,19 @@
-# Todo (current sprint — weekend 2026-09-19/20, free marketing tools)
+# Todo
+
+## Custom domain migration to anthonysko.com (2026-09-21, ADR-007)
+
+Code and docs are migrated locally and `npm run build:all` is green (no old host or base path left in `dist/`). Nothing is committed or pushed yet.
+
+- [ ] Anthony: review the diff, then commit
+- [ ] Namecheap → Advanced DNS: four `A` records for `@` (185.199.108/109/110/111.153), `CNAME www` → `antskoloz.github.io`, optional TXT `_github-pages-challenge-antskoloz` from github.com/settings/pages; remove parking records
+- [ ] Repo Settings → Pages: custom domain `anthonysko.com`, wait for the certificate, tick **Enforce HTTPS**
+- [ ] Push (only when Anthony says so) and confirm the Actions deploy is green
+- [ ] Redeploy the OAuth Worker (`cd oauth-worker && npx wrangler deploy`) so `anthonysko.com` is allowed; test login at https://anthonysko.com/admin/
+- [ ] Add `https://anthonysko.com/` as a new Google Search Console + Bing property, resubmit `sitemap.xml`, `sitemap-index.xml` and the Decline Code Lookup sitemap
+- [ ] Check the GA4/GTM data-stream URL and any other place that lists the old address (LinkedIn profile, email signature)
+- [ ] Later, drop `antskoloz.github.io` from `ALLOWED_DOMAINS` in `oauth-worker/wrangler.toml`
+
+## Free marketing tools sprint (weekend 2026-09-19/20)
 
 Spec: [specs/free-tools.md](specs/free-tools.md). One commit per tool, including its homepage cards (EN/FR/DE) and sitemap entry.
 
@@ -38,7 +53,7 @@ Spec: [specs/free-tools.md](specs/free-tools.md). One commit per tool, including
 - [ ] Anthony to spot-check the tool in a browser (no headless-browser tool was available to verify visually while building it — logic was verified via calc.test.mjs and a manual pipeline simulation instead)
 
 ## Carried over
-- [ ] Verify https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/decline-code-lookup/ is live after the deploy
+- [ ] Verify https://anthonysko.com/projects/decline-code-lookup/ is live after the deploy
 - [ ] Delete the standalone `antskoloz/decline-code-lookup` repo (its old URLs will 404 — no redirect is possible from a deleted Pages site)
 - [ ] Submit `projects/decline-code-lookup/sitemap-index.xml` to Google Search Console / Bing Webmaster Tools
 - [ ] Anthony to review the disclaimer wording

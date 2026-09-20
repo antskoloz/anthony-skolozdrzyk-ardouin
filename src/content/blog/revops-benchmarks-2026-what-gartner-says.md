@@ -45,7 +45,7 @@ Because outside numbers are shaky, your own trend is often the best benchmark. T
 | Lead-to-opportunity conversion | Opportunities created ÷ qualified leads                                              | Handoff quality between marketing and sales        |
 | Data completeness              | Records with all required fields ÷ total records                                     | Whether reports are reliable in the first place    |
 
-For the last row, see [The RevOps Data Quality Audit: A 10-Point Checklist](https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/revops-data-quality-audit-10-point-checklist/). For forecasting in practice, read [Cohort-Based Revenue Forecasting for E-commerce](https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/cohort-based-revenue-forecasting-for-ecommerce/).
+For the last row, see [The RevOps Data Quality Audit: A 10-Point Checklist](https://anthonysko.com/blog/revops-data-quality-audit-10-point-checklist/). For forecasting in practice, read [Cohort-Based Revenue Forecasting for E-commerce](https://anthonysko.com/blog/cohort-based-revenue-forecasting-for-ecommerce/).
 
 ## How should I use benchmarks in practice?
 

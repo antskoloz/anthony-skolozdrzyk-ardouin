@@ -29,7 +29,7 @@ Post body is Markdown, rendered via Astro's `render()` into the `.prose` styled 
 
 ## SEO/GEO per post
 
-Every blog page (via `BlogLayout.astro`) gets: canonical URL, OG + Twitter tags, RSS `<link rel="alternate">`, and — for posts specifically — a `BlogPosting` JSON-LD block with `headline`, `datePublished`, `dateModified` (if set), `keywords`, and `author`/`publisher` referencing the existing site-wide `Person` `@id` (`https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/#person`) so posts are attributed to the same entity as the homepage's existing `Person` schema.
+Every blog page (via `BlogLayout.astro`) gets: canonical URL, OG + Twitter tags, RSS `<link rel="alternate">`, and — for posts specifically — a `BlogPosting` JSON-LD block with `headline`, `datePublished`, `dateModified` (if set), `keywords`, and `author`/`publisher` referencing the existing site-wide `Person` `@id` (`https://anthonysko.com/#person`) so posts are attributed to the same entity as the homepage's existing `Person` schema.
 
 ## Share & favorites bar
 

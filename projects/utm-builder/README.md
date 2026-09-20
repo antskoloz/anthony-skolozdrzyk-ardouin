@@ -1,6 +1,6 @@
 # UTM Link Builder
 
-Free tool for free use, published at `/anthony-skolozdrzyk-ardouin/projects/utm-builder/`. Behavior spec: [../../specs/free-tools.md](../../specs/free-tools.md) (Tool 4).
+Free tool for free use, published at `/projects/utm-builder/`. Behavior spec: [../../specs/free-tools.md](../../specs/free-tools.md) (Tool 4).
 
 Static vanilla HTML/CSS/JS, no build step: `index.html`, `tool.css` (brand styles copied from Tool 1), `tool.js` (UI), `calc.js` (pure URL building, no DOM), `calc.test.mjs`.
 

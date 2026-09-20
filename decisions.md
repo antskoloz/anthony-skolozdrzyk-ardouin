@@ -110,3 +110,21 @@ ADR log. Superseded decisions are marked as such, not deleted or edited in place
 **Status:** Deployed 2026-09-13 at `https://anthony-site-cms-auth.anthony-skolozdrzyk.workers.dev`, referenced from `public/admin/config.yml`'s `backend.base_url`. The Pages-source flip (part 2) is confirmed done: pushes to `main` trigger the "Deploy to GitHub Pages" Actions workflow, which completes successfully and the live site reflects its output within minutes (last verified 2026-09-20 against commit `f99ddb3`).
 
 **Consequences:** Publishing a blog post now depends on the GitHub Actions workflow succeeding, not just a raw git push. `README.md`'s former "no build step" description no longer applies to the blog (it still applies to editing the homepage files directly). The Pages-source flip is a one-time manual/confirmed change, not something to redo per-deploy. The OAuth Worker is a separate deployable (`oauth-worker/`, its own `wrangler.toml`) — it is not part of the Astro build and is only redeployed when its own code changes.
+
+---
+
+## ADR-007: Serve the site from the custom domain `anthonysko.com`
+
+**Date:** 2026-09-21
+**Status:** Accepted
+
+**Context:** Anthony bought `anthonysko.com` and set it as the custom domain in GitHub Pages. The site was built for the project-page sub-path `antskoloz.github.io/anthony-skolozdrzyk-ardouin/`: Astro `base`, ~400 absolute URLs in the homepages, tools, blog and sitemap, the CMS config and the OAuth Worker allowlist all assumed it. Served from the domain root, every asset and link under the old prefix would 404.
+
+**Options considered:**
+1. Keep the old URLs in the code and rely on GitHub's redirect from the old address.
+2. Move everything to the domain root: `site: 'https://anthonysko.com'`, no `base`, and rewrite every absolute URL.
+3. Use `www.anthonysko.com` as the canonical host instead of the apex.
+
+**Decision:** Option 2 with the apex `anthonysko.com` as canonical (GitHub redirects `www` to it). All canonical/OG/hreflang/JSON-LD URLs, sitemaps, `robots.txt`, share links, the CMS `site_url`, and project base paths (`/projects/<name>`) move to the new domain. HTTPS is provided by GitHub Pages (Let's Encrypt), enforced in Settings → Pages. The GitHub repository name (`antskoloz/anthony-skolozdrzyk-ardouin`) does **not** change. The Worker's `ALLOWED_DOMAINS` lists both `anthonysko.com` and `antskoloz.github.io` during the transition. This supersedes the base-path parts of ADR-002 (allowlist value) and ADR-003 (project base path); those entries are left as written.
+
+**Consequences:** Old `antskoloz.github.io/anthony-skolozdrzyk-ardouin/...` URLs are redirected by GitHub Pages, but search engines treat `anthonysko.com` as a new property, so Search Console/Bing must be re-verified and the sitemaps resubmitted, and ranking signals take time to transfer. Share-link URLs already posted keep working through the redirect. The Cloudflare Worker must be redeployed (`wrangler deploy`) for the new allowlist to apply, and the domain's DNS records (four `A` records, `www` CNAME, optional TXT verification) live at Namecheap, outside this repo.

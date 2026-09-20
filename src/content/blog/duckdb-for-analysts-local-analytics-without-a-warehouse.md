@@ -102,7 +102,7 @@ Read options include `sheet`, `range` and `all_varchar`, which reads every cell 
 
 ## Can you reuse work from other analyses?
 
-Yes. Because the syntax is standard SQL plus a few file helpers, queries carry over well. For example, the WAPE and bias query from my post on [sales forecast accuracy](https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/sales-forecast-accuracy-wape-bias-sandbagging/) runs unchanged on a CSV export if you replace the table name with `'forecast_vs_actual.csv'`.
+Yes. Because the syntax is standard SQL plus a few file helpers, queries carry over well. For example, the WAPE and bias query from my post on [sales forecast accuracy](https://anthonysko.com/blog/sales-forecast-accuracy-wape-bias-sandbagging/) runs unchanged on a CSV export if you replace the table name with `'forecast_vs_actual.csv'`.
 
 My own workflow, offered as a suggestion rather than a rule: prototype the logic locally in DuckDB, confirm the numbers on a sample, then port the SQL to your warehouse and check for dialect differences such as date functions.
 

@@ -114,7 +114,7 @@ Version 1 fell further behind each month because it treated April's and May's ne
 * **Cohort quality changes.** A paid-social push can bring lower-retention customers than organic search. Segment cohorts by channel when you can.
 * **Seasonality.** Holiday cohorts behave differently. Compare cohorts from the same season.
 * **Small cohorts are noisy.** Use ranges rather than a single number.
-* **Payment failures hide inside retention.** A customer whose stored card is declined may look like churn. Reviewing declines, as in [Why False Declines Cost E-commerce More Than You Think](https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/why-false-declines-cost-ecommerce-more-than-you-think/), helps separate the two. This is my interpretation, not a measured result from the example above.
+* **Payment failures hide inside retention.** A customer whose stored card is declined may look like churn. Reviewing declines, as in [Why False Declines Cost E-commerce More Than You Think](https://anthonysko.com/blog/why-false-declines-cost-ecommerce-more-than-you-think/), helps separate the two. This is my interpretation, not a measured result from the example above.
 
 ## Frequently asked questions
 

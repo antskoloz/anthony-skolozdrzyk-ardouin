@@ -30,7 +30,7 @@ In practice that gives you a few habits worth defending:
 
 Microsoft is honest that this is "part science and part art" and that sometimes you break the rules on purpose. Fine. But break them knowingly, and write down why. That note will save the next person a lot of time, and that next person is often you in six months.
 
-One more thing I do that isn't from the docs, just from experience: I keep the measures in their own clearly named place and give them readable names without abbreviations. It sounds cosmetic. It stops mattering the day someone new opens the model, or the day you point an AI assistant at it, which I wrote about in [why AI analysts fail on bad metric definitions](https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/why-ai-analysts-fail-on-bad-metric-definitions/).
+One more thing I do that isn't from the docs, just from experience: I keep the measures in their own clearly named place and give them readable names without abbreviations. It sounds cosmetic. It stops mattering the day someone new opens the model, or the day you point an AI assistant at it, which I wrote about in [why AI analysts fail on bad metric definitions](https://anthonysko.com/blog/why-ai-analysts-fail-on-bad-metric-definitions/).
 
 ## Calculation groups: the hidden tip that removes half your measures
 
@@ -120,7 +120,7 @@ Do this after every meaningful change, and especially after adding a calculation
 5. Can a new reader say in one sentence what each page is for?
 6. Have you run Performance Analyzer and looked at the slowest visual?
 
-For keeping changes to a model like this reviewable over time, my [Git, GitHub and LLM workflow for Power BI DAX and M](https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/git-github-llm-power-bi-dax-m-workflow/) goes into the version control side.
+For keeping changes to a model like this reviewable over time, my [Git, GitHub and LLM workflow for Power BI DAX and M](https://anthonysko.com/blog/git-github-llm-power-bi-dax-m-workflow/) goes into the version control side.
 
 ## Frequently asked questions
 

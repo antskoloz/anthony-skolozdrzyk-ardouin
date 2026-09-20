@@ -1,6 +1,6 @@
 # SaaS Metrics & Runway Calculator
 
-Free tool for free use, published at `/anthony-skolozdrzyk-ardouin/projects/saas-metrics-calculator/`. Behavior spec: [../../specs/free-tools.md](../../specs/free-tools.md) (Tool 5).
+Free tool for free use, published at `/projects/saas-metrics-calculator/`. Behavior spec: [../../specs/free-tools.md](../../specs/free-tools.md) (Tool 5).
 
 Static vanilla HTML/CSS/JS, no build step: `index.html`, `tool.css` (brand styles copied from Tool 3, plus coloured metric cards), `tool.js` (UI), `calc.js` (pure formulas, no DOM), `calc.test.mjs`.
 

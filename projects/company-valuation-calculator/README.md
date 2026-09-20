@@ -1,6 +1,6 @@
 # Company Valuation Calculator (WACC, Free Cash Flow, DCF & EPS)
 
-Free, educational tool published at `/anthony-skolozdrzyk-ardouin/projects/company-valuation-calculator/`. Behavior spec: [../../specs/free-tools.md](../../specs/free-tools.md).
+Free, educational tool published at `/projects/company-valuation-calculator/`. Behavior spec: [../../specs/free-tools.md](../../specs/free-tools.md).
 
 Static vanilla HTML/CSS/JS, no build step: `index.html`, `tool.css`, `tool.js` (UI), `calc.js` (pure formulas, no DOM), `calc.test.mjs`.
 

@@ -33,20 +33,19 @@ The homepage pages already work, are hand-tuned for SEO/GEO (JSON-LD, hreflang, 
 
 ## Projects
 
-Each folder under `projects/` is an independent app with its own dependencies; the root site never imports from it. `npm run build:all` runs the root `astro build` and then `scripts/build-projects.mjs`, which for each subfolder either builds it (`npm ci` + `npm run build`, when it has a `package.json`) or copies it as static files, and publishes the result to `dist/projects/<name>/`. A project served at `/anthony-skolozdrzyk-ardouin/projects/<name>/` must be configured with that as its base path (for Astro: `site: 'https://antskoloz.github.io'` and `base: '/anthony-skolozdrzyk-ardouin/projects/<name>'`). See [specs/projects.md](specs/projects.md) and [decisions.md](decisions.md) ADR-003.
+Each folder under `projects/` is an independent app with its own dependencies; the root site never imports from it. `npm run build:all` runs the root `astro build` and then `scripts/build-projects.mjs`, which for each subfolder either builds it (`npm ci` + `npm run build`, when it has a `package.json`) or copies it as static files, and publishes the result to `dist/projects/<name>/`. A project served at `/projects/<name>/` must be configured with that as its base path (for Astro: `site: 'https://anthonysko.com'` and `base: '/projects/<name>'`). See [specs/projects.md](specs/projects.md) and [decisions.md](decisions.md) ADR-003.
 
-## GitHub Pages base path
+## Domain and base path
 
-This is a **project page** (`antskoloz.github.io/anthony-skolozdrzyk-ardouin/`), not a user page, so the site is served under a path prefix. `astro.config.mjs` sets:
+The site is served from the custom domain `https://anthonysko.com/` (apex; `www` redirects to it), so it lives at the domain root and there is no `base` path ([decisions.md](decisions.md) ADR-007). `astro.config.mjs` sets only:
 
 ```js
-site: 'https://antskoloz.github.io',
-base: '/anthony-skolozdrzyk-ardouin',
+site: 'https://anthonysko.com',
 ```
 
-`base` is what makes `@astrojs/sitemap`'s auto-generated URLs and Astro's own routing resolve under the correct subpath. `@astrojs/rss` does **not** read `base` automatically — `src/pages/rss.xml.js` works around this by using a trailing-slash `site` value and relative (no leading `/`) item links, which is the one place this needs to be remembered if the feed is ever touched again.
+DNS is at Namecheap (four `A` records to GitHub Pages, `www` CNAME to `antskoloz.github.io`); HTTPS is issued by GitHub Pages and enforced in Settings → Pages. The custom domain itself is set in the repo's Pages settings, which is why no `CNAME` file is needed with the Actions deploy.
 
-Everything inside `src/layouts/BlogLayout.astro` uses fully-qualified absolute URLs (`SITE_URL` from `src/consts.ts`) for nav links and asset references, rather than relying on `base`-relative paths — this matches how the legacy `public/` pages already hardcode absolute canonical/OG URLs, and sidesteps any ambiguity between Astro-relative and domain-relative paths.
+Everything inside `src/layouts/BlogLayout.astro` uses fully-qualified absolute URLs (`SITE_URL` from `src/consts.ts`) for nav links and asset references, matching how the legacy `public/` pages hardcode absolute canonical/OG URLs. Changing the domain again means rewriting those absolute URLs (`SITE_URL`, homepages, tools, sitemap, robots, CMS `site_url`, project `site`/`base`). `@astrojs/rss` does not read `base`; `src/pages/rss.xml.js` keeps a trailing-slash `site` value and relative item links, which still works at the root.
 
 ## Content model
 
@@ -58,4 +57,4 @@ See [specs/blog.md](specs/blog.md) for the `blog` collection schema and the Deca
 
 ## Admin auth (Decap CMS)
 
-Decap's `github` backend needs an OAuth handshake that a static site can't complete on its own. `oauth-worker/` (a separate deployable, not part of the Astro build) vendors the open-source [sveltia-cms-auth](https://github.com/sveltia/sveltia-cms-auth) script and runs as a Cloudflare Worker at `https://anthony-site-cms-auth.anthony-skolozdrzyk.workers.dev`, referenced from `public/admin/config.yml`'s `backend.base_url`. See `oauth-worker/README.md` for redeploy steps and [decisions.md](decisions.md) ADR-002 for the setup rationale.
+Decap's `github` backend needs an OAuth handshake that a static site can't complete on its own. `oauth-worker/` (a separate deployable, not part of the Astro build) vendors the open-source [sveltia-cms-auth](https://github.com/sveltia/sveltia-cms-auth) script and runs as a Cloudflare Worker at `https://anthony-site-cms-auth.anthony-skolozdrzyk.workers.dev` (allowlisted for the `anthonysko.com` admin origin), referenced from `public/admin/config.yml`'s `backend.base_url`. See `oauth-worker/README.md` for redeploy steps and [decisions.md](decisions.md) ADR-002 for the setup rationale.

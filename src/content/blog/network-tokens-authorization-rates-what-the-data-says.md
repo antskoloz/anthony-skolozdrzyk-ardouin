@@ -19,7 +19,7 @@ Network tokens are one of the few payment upgrades where the networks themselves
 
 A network token is a stand-in for a card number, issued and managed by the card network (for example Visa or Mastercard) rather than by a merchant or a provider. Instead of storing the raw card number, a merchant stores the token and uses it to request payments.
 
-In broad terms, tokens matter for approval rates because the network can keep them current when a card is reissued, so a stored credential is less likely to go stale. Stale card data is a real cause of declines: Stripe's reference lists a Mastercard lifecycle decline (code 79, MAC 01) for an expired card where updated card data is available. I explain how to read those codes in [Credit Card Decline Codes Explained](https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/credit-card-decline-codes-explained/).
+In broad terms, tokens matter for approval rates because the network can keep them current when a card is reissued, so a stored credential is less likely to go stale. Stale card data is a real cause of declines: Stripe's reference lists a Mastercard lifecycle decline (code 79, MAC 01) for an expired card where updated card data is available. I explain how to read those codes in [Credit Card Decline Codes Explained](https://anthonysko.com/blog/credit-card-decline-codes-explained/).
 
 ## What does Visa report?
 
@@ -79,7 +79,7 @@ Run a simple comparison instead of trusting any headline number:
 4. Track fraud rates and chargebacks alongside approvals.
 5. If you can, run a controlled rollout to a random share of traffic. Mixing populations is the most common way to overstate the effect.
 
-For the wider revenue picture, read [Why False Declines Cost E-commerce More Than You Think](https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/why-false-declines-cost-ecommerce-more-than-you-think/).
+For the wider revenue picture, read [Why False Declines Cost E-commerce More Than You Think](https://anthonysko.com/blog/why-false-declines-cost-ecommerce-more-than-you-think/).
 
 ## Frequently asked questions
 

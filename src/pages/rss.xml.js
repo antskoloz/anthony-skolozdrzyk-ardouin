@@ -7,10 +7,9 @@ export async function GET() {
   return rss({
     title: `${SITE_TITLE} — Blog`,
     description: SITE_DESCRIPTION,
-    // @astrojs/rss doesn't know about Astro's `base` config, and resolving a
-    // leading-slash link against a site URL replaces its path instead of
-    // appending — so `site` must end in "/" and links must be relative
-    // (no leading slash) for the repo path to survive URL resolution.
+    // Links are relative (no leading slash) against a `site` ending in "/".
+    // This is a leftover of the old GitHub Pages sub-path, where it was required
+    // (@astrojs/rss ignores Astro's `base`); at the domain root it is harmless.
     site: `${SITE_URL}/`,
     items: posts
       .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())

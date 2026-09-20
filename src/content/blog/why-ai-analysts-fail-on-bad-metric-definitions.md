@@ -108,7 +108,7 @@ The analyst's role shifts. Less time goes to writing every query, and more goes 
 - Does each metric have a named owner?
 - If an AI tool answered a question about them today, could you see the query it ran?
 
-If the answers are "no", fix that before buying another AI analytics tool. For a marketing example of the same principle, where one number needs a clear definition and a way to test it, see [Attribution vs. Incrementality vs. MMM: Which to Use When](https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/attribution-vs-incrementality-vs-mmm/).
+If the answers are "no", fix that before buying another AI analytics tool. For a marketing example of the same principle, where one number needs a clear definition and a way to test it, see [Attribution vs. Incrementality vs. MMM: Which to Use When](https://anthonysko.com/blog/attribution-vs-incrementality-vs-mmm/).
 
 ## Frequently asked questions
 

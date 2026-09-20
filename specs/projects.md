@@ -2,7 +2,7 @@
 
 ## Scope
 
-A `projects/` folder in this repo holds one subfolder per project. Each project is self-contained and is published on the same GitHub Pages site under `/anthony-skolozdrzyk-ardouin/projects/<name>/`. Projects are surfaced on the homepage only through the hand-written "Work" section (`public/index.html`, `fr/`, `de/`); adding a folder does not add a card automatically.
+A `projects/` folder in this repo holds one subfolder per project. Each project is self-contained and is published on the same GitHub Pages site under `/projects/<name>/` of `https://anthonysko.com`. Projects are surfaced on the homepage only through the hand-written "Work" section (`public/index.html`, `fr/`, `de/`); adding a folder does not add a card automatically.
 
 ## Folder contract
 
@@ -15,7 +15,7 @@ A `projects/` folder in this repo holds one subfolder per project. Each project 
 
 Rules:
 - A built app's `build` script must output to `dist/` inside its own folder.
-- The app must be configured for its published base path, `/anthony-skolozdrzyk-ardouin/projects/<name>/`. For Astro: `site: 'https://antskoloz.github.io'` and `base: '/anthony-skolozdrzyk-ardouin/projects/<name>'`.
+- The app must be configured for its published base path, `/projects/<name>/`. For Astro: `site: 'https://anthonysko.com'` and `base: '/projects/<name>'`.
 - A project folder does not contain its own `.github/workflows/` (only the root workflow deploys) and does not import from the root site or from other projects.
 - Dependencies live in the project's own `node_modules/` (already git-ignored); the root `package.json` is not a workspace.
 

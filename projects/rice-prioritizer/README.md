@@ -1,6 +1,6 @@
 # RICE / ICE Prioritizer
 
-Free tool for free use, published at `/anthony-skolozdrzyk-ardouin/projects/rice-prioritizer/`. Behavior spec: [../../specs/free-tools.md](../../specs/free-tools.md) (Tool 6).
+Free tool for free use, published at `/projects/rice-prioritizer/`. Behavior spec: [../../specs/free-tools.md](../../specs/free-tools.md) (Tool 6).
 
 Static vanilla HTML/CSS/JS, no build step: `index.html`, `tool.css` (brand styles copied from Tool 3, plus table and ranking styles), `tool.js` (UI), `calc.js` (scoring, ranking, paste parsing, CSV; no DOM), `calc.test.mjs`.
 

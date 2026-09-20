@@ -62,7 +62,7 @@ The steps below are my recommended process, built on the methods above.
 5. **Keep everything else steady.** Avoid launching promotions, changing prices or shifting other channels in test regions during the test.
 6. **Set the decision rule in advance.** For example: "We will scale the campaign if incremental cost per order is below $X."
 7. **Run for the planned period, then analyze.** Do not stop early because a result looks good.
-8. **Record and reuse the result.** Feed test results into your broader measurement. Meta's Robyn guide strongly recommends using experimental results to calibrate marketing mix models. See [Attribution vs. Incrementality vs. MMM](https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/attribution-vs-incrementality-vs-mmm/).
+8. **Record and reuse the result.** Feed test results into your broader measurement. Meta's Robyn guide strongly recommends using experimental results to calibrate marketing mix models. See [Attribution vs. Incrementality vs. MMM](https://anthonysko.com/blog/attribution-vs-incrementality-vs-mmm/).
 
 ## Which campaigns should I test first?
 

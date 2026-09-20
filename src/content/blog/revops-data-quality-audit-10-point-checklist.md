@@ -122,7 +122,7 @@ Track a simple scorecard and repeat it each quarter. The targets below are mine.
 - **Automate the checks.** Schedule the queries above and alert when a metric crosses your threshold.
 - **Review the rules with sales and marketing.** People fill in what they understand. Short, agreed definitions beat long policies.
 
-For where clean data pays off, see [Cohort-Based Revenue Forecasting for E-commerce](https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/cohort-based-revenue-forecasting-for-ecommerce/) and [RevOps Benchmarks 2026](https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/revops-benchmarks-2026-what-gartner-says/).
+For where clean data pays off, see [Cohort-Based Revenue Forecasting for E-commerce](https://anthonysko.com/blog/cohort-based-revenue-forecasting-for-ecommerce/) and [RevOps Benchmarks 2026](https://anthonysko.com/blog/revops-benchmarks-2026-what-gartner-says/).
 
 ## Frequently asked questions
 

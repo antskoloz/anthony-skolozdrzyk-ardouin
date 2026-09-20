@@ -1,6 +1,6 @@
 # Marketing ROI Calculator
 
-Free tool for free use, published at `/anthony-skolozdrzyk-ardouin/projects/marketing-roi-calculator/`. Behavior spec: [../../specs/free-tools.md](../../specs/free-tools.md) (Tool 3).
+Free tool for free use, published at `/projects/marketing-roi-calculator/`. Behavior spec: [../../specs/free-tools.md](../../specs/free-tools.md) (Tool 3).
 
 Static vanilla HTML/CSS/JS, no build step: `index.html`, `tool.css` (brand styles copied from Tool 1), `tool.js` (UI), `calc.js` (pure formulas, no DOM), `calc.test.mjs`.
 

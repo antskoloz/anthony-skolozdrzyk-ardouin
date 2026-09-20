@@ -2,7 +2,7 @@
 
 A free, independent educational tool for merchants that explains card payment decline codes (Visa, Mastercard, American Express) in plain English — what each one means, why it happens, and what to do about it.
 
-Live at: `https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/decline-code-lookup/`
+Live at: `https://anthonysko.com/projects/decline-code-lookup/`
 
 Lives in the `projects/` folder of the personal-brand repo; the root deploy workflow builds it (see the root `README.md`).
 

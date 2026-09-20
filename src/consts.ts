@@ -1,4 +1,4 @@
-export const SITE_URL = 'https://antskoloz.github.io/anthony-skolozdrzyk-ardouin';
+export const SITE_URL = 'https://anthonysko.com';
 export const SITE_TITLE = 'Anthony Skolozdrzyk-Ardouin';
 export const SITE_DESCRIPTION =
   'Notes on Revenue Operations, payments, forecasting and data analytics from Anthony Skolozdrzyk-Ardouin — Director of Revenue Operations & Data Analytics, Nexi Group.';

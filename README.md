@@ -2,7 +2,7 @@
 
 Trilingual (EN/FR/DE) personal brand homepage, an English-only blog with a Decap CMS admin UI, and a `projects/` folder for self-contained project sites. No database — the blog is Markdown files committed to this repo, built by Astro, served as static files on GitHub Pages.
 
-Live at: https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/
+Live at: https://anthonysko.com/
 
 See [architecture.md](architecture.md), [plan.md](plan.md), [specs/blog.md](specs/blog.md), [specs/projects.md](specs/projects.md) and [decisions.md](decisions.md) for the full design and rationale.
 
@@ -32,7 +32,7 @@ scripts/build-projects.mjs  Builds each projects/* folder into dist/projects/<na
 
 ```bash
 npm install
-npm run dev       # http://localhost:4321/anthony-skolozdrzyk-ardouin/
+npm run dev       # http://localhost:4321/
 npm run build     # blog + homepage only, outputs to dist/
 npm run build:all # also builds every projects/* folder into dist/projects/ (what CI runs)
 npm run preview   # serve the production build locally
@@ -46,7 +46,7 @@ Push to `main` — a GitHub Actions workflow (`.github/workflows/deploy.yml`) bu
 
 ## Adding a project
 
-Create `projects/<name>/` containing a self-contained app (or plain static files). Give it a build script that outputs to `dist/` and configure it for the base path `/anthony-skolozdrzyk-ardouin/projects/<name>/`. It is picked up automatically on the next `build:all` / deploy. Details in [specs/projects.md](specs/projects.md).
+Create `projects/<name>/` containing a self-contained app (or plain static files). Give it a build script that outputs to `dist/` and configure it for the base path `/projects/<name>/`. It is picked up automatically on the next `build:all` / deploy. Details in [specs/projects.md](specs/projects.md).
 
 ## Publishing a blog post
 

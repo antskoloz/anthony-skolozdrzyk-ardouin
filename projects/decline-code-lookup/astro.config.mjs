@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://antskoloz.github.io',
-  base: '/anthony-skolozdrzyk-ardouin/projects/decline-code-lookup',
+  site: 'https://anthonysko.com',
+  base: '/projects/decline-code-lookup',
   integrations: [sitemap()],
 });

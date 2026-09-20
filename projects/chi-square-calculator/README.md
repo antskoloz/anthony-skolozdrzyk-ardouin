@@ -1,6 +1,6 @@
 # Chi-Square Calculator
 
-Free tool for free use, published at `/anthony-skolozdrzyk-ardouin/projects/chi-square-calculator/`. Behavior spec: [../../specs/free-tools.md](../../specs/free-tools.md) (Tool 2, plain-language principles per ADR-005).
+Free tool for free use, published at `/projects/chi-square-calculator/`. Behavior spec: [../../specs/free-tools.md](../../specs/free-tools.md) (Tool 2, plain-language principles per ADR-005).
 
 Static vanilla HTML/CSS/JS, no build step: `index.html` (page copy, worked example, glossary, FAQ), `tool.css` (brand styles copied from Tool 1, plus UI additions), `tool.js` (UI), `stats.js` (pure statistics, no DOM), `stats.test.mjs`.
 

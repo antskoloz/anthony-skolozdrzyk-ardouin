@@ -1,6 +1,6 @@
 # Break-even & Pricing Calculator
 
-Free tool for free use, published at `/anthony-skolozdrzyk-ardouin/projects/break-even-pricing-calculator/`. Behavior spec: [../../specs/free-tools.md](../../specs/free-tools.md) (Tool 7).
+Free tool for free use, published at `/projects/break-even-pricing-calculator/`. Behavior spec: [../../specs/free-tools.md](../../specs/free-tools.md) (Tool 7).
 
 Static vanilla HTML/CSS/JS, no build step: `index.html`, `tool.css` (brand styles copied from Tool 5, plus tab and table styles), `tool.js` (UI), `calc.js` (pure formulas, no DOM), `calc.test.mjs`, `share.js` (share and favorites bar, ADR-006).
 

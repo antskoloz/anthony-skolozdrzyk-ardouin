@@ -38,6 +38,6 @@ Cut order if the weekend slips: UTM bulk mode, then Tool 4, then Tool 3's benchm
 
 ## Phase 3 — Follow-ups (not started)
 
-- [ ] Custom domain + `CNAME` (would require updating all absolute URLs across HTML/sitemap/robots/Astro config)
+- [x] Custom domain `anthonysko.com`: code/doc migration done, see [decisions.md](decisions.md) ADR-007 (DNS, HTTPS, Search Console steps in [todo.md](todo.md))
 - [ ] Dedicated 1200×630 OG share image (currently reuses the headshot)
 - [ ] Submit sitemap(s) to Google Search Console / Bing Webmaster Tools

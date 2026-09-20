@@ -70,7 +70,7 @@ If your approval rate moves from 90% to 92%, that is about $120,000 of monthly r
 
 There is no single switch. These are the levers with public evidence behind them:
 
-1. **Use network tokens.** Visa reports a 4.8% increase in authorization rates for tokenized transactions compared with card numbers (VisaNet, January to December 2025) and a 39.4% lower fraud rate versus non-tokenized credentials. I go deeper in [Network Tokens and Authorization Rates](https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/network-tokens-authorization-rates-what-the-data-says/).
+1. **Use network tokens.** Visa reports a 4.8% increase in authorization rates for tokenized transactions compared with card numbers (VisaNet, January to December 2025) and a 39.4% lower fraud rate versus non-tokenized credentials. I go deeper in [Network Tokens and Authorization Rates](https://anthonysko.com/blog/network-tokens-authorization-rates-what-the-data-says/).
 2. **Keep stored cards fresh.** Stripe cites Postmates seeing a 1.72% uplift from a card account updater, worth $60 million in revenue.
 3. **Add authentication where it helps.** Stripe says 3D Secure can lower decline rates in countries that support it.
 4. **Collect the right data at checkout.** Stripe recommends asking for CVC and postal code to avoid declines that stem from suspected fraud.
@@ -81,7 +81,7 @@ There is no single switch. These are the levers with public evidence behind them
 
 Start with one question: *of the payments we attempted, how many were declined, and why?* Then split the answer three ways:
 
-- **By decline code.** A jump in "do not honor" tells a different story from a jump in "insufficient funds." See [Credit Card Decline Codes Explained](https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/credit-card-decline-codes-explained/) for how to read them.
+- **By decline code.** A jump in "do not honor" tells a different story from a jump in "insufficient funds." See [Credit Card Decline Codes Explained](https://anthonysko.com/blog/credit-card-decline-codes-explained/) for how to read them.
 - **By issuer or card type.** One issuer with a high decline rate points to a specific fix.
 - **By customer type.** New customers and returning customers behave differently.
 

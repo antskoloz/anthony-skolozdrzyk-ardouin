@@ -52,7 +52,7 @@ Microsoft's preparation advice is basically good modeling, nothing exotic. Use a
 
 My take is that Copilot doesn't create new requirements, it raises the price of ignoring old ones. A badly named measure used to confuse a colleague. Now it produces a confident, well-formatted wrong answer for a manager who never sees the model. Microsoft even suggests tagging models as ready for Copilot, or making that readiness a condition for certified status. I'd do that.
 
-This connects to two earlier posts. [Why AI analysts fail on bad metric definitions](https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/why-ai-analysts-fail-on-bad-metric-definitions/) is the reason unclear definitions turn into confident wrong answers, and [my Git, GitHub and LLM workflow for Power BI DAX and M](https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/git-github-llm-power-bi-dax-m-workflow/) is about keeping model changes reviewable.
+This connects to two earlier posts. [Why AI analysts fail on bad metric definitions](https://anthonysko.com/blog/why-ai-analysts-fail-on-bad-metric-definitions/) is the reason unclear definitions turn into confident wrong answers, and [my Git, GitHub and LLM workflow for Power BI DAX and M](https://anthonysko.com/blog/git-github-llm-power-bi-dax-m-workflow/) is about keeping model changes reviewable.
 
 ## It isn't only a Power BI problem
 

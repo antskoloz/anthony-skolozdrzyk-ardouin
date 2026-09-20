@@ -41,7 +41,7 @@ There are three common ways to measure it:
 2. **Natural experiments** use historical variation. They are cheaper but depend on your data.
 3. **Platform-assisted lift tests** are easy to run but rely on the platform's own setup.
 
-For a step-by-step walkthrough, see [Why Platform Conversions Overstate Impact (and How to Test)](https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/why-platform-reported-conversions-overstate-impact/).
+For a step-by-step walkthrough, see [Why Platform Conversions Overstate Impact (and How to Test)](https://anthonysko.com/blog/why-platform-reported-conversions-overstate-impact/).
 
 ## What is marketing mix modeling?
 

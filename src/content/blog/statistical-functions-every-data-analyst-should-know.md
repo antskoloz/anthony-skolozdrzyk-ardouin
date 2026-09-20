@@ -192,7 +192,7 @@ The 2.262 is the 95% t-value for 9 degrees of freedom. For other sample sizes, l
 
 My habit is to run more than one on anything important. When the z-score and the MAD-based score agree, I relax. When they disagree, like they did on our ten days, that disagreement is usually the most interesting finding in the dataset.
 
-If you are also tracking forecasts, the same discipline applies there: one number is never enough. I wrote about that in [Sales forecast accuracy: measure it, stop sandbagging](https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/sales-forecast-accuracy-wape-bias-sandbagging/).
+If you are also tracking forecasts, the same discipline applies there: one number is never enough. I wrote about that in [Sales forecast accuracy: measure it, stop sandbagging](https://anthonysko.com/blog/sales-forecast-accuracy-wape-bias-sandbagging/).
 
 ## Frequently asked questions
 

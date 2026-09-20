@@ -111,7 +111,7 @@ Issuers often categorize declines as generic. Many transactions are categorized 
 
 ## Want a faster lookup?
 
-I built a free tool, the [Decline Code Lookup](https://antskoloz.github.io/decline-code-lookup/), which translates Visa, Mastercard and Amex decline codes into plain English with practical guidance for merchants. To see how decline reasons translate into lost revenue, read [Why False Declines Cost E-commerce More Than You Think](https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/why-false-declines-cost-ecommerce-more-than-you-think/).
+I built a free tool, the [Decline Code Lookup](https://anthonysko.com/projects/decline-code-lookup/), which translates Visa, Mastercard and Amex decline codes into plain English with practical guidance for merchants. To see how decline reasons translate into lost revenue, read [Why False Declines Cost E-commerce More Than You Think](https://anthonysko.com/blog/why-false-declines-cost-ecommerce-more-than-you-think/).
 
 ## Frequently asked questions
 

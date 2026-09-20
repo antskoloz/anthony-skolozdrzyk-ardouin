@@ -1,6 +1,6 @@
 # A/B Test Calculator
 
-Free tool for free use, published at `/anthony-skolozdrzyk-ardouin/projects/ab-test-calculator/`. Behavior spec: [../../specs/free-tools.md](../../specs/free-tools.md) (Tool 1, plain-language principles per ADR-005).
+Free tool for free use, published at `/projects/ab-test-calculator/`. Behavior spec: [../../specs/free-tools.md](../../specs/free-tools.md) (Tool 1, plain-language principles per ADR-005).
 
 Static vanilla HTML/CSS/JS, no build step: `index.html` (page, SEO, FAQ, disclaimer), `tool.css` (brand styles, copied per tool), `tool.js` (UI), `stats.js` (pure statistics, no DOM), `stats.test.mjs`.
 

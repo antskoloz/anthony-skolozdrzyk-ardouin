@@ -1,6 +1,6 @@
 # Project scope
 
-Anthony Skolozdrzyk-Ardouin's personal brand site — trilingual (EN/FR/DE) homepage plus an English-only blog, deployed to GitHub Pages at `https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/`.
+Anthony Skolozdrzyk-Ardouin's personal brand site — trilingual (EN/FR/DE) homepage plus an English-only blog, deployed to GitHub Pages on the custom domain `https://anthonysko.com/` (see [decisions.md](decisions.md) ADR-007).
 
 ## Non-goals
 

@@ -4,11 +4,10 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  // GitHub Pages project site: `site` is the domain, `base` is the repo path.
-  // Astro combines the two when generating absolute URLs (sitemap, RSS) —
-  // see https://docs.astro.build/en/guides/deploy/github/
-  site: 'https://antskoloz.github.io',
-  base: '/anthony-skolozdrzyk-ardouin',
+  // GitHub Pages custom domain (anthonysko.com, ADR-007): the site is served
+  // from the domain root, so no `base` path is needed.
+  // See https://docs.astro.build/en/guides/deploy/github/
+  site: 'https://anthonysko.com',
   trailingSlash: 'always',
   integrations: [
     sitemap({

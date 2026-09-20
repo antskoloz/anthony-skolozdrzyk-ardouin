@@ -5,9 +5,9 @@ backend:
   base_url: https://anthony-site-cms-auth.anthony-skolozdrzyk.workers.dev
   auth_endpoint: auth
 
-site_url: https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/
-display_url: https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/
-logo_url: https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/assets/img/favicon.svg
+site_url: https://anthonysko.com/
+display_url: https://anthonysko.com/
+logo_url: https://anthonysko.com/assets/img/favicon.svg
 
 media_folder: "public/blog/uploads"
 public_folder: "/blog/uploads"

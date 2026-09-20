@@ -91,7 +91,7 @@ The evidence here is my own view from years of BI work, not a measured study. I 
 - **Every change becomes visible.** A measure edit is a line in a diff, with an author, a date and a reason.
 - **Mistakes become reversible.** Reverting a bad change is a Git operation, not a hunt for the last good file.
 - **AI help becomes safer.** The LLM proposes, you review the diff, and nothing reaches the shared model without a check. That is a very different risk profile from pasting AI-written DAX straight into a production model.
-- **Definitions get owners.** A pull request is a natural place to agree what "net revenue" means, which supports the governed metrics approach in [Why AI analysts fail on bad metric definitions](https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/blog/why-ai-analysts-fail-on-bad-metric-definitions/).
+- **Definitions get owners.** A pull request is a natural place to agree what "net revenue" means, which supports the governed metrics approach in [Why AI analysts fail on bad metric definitions](https://anthonysko.com/blog/why-ai-analysts-fail-on-bad-metric-definitions/).
 - **The analyst's job moves up a level.** Less time typing boilerplate, more time on modelling decisions, testing and review.
 
 ## What are the risks and guardrails?

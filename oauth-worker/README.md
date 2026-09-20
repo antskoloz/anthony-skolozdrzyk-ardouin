@@ -4,7 +4,7 @@ A small Cloudflare Worker that completes the GitHub OAuth handshake Decap CMS ne
 
 ## One-time setup
 
-1. **Create a GitHub OAuth App** at github.com/settings/developers → OAuth Apps → New OAuth App. Homepage URL: `https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/`. Callback URL: fill in after step 3, once you know the deployed Worker's URL (`https://<worker-name>.<your-subdomain>.workers.dev/callback`).
+1. **Create a GitHub OAuth App** at github.com/settings/developers → OAuth Apps → New OAuth App. Homepage URL: `https://anthonysko.com/`. Callback URL: fill in after step 3, once you know the deployed Worker's URL (`https://<worker-name>.<your-subdomain>.workers.dev/callback`).
 2. **Log in to Cloudflare from the CLI:**
    ```
    npx wrangler login
