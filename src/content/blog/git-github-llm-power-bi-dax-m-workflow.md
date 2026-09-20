@@ -1,9 +1,16 @@
 ---
 title: "Git and an LLM for Power BI: a new way to build DAX and M"
-description: "Save Power BI as text, version it in GitHub and connect an LLM to write DAX and M. Why this workflow changes how analysts build, review and trust their models."
-pubDate: 2026-09-20
-tags: ["power bi", "git", "dax", "power query", "ai analytics"]
-draft: true
+description: Save Power BI as text, version it in GitHub and connect an LLM to
+  write DAX and M. Why this workflow changes how analysts build, review and
+  trust their models.
+pubDate: 2026-09-20T09:32:00.000+02:00
+tags:
+  - power bi
+  - git
+  - dax
+  - power query
+  - ai analytics
+draft: false
 ---
 
 > **Short answer:** Save your Power BI work as a Power BI Project (PBIP), so the semantic model becomes plain text files. Put those files in a Git repository on GitHub, and connect an LLM to them. You get version history, reviewable changes and an AI assistant that can draft DAX and M inside a safety net. Every change is a diff you can read, test and undo, which is what turns AI help from a risk into a routine.
