@@ -1,11 +1,16 @@
 ---
 title: "Sales forecast accuracy: measure it, stop sandbagging"
-description: "Learn how to measure sales forecast accuracy with WAPE and bias, why a perfect team total can hide rep-level errors, and how to spot sandbagging in your data."
-pubDate: 2026-09-20
-tags: ["forecasting", "revenue operations", "sales pipeline", "sql"]
-draft: true
+description: Learn how to measure sales forecast accuracy with WAPE and bias,
+  why a perfect team total can hide rep-level errors, and how to spot
+  sandbagging in your data.
+pubDate: 2026-09-20T14:24:00.000+02:00
+tags:
+  - forecasting
+  - revenue operations
+  - sales pipeline
+  - sql
+draft: false
 ---
-
 > **Short answer:** Measure forecast accuracy with two numbers, not one. Use WAPE (weighted absolute percentage error) to see how far off you are, and bias to see which direction you miss. Sandbagging, meaning under-forecasting and then over-delivering, only shows up in bias, and it is invisible if you look at team totals alone.
 
 Most revenue teams can tell you their number for the quarter. Far fewer can tell you how good their forecast was last quarter, or whether it is always wrong in the same direction. This guide covers the metrics worth tracking, a worked example with invented numbers, and a SQL query you can adapt to your own CRM export.
@@ -18,28 +23,26 @@ That last one is the cheapest to fix. You need a forecast that was frozen at a k
 
 ## Which metrics should you use?
 
-| Metric | Formula (per group of rows) | What it tells you | Main weakness |
-| --- | --- | --- | --- |
-| **MAPE** | Average of \|actual − forecast\| ÷ actual | Average percentage miss, each row weighted equally | Inflated by small actuals; undefined when actual is zero |
-| **WAPE** | Sum of \|actual − forecast\| ÷ sum of actual | Percentage miss weighted by size, so big deals and big reps count more | Ignores direction |
-| **Bias** | (Sum of forecast − sum of actual) ÷ sum of actual | Whether you over- or under-forecast, and by how much | Errors in opposite directions cancel out |
+| Metric   | Formula (per group of rows)                       | What it tells you                                                      | Main weakness                                            |
+| -------- | ------------------------------------------------- | ---------------------------------------------------------------------- | -------------------------------------------------------- |
+| **MAPE** | Average of |actual − forecast| ÷ actual           | Average percentage miss, each row weighted equally                     | Inflated by small actuals; undefined when actual is zero |
+| **WAPE** | Sum of |actual − forecast| ÷ sum of actual        | Percentage miss weighted by size, so big deals and big reps count more | Ignores direction                                        |
+| **Bias** | (Sum of forecast − sum of actual) ÷ sum of actual | Whether you over- or under-forecast, and by how much                   | Errors in opposite directions cancel out                 |
 
-Two points from the published guidance are worth remembering. Baeldung's explanation of these metrics notes that MAPE "bloats up" on small actuals and recommends WAPE for low or intermittent volumes, and that all three absolute-error metrics are symmetric, so they ignore direction. RELEX, a planning-software vendor, adds that bias reveals systematic over- or under-forecasting, and that small biases compound when repeated across many items.
 
-Sign conventions differ between sources. RELEX expresses bias as a percentage where above 100% means over-forecasting. In this post, bias is (forecast − actual) ÷ actual, so a positive number means you forecast too high and a negative number means you forecast too low.
 
 ## A worked example: a perfect team total that hides the errors
 
 Here are five reps in one quarter. The numbers are invented, in thousands of any currency.
 
-| Rep | Forecast | Actual closed-won | Error (forecast − actual) | Rep bias | Rep WAPE |
-| --- | --- | --- | --- | --- | --- |
-| A | 100 | 90 | +10 | +11.1% | 11.1% |
-| B | 60 | 80 | −20 | −25.0% | 25.0% |
-| C | 200 | 150 | +50 | +33.3% | 33.3% |
-| D | 40 | 60 | −20 | −33.3% | 33.3% |
-| E | 100 | 120 | −20 | −16.7% | 16.7% |
-| **Team** | **500** | **500** | **0** | **0.0%** | **24.0%** |
+| Rep      | Forecast | Actual closed-won | Error (forecast − actual) | Rep bias | Rep WAPE  |
+| -------- | -------- | ----------------- | ------------------------- | -------- | --------- |
+| A        | 100      | 90                | +10                       | +11.1%   | 11.1%     |
+| B        | 60       | 80                | −20                       | −25.0%   | 25.0%     |
+| C        | 200      | 150               | +50                       | +33.3%   | 33.3%     |
+| D        | 40       | 60                | −20                       | −33.3%   | 33.3%     |
+| E        | 100      | 120               | −20                       | −16.7%   | 16.7%     |
+| **Team** | **500**  | **500**           | **0**                     | **0.0%** | **24.0%** |
 
 The team forecast of 500 landed exactly on the actual of 500, so team bias is zero. A leader reading only the roll-up would call it a perfect quarter. But the team WAPE is 24%, because the reps' errors offset each other. Rep C over-called by a third, while reps B, D and E all under-called.
 
@@ -51,9 +54,9 @@ Avoma describes sandbagging as under-forecasting and then over-delivering, and p
 
 Signs in the data:
 
-- **Persistent negative bias** for the same rep or segment across three or more quarters.
-- **Deals that jump into closed-won late** without having been in commit at the start of the period.
-- **Best-case pipeline that closes far more often than its stage probability suggests.**
+* **Persistent negative bias** for the same rep or segment across three or more quarters.
+* **Deals that jump into closed-won late** without having been in commit at the start of the period.
+* **Best-case pipeline that closes far more often than its stage probability suggests.**
 
 None of these prove sandbagging on their own. They tell you where to look and which questions to ask in the next forecast review.
 
@@ -101,8 +104,8 @@ Yes. The formulas are the same. The important part is keeping a frozen snapshot 
 
 ## Sources
 
-- [Avoma: Sales forecasting, a guide to methods, accuracy and AI (2026)](https://www.avoma.com/blog/sales-forecasting)
-- [Baeldung: Understanding forecast accuracy, MAPE, WAPE, WMAPE](https://www.baeldung.com/cs/mape-vs-wape-vs-wmape)
-- [RELEX Solutions: Measuring forecast accuracy, the complete guide](https://www.relexsolutions.com/resources/measuring-forecast-accuracy/)
+* [Avoma: Sales forecasting, a guide to methods, accuracy and AI (2026)](https://www.avoma.com/blog/sales-forecasting)
+* [Baeldung: Understanding forecast accuracy, MAPE, WAPE, WMAPE](https://www.baeldung.com/cs/mape-vs-wape-vs-wmape)
+* [RELEX Solutions: Measuring forecast accuracy, the complete guide](https://www.relexsolutions.com/resources/measuring-forecast-accuracy/)
 
 *Last reviewed: 20 September 2026.*
