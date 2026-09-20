@@ -81,6 +81,27 @@ Path `projects/utm-builder/`.
 
 **Inputs:** destination URL (http/https required, existing query string and `#fragment` preserved), `utm_source`, `utm_medium`, `utm_campaign` (required), `utm_term`, `utm_content` (optional). **Outputs:** the tagged URL with live preview and a copy button. Options: lowercase everything and replace spaces with underscores (on by default), values URL-encoded. Warnings: missing required fields, existing `utm_*` params in the URL (overwritten, said so), inconsistent-case hint, short naming-convention guide. **Optional (cut first if time is short):** bulk mode — paste one URL per line, apply the same campaign fields, copy all.
 
+## Tool 5 — SaaS Metrics & Runway Calculator
+
+Path `projects/saas-metrics-calculator/`. Question answered: *how healthy is my recurring revenue, and how long does my cash last?* For finance people, founders and PMs.
+
+**Inputs (all in one form, sensible example values prefilled):** period the numbers cover (month default, quarter, year); starting MRR; new MRR; expansion MRR (upsells); contraction MRR (downgrades); churned MRR (cancellations); optional customers at start and customers lost; optional cash in the bank and net monthly burn (0 = break-even or better); optional year-over-year revenue growth % and profit margin % (negative allowed) for the Rule of 40. Optional groups are all-or-none within their group, like Tool 3's customer-value group.
+
+**Outputs:** ending MRR = start + new + expansion − contraction − churned; ARR = ending MRR × 12; net new MRR; MRR growth % over the period; gross MRR churn % = (churned + contraction) / start; logo churn % = customers lost / customers at start; net revenue retention (NRR) = (start + expansion − contraction − churned) / start; gross revenue retention (GRR) = (start − contraction − churned) / start; both also shown annualised as rate^(12 / months in period) ("if this period repeated for a year"); SaaS quick ratio = (new + expansion) / (contraction + churned); Rule of 40 = growth % + margin %; burn multiple = net burn over the period / net new ARR (net new MRR × 12); runway (months) = cash / monthly burn.
+Traffic-light signals against widely quoted rules of thumb, labelled as such and not guarantees: annualised NRR ≥ 100 % good, ≥ 90 % warn, below bad; quick ratio ≥ 4 good, ≥ 1 warn, below 1 bad (shrinking); Rule of 40 ≥ 40 good, ≥ 20 warn, below bad; burn multiple ≤ 1.5 good, ≤ 3 warn, above bad; runway ≥ 18 months good, ≥ 12 warn, below bad.
+
+**Edge cases:** starting MRR must be above 0; negative inputs rejected; churned + contraction greater than starting MRR rejected (existing customers cannot lose more than they paid); quick ratio with no losses shows "n/a, no losses this period"; zero burn shows runway "n/a, cash-flow positive or break-even"; burn multiple with zero or negative net new MRR while burning cash shows "n/a, no net new ARR" and a warning; customers lost above customers at start rejected. Same disclaimer wording as every tool, with "financial" advice explicitly excluded.
+
+## Tool 6 — RICE / ICE Prioritizer
+
+Path `projects/rice-prioritizer/`. Question answered: *which of these ideas should we do first?* For product managers.
+
+**Method toggle:** RICE (default) or ICE; each keeps its own rows in the page (in memory only).
+**RICE row:** name, Reach (people or events per quarter, ≥ 0), Impact (0.25 minimal, 0.5 low, 1 medium, 2 high, 3 massive), Confidence (%, 0–100), Effort (person-months, > 0). Score = Reach × Impact × (Confidence / 100) / Effort.
+**ICE row:** name, Impact, Confidence, Ease, each 1–10. Score = Impact × Confidence × Ease (max 1000).
+**UI:** editable table (add / remove rows, live score per row) with example rows prefilled; a ranked list below (rank, name, score, bar scaled to the top score); ties share a rank; "Paste from a spreadsheet" box (tab- or comma-separated, header row detected and skipped, impact words such as "high" accepted, per-line error messages for skipped lines); **Download CSV** (and copy) of the ranked list. A short "how to read this" glossary, a worked example, FAQs.
+**Edge cases:** effort 0 or negative, confidence outside 0–100, non-numeric cells, blank rows (ignored), a row with numbers but no name (labelled "Untitled"), fewer than two valid rows (rank shown, with a hint to add more), CSV cells beginning with `=`, `+`, `-` or `@` are prefixed with an apostrophe so spreadsheets do not run them as formulas.
+
 ## Tests
 
-Tools 1–2 ship `stats.test.mjs` (run with `node`), asserting reference values: z(0.975) = 1.95996; χ² p-value = 0.05 at df=1 x=3.841 and df=2 x=5.991; z² equals uncorrected χ² on the same 2×2; hand-computed sample-size and CI examples. Tool 3's formulas and Tool 4's URL builder are pure functions covered by the same style of test file. Every tool is also checked in a browser under the deployed base path.
+Tools 1–2 ship `stats.test.mjs` (run with `node`), asserting reference values: z(0.975) = 1.95996; χ² p-value = 0.05 at df=1 x=3.841 and df=2 x=5.991; z² equals uncorrected χ² on the same 2×2; hand-computed sample-size and CI examples. Tool 3's formulas and Tool 4's URL builder are pure functions covered by the same style of test file. Tool 5's `calc.test.mjs` asserts hand-computed values (ending MRR, NRR and its annualisation, quick ratio boundary at exactly 4, burn multiple, runway) and the light boundaries; Tool 6's asserts RICE/ICE scores, ranking with ties, paste parsing (header, tabs vs commas, impact words, bad lines) and CSV escaping including the formula-injection prefix. Every tool is also checked in a browser under the deployed base path.

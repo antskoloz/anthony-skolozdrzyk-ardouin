@@ -18,6 +18,11 @@ Spec: [specs/free-tools.md](specs/free-tools.md). One commit per tool, including
 - [x] Tool 2 (`chi-square-calculator`) business-friendly rework: group rows, bars, "who stands out", glossary
 - [x] Update homepage cards (EN/FR/DE) to the new plain wording
 
+## Next tools (chosen 2026-09-20; one commit each, including cards EN/FR/DE + sitemap)
+- [ ] Tool 5: `projects/saas-metrics-calculator/` — calc.js + tests, UI, disclaimer/badge, GA4, cards, sitemap, projects.md list
+- [ ] Tool 6: `projects/rice-prioritizer/` — same checklist
+- [ ] Bench for later: Break-even & Pricing, Funnel What-If, Approval-Rate Uplift Value, attribution comparison, VAT (FR/DE)
+
 ## Carried over
 - [ ] Verify https://antskoloz.github.io/anthony-skolozdrzyk-ardouin/projects/decline-code-lookup/ is live after the deploy
 - [ ] Delete the standalone `antskoloz/decline-code-lookup` repo (its old URLs will 404 — no redirect is possible from a deleted Pages site)
