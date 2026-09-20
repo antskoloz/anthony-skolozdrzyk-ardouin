@@ -1,9 +1,15 @@
 ---
 title: "Power BI Copilot: what it can and can't do today"
-description: "What Copilot in Power BI does well, where it breaks, and how to test it on your own semantic model before business users start trusting its answers."
-pubDate: 2026-09-20
-tags: ["power bi", "copilot", "business intelligence", "ai analytics"]
-draft: true
+description: What Copilot in Power BI does well, where it breaks, and how to
+  test it on your own semantic model before business users start trusting its
+  answers.
+pubDate: 2026-09-20T14:29:00.000+02:00
+tags:
+  - power bi
+  - copilot
+  - business intelligence
+  - ai analytics
+draft: false
 ---
 
 > **Short answer:** Copilot in Power BI can draft DAX, build report pages, summarize a report and answer questions about a semantic model. It's only as good as the model underneath it, and Microsoft's own documentation says the output isn't guaranteed to be correct. Treat it as a quick first draft that you check, not as an analyst you trust.
