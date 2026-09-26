@@ -1,20 +1,21 @@
 ---
-title: "Prompting an LLM for SQL You Can Trust"
-description: How to get reliable SQL from ChatGPT, Claude or Copilot. What context to give, how to use examples, and the checks that catch wrong joins and made-up columns.
-pubDate: 2026-09-26T11:10:00.000+02:00
+title: Prompting an LLM for SQL You Can Trust
+description: How to get reliable SQL from ChatGPT, Claude or Copilot. What
+  context to give, how to use examples, and the checks that catch wrong joins
+  and made-up columns.
+pubDate: 2026-09-26T09:12:00.000+02:00
 tags:
   - llm
   - sql
   - prompt engineering
   - ai for analysts
-draft: true
+draft: false
 ---
-
 > **Short answer:** Give the model your real schema, your metric definitions and two or three worked examples, ask it to explain its joins, and then check the result against a number you already know. The most common failures are queries that run fine but answer a different question, so testing matters more than clever wording.
 
 AI can write a query in seconds, and it will look right almost every time. That is the problem. A wrong query and a right one look identical until you check, and the model will present both with the same calm confidence. The fix is not a magic prompt. It is a better brief, plus a few checks you run every time.
 
-<!-- ANTHONY: add a real story here (an AI-written query that looked right and was wrong, or one that saved you time) -->
+This is where having in mind the top metrics of the business helps: number of active customers, revenue, volumes and other drivers, share of countries... having a "feel" for what is correct - or not, is how it helped me in first place understand that the output was not correct. 
 
 ## Why does AI-generated SQL go wrong?
 
@@ -78,10 +79,10 @@ I go deeper on this in [how to validate AI-generated analysis](/blog/how-to-vali
 
 ## What should I avoid?
 
-- **Pasting confidential data into a public chatbot.** Check your company's rules. Share schema and made-up sample rows, not customer data.
-- **Long, one-shot mega-prompts** for a hard question. Break it into steps: first the base table, then the join, then the aggregation. Decomposition helps with joins and nested queries in particular, according to the [DIN-SQL paper](https://arxiv.org/pdf/2304.11015).
-- **Trusting fluent explanations.** A confident paragraph proves nothing about the query.
-- **Accepting a DELETE or UPDATE** without reading every word.
+* **Pasting confidential data into a public chatbot.** Check your company's rules. Share schema and made-up sample rows, not customer data.
+* **Long, one-shot mega-prompts** for a hard question. Break it into steps: first the base table, then the join, then the aggregation. Decomposition helps with joins and nested queries in particular, according to the [DIN-SQL paper](https://arxiv.org/pdf/2304.11015).
+* **Trusting fluent explanations.** A confident paragraph proves nothing about the query.
+* **Accepting a DELETE or UPDATE** without reading every word.
 
 ## When is it worth it?
 
