@@ -1,20 +1,19 @@
 ---
 title: "DAX CALCULATE Explained: Filter Context in Plain English"
-description: CALCULATE is the most important DAX function and the most confusing. Learn filter context, row context and context transition with simple examples.
-pubDate: 2026-09-26T10:00:00.000+02:00
+description: CALCULATE is the most important DAX function and the most
+  confusing. Learn filter context, row context and context transition with
+  simple examples.
+pubDate: 2026-09-26T09:00:00.000+02:00
 tags:
   - power bi
   - dax
   - calculate
   - data analytics
-draft: true
+draft: false
 ---
-
 > **Short answer:** Every number in a Power BI visual is calculated inside a *filter context*, the set of filters coming from slicers, rows, columns and other visuals. `CALCULATE` lets you change that context for one calculation: add a filter, replace one, or remove one. Understand that, and most of DAX stops feeling like magic.
 
 If you've ever written a measure, dropped it in a table, and watched it return the same number on every row, you have met filter context without knowing its name. It is the single idea that separates "I can copy DAX from the internet" from "I can write it".
-
-<!-- ANTHONY: add a real story here (a measure that returned the wrong number until you understood context) -->
 
 This post explains it with one small model and four measures. The table and column names are illustrative.
 
