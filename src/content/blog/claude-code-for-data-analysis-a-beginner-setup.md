@@ -1,20 +1,21 @@
 ---
 title: "Claude Code for Data Analysis: A Beginner Setup"
-description: How an analyst can set up Claude Code to work with CSV files, SQL and Python safely. Project folder, context file, permissions, Git and a first session.
-pubDate: 2026-09-26T11:20:00.000+02:00
+description: How an analyst can set up Claude Code to work with CSV files, SQL
+  and Python safely. Project folder, context file, permissions, Git and a first
+  session.
+pubDate: 2026-09-26T15:26:00.000+02:00
 tags:
   - claude code
   - ai for analysts
   - workflow
   - data analytics
-draft: true
+draft: false
 ---
-
 > **Short answer:** Claude Code is a coding assistant that runs in your terminal, reads files in a project folder, and can write and run scripts with your permission. For analysis, put your data and scripts in one folder, add a short context file describing your data and metrics, keep everything in Git, and review every change before you accept it.
 
 Most analysts meet AI through a chat window, where the workflow is copy the question, paste the answer, hope. A coding assistant works differently: it sits inside your project, sees your files, and can run the query it just wrote. That makes it more useful and easier to overtrust, so a little setup goes a long way.
 
-<!-- ANTHONY: add a real story here (a real task where you used Claude Code, or a moment you caught it being wrong) -->
+Claude code is really different versus a more common widespread AI chat. Claude code litterally blew my mind when I first used it.
 
 This is a tool guide, not an endorsement of one product. There are other assistants, and I have written about [Copilot in Power BI](/blog/power-bi-copilot-what-it-can-and-cant-do_1/) too. Names and examples are illustrative.
 
@@ -90,10 +91,10 @@ By default the tool asks before it edits files or runs commands, and you approve
 
 ## What are the risks?
 
-- **Sensitive data.** Anything the assistant can read may be sent to the model provider. Check your company's policy first, and use sample or masked data when unsure.
-- **Confident mistakes.** It can write a plausible analysis that is wrong. See [how to validate AI-generated analysis](/blog/how-to-validate-ai-generated-analysis-before-it-reaches-your-boss/).
-- **Scope creep.** It may change more than you asked. Small, reviewed commits catch this.
-- **Skill atrophy.** If you never read the code, you stop being able to. Keep reading it.
+* **Sensitive data.** Anything the assistant can read may be sent to the model provider. Check your company's policy first, and use sample or masked data when unsure.
+* **Confident mistakes.** It can write a plausible analysis that is wrong. See [how to validate AI-generated analysis](/blog/how-to-validate-ai-generated-analysis-before-it-reaches-your-boss/).
+* **Scope creep.** It may change more than you asked. Small, reviewed commits catch this.
+* **Skill atrophy.** If you never read the code, you stop being able to. Keep reading it.
 
 My take: the setup is what separates a helpful assistant from a risky one. Ten minutes on a folder structure and a context file pays back within the first week. If your analysis is a single pivot table, you probably don't need any of this.
 
