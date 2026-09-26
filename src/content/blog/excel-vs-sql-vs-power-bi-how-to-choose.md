@@ -3,7 +3,7 @@ title: "Excel vs SQL vs Power BI: How an Analyst Chooses"
 description: Which tool for which job? A practical way to choose between Excel,
   SQL and Power BI, based on data size, repeatability, audience and who needs to
   reuse the work.
-pubDate: 2026-09-26T10:48:00.000+02:00
+pubDate: 2026-09-26T10:52:00.000+02:00
 tags:
   - excel
   - sql
