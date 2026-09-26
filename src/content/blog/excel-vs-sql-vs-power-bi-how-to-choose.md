@@ -1,20 +1,19 @@
 ---
 title: "Excel vs SQL vs Power BI: How an Analyst Chooses"
-description: "Which tool for which job? A practical way to choose between Excel, SQL and Power BI, based on data size, repeatability, audience and who needs to reuse the work."
-pubDate: 2026-09-26T12:10:00.000+02:00
+description: Which tool for which job? A practical way to choose between Excel,
+  SQL and Power BI, based on data size, repeatability, audience and who needs to
+  reuse the work.
+pubDate: 2026-09-27T16:10:00.000+02:00
 tags:
   - excel
   - sql
   - power bi
   - tools
-draft: true
+draft: false
 ---
-
 > **Short answer:** Use Excel for quick, small, one-off analysis. Use SQL to get and shape data at scale, and to make the logic repeatable. Use Power BI to share interactive reports with many people from a governed model. Most real work uses all three, at different steps.
 
 The question "which should I learn first?" comes up constantly, and the honest answer is that it is the wrong question. These tools don't compete for the same job. They sit at different points in the path from raw data to a decision.
-
-<!-- ANTHONY: add a real story here (a job where you picked the wrong tool, or where switching tools changed everything) -->
 
 Here is how I decide in practice. It reflects my experience and common practitioner advice, and where I generalise, I say so. The examples are illustrative.
 
@@ -22,9 +21,9 @@ Here is how I decide in practice. It reflects my experience and common practitio
 
 Learning guides such as [this Great Learning comparison](https://www.mygreatlearning.com/blog/sql-vs-excel-best-tool-for-data-science/) and [Nareshit's overview](https://nareshit.com/blogs/excel-vs-sql-vs-python-vs-power-bi-data-analytics-guide) describe the same split, and it matches what I see:
 
-- **Excel** is simple, visual and quick. It suits on-the-fly analysis, smaller datasets, calculations and inspecting data.
-- **SQL** helps you access and prepare the data. It is built for querying large volumes of structured data, and for complex logic that gets painful in a spreadsheet.
-- **Power BI** suits interactive dashboards and sharing reports across an organisation, with a model that many people can reuse.
+* **Excel** is simple, visual and quick. It suits on-the-fly analysis, smaller datasets, calculations and inspecting data.
+* **SQL** helps you access and prepare the data. It is built for querying large volumes of structured data, and for complex logic that gets painful in a spreadsheet.
+* **Power BI** suits interactive dashboards and sharing reports across an organisation, with a model that many people can reuse.
 
 ## How do I choose for a given task?
 
@@ -40,9 +39,9 @@ If you will repeat it next week, next month or for a colleague, write it as SQL 
 
 ### 3. Who is the audience, and how will they use it?
 
-- **One person, one answer:** a table in Excel or a paste into an email.
-- **A team that needs to slice and filter:** Power BI.
-- **A leadership audience that wants three numbers:** Power BI or a slide, built from a definition you trust.
+* **One person, one answer:** a table in Excel or a paste into an email.
+* **A team that needs to slice and filter:** Power BI.
+* **A leadership audience that wants three numbers:** Power BI or a slide, built from a definition you trust.
 
 ### 4. Where does the data live?
 
@@ -70,11 +69,11 @@ What matters more than the order is knowing what each one is for.
 
 ## What are the common mistakes?
 
-- **Using Excel as a database.** Multiple versions of a file, manual copy-paste refreshes and no history are how wrong numbers get born.
-- **Using Power BI to clean data** that should be fixed upstream. See [Power Query vs DAX](/blog/power-query-vs-dax-where-each-step-belongs/).
-- **Skipping SQL** and pulling giant exports into a spreadsheet each week.
-- **Building a dashboard for a one-off question.** A table would have done.
-- **Tool loyalty.** The best tool is the one that fits the job and the people who will maintain it.
+* **Using Excel as a database.** Multiple versions of a file, manual copy-paste refreshes and no history are how wrong numbers get born.
+* **Using Power BI to clean data** that should be fixed upstream. See [Power Query vs DAX](/blog/power-query-vs-dax-where-each-step-belongs/).
+* **Skipping SQL** and pulling giant exports into a spreadsheet each week.
+* **Building a dashboard for a one-off question.** A table would have done.
+* **Tool loyalty.** The best tool is the one that fits the job and the people who will maintain it.
 
 ## Where does AI fit in?
 
