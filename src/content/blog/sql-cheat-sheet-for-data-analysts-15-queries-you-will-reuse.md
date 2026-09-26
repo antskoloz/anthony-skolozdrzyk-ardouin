@@ -1,13 +1,15 @@
 ---
 title: "SQL Cheat Sheet for Data Analysts: 15 Queries You'll Reuse"
-description: A practical SQL cheat sheet for data analysts. Fifteen copy-paste queries for filtering, joins, aggregates, CTEs, windows and dates, with plain-English notes.
-pubDate: 2026-09-26T09:00:00.000+02:00
+description: A practical SQL cheat sheet for data analysts. Fifteen copy-paste
+  queries for filtering, joins, aggregates, CTEs, windows and dates, with
+  plain-English notes.
+pubDate: 2026-09-26T07:19:00.000+02:00
 tags:
   - sql
   - data analytics
   - cheat sheet
   - beginners
-draft: true
+draft: false
 ---
 
 > **Short answer:** Most analyst work comes down to a small set of patterns: filter, join, aggregate, rank, compare to the previous row, and clean up. Learn the fifteen below and you can answer the majority of everyday business questions without searching for syntax.
