@@ -1,13 +1,15 @@
 ---
 title: "SQL CTE vs Subquery vs Temp Table: Which to Use"
-description: CTE, subquery or temp table? A plain-English comparison for analysts, with examples, the performance trade-offs, and a simple rule for choosing.
-pubDate: 2026-09-26T09:10:00.000+02:00
+description: CTE, subquery or temp table? A plain-English comparison for
+  analysts, with examples, the performance trade-offs, and a simple rule for
+  choosing.
+pubDate: 2026-09-26T07:27:00.000+02:00
 tags:
   - sql
   - data analytics
   - cte
   - query performance
-draft: true
+draft: false
 ---
 
 > **Short answer:** Use a CTE to make a query readable, a subquery for a small one-off lookup, and a temp table when a big intermediate result is used several times or needs an index. None of them is always faster, so read the query plan before assuming.
