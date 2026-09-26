@@ -1,9 +1,10 @@
 import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
+import { isLive } from '../lib/publish';
 import { SITE_URL, SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 export async function GET() {
-  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  const posts = await getCollection('blog', ({ data }) => isLive(data));
   return rss({
     title: `${SITE_TITLE} — Blog`,
     description: SITE_DESCRIPTION,

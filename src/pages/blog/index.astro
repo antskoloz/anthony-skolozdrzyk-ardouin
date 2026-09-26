@@ -1,9 +1,10 @@
 ---
 import { getCollection } from 'astro:content';
+import { isLive } from '../../lib/publish';
 import BlogLayout from '../../layouts/BlogLayout.astro';
 import { SITE_DESCRIPTION } from '../../consts';
 
-const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const allPosts = await getCollection('blog', ({ data }) => isLive(data));
 const posts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 const dateFormat: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
