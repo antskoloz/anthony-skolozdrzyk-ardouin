@@ -3,7 +3,7 @@ title: "Power BI Time Intelligence: YTD, YoY and Rolling 12 Months"
 description: Build year-to-date, year-over-year and rolling 12-month measures in
   DAX. Includes the date table rules that make time intelligence work, with
   copy-paste measures.
-pubDate: 2026-09-26T09:07:00.000+02:00
+pubDate: 2026-09-26T09:09:00.000+02:00
 tags:
   - power bi
   - dax
