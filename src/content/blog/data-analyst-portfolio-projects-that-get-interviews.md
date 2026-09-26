@@ -1,13 +1,15 @@
 ---
-title: "Data Analyst Portfolio Projects That Get Interviews"
-description: "What hiring managers look for in a data analyst portfolio, how to choose three strong projects, and how to present each one around a business problem."
+title: Data Analyst Portfolio Projects That Get Interviews
+description: What hiring managers look for in a data analyst portfolio, how to
+  choose three strong projects, and how to present each one around a business
+  problem.
 pubDate: 2026-09-26T12:40:00.000+02:00
 tags:
   - data analyst portfolio
   - career
   - hiring
   - data analytics
-draft: true
+draft: false
 ---
 
 > **Short answer:** Build a few projects, not many. Each one should start from a business problem, show how you cleaned the data, state the insight and a recommendation, and admit its limits. Publish it with a clear write-up, because a hiring manager will skim it in under a minute.
