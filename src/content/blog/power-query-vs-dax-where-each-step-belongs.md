@@ -1,20 +1,21 @@
 ---
 title: "Power Query vs DAX: Where Each Step Belongs"
-description: Not sure whether to clean data in Power Query or calculate in DAX? Use this simple rule, with examples for calculated columns, measures and the M language.
-pubDate: 2026-09-26T10:20:00.000+02:00
+description: Not sure whether to clean data in Power Query or calculate in DAX?
+  Use this simple rule, with examples for calculated columns, measures and the M
+  language.
+pubDate: 2026-09-26T08:59:00.000+02:00
 tags:
   - power bi
   - power query
   - dax
   - data modeling
-draft: true
+draft: false
 ---
-
 > **Short answer:** Shape and clean the data in Power Query, as far upstream as you can. Calculate business numbers in DAX measures, because they respond to what the user selects. Use a DAX calculated column only when the value is fixed per row and you need to filter or group by it.
 
 Every Power BI beginner asks the same thing sooner or later: "I can do this in Power Query *and* in DAX. Which one should I use?" The honest answer is that they do different jobs, and the confusion comes from the small overlap between them.
 
-<!-- ANTHONY: add a real story here (a step you put in the wrong layer, and the cost) -->
+My take is: before even thinking DAX or M Language, I always try to prepare the data in a non-aggregated way directly in the SQL database. This is where most of the cleaning should appear, as usually databases benefit from a comprehensive documentation, are shared across the company and have the support of the engineers. 
 
 Here is how I decide. The examples are illustrative.
 
@@ -40,22 +41,22 @@ The reason is simple. Work done upstream is done once, at refresh, and every rep
 
 ## Which tool for which task?
 
-| Task | Best place | Why |
-| --- | --- | --- |
-| Remove duplicates, fix types, rename columns | Power Query | Cleaning, done once at refresh |
-| Split "First Last" into two columns | Power Query | Row-level reshaping |
-| Merge two tables or append files | Power Query | Data shaping |
-| Unpivot a wide table into a tall one | Power Query | Only M does this well |
-| Total sales, average order value, margin % | DAX measure | Must respond to filters |
-| Year-over-year, running total, % of total | DAX measure | Depends on filter context |
-| A "size band" per customer used on an axis | Calculated column (or Power Query) | Fixed per row, used to group |
+| Task                                         | Best place                         | Why                            |
+| -------------------------------------------- | ---------------------------------- | ------------------------------ |
+| Remove duplicates, fix types, rename columns | Power Query                        | Cleaning, done once at refresh |
+| Split "First Last" into two columns          | Power Query                        | Row-level reshaping            |
+| Merge two tables or append files             | Power Query                        | Data shaping                   |
+| Unpivot a wide table into a tall one         | Power Query                        | Only M does this well          |
+| Total sales, average order value, margin %   | DAX measure                        | Must respond to filters        |
+| Year-over-year, running total, % of total    | DAX measure                        | Depends on filter context      |
+| A "size band" per customer used on an axis   | Calculated column (or Power Query) | Fixed per row, used to group   |
 
 ## What is the difference between a measure and a calculated column?
 
 This is the part that trips people up inside DAX itself.
 
-- A **calculated column** is computed row by row when you refresh, and its values are stored in the model. That increases model size and memory use.
-- A **measure** is stored as a formula and computed only when it is used in a report, in the context of the visual.
+* A **calculated column** is computed row by row when you refresh, and its values are stored in the model. That increases model size and memory use.
+* A **measure** is stored as a formula and computed only when it is used in a report, in the context of the visual.
 
 So if the answer changes when someone clicks a slicer, it must be a measure. If it never changes for a given row, a column can work, but ask whether Power Query could produce it instead. A column made upstream compresses better than one made in DAX. SQLBI's [comparison of calculated columns and measures](https://www.sqlbi.com/articles/calculated-columns-and-measures-in-dax/) covers the mechanics in depth, and [endjin's article](https://endjin.com/blog/measures-vs-calculated-columns-in-dax) is a good plain-English second read.
 
