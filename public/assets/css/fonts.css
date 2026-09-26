@@ -1,0 +1,8 @@
+/* Self-hosted Inter (latin subset, variable 400-800): replaces the render-blocking Google Fonts request. */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url(/assets/fonts/inter-latin.woff2) format('woff2');
+}

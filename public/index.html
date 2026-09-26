@@ -40,9 +40,9 @@
 <meta name="twitter:image" content="https://anthonysko.com/assets/img/headshot.jpg">
 
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/fonts.css">
+<link rel="preload" as="image" href="assets/img/headshot-560.webp" imagesrcset="assets/img/headshot-280.webp 280w, assets/img/headshot-560.webp 560w" imagesizes="(max-width: 480px) 220px, 280px" fetchpriority="high">
 <link rel="stylesheet" href="assets/css/style.css">
 
 <script type="application/ld+json">
@@ -209,14 +209,14 @@
 
       <div class="hero-photo-wrap">
         <div class="hero-photo">
-          <img src="assets/img/headshot.jpg" alt="Portrait of Anthony Skolozdrzyk-Ardouin" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <img src="assets/img/headshot-560.webp" srcset="assets/img/headshot-280.webp 280w, assets/img/headshot-560.webp 560w" sizes="(max-width: 480px) 220px, 280px" width="280" height="280" fetchpriority="high" decoding="async" alt="Portrait of Anthony Skolozdrzyk-Ardouin" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
           <div class="hero-photo-fallback" style="display:none;">AS</div>
         </div>
         <div class="hero-badge">
           <strong>17+</strong> Years in payments &amp; analytics
         </div>
         <div class="hero-photo-secondary">
-          <img src="assets/img/full.jpg" alt="Anthony Skolozdrzyk-Ardouin outdoors" onerror="this.parentElement.style.display='none';">
+          <img src="assets/img/full-184.webp" srcset="assets/img/full-92.webp 92w, assets/img/full-184.webp 184w" sizes="92px" width="92" height="92" decoding="async" alt="Anthony Skolozdrzyk-Ardouin outdoors" onerror="this.parentElement.style.display='none';">
         </div>
       </div>
     </div>
