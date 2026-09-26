@@ -1,20 +1,21 @@
 ---
-title: "How to Validate AI-Generated Analysis Before It Reaches Your Boss"
-description: "A practical checklist for checking AI-generated analysis: reconcile totals, trace every number, test edge cases and label what is still an assumption."
-pubDate: 2026-09-26T11:30:00.000+02:00
+title: How to Validate AI-Generated Analysis Before It Reaches Your Boss
+description: "A practical checklist for checking AI-generated analysis:
+  reconcile totals, trace every number, test edge cases and label what is still
+  an assumption."
+pubDate: 2026-09-27T11:30:00.000+02:00
 tags:
   - ai for analysts
   - data quality
   - validation
   - data analytics
-draft: true
+draft: false
 ---
-
 > **Short answer:** Treat every AI-generated number as unverified until you have traced it to the data, reconciled the total against something you trust, and tested the edges. Break the answer into individual claims and check each one. Speed is the gift AI gives you, and checking is the price.
 
 An AI tool can produce a tidy summary with a chart and three confident bullet points in under a minute. Nothing about the tidiness tells you whether the numbers are right. If a wrong figure reaches your boss, it will not matter that a model produced it. It will be your name on the slide.
 
-<!-- ANTHONY: add a real story here (an AI-produced number you caught before it was shared, or one you didn't) -->
+AI hallucination is real and I caught a few of them. Data which don't make sense because the context I gave was not good enough - or because no semantic layer had been developed, leaving room for interpretation.
 
 Here is the checklist I would use before sharing anything an AI helped me produce. The example numbers are illustrative.
 
@@ -40,10 +41,10 @@ Count rows before and after each join and filter. If a join makes the table bigg
 
 ### 4. Test the edges
 
-- Does the date range include the first and last day?
-- What happens with NULLs, refunds and test accounts?
-- Are time zones consistent? See [SQL dates and time zones](/blog/sql-date-functions-fiscal-calendars-week-starts-time-zones/).
-- Are there [duplicates](/blog/find-and-fix-duplicate-rows-in-sql/) in the source?
+* Does the date range include the first and last day?
+* What happens with NULLs, refunds and test accounts?
+* Are time zones consistent? See [SQL dates and time zones](/blog/sql-date-functions-fiscal-calendars-week-starts-time-zones/).
+* Are there [duplicates](/blog/find-and-fix-duplicate-rows-in-sql/) in the source?
 
 ### 5. Ask the tool to argue against itself
 
@@ -69,10 +70,10 @@ The AI can draft. You have to decide. That includes framing the question, applyi
 
 Match the effort to the stakes. A quick exploration for your own eyes needs a light check. A number going to the board needs everything above, plus a second person.
 
-| Use | Minimum checks |
-| --- | --- |
-| Personal exploration | Sanity check, row counts |
-| Internal team report | Reconcile a total, edge cases, assumptions listed |
+| Use                   | Minimum checks                                                     |
+| --------------------- | ------------------------------------------------------------------ |
+| Personal exploration  | Sanity check, row counts                                           |
+| Internal team report  | Reconcile a total, edge cases, assumptions listed                  |
 | Executive or external | All of the above, source trace for every number, a second reviewer |
 
 My opinion: the analysts who benefit most from AI are the ones with the strongest checking habits, because they can move fast and still trust the output. If the analysis is disposable and low stakes, you can relax the process, but keep the sanity check.
