@@ -1,20 +1,20 @@
 ---
-title: "What Is a Semantic Layer, and Why AI Analytics Needs One"
-description: A semantic layer defines your metrics once so people, dashboards and AI all use the same numbers. Learn what it is, what it changes for text-to-SQL, and how to start small.
+title: What Is a Semantic Layer, and Why AI Analytics Needs One
+description: A semantic layer defines your metrics once so people, dashboards
+  and AI all use the same numbers. Learn what it is, what it changes for
+  text-to-SQL, and how to start small.
 pubDate: 2026-09-26T11:00:00.000+02:00
+updatedDate: 2026-09-26T09:13:00.000+02:00
 tags:
   - semantic layer
   - ai analytics
   - metrics
   - data analytics
-draft: true
+draft: false
 ---
-
 > **Short answer:** A semantic layer is a shared, written-down definition of your business metrics and how tables join. When an AI tool asks it for "revenue" instead of guessing at raw tables, it uses the same definition your dashboards use. Vendor benchmarks report large accuracy gains from this, though they are vendor benchmarks, so treat the exact figures with care.
 
 Ask three colleagues what "active customer" means and you may get three answers. A person can usually work out which one you meant from context. An AI model cannot. It will pick one, write perfectly valid SQL, and give you a confident number that may not match anyone's dashboard.
-
-<!-- ANTHONY: add a real story here (a metric with two definitions, and the meeting where the numbers clashed) -->
 
 I wrote about that failure in [why AI analysts fail on bad metric definitions](/blog/why-ai-analysts-fail-on-bad-metric-definitions/). This post is the constructive half: what a semantic layer is and how to get the benefit without a giant project.
 
@@ -22,10 +22,10 @@ I wrote about that failure in [why AI analysts fail on bad metric definitions](/
 
 Think of it as a dictionary and a rulebook that sits between your raw tables and everyone who asks questions of them. It defines:
 
-- **Metrics:** "Revenue = sum of paid order amounts, excluding refunds, in the reporting currency."
-- **Dimensions:** the ways you can slice them (country, product, month).
-- **Joins:** which tables connect and how, so nobody has to rediscover them.
-- **Rules:** filters that always apply, such as "exclude test accounts".
+* **Metrics:** "Revenue = sum of paid order amounts, excluding refunds, in the reporting currency."
+* **Dimensions:** the ways you can slice them (country, product, month).
+* **Joins:** which tables connect and how, so nobody has to rediscover them.
+* **Rules:** filters that always apply, such as "exclude test accounts".
 
 Common descriptions, such as [Knowi's](https://www.knowi.com/blog/semantic-layer-for-ai/), say the semantic layer centralises business logic so that every downstream consumer queries the same definition. The consumers can be a BI tool, a spreadsheet, a notebook or an AI assistant.
 
@@ -70,10 +70,10 @@ If you use Power BI, [model first, then calculation groups](/blog/power-bi-desig
 
 ## What are the limits?
 
-- **It doesn't fix bad data.** If the source has [duplicates](/blog/find-and-fix-duplicate-rows-in-sql/), every definition inherits them.
-- **It needs an owner.** Definitions drift when nobody is responsible for them.
-- **It can't answer everything.** Questions outside the defined metrics still fall back to raw SQL, where the old risks return.
-- **Governance takes real effort.** Agreeing on a definition is a people problem more than a technical one.
+* **It doesn't fix bad data.** If the source has [duplicates](/blog/find-and-fix-duplicate-rows-in-sql/), every definition inherits them.
+* **It needs an owner.** Definitions drift when nobody is responsible for them.
+* **It can't answer everything.** Questions outside the defined metrics still fall back to raw SQL, where the old risks return.
+* **Governance takes real effort.** Agreeing on a definition is a people problem more than a technical one.
 
 My opinion: the definitions matter far more than the tool. A shared document that everyone respects beats a fancy platform that nobody maintains. If you are a team of one with three metrics, a note at the top of your SQL file is enough.
 
