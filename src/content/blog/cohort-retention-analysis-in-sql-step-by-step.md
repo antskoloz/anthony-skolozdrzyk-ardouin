@@ -1,13 +1,15 @@
 ---
-title: "Cohort Retention Analysis in SQL, Step by Step"
-description: Build a cohort retention table in SQL in three steps. Includes a full PostgreSQL query, how to read the triangle, and the mistakes that skew retention.
-pubDate: 2026-09-26T09:30:00.000+02:00
+title: Cohort Retention Analysis in SQL, Step by Step
+description: Build a cohort retention table in SQL in three steps. Includes a
+  full PostgreSQL query, how to read the triangle, and the mistakes that skew
+  retention.
+pubDate: 2026-09-26T07:22:00.000+02:00
 tags:
   - sql
   - cohort analysis
   - retention
   - data analytics
-draft: true
+draft: false
 ---
 
 > **Short answer:** Assign every user to the month they first showed up, measure how many months later each activity happened, then count distinct users per cohort and month and divide by the cohort's starting size. The result is the familiar retention triangle.
