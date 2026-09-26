@@ -1,20 +1,19 @@
 ---
 title: "KPI Dashboard Best Practices: Build One People Actually Open"
-description: "Most dashboards get built, launched and forgotten. Design for decisions, keep the metric count low, define every number, keep data fresh and review usage."
-pubDate: 2026-09-26T12:30:00.000+02:00
+description: Most dashboards get built, launched and forgotten. Design for
+  decisions, keep the metric count low, define every number, keep data fresh and
+  review usage.
+pubDate: 2026-09-26T15:39:00.000+02:00
 tags:
   - dashboards
   - kpi
   - power bi
   - data visualization
-draft: true
+draft: false
 ---
-
 > **Short answer:** Start from the decisions the dashboard should support, not from the data you happen to have. Show a handful of KPIs, define each one, make the most important number obvious in a few seconds, keep the data fresh automatically, and check who really uses it. A dashboard nobody opens is just an expensive hobby.
 
 Every company has a graveyard of dashboards. Built with enthusiasm, presented once, opened by three people, then quietly abandoned. The cause is rarely the tool. It is almost always that nobody decided what the dashboard was for.
-
-<!-- ANTHONY: add a real story here (a dashboard that was widely used, or one that nobody opened, and why) -->
 
 Here are the practices I come back to. They match what most dashboard guides say, and where I add my own opinion, I flag it. The examples are illustrative.
 
@@ -40,12 +39,12 @@ Different roles need different views. An executive wants a few numbers and a tre
 
 ## How do I design it?
 
-- **Consistency.** Use one visual language for colour, scale and layout, so viewers don't have to relearn how to read each chart.
-- **Context on every number.** Compare with a target, last period or last year. A bare "1,240 orders" tells you little. For the DAX behind this, see [time intelligence](/blog/power-bi-time-intelligence-ytd-yoy-rolling-12-months/).
-- **Colour with meaning.** Use red and green sparingly and check they are readable for colour-blind viewers. Grey for the rest.
-- **Headline titles.** Say what the chart shows, and label units and time periods.
-- **Whitespace.** Crowding is not thoroughness.
-- **Tell the story.** Put the summary at the top and the detail underneath. See [data storytelling](/blog/data-storytelling-for-non-technical-stakeholders/).
+* **Consistency.** Use one visual language for colour, scale and layout, so viewers don't have to relearn how to read each chart.
+* **Context on every number.** Compare with a target, last period or last year. A bare "1,240 orders" tells you little. For the DAX behind this, see [time intelligence](/blog/power-bi-time-intelligence-ytd-yoy-rolling-12-months/).
+* **Colour with meaning.** Use red and green sparingly and check they are readable for colour-blind viewers. Grey for the rest.
+* **Headline titles.** Say what the chart shows, and label units and time periods.
+* **Whitespace.** Crowding is not thoroughness.
+* **Tell the story.** Put the summary at the top and the detail underneath. See [data storytelling](/blog/data-storytelling-for-non-technical-stakeholders/).
 
 ## How do I keep the numbers trusted?
 
@@ -65,10 +64,10 @@ Power BI is a strong option if your data is modelled well. A clean [star schema]
 
 Measure it. Power BI and most other tools can show view counts and users. Set a review every quarter:
 
-- Who opened it? How often?
-- Which pages are never viewed? Remove them.
-- Which questions still come to you by email? Add or fix those.
-- Is any KPI unchanged for months? It may not be a useful KPI.
+* Who opened it? How often?
+* Which pages are never viewed? Remove them.
+* Which questions still come to you by email? Add or fix those.
+* Is any KPI unchanged for months? It may not be a useful KPI.
 
 Retire dashboards that nobody uses. Deleting is part of the job.
 
