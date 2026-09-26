@@ -1,13 +1,15 @@
 ---
-title: "How to Find and Fix Duplicate Rows in SQL"
-description: Find duplicate rows in SQL with GROUP BY and ROW_NUMBER, then remove them safely. Copy-paste queries, the traps to avoid, and how to stop duplicates coming back.
-pubDate: 2026-09-26T09:20:00.000+02:00
+title: How to Find and Fix Duplicate Rows in SQL
+description: Find duplicate rows in SQL with GROUP BY and ROW_NUMBER, then
+  remove them safely. Copy-paste queries, the traps to avoid, and how to stop
+  duplicates coming back.
+pubDate: 2026-09-26T07:24:00.000+02:00
 tags:
   - sql
   - data quality
   - data cleaning
   - data analytics
-draft: true
+draft: false
 ---
 
 > **Short answer:** Find duplicates by grouping on the columns that should be unique and keeping groups with a count above one. Remove them by numbering the rows in each group with `ROW_NUMBER()` and deleting everything after the first. Always look before you delete.
