@@ -3,7 +3,7 @@ title: How to Validate AI-Generated Analysis Before It Reaches Your Boss
 description: "A practical checklist for checking AI-generated analysis:
   reconcile totals, trace every number, test edge cases and label what is still
   an assumption."
-pubDate: 2026-09-27T11:30:00.000+02:00
+pubDate: 2026-09-26T10:52:00.000+02:00
 tags:
   - ai for analysts
   - data quality

@@ -1,13 +1,15 @@
 ---
-title: "Data Storytelling for Non-Technical Stakeholders"
-description: "How to present analysis so busy, non-technical people act on it. A simple structure, slide habits, and the mistakes that make good analysis get ignored."
-pubDate: 2026-09-26T12:20:00.000+02:00
+title: Data Storytelling for Non-Technical Stakeholders
+description: How to present analysis so busy, non-technical people act on it. A
+  simple structure, slide habits, and the mistakes that make good analysis get
+  ignored.
+pubDate: 2026-09-26T09:47:00.000+02:00
 tags:
   - data storytelling
   - communication
   - stakeholders
   - data analytics
-draft: true
+draft: false
 ---
 
 > **Short answer:** Lead with the answer, not the method. Say what happened, why it matters and what you recommend, in that order, in the words your audience uses. Put the detail in an appendix. A good analysis that nobody acts on has not done its job.
