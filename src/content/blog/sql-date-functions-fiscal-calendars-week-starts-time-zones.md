@@ -1,13 +1,15 @@
 ---
 title: "SQL Date Functions: Fiscal Calendars, Week Starts and Time Zones"
-description: Handle dates in SQL without wrong totals. DATE_TRUNC, week starts, fiscal years and time zones explained for analysts, with queries and a calendar table.
-pubDate: 2026-09-26T09:40:00.000+02:00
+description: Handle dates in SQL without wrong totals. DATE_TRUNC, week starts,
+  fiscal years and time zones explained for analysts, with queries and a
+  calendar table.
+pubDate: 2026-09-26T07:26:00.000+02:00
 tags:
   - sql
   - dates
   - data analytics
   - reporting
-draft: true
+draft: false
 ---
 
 > **Short answer:** Most date bugs come from three decisions nobody wrote down: which time zone a day is measured in, which day a week starts on, and when the fiscal year begins. Convert the time zone first, truncate second, and put fiscal logic in a calendar table instead of scattering it through queries.
