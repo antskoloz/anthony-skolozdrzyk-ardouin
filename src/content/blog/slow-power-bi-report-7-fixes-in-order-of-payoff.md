@@ -1,20 +1,21 @@
 ---
-title: "Slow Power BI Report? 7 Fixes in Order of Payoff"
-description: A slow Power BI report usually has a few clear causes. Measure with Performance Analyzer first, then apply these seven fixes, biggest payoff first.
-pubDate: 2026-09-26T10:30:00.000+02:00
+title: Slow Power BI Report? 7 Fixes in Order of Payoff
+description: A slow Power BI report usually has a few clear causes. Measure with
+  Performance Analyzer first, then apply these seven fixes, biggest payoff
+  first.
+pubDate: 2026-09-26T09:19:00.000+02:00
 tags:
   - power bi
   - performance
   - optimization
   - data modeling
-draft: true
+draft: false
 ---
-
 > **Short answer:** Measure first with Performance Analyzer, so you know whether the problem is the visuals, the DAX or the data model. Then fix in this order: cut unused data, get to a star schema, simplify the visuals on the page, tidy your measures, and only after that consider heavier options like aggregations.
 
 Nobody complains about a report that is fast. The complaints start when a slicer takes ten seconds to respond and the sales director says the word "unusable" in a meeting.
 
-<!-- ANTHONY: add a real story here (a slow report you sped up, and what turned out to be the cause) -->
+Most of the slowness I could experience was directly related to having too many rows in the fact tables. Business stakeholders asking "nice to have" additional data points, resulting into a few million rows additional - which in fact are almost never checked. Sometimes, just an ad-hoc extract is enough to help the business partners without interfering with the dashboard.
 
 Before you rewrite a single measure, find out what is actually slow. The order below is my own experience-based ranking, not an official one. Where Microsoft documents the approach, I link to it.
 
@@ -24,9 +25,9 @@ Use **Performance Analyzer**. In Power BI Desktop, open the Optimize ribbon and 
 
 For each visual it breaks time into three parts:
 
-- **DAX query:** how long the calculation took. Slow here means look at the measure or the model.
-- **Visual display:** how long it took to draw. Slow here means too many marks, too many visuals, or a heavy custom visual.
-- **Other:** waiting for other visuals or work to finish.
+* **DAX query:** how long the calculation took. Slow here means look at the measure or the model.
+* **Visual display:** how long it took to draw. Slow here means too many marks, too many visuals, or a heavy custom visual.
+* **Other:** waiting for other visuals or work to finish.
 
 Microsoft's [monitoring guidance](https://learn.microsoft.com/en-us/power-bi/guidance/monitor-report-performance) also points out that the data model and refresh can be the issue, so it is worth knowing which of those you are dealing with. Copy the DAX query out of Performance Analyzer and run it in DAX Studio or a query view if a specific visual stands out.
 
@@ -50,9 +51,9 @@ Aggregating, joining and cleaning in the source or in Power Query means the mode
 
 Every visual sends its own queries. A page with twenty visuals fires twenty queries whenever a slicer moves. Try:
 
-- Fewer visuals per page, and split the story across pages.
-- Fewer slicers, or a slicer panel that applies changes on demand.
-- Removing detail tables with thousands of rows from the landing page.
+* Fewer visuals per page, and split the story across pages.
+* Fewer slicers, or a slicer panel that applies changes on demand.
+* Removing detail tables with thousands of rows from the landing page.
 
 Performance Analyzer will show the guilty visual by name.
 
@@ -73,6 +74,8 @@ Variables are evaluated once and reused, which is both faster and easier to read
 
 Power BI can create hidden date tables for every date column when the auto date/time option is on. In larger models this adds size for no benefit once you have a proper date table. Turn it off, and use one shared `Date` table.
 
+High cardinatliy columns can be dangerous. Withouth checking them, you might end-up multiplying the number of rows in the report - and the business stakeholder will be sometimes even more confused as this is too much information for him / her to consume. 
+
 ### 7. Consider aggregations and incremental refresh
 
 If you have handled everything above and the model is still large, then look at aggregation tables, incremental refresh, or Import versus DirectQuery choices. These are powerful and also add complexity, which is why they come last.
@@ -83,9 +86,9 @@ Then the problem is rendering. Reduce the number of data points, replace a custo
 
 ## How do I keep it from getting slow again?
 
-- Re-run Performance Analyzer before publishing a change, and after.
-- Keep a short list of the slowest visuals and what they cost.
-- Review the model when a new source is added, not when users complain.
+* Re-run Performance Analyzer before publishing a change, and after.
+* Keep a short list of the slowest visuals and what they cost.
+* Review the model when a new source is added, not when users complain.
 
 My opinion: most slow reports are slow because of the model, not the DAX. People often spend a week tuning a measure when deleting three columns would have done more. If your report only has a few thousand rows and one user, none of this matters yet.
 
