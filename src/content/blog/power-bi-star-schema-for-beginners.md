@@ -1,20 +1,20 @@
 ---
 title: "Power BI Star Schema for Beginners: A Practical Walkthrough"
-description: What a star schema is, why Microsoft recommends it for Power BI, and how to reshape a flat table into facts and dimensions step by step.
-pubDate: 2026-09-26T10:10:00.000+02:00
+description: What a star schema is, why Microsoft recommends it for Power BI,
+  and how to reshape a flat table into facts and dimensions step by step.
+pubDate: 2026-09-26T08:54:00.000+02:00
 tags:
   - power bi
   - star schema
   - data modeling
   - beginners
-draft: true
+draft: false
 ---
-
 > **Short answer:** A star schema splits your data into one central *fact* table (the events you count, such as sales) surrounded by *dimension* tables (the things you slice by, such as product, customer and date). Microsoft recommends it for Power BI because it gives simpler DAX, faster reports and smaller files.
 
 Most Power BI reports start life as one giant table exported from somewhere. It works for a week. Then someone asks for a filter that spans two sources, a measure returns nonsense, and the file takes a minute to open.
 
-<!-- ANTHONY: add a real story here (a flat-table model that broke, and what changed after remodelling) -->
+I've experienced it first-hand when the granularity of table changed and that the business partners wanted to introduce a second-level of dimension aggregation. 
 
 The fix is almost always the same: reshape the data before you build anything fancy. Here is what that means in practice. The tables and columns are illustrative.
 
@@ -30,8 +30,8 @@ Customer --- Sales --- Date
              Store
 ```
 
-- **Fact tables** hold events: one row per order line, click or payment. They contain numbers you summarise (`Amount`, `Quantity`) and keys pointing to the dimensions.
-- **Dimension tables** hold descriptions: one row per product, customer, day or store. They contain the columns you filter and group by (`Category`, `Country`, `Month`).
+* **Fact tables** hold events: one row per order line, click or payment. They contain numbers you summarise (`Amount`, `Quantity`) and keys pointing to the dimensions.
+* **Dimension tables** hold descriptions: one row per product, customer, day or store. They contain the columns you filter and group by (`Category`, `Country`, `Month`).
 
 [Microsoft's guidance on star schema](https://learn.microsoft.com/en-us/power-bi/guidance/star-schema) puts the roles simply: dimension tables handle filtering and grouping, and fact tables handle summarisation.
 
@@ -61,11 +61,11 @@ Say you have one table, `SalesFlat`, with columns like `OrderID`, `OrderDate`, `
 
 ## What are the common beginner mistakes?
 
-- **Keeping everything in one wide table.** It is tempting and it is the root of most slow models.
-- **Linking dimensions to each other.** That turns the star into a snowflake and makes filters harder to trace. Flatten it where you can.
-- **Many-to-many relationships everywhere.** Microsoft's [many-to-many guidance](https://learn.microsoft.com/en-us/power-bi/guidance/relationships-many-to-many) exists because these relationships are easy to misuse. Reach for a bridge table or a proper dimension first.
-- **Bidirectional filtering as a fix.** It often hides a modelling problem and can cause ambiguity. Turn it on deliberately, not by reflex.
-- **Duplicated keys in a dimension.** A "unique" product list with two rows for one key breaks the one-to-many relationship. Check it.
+* **Keeping everything in one wide table.** It is tempting and it is the root of most slow models.
+* **Linking dimensions to each other.** That turns the star into a snowflake and makes filters harder to trace. Flatten it where you can.
+* **Many-to-many relationships everywhere.** Microsoft's [many-to-many guidance](https://learn.microsoft.com/en-us/power-bi/guidance/relationships-many-to-many) exists because these relationships are easy to misuse. Reach for a bridge table or a proper dimension first.
+* **Bidirectional filtering as a fix.** It often hides a modelling problem and can cause ambiguity. Turn it on deliberately, not by reflex.
+* **Duplicated keys in a dimension.** A "unique" product list with two rows for one key breaks the one-to-many relationship. Check it.
 
 ## Is a star schema always the right answer?
 
