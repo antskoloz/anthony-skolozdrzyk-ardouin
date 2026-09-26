@@ -1,20 +1,19 @@
 ---
 title: "Metric Definition Doc: What to Write Down (With a Template)"
-description: "Stop dashboard debates with a one-page metric definition. Includes a copy-paste template, a filled-in example and the owner, grain and exclusion rules that matter."
-pubDate: 2026-09-26T12:00:00.000+02:00
+description: Stop dashboard debates with a one-page metric definition. Includes
+  a copy-paste template, a filled-in example and the owner, grain and exclusion
+  rules that matter.
+pubDate: 2026-09-26T09:46:00.000+02:00
 tags:
   - metrics
   - kpi
   - data governance
   - data analytics
-draft: true
+draft: false
 ---
-
 > **Short answer:** A metric definition is a one-page record of what a number means: its plain-language definition, formula, grain, inclusions and exclusions, source, owner and how you check it. Write one for every metric that appears in a report, and the "why doesn't your number match mine?" meetings mostly disappear.
 
 Two dashboards, one metric name, two different numbers. Everyone in the room has been there. Nobody is lying, and nobody is wrong in their own definition. The problem is that the definition lived in someone's head.
-
-<!-- ANTHONY: add a real story here (a meeting or report where the same metric had two values, and how it was resolved) -->
 
 This is the human side of the semantic-layer idea in [what a semantic layer is](/blog/semantic-layer-for-ai-what-it-is-and-why-analytics-needs-one/). Whether or not you ever buy a tool, you can write the definitions down this week. The examples are illustrative.
 
@@ -24,20 +23,20 @@ KPI-definition guides differ in detail, but they converge on the same core. The 
 
 My version keeps it to what people actually fill in:
 
-| Field | What to write |
-| --- | --- |
-| **Name** | The one name everyone uses. List aliases too. |
-| **Plain-language definition** | One or two sentences a non-analyst can understand. |
-| **Formula** | The exact calculation, with numerator and denominator. |
-| **Grain** | What one row represents, and the time period (day, week, month). |
-| **Includes / excludes** | Refunds? Test accounts? Internal orders? Cancelled items? |
-| **Source** | Which table or system is the source of truth. |
-| **Time rules** | Time zone, week start, fiscal calendar, cutoff time. |
-| **Owner** | A named person, not a team. |
-| **Refresh** | How often the number updates. |
-| **How to check it** | A reconciliation: "should equal finance's monthly report within 0.5%". |
-| **Known gotchas** | Where people trip up. |
-| **Status and date** | Draft, approved, deprecated, and when it was last reviewed. |
+| Field                         | What to write                                                          |
+| ----------------------------- | ---------------------------------------------------------------------- |
+| **Name**                      | The one name everyone uses. List aliases too.                          |
+| **Plain-language definition** | One or two sentences a non-analyst can understand.                     |
+| **Formula**                   | The exact calculation, with numerator and denominator.                 |
+| **Grain**                     | What one row represents, and the time period (day, week, month).       |
+| **Includes / excludes**       | Refunds? Test accounts? Internal orders? Cancelled items?              |
+| **Source**                    | Which table or system is the source of truth.                          |
+| **Time rules**                | Time zone, week start, fiscal calendar, cutoff time.                   |
+| **Owner**                     | A named person, not a team.                                            |
+| **Refresh**                   | How often the number updates.                                          |
+| **How to check it**           | A reconciliation: "should equal finance's monthly report within 0.5%". |
+| **Known gotchas**             | Where people trip up.                                                  |
+| **Status and date**           | Draft, approved, deprecated, and when it was last reviewed.            |
 
 Some guides separate two owners: a business owner who owns the meaning and a technical owner who maintains the logic. I like that split, because arguments about meaning and arguments about a bug are different arguments.
 
@@ -87,11 +86,11 @@ Then make the logic match. In Power BI that means one measure per definition, fo
 
 ## What are the common mistakes?
 
-- **Writing definitions nobody reads.** Link them from the dashboard.
-- **No owner.** Definitions drift when nobody is responsible.
-- **Too many fields.** If the template takes an hour, it won't get filled in. Start with definition, formula, exclusions, owner.
-- **Never reviewing.** Business rules change. Put a review date on every entry.
-- **Ignoring AI.** If you use an assistant to write queries, these documents are exactly the context it needs, as I describe in [prompting an LLM for SQL you can trust](/blog/prompting-an-llm-for-sql-you-can-trust/).
+* **Writing definitions nobody reads.** Link them from the dashboard.
+* **No owner.** Definitions drift when nobody is responsible.
+* **Too many fields.** If the template takes an hour, it won't get filled in. Start with definition, formula, exclusions, owner.
+* **Never reviewing.** Business rules change. Put a review date on every entry.
+* **Ignoring AI.** If you use an assistant to write queries, these documents are exactly the context it needs, as I describe in [prompting an LLM for SQL you can trust](/blog/prompting-an-llm-for-sql-you-can-trust/).
 
 My opinion: a mediocre definition that is written down and owned beats a perfect one that lives in a head. If you have only three metrics and one reader, a comment at the top of the query is fine.
 
