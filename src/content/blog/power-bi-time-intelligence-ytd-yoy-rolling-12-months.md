@@ -1,13 +1,15 @@
 ---
 title: "Power BI Time Intelligence: YTD, YoY and Rolling 12 Months"
-description: Build year-to-date, year-over-year and rolling 12-month measures in DAX. Includes the date table rules that make time intelligence work, with copy-paste measures.
-pubDate: 2026-09-26T10:40:00.000+02:00
+description: Build year-to-date, year-over-year and rolling 12-month measures in
+  DAX. Includes the date table rules that make time intelligence work, with
+  copy-paste measures.
+pubDate: 2026-09-26T09:07:00.000+02:00
 tags:
   - power bi
   - dax
   - time intelligence
   - reporting
-draft: true
+draft: false
 ---
 
 > **Short answer:** Time intelligence only works with a proper date table: one row per day, no gaps, marked as the date table. With that in place, `TOTALYTD` gives year-to-date, `SAMEPERIODLASTYEAR` gives the prior year, and `DATESINPERIOD` gives a rolling window. Each is a `CALCULATE` that swaps the time filter.
