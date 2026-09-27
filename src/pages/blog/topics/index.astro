@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+import { isLive } from '../../../lib/publish';
+import BlogLayout from '../../../layouts/BlogLayout.astro';
+import { blogPillars } from '../../../data/blog-pillars';
+
+const liveIds = new Set((await getCollection('blog', ({ data }) => isLive(data))).map((p) => p.id));
+const pillars = blogPillars.map((pillar) => ({
+  pillar,
+  count: pillar.postSlugs.filter((id) => liveIds.has(id)).length,
+}));
+---
+
+<BlogLayout
+  title="Browse by topic"
+  description="Blog posts grouped by topic: SQL, Power BI, AI for analysts, RevOps, marketing measurement, analyst craft and SaaS metrics."
+  canonicalPath="/blog/topics/"
+>
+  <section class="blog-hero">
+    <div class="container">
+      <p class="eyebrow">Notes &amp; writing</p>
+      <h1>Browse by topic</h1>
+      <p>The blog grouped into a handful of clusters, each with its own set of posts and, where relevant, a free tool.</p>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="blog-grid">
+      {pillars.map(({ pillar, count }) => (
+        <article class="blog-card">
+          <h2><a href={`/blog/topics/${pillar.slug}/`}>{pillar.name}</a></h2>
+          <p>{pillar.intro}</p>
+          <div class="blog-meta" style="margin-top:16px;">
+            <span>{count} {count === 1 ? 'post' : 'posts'}</span>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</BlogLayout>

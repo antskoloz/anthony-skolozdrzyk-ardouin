@@ -1,0 +1,55 @@
+---
+import { getCollection } from 'astro:content';
+import { isLive } from '../../../lib/publish';
+import BlogLayout from '../../../layouts/BlogLayout.astro';
+import BlogPostCard from '../../../components/BlogPostCard.astro';
+import { blogPillars, type BlogPillar } from '../../../data/blog-pillars';
+
+export async function getStaticPaths() {
+  const allLive = await getCollection('blog', ({ data }) => isLive(data));
+  return blogPillars.map((pillar) => {
+    const posts = allLive
+      .filter((p) => pillar.postSlugs.includes(p.id))
+      .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+    return { params: { pillar: pillar.slug }, props: { pillar, posts } };
+  });
+}
+
+interface Props {
+  pillar: BlogPillar;
+  posts: Awaited<ReturnType<typeof getCollection<'blog'>>>;
+}
+
+const { pillar, posts } = Astro.props;
+---
+
+<BlogLayout
+  title={pillar.name}
+  description={pillar.intro}
+  canonicalPath={`/blog/topics/${pillar.slug}/`}
+>
+  <section class="blog-hero">
+    <div class="container">
+      <p class="eyebrow"><a href="/blog/topics/">Browse by topic</a></p>
+      <h1>{pillar.name}</h1>
+      <p>{pillar.intro}</p>
+      {pillar.tools && pillar.tools.length > 0 && (
+        <div class="tag-list" style="justify-content:center;margin-top:20px;">
+          {pillar.tools.map((tool) => (
+            <a href={tool.href} class="btn btn-outline btn-sm">{tool.label}</a>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+
+  <section class="container">
+    {posts.length === 0 ? (
+      <p class="blog-empty">No posts in this topic yet — check back soon.</p>
+    ) : (
+      <div class="blog-grid">
+        {posts.map((post) => <BlogPostCard post={post} />)}
+      </div>
+    )}
+  </section>
+</BlogLayout>

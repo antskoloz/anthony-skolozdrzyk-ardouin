@@ -2,12 +2,11 @@
 import { getCollection } from 'astro:content';
 import { isLive } from '../../lib/publish';
 import BlogLayout from '../../layouts/BlogLayout.astro';
+import BlogPostCard from '../../components/BlogPostCard.astro';
 import { SITE_DESCRIPTION } from '../../consts';
 
 const allPosts = await getCollection('blog', ({ data }) => isLive(data));
 const posts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-
-const dateFormat: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
 ---
 
 <BlogLayout title="Blog" description={SITE_DESCRIPTION} canonicalPath="/blog/">
@@ -17,6 +16,7 @@ const dateFormat: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long',
       <h1>Blog</h1>
       <p>Revenue Operations, payments and data analytics — practical notes from running RevOps and analytics at scale.</p>
       <p class="blog-hero-authorship">Thinking and expertise from Anthony, written with Claude.</p>
+      <a href="/blog/topics/" class="btn btn-outline btn-sm">Browse by topic</a>
     </div>
   </section>
 
@@ -25,22 +25,7 @@ const dateFormat: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long',
       <p class="blog-empty">No posts yet — check back soon.</p>
     ) : (
       <div class="blog-grid">
-        {posts.map((post) => (
-          <article class="blog-card">
-            <div class="blog-meta">
-              <time datetime={post.data.pubDate.toISOString()}>
-                {post.data.pubDate.toLocaleDateString('en-US', dateFormat)}
-              </time>
-            </div>
-            <h2><a href={`${post.id}/`}>{post.data.title}</a></h2>
-            <p>{post.data.description}</p>
-            {post.data.tags.length > 0 && (
-              <div class="tag-list" style="margin-top:16px;">
-                {post.data.tags.map((tag) => <span class="tag">{tag}</span>)}
-              </div>
-            )}
-          </article>
-        ))}
+        {posts.map((post) => <BlogPostCard post={post} />)}
       </div>
     )}
   </section>

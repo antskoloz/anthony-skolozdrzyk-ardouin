@@ -1199,6 +1199,10 @@ p {
   color: var(--orange-accent);
 }
 
+.blog-hero .btn {
+  margin-top: 24px;
+}
+
 .blog-grid {
   display: grid;
   gap: 28px;
@@ -1372,6 +1376,17 @@ p {
   font-style: italic;
   font-weight: 600;
   color: var(--orange-accent);
+}
+
+.prose .post-pillar-links {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: var(--text-faint);
+}
+
+.prose .post-pillar-links a {
+  color: var(--blue-600);
+  text-decoration: underline;
 }
 
 .share-bar {
