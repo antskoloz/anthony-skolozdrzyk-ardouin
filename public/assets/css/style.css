@@ -9,6 +9,7 @@
   --blue-600: #2f6fed;
   --blue-700: #2557c7;
   --blue-100: #eaf1ff;
+  --orange-accent: #c2410c;
   --bg: #ffffff;
   --bg-alt: #f6f8fb;
   --bg-card: #ffffff;
@@ -1190,6 +1191,14 @@ p {
   font-size: 1.05rem;
 }
 
+.blog-hero-authorship {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  font-style: italic;
+  font-weight: 600;
+  color: var(--orange-accent);
+}
+
 .blog-grid {
   display: grid;
   gap: 28px;
@@ -1361,7 +1370,8 @@ p {
   margin-top: 40px;
   font-size: 0.88rem;
   font-style: italic;
-  color: var(--text-faint);
+  font-weight: 600;
+  color: var(--orange-accent);
 }
 
 .share-bar {
