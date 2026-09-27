@@ -1,0 +1,18 @@
+---
+import { SITE_URL, AUTHOR_NAME } from '../consts';
+---
+
+<aside class="author-box" aria-label="About the author">
+  <img src={`${SITE_URL}/assets/img/headshot-280.webp`} alt={AUTHOR_NAME} width="72" height="72" loading="lazy">
+  <div>
+    <p class="author-box__name">{AUTHOR_NAME}</p>
+    <p class="author-box__bio">
+      Anthony leads Revenue Operations and Data Analytics teams in Europe, with past roles at PayPal, Avis and Twenga.
+      He writes here about SQL, Power BI, AI for analysts and the numbers behind growth.
+    </p>
+    <p class="author-box__links">
+      <a href="https://www.linkedin.com/in/anthony-skolozdrzyk-ardouin-data-analytics-expert" target="_blank" rel="noopener">LinkedIn</a>
+      <a href={`${SITE_URL}/#contact`}>Get in touch</a>
+    </p>
+  </div>
+</aside>

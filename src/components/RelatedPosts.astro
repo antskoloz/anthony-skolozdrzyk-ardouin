@@ -1,0 +1,28 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BlogPostCard from './BlogPostCard.astro';
+import { getPillarsForSlug } from '../data/blog-pillars';
+
+interface Props {
+  currentId: string;
+  allLive: CollectionEntry<'blog'>[];
+}
+
+const { currentId, allLive } = Astro.props;
+const relatedIds = new Set(getPillarsForSlug(currentId).flatMap((p) => p.postSlugs));
+relatedIds.delete(currentId);
+
+const related = allLive
+  .filter((p) => relatedIds.has(p.id))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+---
+
+{related.length > 0 && (
+  <section class="related-posts" aria-labelledby="related-posts-title">
+    <h2 id="related-posts-title">More on this topic</h2>
+    <div class="blog-grid">
+      {related.map((post) => <BlogPostCard post={post} />)}
+    </div>
+  </section>
+)}

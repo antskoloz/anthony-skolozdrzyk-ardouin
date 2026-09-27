@@ -1199,7 +1199,11 @@ p {
   color: var(--orange-accent);
 }
 
-.blog-hero .btn {
+.blog-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
   margin-top: 24px;
 }
 
@@ -1387,6 +1391,70 @@ p {
 .prose .post-pillar-links a {
   color: var(--blue-600);
   text-decoration: underline;
+}
+
+.author-box {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  margin-top: 32px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-alt);
+}
+
+.prose .author-box img {
+  width: 72px;
+  height: 72px;
+  margin: 0;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.prose .author-box p {
+  margin-bottom: 0;
+}
+
+.prose .author-box__name {
+  font-weight: 700;
+  color: var(--navy-900);
+}
+
+.prose .author-box__bio {
+  margin-top: 4px;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.prose .author-box__links {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.prose .author-box__links a {
+  color: var(--blue-600);
+  text-decoration: none;
+}
+
+.related-posts {
+  margin-top: 56px;
+  padding-bottom: 24px;
+}
+
+.related-posts h2 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 520px) {
+  .author-box {
+    flex-direction: column;
+  }
 }
 
 .share-bar {

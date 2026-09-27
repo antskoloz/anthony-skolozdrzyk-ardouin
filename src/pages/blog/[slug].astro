@@ -3,6 +3,8 @@ import { getCollection, render, type CollectionEntry } from 'astro:content';
 import { isLive } from '../../lib/publish';
 import BlogLayout from '../../layouts/BlogLayout.astro';
 import ShareBar from '../../components/ShareBar.astro';
+import AuthorBox from '../../components/AuthorBox.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
 import { getPillarsForSlug } from '../../data/blog-pillars';
 import { SITE_URL } from '../../consts';
 
@@ -10,15 +12,16 @@ export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => isLive(data));
   return posts.map((post) => ({
     params: { slug: post.id },
-    props: { post },
+    props: { post, allLive: posts },
   }));
 }
 
 interface Props {
   post: CollectionEntry<'blog'>;
+  allLive: CollectionEntry<'blog'>[];
 }
 
-const { post } = Astro.props;
+const { post, allLive } = Astro.props;
 const { Content } = await render(post);
 const pillars = getPillarsForSlug(post.id);
 
@@ -69,7 +72,10 @@ const dateFormat: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long',
           ))}
         </p>
       )}
+      <AuthorBox />
       <ShareBar url={`${SITE_URL}/blog/${post.id}/`} title={post.data.title} />
     </div>
+
+    <RelatedPosts currentId={post.id} allLive={allLive} />
   </div>
 </BlogLayout>

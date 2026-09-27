@@ -16,7 +16,10 @@ const posts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.
       <h1>Blog</h1>
       <p>Revenue Operations, payments and data analytics — practical notes from running RevOps and analytics at scale.</p>
       <p class="blog-hero-authorship">Thinking and expertise from Anthony, written with Claude.</p>
-      <a href="/blog/topics/" class="btn btn-outline btn-sm">Browse by topic</a>
+      <div class="blog-hero__actions">
+        <a href="/blog/topics/" class="btn btn-outline btn-sm">Browse by topic</a>
+        <a href="/rss.xml" class="btn btn-outline btn-sm">Subscribe via RSS</a>
+      </div>
     </div>
   </section>
 
