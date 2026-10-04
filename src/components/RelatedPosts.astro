@@ -9,12 +9,24 @@ interface Props {
 }
 
 const { currentId, allLive } = Astro.props;
-const relatedIds = new Set(getPillarsForSlug(currentId).flatMap((p) => p.postSlugs));
-relatedIds.delete(currentId);
+const pillars = getPillarsForSlug(currentId);
+const current = allLive.find((p) => p.id === currentId);
+const currentTags = new Set(current?.data.tags ?? []);
 
+// Rank by relevance, not recency: shared tags first, then the curated order in
+// blog-pillars.ts, so older posts that already rank keep getting linked.
+const curatedRank = new Map<string, number>();
+pillars.forEach((pillar) =>
+  pillar.postSlugs.forEach((slug, i) => {
+    if (!curatedRank.has(slug) || i < curatedRank.get(slug)!) curatedRank.set(slug, i);
+  }),
+);
+curatedRank.delete(currentId);
+
+const sharedTags = (p: CollectionEntry<'blog'>) => p.data.tags.filter((t) => currentTags.has(t)).length;
 const related = allLive
-  .filter((p) => relatedIds.has(p.id))
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .filter((p) => curatedRank.has(p.id))
+  .sort((a, b) => sharedTags(b) - sharedTags(a) || curatedRank.get(a.id)! - curatedRank.get(b.id)!)
   .slice(0, 3);
 ---
 

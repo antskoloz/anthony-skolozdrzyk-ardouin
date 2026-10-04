@@ -54,7 +54,7 @@ Adjust depth, vocabulary and focus for each. The same message lands better when 
 - **Highlight the point.** Grey out everything else and colour the one line or bar you want people to see.
 - **Cut the decoration.** Gridlines, 3D effects and rainbow palettes cost attention and add nothing.
 - **Use their words.** If the business says "orders", don't say "transactions". Skip jargon such as "p-value" or "cohort" unless you explain it in a sentence.
-- **Show scale and context.** A 12% drop means little without knowing whether normal noise is 2% or 10%. For help, see [six statistical functions every analyst should know](/blog/statistical-functions-every-data-analyst-should-know/).
+- **Show scale and context.** A 12% drop means little without knowing whether normal noise is 2% or 10%. For a plain-English take on telling signal from noise, see [A/B test sample size and significance explained](/blog/ab-test-sample-size-and-significance-explained/).
 
 ## How do I explain uncertainty without losing them?
 

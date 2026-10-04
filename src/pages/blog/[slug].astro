@@ -24,6 +24,7 @@ interface Props {
 const { post, allLive } = Astro.props;
 const { Content } = await render(post);
 const pillars = getPillarsForSlug(post.id);
+const pillarTools = [...new Map(pillars.flatMap((p) => p.tools ?? []).map((t) => [t.href, t])).values()];
 
 const dateFormat: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
 ---
@@ -68,6 +69,17 @@ const dateFormat: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long',
             <>
               {i > 0 && ', '}
               <a href={`/blog/topics/${pillar.slug}/`}>{pillar.name}</a>
+            </>
+          ))}
+        </p>
+      )}
+      {pillarTools.length > 0 && (
+        <p class="post-pillar-links">
+          Free tools for this topic:{' '}
+          {pillarTools.map((tool, i) => (
+            <>
+              {i > 0 && ', '}
+              <a href={tool.href}>{tool.label}</a>
             </>
           ))}
         </p>

@@ -41,7 +41,7 @@ There are three common ways to measure it:
 2. **Natural experiments** use historical variation. They are cheaper but depend on your data.
 3. **Platform-assisted lift tests** are easy to run but rely on the platform's own setup.
 
-For a step-by-step walkthrough, see [Why Platform Conversions Overstate Impact (and How to Test)](https://anthonysko.com/blog/why-platform-reported-conversions-overstate-impact/).
+Whichever you pick, size the test before you run it: [A/B test sample size and significance explained](/blog/ab-test-sample-size-and-significance-explained/) shows how, and the free [A/B Test Calculator](/projects/ab-test-calculator/) does the maths.
 
 ## What is marketing mix modeling?
 

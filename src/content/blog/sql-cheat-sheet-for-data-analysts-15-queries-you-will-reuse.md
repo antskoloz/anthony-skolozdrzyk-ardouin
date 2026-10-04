@@ -62,7 +62,7 @@ GROUP BY customer_id
 HAVING SUM(amount) > 1000;
 ```
 
-`WHERE` filters rows before grouping. `HAVING` filters groups after. I mix these up more often than I admit.
+`WHERE` filters rows before grouping. `HAVING` filters groups after. I mix these up more often than I admit, which is why I wrote a [full walkthrough of WHERE vs GROUP BY vs HAVING](/blog/sql-group-by-vs-having-vs-where/).
 
 ### 5. Left join (keep everyone on the left)
 

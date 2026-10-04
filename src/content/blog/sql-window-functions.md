@@ -203,7 +203,7 @@ FROM orders;
 
 ## 9. How do I build a cohort retention table?
 
-**Use cases:** SaaS and e-commerce retention, repeat purchase rate.
+**Use cases:** SaaS and e-commerce retention, repeat purchase rate. For the full version, from raw orders to a finished retention grid, see [cohort retention analysis in SQL, step by step](/blog/cohort-retention-analysis-in-sql-step-by-step/).
 
 ```sql
 WITH first_orders AS (

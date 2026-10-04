@@ -47,7 +47,7 @@ As a widely quoted rule of thumb, under 12 months is generally considered health
 ## What actually shortens a long payback period?
 
 - **Raise average order value or expansion revenue**, so each customer contributes more margin per month without changing acquisition cost.
-- **Reduce CAC** by focusing spend on channels with a demonstrated lower cost per acquired customer — see [why platform-reported conversions overstate impact](/blog/why-platform-reported-conversions-overstate-impact/) before trusting a channel's reported CAC at face value, since attribution can make some channels look cheaper than they really are.
+- **Reduce CAC** by focusing spend on channels with a demonstrated lower cost per acquired customer — see [attribution vs. incrementality vs. MMM](/blog/attribution-vs-incrementality-vs-mmm/) before trusting a channel's reported CAC at face value, since attribution can make some channels look cheaper than they really are.
 - **Improve gross margin**, for instance by reducing the cost of serving a customer (support, infrastructure, onboarding), which increases the monthly margin the payback formula is dividing into.
 - **Shorten time to value**, so customers are more likely to stay long enough for the payback period to actually play out rather than churning before recovering the acquisition cost — a fast payback calculation is only useful if the customer actually sticks around that long.
 

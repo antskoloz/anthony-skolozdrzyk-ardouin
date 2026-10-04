@@ -106,6 +106,7 @@ export const blogPillars: BlogPillar[] = [
       { label: 'A/B Test Calculator', href: '/projects/ab-test-calculator/' },
       { label: 'Chi-Square Calculator', href: '/projects/chi-square-calculator/' },
       { label: 'UTM Link Builder', href: '/projects/utm-builder/' },
+      { label: 'Marketing ROI Calculator', href: '/projects/marketing-roi-calculator/' },
     ],
   },
   {
