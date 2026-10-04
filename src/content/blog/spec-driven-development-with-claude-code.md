@@ -1,6 +1,6 @@
 ---
 title: "Spec-Driven Development with Claude Code: My Setup"
-description: "How I use spec-driven development with Claude Code to build a real site: the five docs, the rules that keep chat out of them, and a real session."
+description: "How I use spec-driven development with Claude Code to build a real site: the six docs, the rules that keep chat out of them, and a real session."
 pubDate: 2026-10-10T09:00:00.000+02:00
 tags:
   - claude code
@@ -23,7 +23,7 @@ Spec-driven development is an old idea with a new reason to exist. You describe 
 
 What changed is who reads the documents. An AI assistant starts every session with no memory of the last one, unless something tells it. A spec is that something. Think of it as the handover note you'd leave a colleague covering your desk for a week, except the colleague arrives every morning.
 
-The popular write-ups describe the same loop: spec, then plan, then code, with a human review between each step. Open-source kits such as GitHub's Spec Kit package it up. You don't need a kit to start, though. Five Markdown files did it for me.
+The popular write-ups describe the same loop: spec, then plan, then code, with a human review between each step. Open-source kits such as GitHub's Spec Kit package it up. You don't need a kit to start, though. Six Markdown files did it for me.
 
 ## Which documents do I keep?
 

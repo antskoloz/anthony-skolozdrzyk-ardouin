@@ -7,6 +7,7 @@ import AuthorBox from '../../components/AuthorBox.astro';
 import RelatedPosts from '../../components/RelatedPosts.astro';
 import { getPillarsForSlug } from '../../data/blog-pillars';
 import { SITE_URL } from '../../consts';
+import { existsSync } from 'node:fs';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => isLive(data));
@@ -24,6 +25,9 @@ interface Props {
 const { post, allLive } = Astro.props;
 const { Content } = await render(post);
 const pillars = getPillarsForSlug(post.id);
+// Per-post share image from scripts/og-images.mjs; BlogLayout falls back to the default.
+const ogCard = `/assets/img/og/blog-${post.id}.png`;
+const ogImage = post.data.heroImage ?? (existsSync(`public${ogCard}`) ? ogCard : undefined);
 const pillarTools = [...new Map(pillars.flatMap((p) => p.tools ?? []).map((t) => [t.href, t])).values()];
 
 const dateFormat: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
@@ -33,7 +37,7 @@ const dateFormat: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long',
   title={post.data.title}
   description={post.data.description}
   canonicalPath={`/blog/${post.id}/`}
-  ogImage={post.data.heroImage}
+  ogImage={ogImage}
   article={{ pubDate: post.data.pubDate, updatedDate: post.data.updatedDate, tags: post.data.tags }}
 >
   <div class="container">
