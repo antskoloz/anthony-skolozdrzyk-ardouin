@@ -1,13 +1,14 @@
 ---
 title: "Spec-Driven Development with Claude Code: My Setup"
-description: "How I use spec-driven development with Claude Code to build a real site: the six docs, the rules that keep chat out of them, and a real session."
-pubDate: 2026-10-10T09:00:00.000+02:00
+description: "How I use spec-driven development with Claude Code to build a real
+  site: the six docs, the rules that keep chat out of them, and a real session."
+pubDate: 2026-10-04T11:12:00.000+02:00
 tags:
   - claude code
   - ai for analysts
   - workflow
   - spec-driven development
-draft: true
+draft: false
 ---
 > **Short answer:** Spec-driven development means you write down what you want built (the spec) and how you will build it (the plan) before the AI writes any code, and you keep those documents as the source of truth. With Claude Code, that is a handful of Markdown files in the project, plus one rule: nothing said in a chat counts until it is written into one of them.
 
@@ -15,7 +16,7 @@ If you've used an AI coding assistant for more than an afternoon, you've probabl
 
 This post is how I avoid that. It's the actual setup behind this website, which I build with [Claude Code](/blog/claude-code-for-data-analysis-a-beginner-setup/): the documents, the rules, and what a working session looks like.
 
-<!-- ANTHONY: add a real story here, e.g. the moment you decided you needed this, or a time the AI undid a decision -->
+This way of working was actually something I learnt from Lee Boonstra, engineer at Google when he kindly shared with us this methodology.  
 
 ## What is spec-driven development?
 
@@ -29,14 +30,14 @@ The popular write-ups describe the same loop: spec, then plan, then code, with a
 
 Each file has one job. Mixing jobs is how documents rot.
 
-| File | Job | Changes how often |
-|---|---|---|
-| `CLAUDE.md` | Scope and non-goals: what this project is and is not | Rarely |
-| `plan.md` | Phased roadmap with checkboxes | Every few weeks |
-| `architecture.md` | How the system fits together | When the design changes |
-| `specs/*.md` | One file per feature: behaviour, data shape, edge cases | When a feature changes |
-| `decisions.md` | Decision log: what we chose, what we rejected, why | Append-only |
-| `todo.md` | This week's checklist | Every session |
+| File              | Job                                                     | Changes how often       |
+| ----------------- | ------------------------------------------------------- | ----------------------- |
+| `CLAUDE.md`       | Scope and non-goals: what this project is and is not    | Rarely                  |
+| `plan.md`         | Phased roadmap with checkboxes                          | Every few weeks         |
+| `architecture.md` | How the system fits together                            | When the design changes |
+| `specs/*.md`      | One file per feature: behaviour, data shape, edge cases | When a feature changes  |
+| `decisions.md`    | Decision log: what we chose, what we rejected, why      | Append-only             |
+| `todo.md`         | This week's checklist                                   | Every session           |
 
 `CLAUDE.md` is special because Claude Code reads it automatically at the start of every session. Mine is short. It says what the site is, lists the non-goals ("no database, no server-side runtime", "no blog translation"), and points to the other files.
 
@@ -50,10 +51,10 @@ The rule: **chat is exploration, documents are truth.**
 
 A conversation contains brainstorming, half-ideas, questions and things we explicitly rejected. None of that should become canon just because it was said. So the layers stay separate:
 
-- **Chat** is where we think out loud.
-- **Requirements** (`plan.md`, `CLAUDE.md`) hold approved intent.
-- **Specs** (`architecture.md`, `specs/`) hold approved behaviour.
-- **Code** implements the spec.
+* **Chat** is where we think out loud.
+* **Requirements** (`plan.md`, `CLAUDE.md`) hold approved intent.
+* **Specs** (`architecture.md`, `specs/`) hold approved behaviour.
+* **Code** implements the spec.
 
 I put this rule in my global Claude Code instructions, so it applies to every project, not just this one. It tells the assistant to read the relevant docs before proposing anything, to flag when a request changes scope or contradicts a recorded decision, and to ask before editing a canonical doc.
 
@@ -100,12 +101,10 @@ Shorter than you think. A spec is not a novel; it's the answers to the questions
 
 It's not free, and it's not magic. The honest limits:
 
-- **It's overhead for tiny jobs.** A one-off script doesn't need five documents. I use judgement: anything with more than one session of work gets the docs; a throwaway doesn't.
-- **Docs drift if you let them.** The method only works if updating the doc is part of "done". The day you skip it is the day the doc starts lying.
-- **The assistant still makes mistakes.** A spec reduces wrong guesses; it doesn't remove them. You still review every change. I've written separately about [how to validate AI output before it reaches anyone important](/blog/how-to-validate-ai-generated-analysis-before-it-reaches-your-boss/), and the same habits apply to code.
-- **A spec can be wrong.** Writing it down makes a bad idea easier to spot, but it doesn't make it a good idea.
-
-<!-- ANTHONY: add a real "I got this wrong once" moment here, e.g. a session where you skipped the docs and paid for it -->
+* **It's overhead for tiny jobs.** A one-off script doesn't need five documents. I use judgement: anything with more than one session of work gets the docs; a throwaway doesn't.
+* **Docs drift if you let them.** The method only works if updating the doc is part of "done". The day you skip it is the day the doc starts lying.
+* **The assistant still makes mistakes.** A spec reduces wrong guesses; it doesn't remove them. You still review every change. I've written separately about [how to validate AI output before it reaches anyone important](/blog/how-to-validate-ai-generated-analysis-before-it-reaches-your-boss/), and the same habits apply to code.
+* **A spec can be wrong.** Writing it down makes a bad idea easier to spot, but it doesn't make it a good idea.
 
 ## Is this only for developers?
 
