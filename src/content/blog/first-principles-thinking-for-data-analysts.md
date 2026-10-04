@@ -1,12 +1,13 @@
 ---
-title: "First-Principles Thinking for Data Analysts"
-description: "What first-principles thinking means for a data analyst, with worked examples: questioning a metric, a benchmark and a dashboard request."
-pubDate: 2026-10-11T09:00:00.000+02:00
+title: First-Principles Thinking for Data Analysts
+description: "What first-principles thinking means for a data analyst, with
+  worked examples: questioning a metric, a benchmark and a dashboard request."
+pubDate: 2026-10-04T11:08:00.000+02:00
 tags:
   - analyst craft
   - problem solving
   - data analytics
-draft: true
+draft: false
 ---
 > **Short answer:** First-principles thinking means breaking a problem down to what you know is true, separating it from what you're assuming, and rebuilding the answer from there. For an analyst, it usually starts with three questions: what decision is this for, what is this number actually counting, and what would have to be true for this conclusion to hold?
 
@@ -38,24 +39,24 @@ Say conversion rate dropped from 3.1% to 2.4% overnight. Reasoning by analogy sa
 
 From first principles, start with what the number is: **conversions divided by sessions**. Two numbers, so two places it can move.
 
-| Question | What you check |
-|---|---|
-| Did conversions fall? | Orders in the order system, not the analytics tool |
-| Did sessions rise? | Traffic by source: a bot spike or a new campaign inflates the denominator |
-| Did the definition change? | A tracking release, a consent banner change, a new filter |
-| Is it real at all? | Was yesterday a normal day? Compare with the same weekday |
+| Question                   | What you check                                                            |
+| -------------------------- | ------------------------------------------------------------------------- |
+| Did conversions fall?      | Orders in the order system, not the analytics tool                        |
+| Did sessions rise?         | Traffic by source: a bot spike or a new campaign inflates the denominator |
+| Did the definition change? | A tracking release, a consent banner change, a new filter                 |
+| Is it real at all?         | Was yesterday a normal day? Compare with the same weekday                 |
 
 Illustrative numbers: if orders are flat and sessions jumped 30% from one referral source, checkout is fine. The denominator moved. That's a very different ticket, sent to a very different team.
 
-<!-- ANTHONY: add a real story here, e.g. a metric that "dropped" in your career where the real cause was the denominator or a definition change -->
+
 
 ## Example 2: the benchmark everyone quotes
 
 "A good SaaS churn rate is under 5%." You'll see numbers like this in every deck. First-principles questions:
 
-- **Who measured it, and on whom?** A benchmark from enterprise contracts says little about a monthly self-serve product.
-- **What's the definition?** Logo churn or revenue churn? Monthly or annual? Gross or net?
-- **What decision does it support?** A benchmark tells you whether you're unusual. It doesn't tell you what to do.
+* **Who measured it, and on whom?** A benchmark from enterprise contracts says little about a monthly self-serve product.
+* **What's the definition?** Logo churn or revenue churn? Monthly or annual? Gross or net?
+* **What decision does it support?** A benchmark tells you whether you're unusual. It doesn't tell you what to do.
 
 I went through this in more detail for [RevOps benchmarks](/blog/revops-benchmarks-2026-what-gartner-says/). The short version: a benchmark is a hypothesis about your business, not a fact about it. Your own trend over time is usually the better yardstick, and the [SaaS metrics post](/blog/saas-metrics-that-matter-mrr-churn-ltv-nrr/) covers which definitions to pin down first.
 
@@ -73,9 +74,9 @@ A question I like: **"If this number went up 10% tomorrow, what would you do?"**
 
 You don't apply it to everything. First-principles thinking is expensive, and most days the usual approach is fine. Use it when:
 
-- the stakes are high (a number going to leadership, a decision with real money behind it),
-- something surprises you,
-- or "that's how it's always done" is the only justification on offer.
+* the stakes are high (a number going to leadership, a decision with real money behind it),
+* something surprises you,
+* or "that's how it's always done" is the only justification on offer.
 
 A lightweight routine I'd suggest:
 
@@ -87,10 +88,6 @@ A lightweight routine I'd suggest:
 ## What first-principles thinking is not
 
 It's not "ignore all prior knowledge". Frameworks, benchmarks and best practices exist because they're usually right, and they're fast. The aim is to know which foundations you're standing on, not to rebuild the house every morning.
-
-It's also not a personality. The analysts I've learned the most from weren't contrarians. They were the people who calmly asked "what's in the denominator?" when everyone else was already drafting the slide.
-
-<!-- ANTHONY: optional, a short line about someone you learned this from (no names needed) -->
 
 My take: the formula-writing step is the one to start with. It takes two minutes, it feels slightly silly, and it has saved me from more wrong answers than any tool.
 
