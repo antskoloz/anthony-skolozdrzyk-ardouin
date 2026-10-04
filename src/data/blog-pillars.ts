@@ -75,6 +75,8 @@ export const blogPillars: BlogPillar[] = [
       'prompting-an-llm-for-sql-you-can-trust',
       'text-to-sql-tools-compared',
       'git-github-llm-power-bi-dax-m-workflow',
+      'ai-transformation-starts-with-your-data',
+      'spec-driven-development-with-claude-code',
     ],
   },
   {
@@ -123,6 +125,7 @@ export const blogPillars: BlogPillar[] = [
       'kpi-dashboard-best-practices-people-actually-open',
       'sql-interview-questions-analysts-are-actually-asked',
       'why-ai-analysts-fail-on-bad-metric-definitions',
+      'first-principles-thinking-for-data-analysts',
     ],
     tools: [{ label: 'RICE / ICE Prioritizer', href: '/projects/rice-prioritizer/' }],
   },
