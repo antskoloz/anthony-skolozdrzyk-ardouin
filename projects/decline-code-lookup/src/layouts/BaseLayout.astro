@@ -1,6 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import ShareBar from "../components/ShareBar.astro";
 import { buildCanonicalUrl, pageTitle, withBase, SITE_NAME } from "../utils/seo";
 import "../styles/global.css";
 
@@ -54,7 +55,9 @@ const canonicalUrl = buildCanonicalUrl(Astro, path);
     <Header />
     <main id="main-content">
       <slot />
+      {!noindex && <ShareBar url={canonicalUrl} title={pageTitle(title)} />}
     </main>
     <Footer />
+    {!noindex && <script is:inline src="/assets/js/share.js" defer></script>}
   </body>
 </html>
