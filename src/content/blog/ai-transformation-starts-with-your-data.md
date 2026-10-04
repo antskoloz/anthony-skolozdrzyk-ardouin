@@ -1,17 +1,18 @@
 ---
-title: "AI Transformation Starts With Your Data, Not the Model"
-description: "Why most AI transformation programmes stall, what the research says, and a practical data-readiness checklist analysts can run first."
-pubDate: 2026-10-18T09:00:00.000+02:00
+title: AI Transformation Starts With Your Data, Not the Model
+description: Why most AI transformation programmes stall, what the research
+  says, and a practical data-readiness checklist analysts can run first.
+pubDate: 2026-10-04T11:08:00.000+02:00
 tags:
   - ai for analysts
   - ai transformation
   - data quality
   - data strategy
-draft: true
+draft: false
 ---
 > **Short answer:** AI transformation usually stalls on data, not models. Gartner expects organisations to abandon 60% of AI projects that lack AI-ready data through 2026, and RAND notes estimates that more than 80% of AI projects fail. Before choosing a model, check that your key metrics have one definition, your data has an owner, and you can measure whether the AI actually helped.
 
-Every company I talk to has an AI transformation story in progress. Many of them have the same plot: an impressive pilot, a lot of excitement, then a slow fade when it meets real data. The model was rarely the problem.
+Every company I read about has an AI transformation story in progress. Many of them have the same plot: an impressive pilot, a lot of excitement, then a slow fade when it meets real data. The model was rarely the problem.
 
 This post covers why that happens, what the research says, and a readiness checklist you can run before the next pilot. It's written from an analyst's seat, because analysts are usually the first to see the cracks.
 
@@ -25,8 +26,8 @@ That definition matters, because it tells you how to measure it. If nothing abou
 
 The research points in the same direction.
 
-- **Gartner** predicts that through 2026, organisations will abandon 60% of AI projects that aren't supported by AI-ready data.
-- **RAND Corporation** notes that, by some estimates, more than 80% of AI projects fail, about twice the rate of IT projects without AI. Its own interviews with 65 data scientists and engineers found that the most common root cause is misunderstanding the problem to be solved, with missing or poor data close behind. Most of the causes have nothing to do with which model was chosen.
+* **Gartner** predicts that through 2026, organisations will abandon 60% of AI projects that aren't supported by AI-ready data.
+* **RAND Corporation** notes that, by some estimates, more than 80% of AI projects fail, about twice the rate of IT projects without AI. Its own interviews with 65 data scientists and engineers found that the most common root cause is misunderstanding the problem to be solved, with missing or poor data close behind. Most of the causes have nothing to do with which model was chosen.
 
 A caveat on both: "fail" is defined differently across studies, and survey figures vary a lot. I'd treat them as "most", not as precise percentages. The direction is consistent, though, and it matches what analysts see every day.
 
@@ -37,7 +38,7 @@ In plain terms, AI projects tend to fail for four reasons:
 3. **Nobody owns the data.** When the AI gives a wrong answer, there's no one whose job it is to fix the source.
 4. **Nobody measures the outcome.** The pilot is judged on how impressive it looks, not on whether the work improved.
 
-<!-- ANTHONY: add a real story here, e.g. an AI or automation initiative you saw stall on data (no confidential detail) -->
+Creating a semantinc model with currated and well-defined definitions around the metrics totally makes a difference. For instance, defining "active users": what time definition? Should all segments of customers be included and follow the same rules? Which source data table should be considered as the truth, the one coming from the CRM or any other system like the billing engine?
 
 ## What does "AI-ready data" mean?
 
@@ -45,12 +46,12 @@ It sounds vague, so here's the analyst's version. Data is AI-ready when an assis
 
 That needs four things:
 
-| Property | What it means | Quick test |
-|---|---|---|
-| **Defined** | Each key metric has one written definition | Ask three teams for "active customers". Same number? |
-| **Clean** | Duplicates, nulls and test records are handled | Run a [duplicate-row check](/blog/find-and-fix-duplicate-rows-in-sql/) on your main tables |
-| **Owned** | Someone fixes the source when it's wrong | Can you name the owner of your revenue table? |
-| **Documented** | Tables and columns are described in words | Could a new hire find the right table in a day? |
+| Property       | What it means                                  | Quick test                                                                                 |
+| -------------- | ---------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| **Defined**    | Each key metric has one written definition     | Ask three teams for "active customers". Same number?                                       |
+| **Clean**      | Duplicates, nulls and test records are handled | Run a [duplicate-row check](/blog/find-and-fix-duplicate-rows-in-sql/) on your main tables |
+| **Owned**      | Someone fixes the source when it's wrong       | Can you name the owner of your revenue table?                                              |
+| **Documented** | Tables and columns are described in words      | Could a new hire find the right table in a day?                                            |
 
 The first row is the one that bites hardest. An AI can write perfectly valid SQL against the wrong definition of revenue, and nothing in the output will warn you. That's the subject of [why AI analysts fail on bad metric definitions](/blog/why-ai-analysts-fail-on-bad-metric-definitions/), and it's why a [semantic layer](/blog/semantic-layer-for-ai-what-it-is-and-why-analytics-needs-one/) is becoming part of the AI conversation.
 
@@ -74,9 +75,9 @@ Closer to the middle than most org charts suggest. Analysts know which tables li
 
 Practically, that means analysts can:
 
-- write the metric definitions the AI will rely on,
-- build the evaluation set (questions with known correct answers) to test any assistant before rollout,
-- and decide [which tasks to hand to AI and which to keep](/blog/which-analyst-tasks-to-hand-to-ai-and-which-to-keep/).
+* write the metric definitions the AI will rely on,
+* build the evaluation set (questions with known correct answers) to test any assistant before rollout,
+* and decide [which tasks to hand to AI and which to keep](/blog/which-analyst-tasks-to-hand-to-ai-and-which-to-keep/).
 
 The evaluation set is the one I'd push hardest. Twenty real questions with answers you've checked by hand will tell you more about an AI tool than any vendor demo.
 
