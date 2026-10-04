@@ -1,6 +1,8 @@
 ---
 slug: error-transaction
 title: Error / Transaction Error
+seoTitle: "Error / Transaction Error (Code 06): Meaning"
+metaDescription: "Code 06 \"error\" means the transaction failed for a technical reason on the issuer or network side, not because of the card. What causes it and when a retry will work."
 category: technical-processing
 summary: >-
   An "Error" or "Transaction Error" decline is a generic processing failure

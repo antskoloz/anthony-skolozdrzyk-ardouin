@@ -1,6 +1,8 @@
 ---
 slug: exceeds-withdrawal-limit
 title: Exceeds Withdrawal/Activity Limit
+seoTitle: "Exceeds Withdrawal Limit (Code 61): Meaning & Fix"
+metaDescription: "Code 61 \"exceeds withdrawal amount limit\" means the payment is above the card's daily or per-transaction limit. What the decline means and how to get the payment through."
 category: insufficient-funds
 summary: >-
   This decline means the transaction amount, or the cumulative amount of

@@ -1,6 +1,8 @@
 ---
 slug: cvv-invalid
 title: Invalid CVV/CVC
+seoTitle: "Declined CVV2 / Invalid CVV (Code 82): Meaning"
+metaDescription: "A \"declined CVV2\" or invalid CVV (code 82) means the 3- or 4-digit security code did not match the card. What it means, common causes and what to do before retrying."
 category: fraud
 summary: >-
   An "Invalid CVV/CVC" decline means the security code submitted with the

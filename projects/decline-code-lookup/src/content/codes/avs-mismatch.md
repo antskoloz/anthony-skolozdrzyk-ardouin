@@ -1,6 +1,8 @@
 ---
 slug: avs-mismatch
 title: Address Verification (AVS) Mismatch
+seoTitle: "AVS Mismatch: Meaning & Why the Card Was Declined"
+metaDescription: "An AVS mismatch means the billing address entered does not match the address the bank has on file for the card. What it means, why it causes declines, and how to fix it."
 category: fraud
 summary: >-
   An AVS mismatch occurs when the billing address or ZIP code entered at

@@ -1,6 +1,8 @@
 ---
 slug: transaction-not-permitted-cardholder
 title: Transaction Not Permitted to Cardholder
+seoTitle: "Transaction Not Permitted to Cardholder (Code 57)"
+metaDescription: "Code 57 \"transaction not permitted to cardholder\" means the card is not allowed for this type of purchase. Why the bank blocks it and how the cardholder can get it lifted."
 category: risk-compliance
 summary: >-
   This decline means the issuer does not allow this specific cardholder's

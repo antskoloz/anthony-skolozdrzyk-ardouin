@@ -1,6 +1,8 @@
 ---
 slug: restricted-card
 title: Restricted Card
+seoTitle: "Restricted Card (Code 62): Meaning & What to Do"
+metaDescription: "A \"restricted card\" decline (code 62 or 36) means the bank limits where or how this card can be used: country, merchant type or card program. What it means and how to fix it."
 category: risk-compliance
 summary: >-
   A Restricted Card decline means the issuer has placed a specific

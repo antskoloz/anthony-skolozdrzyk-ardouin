@@ -1,6 +1,8 @@
 ---
 slug: suspected-fraud-pickup-card
 title: Suspected Fraud / Pick Up Card
+seoTitle: "Suspected Fraud / Pick Up Card (Code 41, 43)"
+metaDescription: "A \"suspected fraud\" or \"pick up card\" decline (codes 41 or 43) means the issuer believes the card may be lost, stolen or used fraudulently. What it means and what to do."
 category: fraud
 summary: >-
   This decline means the card issuer believes the card may be lost, stolen,

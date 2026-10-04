@@ -1,6 +1,8 @@
 ---
 slug: do-not-honor
 title: Do Not Honor
+seoTitle: "Do Not Honor (Code 05): Meaning & What to Do"
+metaDescription: "\"Do Not Honor\" (code 05) means the card issuer declined the payment without saying why. What it means on a debit or credit card, the usual causes, and what to do next."
 category: other
 summary: >-
   A "Do Not Honor" decline is a catch-all response from the card issuer

@@ -1,6 +1,8 @@
 ---
 slug: issuer-unavailable
 title: Issuer or Switch Inoperative
+seoTitle: "Issuer or Switch Inoperative (Code 91): Meaning"
+metaDescription: "Code 91 \"issuer or switch inoperative\" means the bank's system could not be reached. It is a temporary technical outage, not a problem with the card. Wait a few minutes and retry."
 category: technical-processing
 summary: >-
   This decline means the card issuer's system, or the network switch routing

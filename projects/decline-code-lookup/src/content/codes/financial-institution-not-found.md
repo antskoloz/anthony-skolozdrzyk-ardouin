@@ -1,6 +1,8 @@
 ---
 slug: financial-institution-not-found
 title: Financial Institution Not Found
+seoTitle: "Financial Institution Not Found (Code 92): Meaning"
+metaDescription: "Code 92 \"financial institution not found\" means the card number could not be routed to a bank, usually a mistyped number or an outdated BIN table. What to check and what to do."
 category: technical-processing
 summary: >-
   This decline means the routing information attached to the transaction

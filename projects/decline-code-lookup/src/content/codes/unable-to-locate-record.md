@@ -1,6 +1,8 @@
 ---
 slug: unable-to-locate-record
 title: Unable to Locate Record
+seoTitle: "Unable to Locate Record (Code 25): Meaning"
+metaDescription: "Code 25 \"unable to locate record\" means the issuer could not find the card or original transaction in its files. Common causes and what merchants and cardholders should do."
 category: technical-processing
 summary: >-
   An "Unable to Locate Record" decline occurs when the issuer can't find the

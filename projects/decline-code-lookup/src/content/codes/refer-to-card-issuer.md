@@ -1,6 +1,8 @@
 ---
 slug: refer-to-card-issuer
 title: Refer to Card Issuer
+seoTitle: "Refer to Card Issuer (Code 01): Meaning & Fix"
+metaDescription: "\"Refer to card issuer\" (code 01 or 02) means the bank wants the cardholder to contact it before approving the payment. What it means and the fastest way to resolve it."
 category: other
 summary: >-
   "Refer to Card Issuer" is a generic response instructing the merchant that
